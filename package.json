@@ -1,0 +1,17 @@
+{
+  "name": "bloom-into-you",
+  "version": "0.1.0",
+  "private": true,
+  "description": "dennissnellenberg.com 的忠实复刻（构建期模板层：11ty + Nunjucks）",
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "cheerio": "^1.2.0",
+    "playwright-core": "^1.63.0"
+  }
+}
