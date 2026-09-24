@@ -18,11 +18,20 @@
     cursorSpan      光标文字：'View' / 'Website' / 'Next case'
     floatImages     浮动缩略图数据（仅 'float' 模式用）
 
-  关于 <script> 块（SPEC.md §2.1 的 8 个标签）：**P2 刻意不输出**。
-  该块的最后一个文件是我们的运动运行时，它属于 P3（「全局运动运行时」）；
-  为尚不存在的文件输出 <script> 只会得到 404，不是"骨架更完整"。
-  P3 落地时在此处一次性补上（含 7 个第三方库的自托管副本 + 运行时本体），
-  顺序严格按 §2.1。静态验收不受影响 —— 静态模式本来就把 script 元素排除在清册外。
+  关于 <script> 块（SPEC.md §2.1）：P3 起按原站逐字输出，**顺序不可调换**。
+  两个必须照抄的反常之处：
+    · Barba 有**三行**，但只有 `@barba/core@2.10.3` 那行是活的 —— 前两行是 HTML 注释
+      （注释不是元素节点，用真正的 HTML 解析器比对时才不会被误当成活跃标签）。
+      运行时 `barba.version === "2.10.3"`，只有一个实例。
+    · `locomotive-scroll.min.js` **没有** `defer`，而 `index-new.js` **有** —— 这保证
+      `LocomotiveScroll` 全局在 `index-new.js` 执行前已就绪。不要给前者加 defer，
+      也不要给后者去掉 defer（它依赖 DOM 就绪）。
+  以及两处**有意的不同**（均已登记）：
+    · **不移植 Google Analytics**（SPEC.md §1.3 的范围边界）：原站 <head> 里有 2 个
+      <script>（外部 gtag + 内联配置），产物没有。故 `script` 元素**不参与结构层比对**，
+      §2.1 的加载顺序改由 motion 层的 `scripts` 有序清单专门比对（见 harness）。
+    · 两个自托管脚本的 host 与原站不同（`/assets/js/…` vs
+      `https://dennissnellenberg.com/assets/js/…`）—— 比对时由 `--url-mode path` 折叠。
 #}
 <!DOCTYPE html><!--  This site was created by Dennis Snellenberg (Code by Dennis)  -->
 <html lang="{{ site.lang }}">
@@ -37,5 +46,14 @@
 {{ content | safe }}
 </div>
         </main>
-    </body>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.7"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.3"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.6.1/dist/lazyload.min.js"></script>
+
+        <script src="/assets/js/locomotive-scroll.min.js"></script>        <script defer src="/assets/js/index-new.js"></script>    </body>
 </html>

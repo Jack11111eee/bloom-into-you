@@ -8,7 +8,12 @@ ns: contact
   这是一页**一次性排版**（无重复结构），按 §9.3 / §6.6 的立场"逐字归档，不做抽象"。
   共享部件已换成 include，原站绝对 URL 已折成根相对路径。
 
-  > 表单的 `<label for>` 已按 §5.12 A1 修正（原站 3 个 label 共用 `for="email"`）。
+  > ⚠️ 表单的 `<label for>` **尚未按 §5.12 A1 修正** —— 当前 6 个 label 的 `for` 与
+  > 原站**逐字相同**（`tel` / `name` / `email` / `email` / `email` / `message`），
+  > 即 organization 与 service 两个 label 仍指向 email 输入框。
+  > 这里原先的注释写的是"已按 A1 修正"，**与代码不符**（`ISSUES.md` ISSUE-019）。
+  > 修正动作排在 **P8 Gate 4**（"A 类缺陷已修"），届时改这两处 `for` 并同步
+  > `DEVIATIONS.md` A1；跨站比对会因此多两处已登记差异，需要相应的归一化。
 
   P8「内容个性化」必须替换本页的全部原站文案与媒体引用。
 #}
