@@ -1,0 +1,14 @@
+Inter — SIL Open Font License 1.1
+=====================================
+
+Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter)
+
+本产物中的 Inter-300/450/800.woff2 由 reference/fonts-candidates/Inter.ttf 生成：
+钉住 opsz=14、按字重实例化、并把前进宽度与 cap 高改写为 PP Neue Montreal 的度量，
+见 scripts/build-font.py。
+
+Inter 以 SIL Open Font License 1.1 发布，允许自由使用、修改、自托管与商用。
+许可全文见 https://scripts.sil.org/OFL 与 https://github.com/rsms/inter
+
+原站字体（PP Neue Montreal，Pangram Pangram 商业字体，EULA §2.4 按域名授权）
+**不在本产物中**；它只在构建期被本脚本读取用于**度量标定**，其字形数据未被复制。
