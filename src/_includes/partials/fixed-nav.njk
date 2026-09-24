@@ -1,0 +1,48 @@
+{#
+  partials/fixed-nav.njk — 全屏菜单（SPEC.md §6.0 / §5.6）
+
+  全站 17 页逐字一致，唯一变化是 `.links-wrap > li` 上 `active` 的位置
+  （由 frontmatter 的 `fixedNavActive` 给出；archive 与 styleguide 无高亮）。
+  已用 cheerio 把 17 页的 `.fixed-nav` 归一化掉 `active` 后比对：**1 个变体**。
+#}
+<div class="fixed-nav theme-dark">
+                <div class="fixed-nav-rounded-div">
+                    <div class="rounded-div-wrap">
+                        <div class="rounded-div"></div>
+                    </div>
+                </div>
+                <div class="fixed-nav-inner">
+                    <div class="row nav-row">
+                        <h5>Navigation</h5>
+                        <div class="stripe"></div>
+                        <ul class="links-wrap">
+{%- for item in site.fixedNav %}
+                            <li class="{{ item.classes | join(' ') }}{% if loop.index0 === fixedNavActive %} active{% endif %}">
+                                <a href="{{ item.href }}" class="btn-click magnetic" data-strength="{{ item.strength }}" data-strength-text="{{ item.strengthText }}">
+                                <span class="btn-text">
+                                    <span class="btn-text-inner">{{ item.label }}</span>
+                                </span>
+                                </a>
+                            </li>
+{%- endfor %}
+                        </ul>
+                    </div>
+                    <div class="row social-row">
+                        <div class="stripe"></div>
+                        <div class="socials">
+                            <h5>Socials</h5>
+                            <ul>
+{%- for s in site.socials %}
+                                <li class="btn btn-link btn-link-external">
+                                    <a href="{{ s.url }}" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                                        <span class="btn-text">
+                                            <span class="btn-text-inner">{{ s.label }}</span>
+                                        </span>
+                                    </a>
+                                </li>
+{%- endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>

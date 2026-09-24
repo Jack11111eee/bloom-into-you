@@ -1,0 +1,35 @@
+{#
+  blocks/fullwidth.njk — `block-fullwidth`（SPEC.md §6.1，全站 12 个）
+
+  特征：**没有 `.container`**，直接 `.row > .flex-col > .single-image`。
+
+  三种可选叠加，逐页不同：
+    · `.overlay.dark-overlay`（内联 `opacity`：0 / 0.1 / 0.15 / 0.2）
+    · `.overlay.text-overlay.theme-dark > .container > h2`（文字叠加）
+    · 两者都没有（one-nil `block_2`）
+  媒体两种形态：video（`data-scroll-speed` 挂在 `.overlay` 上）
+  或 image（`data-scroll-speed` 挂在 `img` 上）。
+#}
+<section class="section single-block block-fullwidth block_{{ b.index }}{{ ' block-padding-bottom' if b.paddingBottom }}"{% if b.background %} style="background-color: {{ b.background }};"{% endif %} data-scroll-section>
+   <div class="row">
+      <div class="flex-col">
+         <div class="single-image">
+{% if b.media.kind === 'video' %}
+            <div class="overlay overlay-image playpauze" data-scroll data-scroll-speed="{{ b.scrollSpeed }}"><video class="overlay" src="{{ b.media.src }}" loop muted playsinline></video></div>
+{%- else %}
+            <img class="overlay overlay-image lazy" data-scroll data-scroll-speed="{{ b.scrollSpeed }}" src="{{ b.media.srcSmall }}" data-src="{{ b.media.src }}" width="{{ b.media.width }}" height="{{ b.media.height }}">
+{%- endif %}
+{% if b.darkOverlay !== null %}
+                        <div class="overlay dark-overlay" style="opacity: {{ b.darkOverlay }};"></div>
+{% endif %}
+{% if b.textOverlay %}
+                        <div class="overlay text-overlay{{ ' theme-dark' if b.textOverlayThemeDark }}">
+               <div class="container">
+                  <h2>{{ b.textOverlay }}</h2>
+               </div>
+            </div>
+{% endif %}
+         </div>
+      </div>
+   </div>
+</section>

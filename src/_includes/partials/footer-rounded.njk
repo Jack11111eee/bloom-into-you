@@ -1,0 +1,11 @@
+{#
+  partials/footer-rounded.njk — `.main-wrap` 与页脚之间的圆角过渡遮罩（SPEC.md §6.0）
+
+  5 个非案例页的实例逐字一致；案例页在 `.rounded-div` 上多一个内联 `background-color`
+  （逐页不同，来自数据的 `footerAccent`）。contact 页**没有**这个元素。
+#}
+<div class="footer-rounded-div" data-scroll-section="">
+                    <div class="rounded-div-wrap">
+                        <div class="rounded-div"{% if footerAccent %} style="background-color: {{ footerAccent }};"{% endif %}></div>
+                    </div>
+                </div>

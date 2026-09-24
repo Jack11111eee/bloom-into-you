@@ -1,0 +1,76 @@
+{
+  "_comment": "首页专属内容（SPEC.md §6.2 / §7.1）。P2 阶段仍是原站文案，P8 必须替换。",
+  "introHeading": "Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.",
+  "introText": "The combination of my passion for design, code & interaction positions me in a unique place in the web design world.",
+  "heroRole": "Freelance Designer & Developer",
+  "heroName": "Dennis Snellenberg",
+  "heroLocation": "Located in the Netherlands",
+  "featured": [
+    {
+      "classes": [
+        "development",
+        "interaction"
+      ],
+      "href": "/work/twice",
+      "target": null,
+      "arrow": false,
+      "name": "TWICE",
+      "location": null,
+      "services": "Interaction & Development",
+      "year": "2024",
+      "tileColor": "#F1F1F1",
+      "tileImage": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice.jpg"
+    },
+    {
+      "classes": [
+        "design",
+        "development",
+        "interaction"
+      ],
+      "href": "/work/the-damai",
+      "target": null,
+      "arrow": false,
+      "name": "The Damai",
+      "location": null,
+      "services": "Design & Development",
+      "year": "2024",
+      "tileColor": "#E0D9D1",
+      "tileImage": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2.jpg"
+    },
+    {
+      "classes": [
+        "design",
+        "development",
+        "interaction"
+      ],
+      "href": "/work/fabric",
+      "target": null,
+      "arrow": false,
+      "name": "FABRIC™",
+      "location": null,
+      "services": "Design & Development",
+      "year": "2023",
+      "tileColor": "#48494A",
+      "tileImage": "/media/pages/work/fabric/ac07564a5f-1688453092/thumbnail-fabric-darkgray.jpg"
+    },
+    {
+      "classes": [
+        "design",
+        "development",
+        "interaction"
+      ],
+      "href": "/work/aanstekelijk",
+      "target": null,
+      "arrow": false,
+      "name": "Aanstekelijk",
+      "location": null,
+      "services": "Design & Development",
+      "year": "2023",
+      "tileColor": "#101010",
+      "tileImage": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk.jpg"
+    }
+  ],
+  "moreWorkHref": "/work",
+  "moreWorkCount": "11"
+}
+

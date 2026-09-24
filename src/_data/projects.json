@@ -1,0 +1,1985 @@
+{
+  "_comment": "11 个案例（SPEC.md §7.3）。blocks 是 §6.1 的逐页序列，由 reference/html 机械抽取。P8 必须替换全部文案与媒体。",
+  "projects": [
+    {
+      "slug": "twice",
+      "title": "TWICE - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice-860x540-crop-q72.jpg",
+      "canonical": "/work/twice",
+      "loaderActive": 11,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "cursorSpan": "Next case",
+      "name": "TWICE",
+      "liveSite": "https://twicemediahouse.com/",
+      "intro": [
+        {
+          "label": "Role / Services",
+          "items": [
+            "Interaction & Development"
+          ]
+        },
+        {
+          "label": "Credits",
+          "items": [
+            "Design: Dylan Brouwer"
+          ]
+        },
+        {
+          "label": "Location & year",
+          "items": [
+            "Spain ©",
+            "2024"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": "https://twicemediahouse.com/",
+        "image": "/media/pages/work/twice/56dc0c6ce1-1710405711/dsc7458.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": "/media/pages/work/twice/b8d83f1720-1710411070/case-header-twice.svg",
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "device",
+          "index": 0,
+          "background": "#C0CAC9",
+          "paddingBottom": false,
+          "device": "mbp16lower",
+          "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/twice/2a06f31598-1710406342/screen-rec-home-2.mov",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "device",
+          "index": 1,
+          "background": "#C0CAC9",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/twice/9c011cac90-1710411859/screen-rec-nav-hover.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 2,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/twice/9410598988-1710411431/starvie.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0.2",
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "device",
+          "index": 3,
+          "background": "#C0CAC9",
+          "paddingBottom": false,
+          "device": "mbp16lower",
+          "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/twice/49c2363f7d-1710412499/screen-rec-work.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "mobile-devices",
+          "index": 4,
+          "background": "#C0CAC9",
+          "paddingBottom": false,
+          "device": "nodevice",
+          "columns": [
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_4",
+                "data-scroll-speed": "1"
+              },
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/twice/076ed24f45-1710412700/screen-mobile-1.jpg",
+                "srcSmall": "/media/pages/work/twice/076ed24f45-1710412700/screen-mobile-1-540x.jpg",
+                "width": 1080,
+                "height": 2191,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": null
+            },
+            {
+              "deviceAttrs": {},
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/twice/6d3469f364-1710412710/screen-mobile-2.jpg",
+                "srcSmall": "/media/pages/work/twice/6d3469f364-1710412710/screen-mobile-2-540x.jpg",
+                "width": 1080,
+                "height": 2191,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": null
+            },
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_4",
+                "data-scroll-speed": "-1"
+              },
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/twice/4482f6c357-1710412713/screen-mobile-3.jpg",
+                "srcSmall": "/media/pages/work/twice/4482f6c357-1710412713/screen-mobile-3-540x.jpg",
+                "width": 1080,
+                "height": 2186,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": null
+            }
+          ]
+        }
+      ],
+      "customCss": ".block-device .device-nodevice .single-image {\n   border-radius: 0.3em;\n}\n\n.block-mobile-devices .single-image {\n   border-radius: 0.3em !important;\n}\n\n.block-mobile-devices .single-image::before {\n   padding-top: 203%;\n}",
+      "footerAccent": "#C0CAC9",
+      "nextCase": {
+        "slug": "the-damai",
+        "name": "The Damai",
+        "tileColor": "#E0D9D1",
+        "tileImage": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2.jpg"
+      }
+    },
+    {
+      "slug": "the-damai",
+      "title": "The Damai - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2-860x540-crop-q72.jpg",
+      "canonical": "/work/the-damai",
+      "loaderActive": 12,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "cursorSpan": "Next case",
+      "name": "The Damai",
+      "liveSite": "https://thedamai.codebydennis.com/",
+      "intro": [
+        {
+          "label": "Role / Services",
+          "items": [
+            "Design & Development"
+          ]
+        },
+        {
+          "label": "Credits",
+          "items": [
+            "Design: Christy Lammerink",
+            "Design: Tom de Koning",
+            "Photography: Niké Schuurmans"
+          ]
+        },
+        {
+          "label": "Location & year",
+          "items": [
+            "Bali, Indonesia ©",
+            "2024"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": "https://thedamai.codebydennis.com/",
+        "image": "/media/pages/work/the-damai/815df0128d-1710449859/case-image-2.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": "/media/pages/work/the-damai/57740648c2-1710449705/case-header-thedamai.svg",
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "device",
+          "index": 0,
+          "background": "#E0D9D1",
+          "paddingBottom": false,
+          "device": "mbp15",
+          "frame": "/assets/img/device-mbp-15-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/the-damai/3ab44b1b58-1710450405/thedamai-nav.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "device",
+          "index": 1,
+          "background": "#E0D9D1",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/the-damai/be6233b462-1710450698/thedamai-home.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 2,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/the-damai/0367a4932e-1710451142/kien_team-52.jpg",
+            "srcSmall": "/media/pages/work/the-damai/0367a4932e-1710451142/kien_team-52-540x.jpg",
+            "width": 5856,
+            "height": 3896,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": "-2"
+          },
+          "scrollSpeed": "-2",
+          "darkOverlay": "0",
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "device",
+          "index": 3,
+          "background": "#E0D9D1",
+          "paddingBottom": false,
+          "device": "mbp15",
+          "frame": "/assets/img/device-mbp-15-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/the-damai/595712d496-1710451331/thedamai-spa.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "device",
+          "index": 4,
+          "background": "#E0D9D1",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/the-damai/72be43aaa6-1710451518/thedamai-credits.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 5,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/the-damai/87898b3c46-1710451478/kien_team-25.jpg",
+            "srcSmall": "/media/pages/work/the-damai/87898b3c46-1710451478/kien_team-25-540x.jpg",
+            "width": 6048,
+            "height": 4024,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": "-2"
+          },
+          "scrollSpeed": "-2",
+          "darkOverlay": "0",
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "mobile-devices",
+          "index": 6,
+          "background": null,
+          "paddingBottom": false,
+          "device": "nodevice",
+          "columns": [
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_6",
+                "data-scroll-speed": "1"
+              },
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/the-damai/b67950e2d6-1710450150/mobile-1.jpg",
+                "srcSmall": "/media/pages/work/the-damai/b67950e2d6-1710450150/mobile-1-540x.jpg",
+                "width": 1080,
+                "height": 2021,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": null
+            },
+            {
+              "deviceAttrs": {},
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/the-damai/f076eeb3d3-1710450154/mobile-2.jpg",
+                "srcSmall": "/media/pages/work/the-damai/f076eeb3d3-1710450154/mobile-2-540x.jpg",
+                "width": 1080,
+                "height": 2021,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": null
+            },
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_6",
+                "data-scroll-speed": "-1"
+              },
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/the-damai/593d70e410-1710450158/mobile-3.jpg",
+                "srcSmall": "/media/pages/work/the-damai/593d70e410-1710450158/mobile-3-540x.jpg",
+                "width": 1080,
+                "height": 2021,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": null
+            }
+          ]
+        }
+      ],
+      "customCss": ".block-device .single-image::before {\n   padding-top: 62%;\n}\n\n.block-device .device-mbp15 .overlay-device-image::before {\n    padding-top: 50.2%;\n}\n\n.block-mobile-devices .single-image::before {\n   padding-top: 187%;\n}",
+      "footerAccent": null,
+      "nextCase": {
+        "slug": "fabric",
+        "name": "FABRIC™",
+        "tileColor": "#48494A",
+        "tileImage": "/media/pages/work/fabric/ac07564a5f-1688453092/thumbnail-fabric-darkgray.jpg"
+      }
+    },
+    {
+      "slug": "fabric",
+      "title": "FABRIC™ - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/pages/work/fabric/6e80c43c4a-1687424717/thumbnail-fabric-860x540-crop-q72.jpg",
+      "canonical": "/work/fabric",
+      "loaderActive": 13,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "cursorSpan": "Next case",
+      "name": "FABRIC™",
+      "liveSite": "https://fabric.codebydennis.com/",
+      "intro": [
+        {
+          "label": "Role / Services",
+          "items": [
+            "Design & Development"
+          ]
+        },
+        {
+          "label": "Credits",
+          "items": [
+            "Branding: Ché Heijnen"
+          ]
+        },
+        {
+          "label": "Location & year",
+          "items": [
+            "United Kingdom ©",
+            "2023"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": "https://fabric.codebydennis.com/",
+        "image": "/media/pages/work/fabric/8377f6f5a6-1687432216/case-header-fabric.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": "/media/pages/work/fabric/8f8553d186-1687432162/case-header-fabric-2.svg",
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "device",
+          "index": 0,
+          "background": "#E6E8EB",
+          "paddingBottom": false,
+          "device": "macprohigher",
+          "frame": "/assets/img/device-macpro-higher.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/fabric/98e09d88cf-1687429337/case-home-scroll.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "device",
+          "index": 1,
+          "background": "#E6E8EB",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/fabric/a12f6afedd-1687432297/case-core.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "device",
+          "index": 2,
+          "background": "#d4d6d8",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/fabric/c19ad20488-1687432521/case-writing.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "device",
+          "index": 3,
+          "background": "#E6E8EB",
+          "paddingBottom": true,
+          "device": "mbp15",
+          "frame": "/assets/img/device-mbp-15-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/fabric/8b90e85341-1687432348/case-nav.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        }
+      ],
+      "customCss": ".section.block_2 .single-image::before {\n   padding-top: 61%;\n}\n\n.section.block_2 video.overlay {\n   object-position: top;\n}\n\n.block-device .device-nodevice .single-image {\n   border-radius: 0.25em;\n}",
+      "footerAccent": "#E6E8EB",
+      "nextCase": {
+        "slug": "aanstekelijk",
+        "name": "Aanstekelijk",
+        "tileColor": "#101010",
+        "tileImage": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk.jpg"
+      }
+    },
+    {
+      "slug": "aanstekelijk",
+      "title": "Aanstekelijk - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk-860x540-crop-q72.jpg",
+      "canonical": "/work/aanstekelijk",
+      "loaderActive": 14,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "cursorSpan": "Next case",
+      "name": "Aanstekelijk",
+      "liveSite": "https://aanstekelijk.nl/",
+      "intro": [
+        {
+          "label": "Role / Services",
+          "items": [
+            "Design & Development"
+          ]
+        },
+        {
+          "label": "Credits",
+          "items": [
+            "Branding: Ché Heijnen"
+          ]
+        },
+        {
+          "label": "Location & year",
+          "items": [
+            "The Netherlands ©",
+            "2023"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": "https://aanstekelijk.nl/",
+        "image": "/media/pages/work/aanstekelijk/40c9f47689-1680160244/case-header-aanstekelijk.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": "/media/pages/work/aanstekelijk/bb8662dc3e-1680160289/case-header-aanstekelijk.svg",
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "device",
+          "index": 0,
+          "background": "#ddd",
+          "paddingBottom": true,
+          "device": "mbp16lower",
+          "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/aanstekelijk/23e625e878-1680160784/aanstekelijk-home-scroll.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "device",
+          "index": 1,
+          "background": "#101010",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/aanstekelijk/ae0d5a86c3-1680161403/aanstekelijk-navigation.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 2,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/aanstekelijk/87d540dba1-1680161125/aanstekelijk-about-1.jpg",
+            "srcSmall": "/media/pages/work/aanstekelijk/87d540dba1-1680161125/aanstekelijk-about-1-540x.jpg",
+            "width": 1378,
+            "height": 969,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": "-3"
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0",
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "device",
+          "index": 3,
+          "background": "#ddd",
+          "paddingBottom": false,
+          "device": "mbp16lower",
+          "frame": "/assets/img/device-mbp-16-lower.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/aanstekelijk/fc85e435e2-1680162198/aanstekelijk-work-slider.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "device",
+          "index": 4,
+          "background": "#ddd",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/aanstekelijk/48e89dae7b-1680162451/aanstekelijk-contact.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        }
+      ],
+      "customCss": ".block-device .device-nodevice .single-image {\n   border-radius: 0.75em;\n}\n\n.block-device .device-nodevice .single-image .overlay-image::after {\ncontent: \"\";\nposition: absolute;\ntop: 0;\nleft: 0;\nwidth: 100%;\nheight: 100%;\nborder: 2px solid #2c2c2c;\nborder-radius: 0.75em;\nz-index: 2;\n}",
+      "footerAccent": "#ddd",
+      "nextCase": {
+        "slug": "base-create",
+        "name": "Base Create",
+        "tileColor": "#363637",
+        "tileImage": "/media/pages/work/base-create/1f2468ab51-1680179645/thumbnail-base-desktop.jpg"
+      }
+    },
+    {
+      "slug": "base-create",
+      "title": "Base Create - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/pages/work/base-create/1f2468ab51-1680179645/thumbnail-base-desktop-860x540-crop-q72.jpg",
+      "canonical": "/work/base-create",
+      "loaderActive": 15,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "cursorSpan": "Next case",
+      "name": "Base Create",
+      "liveSite": "https://basecreate.com",
+      "intro": [
+        {
+          "label": "Role / Services",
+          "items": [
+            "Design & Development"
+          ]
+        },
+        {
+          "label": "Location",
+          "items": [
+            "Hong Kong"
+          ]
+        },
+        {
+          "label": "Year",
+          "items": [
+            "2023"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": "https://basecreate.com",
+        "image": "/media/pages/work/base-create/1b5a809c2f-1680180571/case-header-base-v2.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": null,
+        "paddingBottom": false
+      },
+      "blocks": [
+        {
+          "type": "device",
+          "index": 0,
+          "background": null,
+          "paddingBottom": true,
+          "device": "mbp15",
+          "frame": "/assets/img/device-mbp-15-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/base-create/ac93144c69-1680181224/base-home-desktop.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 1,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/base-create/42eea181cf-1680181182/base-nothing-phone.jpg",
+            "srcSmall": "/media/pages/work/base-create/42eea181cf-1680181182/base-nothing-phone-540x.jpg",
+            "width": 6000,
+            "height": 4500,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": "-3"
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0",
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "device",
+          "index": 2,
+          "background": null,
+          "paddingBottom": true,
+          "device": "mbp15",
+          "frame": "/assets/img/device-mbp-15-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/base-create/6e212750e0-1680181564/base-news.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 3,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/base-create/975fa33825-1680181783/base-mbp-1.jpg",
+            "srcSmall": "/media/pages/work/base-create/975fa33825-1680181783/base-mbp-1-540x.jpg",
+            "width": 6000,
+            "height": 4500,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": "-3"
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0",
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "device",
+          "index": 4,
+          "background": null,
+          "paddingBottom": true,
+          "device": "mbp15",
+          "frame": "/assets/img/device-mbp-15-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/base-create/760b21bcc5-1680181631/base-case.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        }
+      ],
+      "customCss": ".block-device .device-nodevice .single-image {\n   border-radius: 2em;\n}",
+      "footerAccent": null,
+      "nextCase": {
+        "slug": "avvr",
+        "name": "AVVR",
+        "tileColor": "#D8D3CD",
+        "tileImage": "/media/pages/work/avvr/4d2a7758a4-1672918357/thumbnail-avvr-v2.jpg"
+      }
+    },
+    {
+      "slug": "avvr",
+      "title": "AVVR - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/pages/work/avvr/4d2a7758a4-1672918357/thumbnail-avvr-v2-860x540-crop-q72.jpg",
+      "canonical": "/work/avvr",
+      "loaderActive": 16,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "cursorSpan": "Next case",
+      "name": "AVVR",
+      "liveSite": "https://avvr.nl/",
+      "intro": [
+        {
+          "label": "Role / Services",
+          "items": [
+            "Design & Development"
+          ]
+        },
+        {
+          "label": "Credits",
+          "items": [
+            "Branding: Ché Heijnen"
+          ]
+        },
+        {
+          "label": "Location & year",
+          "items": [
+            "The Netherlands ©",
+            "2023"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": "https://avvr.nl/",
+        "image": "/media/pages/work/avvr/69dfb0e43c-1672818555/avvr_006_resized.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": "/media/pages/work/avvr/7a28d40c58-1672818720/case-header-avvr.svg",
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "device",
+          "index": 0,
+          "background": "#E5E0DC",
+          "paddingBottom": true,
+          "device": "mbp15",
+          "frame": "/assets/img/device-mbp-15-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/avvr/cd13c30fcb-1672821256/avvr-scroll-home.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "mobile-devices",
+          "index": 1,
+          "background": "#E5E0DC",
+          "paddingBottom": false,
+          "device": "iphone14",
+          "columns": [
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_1",
+                "data-scroll-speed": "1"
+              },
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/avvr/d90cfe7ba5-1672819746/mobile-screen-avvr-1.jpg",
+                "srcSmall": "/media/pages/work/avvr/d90cfe7ba5-1672819746/mobile-screen-avvr-1-540x.jpg",
+                "width": 540,
+                "height": 1165,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone14.png"
+            },
+            {
+              "deviceAttrs": {},
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/avvr/ffaf296ffc-1672820127/mobile-screen-avvr-2.jpg",
+                "srcSmall": "/media/pages/work/avvr/ffaf296ffc-1672820127/mobile-screen-avvr-2-540x.jpg",
+                "width": 540,
+                "height": 1165,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone14.png"
+            },
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_1",
+                "data-scroll-speed": "-1"
+              },
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/avvr/a2dd625bf2-1672820988/mobile-screen-avvr-3.jpg",
+                "srcSmall": "/media/pages/work/avvr/a2dd625bf2-1672820988/mobile-screen-avvr-3-540x.jpg",
+                "width": 540,
+                "height": 1165,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone14.png"
+            }
+          ]
+        },
+        {
+          "type": "fullwidth",
+          "index": 2,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/avvr/d3533056b1-1672818970/avvr_007_resized.jpg",
+            "srcSmall": "/media/pages/work/avvr/d3533056b1-1672818970/avvr_007_resized-540x.jpg",
+            "width": 2880,
+            "height": 1921,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": "-3"
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0",
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "device",
+          "index": 3,
+          "background": "#E5E0DC",
+          "paddingBottom": false,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/avvr/9b9338e8bc-1672823965/avvr-scroll-news-2.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "device",
+          "index": 4,
+          "background": "#E5E0DC",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/avvr/5137718302-1672823179/avvr-scroll-about.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        }
+      ],
+      "customCss": ".block_0.single-block.block-padding-bottom {\n    padding-bottom: calc(var(--section-padding) * 0.5);\n}\n\n.block-device .device-nodevice .single-image {\n   border-radius: 0.75em;\n}",
+      "footerAccent": "#E5E0DC",
+      "nextCase": {
+        "slug": "graphichunters",
+        "name": "GraphicHunters",
+        "tileColor": "#7E7E7E",
+        "tileImage": "/media/pages/work/graphichunters/0daec771af-1660128857/thumbnail-gh.jpg"
+      }
+    },
+    {
+      "slug": "graphichunters",
+      "title": "GraphicHunters - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/pages/work/graphichunters/0daec771af-1660128857/thumbnail-gh-860x540-crop-q72.jpg",
+      "canonical": "/work/graphichunters",
+      "loaderActive": 17,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "cursorSpan": "Next case",
+      "name": "GraphicHunters",
+      "liveSite": "https://gh22.codebydennis.com/",
+      "intro": [
+        {
+          "label": "Role / Services",
+          "items": [
+            "Design & Development"
+          ]
+        },
+        {
+          "label": "Location",
+          "items": [
+            "The Netherlands"
+          ]
+        },
+        {
+          "label": "Year",
+          "items": [
+            "2022"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": "https://gh22.codebydennis.com/",
+        "image": "/media/pages/work/graphichunters/a2a863c4a0-1660130965/case-header-back-gh.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": "/media/pages/work/graphichunters/c42cfa6c3a-1660129143/case-header-gh.svg",
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "device",
+          "index": 0,
+          "background": "#eeeeee",
+          "paddingBottom": true,
+          "device": "mbp16lower",
+          "frame": "/assets/img/device-mbp-16-lower.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/graphichunters/80d025d94b-1660129669/loading-gh.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 1,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/graphichunters/ea119dae77-1660131665/rotate-g-small.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0.15",
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "mobile-devices",
+          "index": 2,
+          "background": null,
+          "paddingBottom": false,
+          "device": "iphone14",
+          "columns": [
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_2",
+                "data-scroll-speed": "1"
+              },
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/graphichunters/adddd3362a-1660130661/screen-1.jpg",
+                "srcSmall": "/media/pages/work/graphichunters/adddd3362a-1660130661/screen-1-540x.jpg",
+                "width": 540,
+                "height": 1165,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone14.png"
+            },
+            {
+              "deviceAttrs": {},
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/graphichunters/fd4228d034-1660130665/screen-2.jpg",
+                "srcSmall": "/media/pages/work/graphichunters/fd4228d034-1660130665/screen-2-540x.jpg",
+                "width": 540,
+                "height": 1174,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone14.png"
+            },
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_2",
+                "data-scroll-speed": "-1"
+              },
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/graphichunters/c1121fbcf0-1660130670/screen-3.jpg",
+                "srcSmall": "/media/pages/work/graphichunters/c1121fbcf0-1660130670/screen-3-540x.jpg",
+                "width": 540,
+                "height": 1169,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone14.png"
+            }
+          ]
+        },
+        {
+          "type": "device",
+          "index": 3,
+          "background": "#eeeeee",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/graphichunters/d5337071c4-1660130224/archive-gh.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        }
+      ],
+      "customCss": ".block-fullwidth video {filter: brightness(1.2) invert(1) saturate(1.5);}",
+      "footerAccent": "#eeeeee",
+      "nextCase": {
+        "slug": "future-goals",
+        "name": "Future Goals",
+        "tileColor": "#DCD0C2",
+        "tileImage": "/media/pages/work/future-goals/614e28a662-1653057688/thumbnail-futuregoals.jpg"
+      }
+    },
+    {
+      "slug": "future-goals",
+      "title": "Future Goals - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/pages/work/future-goals/614e28a662-1653057688/thumbnail-futuregoals-860x540-crop-q72.jpg",
+      "canonical": "/work/future-goals",
+      "loaderActive": 18,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "cursorSpan": "Next case",
+      "name": "Future Goals",
+      "liveSite": "https://futuregoals.com/en/",
+      "intro": [
+        {
+          "label": "Role / Services",
+          "items": [
+            "Interaction & Development"
+          ]
+        },
+        {
+          "label": "Credits",
+          "items": [
+            "Concept: One:Nil",
+            "Design: GraphicHunters"
+          ]
+        },
+        {
+          "label": "Location & year",
+          "items": [
+            "Curaçao ©",
+            "2022"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": "https://futuregoals.com/en/",
+        "image": "/media/pages/work/future-goals/8c916e77f1-1653053706/futuregoals-case-header.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": "/media/pages/work/future-goals/98001978ba-1653053710/futuregoals-case-header-front.svg",
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "device",
+          "index": 0,
+          "background": "#DCD0C2",
+          "paddingBottom": true,
+          "device": "ipadpro",
+          "frame": "/assets/img/device-ipad-pro-lower.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/future-goals/ad92afd3da-1653054674/future-goals-screen.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 1,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/future-goals/98ad2da45a-1653055060/full-size-1.jpg",
+            "srcSmall": "/media/pages/work/future-goals/98ad2da45a-1653055060/full-size-1-540x.jpg",
+            "width": 3000,
+            "height": 2250,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": "-3"
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": null,
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "mobile-devices",
+          "index": 2,
+          "background": "#DCD0C2",
+          "paddingBottom": false,
+          "device": "iphone13nonotch",
+          "columns": [
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_2",
+                "data-scroll-speed": "1"
+              },
+              "media": {
+                "kind": "video",
+                "src": "/media/pages/work/future-goals/73fecccd91-1653055451/screen-rec-mob.mp4",
+                "cls": [
+                  "overlay"
+                ]
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            },
+            {
+              "deviceAttrs": {},
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/future-goals/7290f5da48-1653055387/futuregoals-screen-2.jpg",
+                "srcSmall": "/media/pages/work/future-goals/7290f5da48-1653055387/futuregoals-screen-2-540x.jpg",
+                "width": 540,
+                "height": 1170,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            },
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_2",
+                "data-scroll-speed": "-1"
+              },
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/future-goals/69afe68ccf-1653055393/futuregoals-screen-3.jpg",
+                "srcSmall": "/media/pages/work/future-goals/69afe68ccf-1653055393/futuregoals-screen-3-540x.jpg",
+                "width": 540,
+                "height": 1170,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            }
+          ]
+        },
+        {
+          "type": "fullwidth",
+          "index": 3,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/future-goals/c6b7159243-1653056956/high_headerfuturegoals-1.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0",
+          "textOverlay": "From the ocean, for the future",
+          "textOverlayThemeDark": true
+        },
+        {
+          "type": "screenshot",
+          "index": 4,
+          "background": "#DCD0C2",
+          "paddingBottom": true,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/future-goals/685adbde8d-1653055959/photo-gallery-big.jpg",
+            "srcSmall": "/media/pages/work/future-goals/685adbde8d-1653055959/photo-gallery-big-540x.jpg",
+            "width": 4400,
+            "height": 2120
+          }
+        }
+      ],
+      "customCss": ".block_4 .container {\n  padding: 0;\n}\n\n@media screen and (max-width: 540px) {\n}",
+      "footerAccent": "#DCD0C2",
+      "nextCase": {
+        "slug": "atypikal",
+        "name": "Atypikal",
+        "tileColor": "#B1A994",
+        "tileImage": "/media/pages/work/atypikal/fd1951ffc9-1646837277/thumbnail-atypikal.jpg"
+      }
+    },
+    {
+      "slug": "atypikal",
+      "title": "Atypikal - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/pages/work/atypikal/fd1951ffc9-1646837277/thumbnail-atypikal-860x540-crop-q72.jpg",
+      "canonical": "/work/atypikal",
+      "loaderActive": 19,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "cursorSpan": "Next case",
+      "name": "Atypikal",
+      "liveSite": "https://atypikal.co/",
+      "intro": [
+        {
+          "label": "Role / Services",
+          "items": [
+            "Interaction & Development"
+          ]
+        },
+        {
+          "label": "Credits",
+          "items": [
+            "Design: Robyn Cambruzzi"
+          ]
+        },
+        {
+          "label": "Location & year",
+          "items": [
+            "United States ©",
+            "2021"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": "https://atypikal.co/",
+        "image": "/media/pages/work/atypikal/e0f19f8847-1646837280/atypikal-case-header.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": "/media/pages/work/atypikal/fd65568bd5-1646837277/atypikal-case-header-overlay.svg",
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "device",
+          "index": 0,
+          "background": "#d8d5cc",
+          "paddingBottom": true,
+          "device": "macprohigher",
+          "frame": "/assets/img/device-macpro-higher.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/atypikal/869f36be3e-1646837282/atypikal-screen-scroll.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "mobile-devices",
+          "index": 1,
+          "background": null,
+          "paddingBottom": false,
+          "device": "iphone13nonotch",
+          "columns": [
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_1",
+                "data-scroll-speed": "-1"
+              },
+              "media": {
+                "kind": "video",
+                "src": "/media/pages/work/atypikal/52f224ca12-1646837279/atypikal-screen-mobile-load.mp4",
+                "cls": [
+                  "overlay"
+                ]
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            },
+            {
+              "deviceAttrs": {},
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/atypikal/6d95789446-1646837279/atypikal-mobile-2.jpg",
+                "srcSmall": "/media/pages/work/atypikal/6d95789446-1646837279/atypikal-mobile-2-540x.jpg",
+                "width": 540,
+                "height": 1170,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            },
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_1",
+                "data-scroll-speed": "1"
+              },
+              "media": {
+                "kind": "video",
+                "src": "/media/pages/work/atypikal/71c55005ad-1646837277/atypikal-mobile-footer.mp4",
+                "cls": [
+                  "overlay"
+                ]
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            }
+          ]
+        },
+        {
+          "type": "device",
+          "index": 2,
+          "background": "#d8d5cc",
+          "paddingBottom": true,
+          "device": "ipadpro",
+          "frame": "/assets/img/device-ipad-pro-lower.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/atypikal/06caeb881e-1646837280/atypikal-screen-footer.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": {
+            "src": "/assets/img/device-apple-pencil.png",
+            "cls": [
+              "overlay",
+              "overlay-pencil",
+              "lazy"
+            ],
+            "scrollSpeed": "1.5"
+          }
+        }
+      ],
+      "customCss": ".block-fullwidth {background: #000;}",
+      "footerAccent": "#d8d5cc",
+      "nextCase": {
+        "slug": "one-nil",
+        "name": "One:Nil",
+        "tileColor": "var(--color-lightgray)",
+        "tileImage": "/media/pages/work/one-nil/288460827e-1646837272/thumbnail-onenil-v3.jpg"
+      }
+    },
+    {
+      "slug": "one-nil",
+      "title": "One:Nil - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/pages/work/one-nil/288460827e-1646837272/thumbnail-onenil-v3-860x540-crop-q72.jpg",
+      "canonical": "/work/one-nil",
+      "loaderActive": 20,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "cursorSpan": "Next case",
+      "name": "One:Nil",
+      "liveSite": "https://onenil.com/",
+      "intro": [
+        {
+          "label": "Role / Services",
+          "items": [
+            "Interaction & Development"
+          ]
+        },
+        {
+          "label": "Credits",
+          "items": [
+            "Design: GraphicHunters"
+          ]
+        },
+        {
+          "label": "Location & year",
+          "items": [
+            "The Netherlands ©",
+            "2021"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": "https://onenil.com/",
+        "image": "/media/pages/work/one-nil/eab8a1f9e0-1646837269/image-case-onenil-v2.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": "/media/pages/work/one-nil/e9adff7ae4-1646837269/image-case-onenil-logo.svg",
+        "paddingBottom": false
+      },
+      "blocks": [
+        {
+          "type": "device",
+          "index": 0,
+          "background": null,
+          "paddingBottom": true,
+          "device": "mbp16lower",
+          "frame": "/assets/img/device-mbp-16-lower.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/one-nil/48db0808ea-1646837267/onenil-screen-load.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "mobile-devices",
+          "index": 1,
+          "background": "#dfdfdf",
+          "paddingBottom": false,
+          "device": "iphone13nonotch",
+          "columns": [
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_1",
+                "data-scroll-speed": "1"
+              },
+              "media": {
+                "kind": "video",
+                "src": "/media/pages/work/one-nil/4cd9bd35fb-1646837271/onenil-screen-mobile-cases.mp4",
+                "cls": [
+                  "overlay"
+                ]
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            },
+            {
+              "deviceAttrs": {},
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/one-nil/d2d402c560-1646837270/onenil-screen-archive.jpg",
+                "srcSmall": "/media/pages/work/one-nil/d2d402c560-1646837270/onenil-screen-archive-540x.jpg",
+                "width": 776,
+                "height": 1684,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            },
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_1",
+                "data-scroll-speed": "-1"
+              },
+              "media": {
+                "kind": "video",
+                "src": "/media/pages/work/one-nil/d8aa6ace03-1646837276/onenil-screen-mobile-contact.mp4",
+                "cls": [
+                  "overlay"
+                ]
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            }
+          ]
+        },
+        {
+          "type": "fullwidth",
+          "index": 2,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/one-nil/86e707f8d6-1646837266/onenil-laptop.jpg",
+            "srcSmall": "/media/pages/work/one-nil/86e707f8d6-1646837266/onenil-laptop-540x.jpg",
+            "width": 2880,
+            "height": 2160,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": "-5"
+          },
+          "scrollSpeed": "-5",
+          "darkOverlay": null,
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "device",
+          "index": 3,
+          "background": null,
+          "paddingBottom": true,
+          "device": "mbp16lower",
+          "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/one-nil/26601c386e-1646837270/parallax-archive.jpg",
+            "srcSmall": "/media/pages/work/one-nil/26601c386e-1646837270/parallax-archive-540x.jpg",
+            "width": 1728,
+            "height": 1501,
+            "cls": [
+              "lazy"
+            ],
+            "scrollSpeed": "1.5"
+          },
+          "parallax": {
+            "src": "/media/pages/work/one-nil/26601c386e-1646837270/parallax-archive.jpg",
+            "srcSmall": "/media/pages/work/one-nil/26601c386e-1646837270/parallax-archive-540x.jpg",
+            "width": 1728,
+            "height": 1501,
+            "scrollSpeed": "1.5"
+          },
+          "overlayTops": [
+            {
+              "src": "/media/pages/work/one-nil/cf8d6eb3fa-1646837265/onenil-nav-bar.svg",
+              "srcSmall": "/media/pages/work/one-nil/cf8d6eb3fa-1646837265/onenil-nav-bar.svg",
+              "width": 1440,
+              "height": 130,
+              "scrollSpeed": null
+            }
+          ],
+          "pencil": null
+        },
+        {
+          "type": "device",
+          "index": 4,
+          "background": "#dfdfdf",
+          "paddingBottom": true,
+          "device": "macprohigher",
+          "frame": "/assets/img/device-macpro-higher.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/one-nil/475502238f-1646837270/onenil-screen-nav.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        }
+      ],
+      "customCss": null,
+      "footerAccent": "#dfdfdf",
+      "nextCase": {
+        "slug": "andy-hardy",
+        "name": "Andy Hardy",
+        "tileColor": "#626D6E",
+        "tileImage": "/media/pages/work/andy-hardy/f152b03247-1646837253/thumbnail-andyhardy.jpg"
+      }
+    },
+    {
+      "slug": "andy-hardy",
+      "title": "Andy Hardy - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/pages/work/andy-hardy/f152b03247-1646837253/thumbnail-andyhardy-860x540-crop-q72.jpg",
+      "canonical": "/work/andy-hardy",
+      "loaderActive": 21,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "cursorSpan": "Next case",
+      "name": "Andy Hardy",
+      "liveSite": "https://andyhardy.co/",
+      "intro": [
+        {
+          "label": "Role / Services",
+          "items": [
+            "Design & Development"
+          ]
+        },
+        {
+          "label": "Location",
+          "items": [
+            "Australia"
+          ]
+        },
+        {
+          "label": "Year",
+          "items": [
+            "2020"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": "https://andyhardy.co/",
+        "image": "/media/pages/work/andy-hardy/45460186ce-1646837251/image-case-andy.png",
+        "scrollSpeed": "-1",
+        "overlayTop": "/media/pages/work/andy-hardy/2790d2bebd-1646837255/andy-name.svg",
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "device",
+          "index": 0,
+          "background": "#d0d5d5",
+          "paddingBottom": true,
+          "device": "mbp16lower",
+          "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/andy-hardy/17b0c05d2b-1646837250/landscape_background_small.jpg",
+            "srcSmall": "/media/pages/work/andy-hardy/17b0c05d2b-1646837250/landscape_background_small-540x.jpg",
+            "width": 1800,
+            "height": 1344,
+            "cls": [
+              "lazy"
+            ],
+            "scrollSpeed": "-1.5"
+          },
+          "parallax": {
+            "src": "/media/pages/work/andy-hardy/17b0c05d2b-1646837250/landscape_background_small.jpg",
+            "srcSmall": "/media/pages/work/andy-hardy/17b0c05d2b-1646837250/landscape_background_small-540x.jpg",
+            "width": 1800,
+            "height": 1344,
+            "scrollSpeed": "-1.5"
+          },
+          "overlayTops": [
+            {
+              "src": "/media/pages/work/andy-hardy/74f5cb3afe-1646837250/landscape_andy.png",
+              "srcSmall": "/media/pages/work/andy-hardy/74f5cb3afe-1646837250/landscape_andy-540x.png",
+              "width": 3200,
+              "height": 2150,
+              "scrollSpeed": "-.75"
+            },
+            {
+              "src": "/media/pages/work/andy-hardy/889b4920b6-1646837252/andrew-top.png",
+              "srcSmall": "/media/pages/work/andy-hardy/889b4920b6-1646837252/andrew-top-540x.png",
+              "width": 2880,
+              "height": 1800,
+              "scrollSpeed": null
+            }
+          ],
+          "pencil": null
+        },
+        {
+          "type": "device",
+          "index": 1,
+          "background": "#e4e8e8",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/andy-hardy/290274f2dd-1646837253/andy-portfolio.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 2,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/andy-hardy/21ce736523-1646837255/andy-hardy-people-accomodation-photographer-filmmaker-australia-16-2160x2160.jpg",
+            "srcSmall": "/media/pages/work/andy-hardy/21ce736523-1646837255/andy-hardy-people-accomodation-photographer-filmmaker-australia-16-2160x2160-540x.jpg",
+            "width": 2000,
+            "height": 1333,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": "-3"
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0.1",
+          "textOverlay": "Multidisciplinary visual creator",
+          "textOverlayThemeDark": true
+        },
+        {
+          "type": "mobile-devices",
+          "index": 3,
+          "background": "#e4e8e8",
+          "paddingBottom": false,
+          "device": "iphone13nonotch",
+          "columns": [
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_3",
+                "data-scroll-speed": "1"
+              },
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/andy-hardy/692c4ad8ac-1646837253/andy-mobile-1.jpg",
+                "srcSmall": "/media/pages/work/andy-hardy/692c4ad8ac-1646837253/andy-mobile-1-540x.jpg",
+                "width": 540,
+                "height": 1170,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            },
+            {
+              "deviceAttrs": {},
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/andy-hardy/a804e16944-1646837251/andy-mobile-3.jpg",
+                "srcSmall": "/media/pages/work/andy-hardy/a804e16944-1646837251/andy-mobile-3-540x.jpg",
+                "width": 540,
+                "height": 1170,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            },
+            {
+              "deviceAttrs": {
+                "data-scroll": "",
+                "data-scroll-target": ".block_3",
+                "data-scroll-speed": "-1"
+              },
+              "media": {
+                "kind": "image",
+                "src": "/media/pages/work/andy-hardy/6c7ba9f412-1646837254/andy-mobile-4.jpg",
+                "srcSmall": "/media/pages/work/andy-hardy/6c7ba9f412-1646837254/andy-mobile-4-540x.jpg",
+                "width": 540,
+                "height": 1170,
+                "cls": [
+                  "overlay",
+                  "overlay-image",
+                  "lazy"
+                ],
+                "scrollSpeed": null
+              },
+              "frame": "/assets/img/device-iphone13-nonotch.png"
+            }
+          ]
+        },
+        {
+          "type": "screenshot",
+          "index": 4,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/andy-hardy/1081f723ef-1646837256/andy-screen-personal.jpg",
+            "srcSmall": "/media/pages/work/andy-hardy/1081f723ef-1646837256/andy-screen-personal-540x.jpg",
+            "width": 2880,
+            "height": 1800
+          }
+        },
+        {
+          "type": "screenshot",
+          "index": 5,
+          "background": null,
+          "paddingBottom": true,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/andy-hardy/237a0f8246-1646837254/andy-screen-interaction.mp4",
+            "cls": []
+          }
+        }
+      ],
+      "customCss": null,
+      "footerAccent": null,
+      "nextCase": {
+        "slug": "twice",
+        "name": "TWICE",
+        "tileColor": "#F1F1F1",
+        "tileImage": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice.jpg"
+      }
+    }
+  ]
+}
+

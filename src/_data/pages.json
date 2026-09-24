@@ -1,0 +1,234 @@
+{
+  "_comment": "6 个非案例页的 head 字段与高亮索引（案例页的同类字段在 projects.json）。",
+  "pages": {
+    "home": {
+      "file": "home.html",
+      "ns": "home",
+      "cursorMode": "float",
+      "cursorSpan": "View",
+      "title": "Dennis Snellenberg • Freelance Designer & Developer",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-dennis-snellenberg-860x540-crop-q72.jpg",
+      "canonical": "/",
+      "loaderActive": 9,
+      "navActive": null,
+      "fixedNavActive": 0,
+      "floatImages": [
+        {
+          "classes": [
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "#F1F1F1",
+          "thumbnail": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "design",
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "#E0D9D1",
+          "thumbnail": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "design",
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "#48494A",
+          "thumbnail": "/media/pages/work/fabric/ac07564a5f-1688453092/thumbnail-fabric-darkgray-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "design",
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "#101010",
+          "thumbnail": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk-810x810-crop-q72.jpg"
+        }
+      ]
+    },
+    "work": {
+      "file": "work.html",
+      "ns": "work",
+      "cursorMode": "float",
+      "cursorSpan": "View",
+      "title": "Work - Dennis Snellenberg",
+      "description": "Creating next level digital products. I help companies from all over the world (Netherlands, United States, United Kingdom, Australia, Germany etc.)",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-dennis-snellenberg-860x540-crop-q72.jpg",
+      "canonical": "/work",
+      "loaderActive": 10,
+      "navActive": 0,
+      "fixedNavActive": 1,
+      "floatImages": [
+        {
+          "classes": [
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "#F1F1F1",
+          "thumbnail": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "design",
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "#E0D9D1",
+          "thumbnail": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "design",
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "#48494A",
+          "thumbnail": "/media/pages/work/fabric/ac07564a5f-1688453092/thumbnail-fabric-darkgray-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "design",
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "#101010",
+          "thumbnail": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "development",
+            "interaction",
+            "design",
+            "visible"
+          ],
+          "tileColor": "#363637",
+          "thumbnail": "/media/pages/work/base-create/1f2468ab51-1680179645/thumbnail-base-desktop-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "design",
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "#D8D3CD",
+          "thumbnail": "/media/pages/work/avvr/4d2a7758a4-1672918357/thumbnail-avvr-v2-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "design",
+            "development",
+            "visible"
+          ],
+          "tileColor": "#7E7E7E",
+          "thumbnail": "/media/pages/work/graphichunters/0daec771af-1660128857/thumbnail-gh-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "#DCD0C2",
+          "thumbnail": "/media/pages/work/future-goals/614e28a662-1653057688/thumbnail-futuregoals-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "#B1A994",
+          "thumbnail": "/media/pages/work/atypikal/fd1951ffc9-1646837277/thumbnail-atypikal-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "development",
+            "interaction",
+            "visible"
+          ],
+          "tileColor": "var(--color-lightgray)",
+          "thumbnail": "/media/pages/work/one-nil/288460827e-1646837272/thumbnail-onenil-v3-810x810-crop-q72.jpg"
+        },
+        {
+          "classes": [
+            "design",
+            "development",
+            "visible"
+          ],
+          "tileColor": "#626D6E",
+          "thumbnail": "/media/pages/work/andy-hardy/f152b03247-1646837253/thumbnail-andyhardy-810x810-crop-q72.jpg"
+        }
+      ]
+    },
+    "about": {
+      "file": "about.html",
+      "ns": "about",
+      "cursorMode": "none",
+      "cursorSpan": null,
+      "title": "About - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. From my office in the Netherlands I help companies with Digital Design, Front-End Development & Interaction.",
+      "ogImage": "/media/pages/about/d289927735-1646837228/meta-dennis-about-860x540-crop-q72.jpg",
+      "canonical": "/about",
+      "loaderActive": 22,
+      "navActive": 1,
+      "fixedNavActive": 2,
+      "floatImages": null
+    },
+    "contact": {
+      "file": "contact.html",
+      "ns": "contact",
+      "cursorMode": "none",
+      "cursorSpan": null,
+      "title": "Contact - Dennis Snellenberg",
+      "description": "Let's start a project together. Reach out via email or hop on a call. I work with companies from all over the world from my office in the Netherlands.",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-dennis-snellenberg-860x540-crop-q72.jpg",
+      "canonical": "/contact",
+      "loaderActive": 23,
+      "navActive": 2,
+      "fixedNavActive": 3,
+      "floatImages": null
+    },
+    "archive": {
+      "file": "archive.html",
+      "ns": "archive",
+      "cursorMode": "empty",
+      "cursorSpan": "Website",
+      "title": "Archive - Dennis Snellenberg",
+      "description": "Archive of recent and past work made by Dennis Snellenberg. © Code by Dennis",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-dennis-snellenberg-860x540-crop-q72.jpg",
+      "canonical": "/archive",
+      "loaderActive": 25,
+      "navActive": null,
+      "fixedNavActive": null,
+      "floatImages": null
+    },
+    "styleguide": {
+      "file": "styleguide.html",
+      "ns": "styleguide",
+      "cursorMode": "none",
+      "cursorSpan": null,
+      "title": "Styleguide - Dennis Snellenberg",
+      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-dennis-snellenberg-860x540-crop-q72.jpg",
+      "canonical": "/styleguide",
+      "loaderActive": 27,
+      "navActive": null,
+      "fixedNavActive": null,
+      "floatImages": null
+    }
+  }
+}

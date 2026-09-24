@@ -1,0 +1,17 @@
+{#
+  work-single.njk — 11 个案例页（SPEC.md §6.1）
+
+  `.main-wrap` 内的顺序固定：case-top-wrap → single-block × N → footer-rounded-div
+  → footer-wrap.footer-case-wrap → 逐页 <style>（9 页有、2 页没有）。
+
+  `blocks` 的序列逐页不同（3–7 个），来自 `projects.json`，由 `blocks/dispatch.njk` 分派。
+#}
+{% include "partials/case-top.njk" %}
+{%- for b in project.blocks %}
+{% include "blocks/dispatch.njk" %}
+{%- endfor %}
+{% include "partials/footer-rounded.njk" %}
+{% include "partials/footer-case.njk" %}
+{%- if project.customCss %}
+<style>{{ project.customCss | safe }}</style>
+{%- endif %}

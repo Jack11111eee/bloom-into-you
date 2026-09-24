@@ -1,0 +1,242 @@
+{
+  "_comment": "站点级常量（SPEC.md §7.2）。P2 阶段仍是**原站文案**，P8「内容个性化」必须全部替换。",
+  "lang": "en",
+  "navBar": [
+    {
+      "label": "Work",
+      "href": "/work",
+      "strength": "20",
+      "strengthText": "10",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
+      "label": "About",
+      "href": "/about",
+      "strength": "20",
+      "strengthText": "10",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
+      "label": "Contact",
+      "href": "/contact",
+      "strength": "20",
+      "strengthText": "10",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
+      "label": "Menu",
+      "href": null,
+      "strength": "20",
+      "strengthText": "10",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link",
+        "btn-menu"
+      ]
+    }
+  ],
+  "fixedNav": [
+    {
+      "label": "Home",
+      "href": "/",
+      "strength": "24",
+      "strengthText": "12",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
+      "label": "Work",
+      "href": "/work",
+      "strength": "24",
+      "strengthText": "12",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
+      "label": "About",
+      "href": "/about",
+      "strength": "24",
+      "strengthText": "12",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
+      "label": "Contact",
+      "href": "/contact",
+      "strength": "24",
+      "strengthText": "12",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    }
+  ],
+  "socials": [
+    {
+      "label": "Awwwards",
+      "url": "https://www.awwwards.com/dennissnellenberg/"
+    },
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/codebydennis/"
+    },
+    {
+      "label": "Twitter",
+      "url": "https://twitter.com/codebydennis"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/dennissnellenberg/"
+    }
+  ],
+  "loaderWords": [
+    {
+      "text": "Hello",
+      "cls": "home-active home-active-first"
+    },
+    {
+      "text": "Bonjour",
+      "cls": "home-active"
+    },
+    {
+      "text": "स्वागत हे",
+      "cls": "home-active"
+    },
+    {
+      "text": "Ciao",
+      "cls": "home-active"
+    },
+    {
+      "text": "Olá",
+      "cls": "home-active"
+    },
+    {
+      "text": "おい",
+      "cls": "home-active jap"
+    },
+    {
+      "text": "Hallå",
+      "cls": "home-active"
+    },
+    {
+      "text": "Guten tag",
+      "cls": "home-active"
+    },
+    {
+      "text": "Hallo",
+      "cls": "home-active-last"
+    },
+    {
+      "text": "Home",
+      "cls": ""
+    },
+    {
+      "text": "Work",
+      "cls": ""
+    },
+    {
+      "text": "TWICE",
+      "cls": ""
+    },
+    {
+      "text": "The Damai",
+      "cls": ""
+    },
+    {
+      "text": "FABRIC™",
+      "cls": ""
+    },
+    {
+      "text": "Aanstekelijk",
+      "cls": ""
+    },
+    {
+      "text": "Base Create",
+      "cls": ""
+    },
+    {
+      "text": "AVVR",
+      "cls": ""
+    },
+    {
+      "text": "GraphicHunters",
+      "cls": ""
+    },
+    {
+      "text": "Future Goals",
+      "cls": ""
+    },
+    {
+      "text": "Atypikal",
+      "cls": ""
+    },
+    {
+      "text": "One:Nil",
+      "cls": ""
+    },
+    {
+      "text": "Andy Hardy",
+      "cls": ""
+    },
+    {
+      "text": "About",
+      "cls": ""
+    },
+    {
+      "text": "Contact",
+      "cls": ""
+    },
+    {
+      "text": "Success",
+      "cls": ""
+    },
+    {
+      "text": "Archive",
+      "cls": ""
+    },
+    {
+      "text": "Error",
+      "cls": ""
+    },
+    {
+      "text": "Styleguide",
+      "cls": ""
+    }
+  ],
+  "contact": {
+    "email": "info@dennissnellenberg.com",
+    "tel": "+31 6 27 84 74 30",
+    "telHref": "tel:+31627847430",
+    "contactHref": "/contact"
+  },
+  "footer": {
+    "versionLabel": "Version",
+    "version": "2022 © Edition",
+    "timeLabel": "Local time",
+    "timeText": "09:41 PM CET",
+    "socialsLabel": "Socials"
+  }
+}

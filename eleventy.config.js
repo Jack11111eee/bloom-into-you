@@ -7,8 +7,14 @@
  */
 
 export default function (eleventyConfig) {
-  // 模板层不产生任何客户端资源；assets 由后续阶段（P2）单独引入。
   eleventyConfig.setQuietMode(true);
+
+  // ── 静态资源（P2 起）────────────────────────────────────────────────────
+  // CSS / 字体 / 占位媒体原样复制到 dist，不做任何处理 —— 模板层不碰它们。
+  // 路径刻意与原站同构（`/assets/css/…`、`/assets/img/…`、`/media/…`），
+  // 因为 SPEC.md §7.5 要求"保持文件名与目录结构，使 HTML 中的引用可以原样保留"，
+  // 也因为跨站比对要按 URL 折叠后两侧可比（`--url-mode basename`）。
+  eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
 
   /**
    * thumb — 由原图 URL 推出 Kirby 的 -540x 缩略图 URL。

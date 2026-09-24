@@ -1,0 +1,10 @@
+{#
+  partials/chrome.njk — <main> 里、滚动容器之前的固定件（SPEC.md §6.0）
+
+  顺序固定：光标三层 → 汉堡钮 → `.overlay.fixed-nav-back` → `.fixed-nav`。
+  `main > .fixed-nav-back` 全站逐字一致（`<div class="overlay fixed-nav-back"></div>`）。
+#}
+{% include "partials/cursor.njk" %}
+{% include "partials/hamburger.njk" %}
+<div class="overlay fixed-nav-back"></div>
+{% include "partials/fixed-nav.njk" %}

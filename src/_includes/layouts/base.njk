@@ -1,0 +1,41 @@
+{#
+  layouts/base.njk — 整页骨架（SPEC.md §6.0「全站外壳」）
+
+  结构与属性顺序照抄原站，因为运行时依赖它们：
+    · Barba：data-barba="wrapper" / data-barba="container" / data-barba-namespace
+    · Locomotive：[data-scroll-container]
+    · JS：.once-in / .loading-words .active 等类名
+  任何"优化"都会破坏运行时行为，故此处刻意不做任何调整。
+
+  frontmatter 契约（各路由页提供）：
+    ns              main 的 id 与 data-barba-namespace（§6.0 的 7 个值之一）
+    title/description/ogImage/canonical   <head> 的逐页字段
+    loaderActive    site.loaderWords 的索引，标 active 的那一条
+    navActive       site.navBar 的索引，或 null（archive/styleguide 无高亮）
+    fixedNavActive  site.fixedNav 的索引，或 null
+    cursorMode      'float'（home/work，有浮动缩略图）/ 'empty'（archive/案例页）/
+                    'none'（about/contact/styleguide 完全没有光标元素）
+    cursorSpan      光标文字：'View' / 'Website' / 'Next case'
+    floatImages     浮动缩略图数据（仅 'float' 模式用）
+
+  关于 <script> 块（SPEC.md §2.1 的 8 个标签）：**P2 刻意不输出**。
+  该块的最后一个文件是我们的运动运行时，它属于 P3（「全局运动运行时」）；
+  为尚不存在的文件输出 <script> 只会得到 404，不是"骨架更完整"。
+  P3 落地时在此处一次性补上（含 7 个第三方库的自托管副本 + 运行时本体），
+  顺序严格按 §2.1。静态验收不受影响 —— 静态模式本来就把 script 元素排除在清册外。
+#}
+<!DOCTYPE html><!--  This site was created by Dennis Snellenberg (Code by Dennis)  -->
+<html lang="{{ site.lang }}">
+{% include "partials/head.njk" %}
+
+    <body data-barba="wrapper">
+        <div class="no-scroll-overlay"></div>
+        {% include "partials/loader.njk" %}
+        <main class="main" id="{{ ns }}" data-barba="container" data-barba-namespace="{{ ns }}" >
+{% include "partials/chrome.njk" %}
+<div class="main-wrap" data-scroll-container>
+{{ content | safe }}
+</div>
+        </main>
+    </body>
+</html>

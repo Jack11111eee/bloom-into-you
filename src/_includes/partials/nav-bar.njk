@@ -1,0 +1,41 @@
+{#
+  partials/nav-bar.njk — 页头导航条（`.nav-bar`）
+
+  全站 17 页逐字一致，唯一变化是 `.links-wrap > li` 上 `active` 的位置
+  （`navActive`；archive 与 styleguide 无高亮）。归一化 `active` 后比对：**1 个变体**。
+
+  左侧的 "Code by Dennis Snellenberg" 块只在 `work-header` 里出现吗？——不是：
+  它存在于全部 17 页的 `.nav-bar` 中（已逐页确认），故一并放在本 partial。
+#}
+<div class="nav-bar">
+    <div class="credits-top">
+        <div class="btn btn-link btn-left-top">
+            <a href="/" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+            <span class="btn-text">
+                <div class="credit"><span>©</span></div><div class="cbd"><span class="code-by">Code by </span><span class="dennis"><span class="dennis-span">Dennis</span> <span class="snellenberg">Snellenberg</span></span></div>
+            </span>
+            </a>
+        </div>
+    </div>
+    <ul class="links-wrap">
+{%- for item in site.navBar %}
+{%- if item.href %}
+        <li class="{{ item.classes | join(' ') }}{% if loop.index0 === navActive %} active{% endif %}">
+            <a href="{{ item.href }}" class="btn-click magnetic" data-strength="{{ item.strength }}" data-strength-text="{{ item.strengthText }}">
+            <span class="btn-text">
+                <span class="btn-text-inner">{{ item.label }}</span>
+            </span>
+            </a>
+        </li>
+{%- else %}
+        <li class="{{ item.classes | join(' ') }}">
+            <div class="btn-click magnetic" data-strength="{{ item.strength }}" data-strength-text="{{ item.strengthText }}">
+                <div class="btn-text">
+                    <span class="btn-text-inner">{{ item.label }}</span>
+                </div>
+            </div>
+        </li>
+{%- endif %}
+{%- endfor %}
+    </ul>
+</div>

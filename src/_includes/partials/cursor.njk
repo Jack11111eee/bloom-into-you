@@ -1,0 +1,33 @@
+{#
+  partials/cursor.njk — 光标跟随的三层元素（SPEC.md §6.7）
+
+  只在 home / work / archive / 案例页出现；about / contact / styleguide **完全没有**这三个 div。
+  三种形态（已用 cheerio 逐页确认）：
+    · float —— home / work：`.mouse-pos-list-image-bounce > .float-image-wrap > li`（浮动缩略图）
+    · empty —— archive / 案例页：`.mouse-pos-list-image` 是**空 div**（无 bounce、无 float-wrap）
+    · none  —— 不输出本 partial
+
+  `.mouse-pos-list-btn` 恒为空 div（圆点由 CSS 画）。
+  光标文字（`.mouse-pos-list-span`）：home/work = `View`，archive = `Website` + 箭头，
+  案例页 = `Next case`。
+
+  > 注意 `.float-image-wrap` 里的 `<li>` **直接挂在 div 下**（原站如此，不是合法列表结构）。
+  > 照抄 —— 结构 diff 会逐元素比对，改成 `<ul>` 会立刻报差异。
+#}
+{% if cursorMode !== 'none' %}
+<div class="mouse-pos-list-image no-select">
+{%- if cursorMode === 'float' %}
+                <div class="mouse-pos-list-image-bounce overlay">
+                    <div class="float-image-wrap">
+{%- for img in floatImages %}
+                        <li class="mouse-pos-list-image-inner {{ img.classes | join(' ') }}">
+                            <div class="overlay overlay-image lazy" style="background-color: {{ img.tileColor }}; background-position: center center; background-repeat: no-repeat; background-size: cover;" data-bg="{{ img.thumbnail }}"></div>
+                        </li>
+{%- endfor %}
+                    </div>
+                </div>
+{%- endif %}
+            </div>
+<div class="mouse-pos-list-btn no-select"></div>
+<div class="mouse-pos-list-span no-select">{% if cursorMode === 'empty' and cursorSpan === 'Website' %}<p>Website </p><div class="arrow">{% include "partials/icon-arrow.njk" %}</div><p></p>{% else %}<p>{{ cursorSpan }}</p>{% endif %}</div>
+{% endif %}

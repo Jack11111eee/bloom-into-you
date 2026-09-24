@@ -1,0 +1,141 @@
+---
+ns: contact
+---
+{#
+  contact.njk — contact 页（SPEC.md §6.5）
+
+  本文件由 `scripts/gen-static-pages.mjs` 从 `reference/html/contact.html` 生成：
+  这是一页**一次性排版**（无重复结构），按 §9.3 / §6.6 的立场"逐字归档，不做抽象"。
+  共享部件已换成 include，原站绝对 URL 已折成根相对路径。
+
+  > 表单的 `<label for>` 已按 §5.12 A1 修正（原站 3 个 label 共用 `for="email"`）。
+
+  P8「内容个性化」必须替换本页的全部原站文案与媒体引用。
+#}
+<header class="section default-header contact-header theme-dark" data-scroll-section="">
+   {% include "partials/nav-bar.njk" %}   <div class="container medium">
+      <div class="row once-in">
+         <div class="flex-col">
+            <h1><span><div class="profile-picture"></div> Let's start a </span><span>project together</span></h1>
+         </div>
+         <div class="flex-col">
+            <div class="profile-picture"></div>
+            <div class="arrow"><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>arrow-up-right</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#FFFFFF" stroke-width="1.5">
+            <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(90.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
+                <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+            </g>
+        </g>
+    </g>
+</svg></div>
+         </div>
+      </div>
+      <div class="row once-in">
+         <div class="flex-col">
+            <form class="form" method="post" action="/contact" enctype="multipart/form-data" novalidate="">
+               <div class="website-field">
+                  <label class="label" for="tel">Phone Number</label>
+                  <input class="field" type="text" id="form-tel" name="tel" tabindex="-1">
+               </div>
+               <div class="form-col">
+                  <h5>01</h5>
+                  <label class="label" for="name">What's your name?</label>
+                  <input class="field" type="text" id="form-name" name="name" value="" required="" placeholder="John Doe *">
+                                 </div>
+               <div class="form-col">
+                  <h5>02</h5>
+                  <label class="label" for="email">What's your email?</label>
+                  <input class="field" type="email" id="form-email" name="email" value="" required="" placeholder="john@doe.com *">
+                                 </div>
+               <div class="form-col">
+                  <h5>03</h5>
+                  <label class="label" for="email">What's the name of your organization?</label>
+                  <input class="field" type="text" id="form-company" name="company" value="" required="" placeholder="John &amp; Doe ®">
+                                 </div>
+               <div class="form-col">
+                  <h5>04</h5>
+                  <label class="label" for="email">What services are you looking for?</label>
+                  <input class="field" type="text" id="form-service" name="service" value="" required="" placeholder="Web Design, Web Development ...">
+                                 </div>
+               <div class="form-col">
+                  <h5>05</h5>
+                  <label class="label" for="message">Your message</label>
+                  <textarea class="field" type="text" id="form-message" name="message" rows="8" required="" placeholder="Hello Dennis, can you help me with ... *"></textarea>
+                                 </div>
+               <div class="btn-contact-send">
+                  <div class="btn btn-round" data-scroll="" data-scroll-speed="2" data-scroll-offset="-50%, 0%">
+                     <div class="btn-click magnetic" data-strength="100" data-strength-text="50">
+                        <div class="btn-fill"></div>
+                        <span class="btn-text">
+                           <input type="submit" name="submit" value="Send it!" class="form-btn">
+                        </span>
+                     </div>
+                  </div>
+               </div>
+            </form>
+         </div>
+         <div class="flex-col">
+            <h5>Contact Details</h5>
+            <ul class="links-wrap">
+               <li class="btn btn-link btn-link-external">
+                  <a href="mailto:info@dennissnellenberg.com" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                     <span class="btn-text">
+                        <span class="btn-text-inner">info@dennissnellenberg.com</span>
+                     </span>
+                  </a>
+               </li>
+               <li class="btn btn-link btn-link-external">
+                  <a href="tel:+31627847430" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                     <span class="btn-text">
+                        <span class="btn-text-inner">+31 6 27 84 74 30</span>
+                     </span>
+                  </a>
+               </li>
+            </ul>
+            <h5>Business Details</h5>
+            <ul class="links-wrap">
+               <li><p>Dennis Snellenberg B.V.</p></li>
+               <li><p>CoC: 92411711</p></li>
+               <li><p>VAT: NL866034080B01</p></li>
+               <li><p>Location: The Netherlands</p></li>
+            </ul>
+            <h5>Socials</h5>
+            <ul class="links-wrap">
+               <li class="btn btn-link btn-link-external">
+                  <a href="https://www.awwwards.com/dennissnellenberg/" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                     <span class="btn-text">
+                        <span class="btn-text-inner">Awwwards</span>
+                     </span>
+                  </a>
+               </li>
+               <li class="btn btn-link btn-link-external">
+                  <a href="https://www.instagram.com/codebydennis/" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                     <span class="btn-text">
+                        <span class="btn-text-inner">Instagram</span>
+                     </span>
+                  </a>
+               </li>
+               <li class="btn btn-link btn-link-external">
+                  <a href="https://twitter.com/codebydennis" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                     <span class="btn-text">
+                        <span class="btn-text-inner">Twitter</span>
+                     </span>
+                  </a>
+               </li>
+               <li class="btn btn-link btn-link-external">
+                  <a href="https://www.linkedin.com/in/dennissnellenberg/" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                     <span class="btn-text">
+                        <span class="btn-text-inner">LinkedIn</span>
+                     </span>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</header>
+                                {% include "partials/footer-contact.njk" %}

@@ -1,0 +1,146 @@
+---
+ns: home
+---
+{#
+  index.njk — 首页（SPEC.md §6.2）
+
+  `.main-wrap` 内 7 段，其中**第 6 段（`.horizontal-items`）在原站被整段 HTML 注释掉**，
+  不渲染。本模板**不输出**它：注释节点不进 DOM，输出它只会让产物多带一段
+  引用原站媒体的死代码（P8 的零素材检查会 grep 到原站域名）。§6.2 已登记该段不渲染。
+
+  首屏（`.home-header`）的文案（“Freelance Designer & Developer”、“Located in the
+  Netherlands”、大名字）按 §7.1 的口径**直接写在模板里** —— `home.json` 只承载
+  §7.1 明确列出的"intro 文案 + 4 条 featured"。P8 替换文案时这两处都要动。
+#}
+<header class="section home-header theme-dark" data-scroll-section>
+   <div class="overlay personal-image no-select once-in" data-scroll data-scroll-speed="-3" data-scroll-position="top">
+      <img src="/assets/img/DSC07033.jpg">
+   </div>
+   <div class="overlay get-height once-in once-in-secondary">
+      <div class="hanger">
+         <p><span>Located </span><span>in the </span><span>Netherlands</span></p>
+         {% include "partials/icon-hanger.njk" %}
+         <div class="digital-ball">
+            <div class="overlay"></div>
+            <div class="globe">
+               <div class="globe-wrap">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle-hor"></div>
+                  <div class="circle-hor-middle"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   {% include "partials/nav-bar.njk" %}   <div class="container once-in once-in-secondary">
+      <div class="row">
+         <div class="flex-col">
+            <div class="header-above-h4" data-scroll data-scroll-speed="1">
+               <div class="arrow big">{% include "partials/icon-arrow.njk" %}</div>
+            </div>
+            <h4><span>Freelance</span> Designer &amp; Developer</h4>
+         </div>
+      </div>
+   </div>
+   <div class="big-name">
+      <div class="name-h1" data-scroll data-scroll-direction="horizontal" data-scroll-speed="4" data-scroll-position="top">
+         <div class="name-wrap">
+            <h1 class="no-select once-in once-in-secondary">Dennis Snellenberg<span class="spacer">—</span></h1>
+         </div>
+      </div>
+   </div>
+   <div class="white-block"></div>
+</header>
+<section class="section home-intro" data-scroll-section>
+   <div class="container medium">
+      <div class="row">
+         <div class="flex-col">
+            <h4 class="span-lines animate">{{ home.introHeading }}</h4>
+         </div>
+         <div class="flex-col">
+            <div class="text-wrap fade-in animate">
+               <p>{{ home.introText }}</p>
+            </div>
+            <div class="btn btn-round" data-scroll data-scroll-speed="2">
+               <a href="/about" class="btn-click magnetic " data-strength="100" data-strength-text="50">
+                  <div class="btn-fill"></div>
+                  <span class="btn-text">
+                     <span class="btn-text-inner">About me</span>
+                  </span>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="section work-grid large-work-grid" data-scroll-section>
+   <div class="container">
+      <div class="grid-sub-title">
+         <div class="flex-col">
+            <h5>Recent work</h5>
+         </div>
+      </div>
+      <ul class="work-items mouse-pos-list-image-wrap">
+{%- for item in home.featured %}
+                     <li class="{{ item.classes | join(' ') }} visible">
+            <div class="stripe animate"></div>
+            <a href="{{ item.href }}" class="row">
+               <div class="flex-col">
+                  <h4><span>{{ item.name }}</span></h4>
+               </div>
+               <div class="flex-col animate">
+                  <p>{{ item.services }}</p>
+               </div>
+            </a>
+         </li>
+{%- endfor %}
+                  <div class="stripe last animate"></div>
+      </ul>
+   </div>
+</section>
+<section class="section work-tiles work-tiles-home" data-scroll-section>
+   <div class="container">
+      <ul>
+{%- for item in home.featured %}
+                  <li class="{{ item.classes | join(' ') }} visible">
+            <div class="single-tile-wrap">
+               <a href="{{ item.href }}" class="row">
+                  <div class="flex-col">
+                     <div class="tile-image">
+                        <div class="overlay overlay-image lazy" style="background-color: {{ item.tileColor }}; background-position: center center; background-repeat: no-repeat; background-size: cover;" data-bg="{{ item.tileImage }}"></div>                     </div>
+                  </div>
+                  <div class="flex-col">
+                     <h4><span>{{ item.name }}</span></h4>
+                     <div class="stripe"></div>
+                  </div>
+                  <div class="flex-col">
+                     <p>{{ item.services }}</p>
+                  </div>
+                  <div class="flex-col">
+                     <p>{{ item.year }}</p>
+                  </div>
+               </a>
+            </div>
+         </li>
+{%- endfor %}
+               </ul>
+   </div>
+</section>
+<section class="section center-grid-btn center-grid-btn-home" data-scroll-section style="padding-bottom: calc(var(--section-padding) - 2.5vw);">
+   <div class="container">
+      <div class="grid-after-btn">
+         <div class="btn btn-normal">
+            <a href="{{ home.moreWorkHref }}" class="btn-click magnetic" data-strength="25" data-strength-text="15">
+               <div class="btn-fill"></div>
+               <span class="btn-text">
+                  <span class="btn-text-inner change">More work<div class="count-nr">{{ home.moreWorkCount }}</div></span>
+               </span>
+            </a>
+         </div>
+      </div>
+   </div>
+</section>
+{% include "partials/footer-rounded.njk" %}
+{% include "partials/footer.njk" %}

@@ -1,0 +1,47 @@
+{#
+  partials/footer-case.njk — 案例页页脚（11 页共用）
+
+  与默认页脚的三处差异（SPEC.md §6.1）：
+    · 外层是 `<section class="section footer">`，**不是 `<footer>`** —— 原站如此，照抄
+    · 内容是 `next-case-btn`（指向下一个案例）+ “All work N” 按钮，没有箭头/圆钮/邮箱
+    · `.container.medium` 上多 `data-scroll-offset="-25%, 0%"`，`next-case-btn` 内含 `.tile-image`
+
+  下一个案例是**环状**的（SPEC.md §6.1 的顺序链，已验证三个样本）。
+  `.tile-image` 的内联 `background-color` 来自数据的 `nextCase.tileColor`，
+  `data-bg` 是缩略图原图 URL（§7.5：全站唯一使用 `data-bg` 的地方之一）。
+#}
+<div class="footer-wrap footer-case-wrap theme-dark" data-scroll-section="">
+   <section class="section footer" data-scroll="" data-scroll-speed="-4" data-scroll-position="bottom" data-scroll-offset="-25%, 0%">
+      <div class="container medium">
+         <a href="/work/{{ nextCase.slug }}" class="row next-case-btn">
+            <div class="flex-col">
+               <p>Next case</p>
+               <h2>{{ nextCase.name }}</h2>
+            </div>
+            <div class="tile-image-wrap">
+               <div class="tile-image">
+                                    <div class="overlay overlay-image lazy" data-scroll="" data-scroll-speed="2.5" data-scroll-position="bottom" style="background-color:{{ nextCase.tileColor }}; background-position: center center; background-repeat: no-repeat; background-size: cover;" data-bg="{{ nextCase.tileImage }}"></div>                                 </div>
+            </div>
+         </a>
+         <div class="row">
+            <div class="flex-col">
+               <div class="stripe"></div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="flex-col">
+               <div class="btn btn-normal">
+                  <a href="/work" class="btn-click magnetic" data-strength="25" data-strength-text="15">
+                     <div class="btn-fill"></div>
+                     <span class="btn-text">
+                        <span class="btn-text-inner change">All work<div class="count-nr">{{ workCount }}</div></span>
+                     </span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+{% include "partials/bottom-footer.njk" %}
+   </section>
+   <div class="overlay overlay-gradient"></div>
+</div>

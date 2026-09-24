@@ -1,0 +1,10 @@
+{# blocks/dispatch.njk — 按 `type` 分派到对应的 block partial（SPEC.md §6.1 的 4 类 single-block）
+
+  未知类型由抽取脚本 `scripts/extract-page-data.mjs` 直接抛错拦住 ——
+  模板层不做静默兜底：静默渲染出一个"少了一个块"的页面正是最难发现的失败。
+#}
+{%- if b.type === 'device' %}{% include "blocks/device.njk" %}
+{%- elif b.type === 'fullwidth' %}{% include "blocks/fullwidth.njk" %}
+{%- elif b.type === 'mobile-devices' %}{% include "blocks/mobile-devices.njk" %}
+{%- elif b.type === 'screenshot' %}{% include "blocks/screenshot.njk" %}
+{%- endif %}

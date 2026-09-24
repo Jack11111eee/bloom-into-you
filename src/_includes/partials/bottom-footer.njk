@@ -1,0 +1,37 @@
+{#
+  partials/bottom-footer.njk — 页脚底部（credits / local time / socials）
+
+  三种页脚共用这一块：默认页脚、案例页页脚、contact 的简化页脚。
+  全站逐字一致（`#timeSpan` 的初值也是原站写死的 `09:41 PM CET`，运行时由 JS 覆写）。
+#}
+                        <div class="container no-padding">
+                            <div class="row bottom-footer">
+                                <div class="flex-col">
+                                    <div class="credits">
+                                        <h5>{{ site.footer.versionLabel }}</h5>
+                                        <p>{{ site.footer.version }}</p>
+                                    </div>
+                                    <div class="time">
+                                        <h5>{{ site.footer.timeLabel }}</h5>
+                                        <p><span id="timeSpan">{{ site.footer.timeText }}</span></p>
+                                    </div>
+                                </div>
+                                <div class="flex-col">
+                                    <div class="socials">
+                                        <h5>{{ site.footer.socialsLabel }}</h5>
+                                        <ul>
+{%- for s in site.socials %}
+                                            <li class="btn btn-link btn-link-external">
+                                                <a href="{{ s.url }}" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                                                    <span class="btn-text">
+                                                        <span class="btn-text-inner">{{ s.label }}</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+{%- endfor %}
+                                        </ul>
+                                        <div class="stripe"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>

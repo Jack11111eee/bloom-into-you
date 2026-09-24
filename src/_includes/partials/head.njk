@@ -1,0 +1,43 @@
+{#
+  partials/head.njk — 共享 <head>
+
+  逐页只变 8 个值：title / description / og:title / og:description / og:image /
+  twitter:title / twitter:description / twitter:image / canonical。
+  其余（viewport、og:site_name、og:locale ×2、og:type、twitter:card、google notranslate、
+  font preload、5 个 CSS）全站逐字一致 —— 已用 cheerio 逐页比对确认。
+
+  三个必须照抄的细节：
+    · `og:locale` 在原站**出现两次**（一次在 og:site_name 之后、一次在 notranslate 之后），
+      且两处缩进不同。是冗余，但照抄以保持结构一致。
+    · 5 个 CSS 的加载顺序固定（§2.1）：normalize → locomotive-scroll → styleguide →
+      components → style-new。**styleguide.css 是设计令牌层**（§3），不能调换。
+    · 字体预载只预载一个文件（§4 实测：原站运行时只有 450 那一个进入 loaded）——
+     原站预载 `NeueMontreal-Regular.otf`，对应本产物的 `Inter-450.woff2`。
+
+  两处**有意的不同**（都已在文档登记，跨站比对时由 `--font-mode sub` 折叠）：
+    · 字体文件名与 MIME：原站 `NeueMontreal-Regular.otf` / `font/otf`，本产物
+      `Inter-450.woff2` / `font/woff2`（SPEC.md §4 的替换）。
+    · **不移植 Google Analytics**（§1.3）：原站在此有 2 个 <script>，产物没有。
+#}
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <title>{{ title }}</title>
+      <meta name="description" content="{{ description }}">
+      <meta property="og:title" content="{{ title }}">
+      <meta property="og:description" content="{{ description }}">
+      <meta property="og:image" content="{{ ogImage }}">
+      <meta property="og:site_name" content="Dennis Snellenberg">
+                              <meta property="og:locale" content="en">
+      <meta property="og:type" content="website">      <meta property="twitter:title" content="{{ title }}">
+      <meta property="twitter:description" content="{{ description }}">
+      <meta property="twitter:image" content="{{ ogImage }}">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="google" content="notranslate">
+      <meta property="og:locale" content="en">
+      <link rel="canonical" href="{{ canonical }}">
+
+      <link rel="preload" as="font" href="/assets/fonts/Inter-450.woff2" type="font/woff2" crossorigin="anonymous">
+
+      <link href="/assets/css/normalize.css" rel="stylesheet">      <link href="/assets/css/locomotive-scroll.css" rel="stylesheet">      <link href="/assets/css/styleguide.css" rel="stylesheet">      <link href="/assets/css/components.css" rel="stylesheet">      <link href="/assets/css/style-new.css" rel="stylesheet">
+   </head>

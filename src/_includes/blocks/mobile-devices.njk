@@ -1,0 +1,34 @@
+{#
+  blocks/mobile-devices.njk — `block-mobile-devices`（SPEC.md §6.1，全站 8 个）
+
+  恒 3 列（`.container.no-padding.block-padding-sides.amount-3`）。
+  第 1 / 3 列的 `.device` 带 `data-scroll data-scroll-target=".block_N" data-scroll-speed="±1"`，
+  **第 2 列没有** —— 逐列属性直接从归档抽取（`deviceAttrs`），不按规则生成，
+  因为"哪几列有"是原站数据而不是可推导的模式。
+
+  列内媒体两种形态（`media()` 分派）：image（`<img class="overlay overlay-image lazy">`）
+  或 video（`<div class="overlay overlay-image playpauze"><video class="overlay">`）。
+  设备外框 `.overlay-device-image` 只在 `device !== 'nodevice'` 时存在（逐列抽 `frame`）。
+#}
+<section class="section single-block block-mobile-devices block_{{ b.index }}{{ ' block-padding-bottom' if b.paddingBottom }}"{% if b.background %} style="background-color: {{ b.background }};"{% endif %} data-scroll-section>
+   <div class="container no-padding block-padding-sides amount-3">
+      <div class="row device-{{ b.device }}">
+{%- for col in b.columns %}
+         <div class="flex-col block-padding-bottom">
+            <div class="device"{% for k, v in col.deviceAttrs %} {{ k }}="{{ v }}"{% endfor %}>
+               <div class="single-image">
+{% if col.media.kind === 'video' %}
+                  <div class="overlay overlay-image playpauze"><video class="overlay" src="{{ col.media.src }}" loop muted playsinline></video></div>
+{%- else %}
+                  <img class="overlay overlay-image lazy" src="{{ col.media.srcSmall }}" data-src="{{ col.media.src }}" width="{{ col.media.width }}" height="{{ col.media.height }}">
+{%- endif %}
+               </div>
+{% if col.frame %}
+               <div class="overlay-device-image"><div class="overlay overlay-device" style="background: url('{{ col.frame }}') center center no-repeat; background-size: cover;"></div></div>
+{% endif %}
+            </div>
+         </div>
+{%- endfor %}
+      </div>
+   </div>
+</section>

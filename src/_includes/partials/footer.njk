@@ -1,0 +1,58 @@
+{#
+  partials/footer.njk — 默认页脚（home / work / about / archive / styleguide）
+
+  `.footer-wrap.footer-footer-wrap.theme-dark`：箭头 + “Let’s work together” + 圆钮
+  “Get in touch” + email/tel 按钮 + 底部信息。全站逐字一致（5 页同一实例）。
+
+  > `Let’s` 用的是**弯引号 U+2019**，且 “work” 后有两个空格 —— 原站如此。
+  > 文本内容是逐字比较的，不能"顺手修正"排版。
+#}
+<div class="footer-wrap footer-footer-wrap theme-dark" data-scroll-section="">
+                    <footer class="section footer" data-scroll="" data-scroll-speed="-4" data-scroll-position="bottom">
+                        <div class="container medium">
+                            <div class="row">
+                                <div class="flex-col">
+                                    <div class="arrow">{% include "partials/icon-arrow.njk" %}</div>
+                                    <h2><span><div class="profile-picture"></div> Let’s work  </span><span>together</span></h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="flex-col">
+                                    <div class="stripe"></div>
+                                    <div class="btn-fixed">
+                                        <div class="btn btn-round" data-scroll="" data-scroll-speed="-1" data-scroll-direction="horizontal" data-scroll-position="bottom" data-scroll-offset="-50%, 0">
+                                            <a href="{{ site.contact.contactHref }}" class="btn-click magnetic " data-strength="100" data-strength-text="50">
+                                                <div class="btn-fill"></div>
+                                                <span class="btn-text">
+                                                    <span class="btn-text-inner">Get in touch</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="flex-col">
+                                    <div class="btn btn-normal">
+                                        <a href="mailto:{{ site.contact.email }}" class="btn-click magnetic" data-strength="25" data-strength-text="15">
+                                        <div class="btn-fill"></div>
+                                        <span class="btn-text">
+                                            <span class="btn-text-inner change">{{ site.contact.email }}</span>
+                                        </span>
+                                        </a>
+                                    </div>
+                                    <div class="btn btn-normal">
+                                        <a href="{{ site.contact.telHref }}" class="btn-click magnetic" data-strength="25" data-strength-text="15">
+                                        <div class="btn-fill"></div>
+                                        <span class="btn-text">
+                                            <span class="btn-text-inner change">{{ site.contact.tel }}</span>
+                                        </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+{% include "partials/bottom-footer.njk" %}
+                    </footer>
+                    <div class="overlay overlay-gradient"></div>
+                </div>
