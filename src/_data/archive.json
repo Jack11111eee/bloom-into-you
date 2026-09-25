@@ -1,6 +1,5 @@
 {
-  "_comment": "archive 66 条（SPEC.md §6.3）。全部是 target=\"_blank\" 外链，无缩略图、无分类。",
-  "count": "(66)",
+  "_comment": "archive 66 条（SPEC.md §6.3）。全部是 target=\"_blank\" 外链，无缩略图、无分类。标题里的 `(66)` 由 `archiveCount` 从本文件的 `items` 派生（`DEVIATIONS.md` B8）。",
   "items": [
     {
       "classes": [],

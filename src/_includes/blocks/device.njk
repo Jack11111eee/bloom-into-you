@@ -8,7 +8,9 @@
 
   设备外框（`.overlay-device-image`）**只在 `device !== 'nodevice'` 时存在**；
   外框图走内联 `background: url(...)`，不走 lazyload（§7.5）。
-  `device-nodevice` 出现 11 次（块内最多），是**一等形态**而非例外。
+  `device-nodevice` 在本块内出现 **11** 次（`block-device` 的 31 个里最多），是**一等形态**而非例外。
+  （全站 `device-*` 共 39 处、`nodevice` 13 处 —— 另外 2 处 `nodevice` 在 `block-mobile-devices` 里，
+  见 `mobile-devices.njk`。`PLAN.md` P5 引用的 **13** 是这个全站口径，别与本块的 11 混起来。）
 #}
 <section class="section single-block block-device block_{{ b.index }}{{ ' block-padding-bottom' if b.paddingBottom }}"{% if b.background %} style="background-color: {{ b.background }};"{% endif %} data-scroll-section>
    <div class="container">

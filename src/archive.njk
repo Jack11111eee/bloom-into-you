@@ -9,12 +9,13 @@ ns: archive
     · 全部 `target="_blank"` 外链，行尾多一个 `.arrow` 外链指示
     · `ul` 是 `work-items mouse-pos-list-archive`（work 是 `…-image-wrap all-active`）
     · 标题里的计数是 `(66)`（带括号），work 页的 Archive 按钮是 `66`
+  `(66)` 的**数值从数据派生**（`archiveCount`，`DEVIATIONS.md` B8）；括号是原站标记，留在此处。
 #}
 <header class="section default-header work-header archive-header" data-scroll-section>
 {% include "partials/nav-bar.njk" %}   <div class="container medium">
       <div class="row">
          <div class="flex-col once-in">
-            <h1><span>Archive <div class="count-nr">{{ archive.count }}</div></span></h1>
+            <h1><span>Archive <div class="count-nr">({{ archiveCount }})</div></span></h1>
          </div>
       </div>
    </div>

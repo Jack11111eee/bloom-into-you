@@ -30,6 +30,24 @@ export default {
     // 案例页页脚（`partials/footer-case.njk`）：下一个案例 + "All work N"
     nextCase: (data) => pick(data).nextCase,
     workCount: (data) => data.work.items.length,
+    /**
+     * `.count-nr` 的派生值（`DEVIATIONS.md` B8）。
+     *
+     * 原站**写死**：work.html 是 `7 / 11 / 66`、archive.html 是 `(66)`。
+     * 口径与原站一致 —— 原站那两个数就是 `li.design` / `li.development` 的个数
+     * （`[实测]` work.html：design 7、development 11），Archive 是条目总数。
+     *
+     * 放在**渲染期**而不是抽取期：计数与 `items` 同源，改数据不可能只改一个。
+     * 抽取期写进 JSON 也能得到同样的数字，但那仍是"存下来的一份拷贝"，
+     * 内容替换（P8）时又会出现"数据改了、数字没改"的同一个缺陷。
+     */
+    workCounts: (data) => ({
+      design: data.work.items.filter((i) => i.classes.includes('design')).length,
+      development: data.work.items.filter((i) => i.classes.includes('development')).length,
+      archive: data.archive.items.length,
+    }),
+    // archive.html 的 `(66)` —— 括号是原站标记的一部分，留在模板里
+    archiveCount: (data) => data.archive.items.length,
     // `.rounded-div` 的内联底色（仅案例页有；其余页 `{% if %}` 判空后不输出）
     footerAccent: (data) => pick(data).footerAccent,
   },

@@ -12,8 +12,8 @@ ns: work
   ★ 两套列表必须**同时渲染**：筛选与视图切换是纯 JS 改类名（§6.3 / §5.9），
   不是服务端条件渲染。只渲染一套会让结构 diff 报"缺 11 个元素"。
 
-  `.count-nr` 的三个值（7 / 11 / 66）在 `work.json` 里，**仍是原站写死的值**；
-  改为派生是 `DEVIATIONS.md` B8 / P5 的事。
+  `.count-nr` 的三个值（7 / 11 / 66）**从数据派生**（`src.11tydata.js` 的 `workCounts`，
+  `DEVIATIONS.md` B8）—— 原站写死，我们改派生；内容未替换前数值与原站相同。
 #}
 <header class="section default-header work-header" data-scroll-section>
 {% include "partials/nav-bar.njk" %}   <div class="container medium">
@@ -40,7 +40,7 @@ ns: work
                <div class="btn-click magnetic" data-strength="25" data-strength-text="15">
                   <div class="btn-fill"></div>
                   <span class="btn-text">
-                     <span class="btn-text-inner change">Design<div class="count-nr">{{ work.counts.design }}</div></span>
+                     <span class="btn-text-inner change">Design<div class="count-nr">{{ workCounts.design }}</div></span>
                   </span>
                </div>
             </div>
@@ -48,7 +48,7 @@ ns: work
                <div class="btn-click magnetic" data-strength="25" data-strength-text="15">
                   <div class="btn-fill"></div>
                   <span class="btn-text">
-                     <span class="btn-text-inner change">Development<div class="count-nr">{{ work.counts.development }}</div></span>
+                     <span class="btn-text-inner change">Development<div class="count-nr">{{ workCounts.development }}</div></span>
                   </span>
                </div>
             </div>
@@ -152,7 +152,7 @@ ns: work
             <a href="/archive" class="btn-click magnetic" data-strength="25" data-strength-text="15">
                <div class="btn-fill"></div>
                <span class="btn-text">
-                  <span class="btn-text-inner change">Archive<div class="count-nr">{{ work.counts.archive }}</div></span>
+                  <span class="btn-text-inner change">Archive<div class="count-nr">{{ workCounts.archive }}</div></span>
                </span>
             </a>
          </div>
