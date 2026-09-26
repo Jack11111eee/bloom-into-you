@@ -1,28 +1,31 @@
-/* ------------------------- Styleguide ® Code by Dennis -------------------------------------------------- */
+/* ------------------------- Styleguide -------------------------------------------------- */
 
 /* ------------------------- Fonts -------------------------------------------------- */
 
-/* ── 字体（SPEC.md §4：Inter 替代 PP Neue Montreal）────────────────────────────
+/* ── 字体（SPEC.md §4：Inter 替代原站的自托管商业字体）────────────────────────
  *
- * 原站此处是 6 个 @font-face（家族名 'Dennis Sans'，字重 300/450/800 × normal/italic，
- * src 指向 NeueMontreal-*.otf）。本产物改为**三个静态面**：
+ * 原站此处是 6 个 @font-face（家族名取的是原站品牌名，字重 300/450/800 ×
+ * normal/italic，src 指向其自托管的 .otf）。本产物改为**三个静态面**：
  *
- *   · 家族名改为 'Inter' —— 产物不得带原站素材名（P8 的零素材检查会 grep 'Dennis'）
+ *   · 家族名改为 'Inter' —— 产物不得带原站素材名
  *   · 字重 300 / 450 / 800 —— 与原站**逐档相同**，故浏览器的字体匹配行为也相同
  *     （原站没有 400 / 500 面，故 `font-weight: 400/500` 在原站落到 300/450；
  *      本产物同样如此，不额外补面）
  *   · 不声明 italic：全站 `font-style` 被下面的重置强制为 normal（实测无 italic 用法）
  *
  * ★ 这三个文件是**度量兼容**字体，不是原样的 Inter —— 见 `scripts/build-font.py`：
- *   逐字形的前进宽度与 cap 高被改写为 PP Neue Montreal 的值。
+ *   逐字形的前进宽度与 cap 高被改写为**原站字体的值**。
  *
  *   为什么不用 `size-adjust`（本文件此前的做法）：`[实测]`（measure-both-fonts.mjs）
- *   Inter@450 比 PP NM Regular 平均宽 **+8.6%**（`docs/font-substitution.md` 原写的
+ *   Inter@450 比原站字体平均宽 **+8.6%**（`docs/font-substitution.md` 原写的
  *   +2.5%/+3.6% 已被推翻）。`size-adjust` 要补偿 8.6% 就得缩到 ~87%，那会让**所有
  *   字形整体缩小约 11%**（cap 高 0.7275em → 0.65em），文本明显变小 —— 对复刻项目
  *   是不可接受的观感偏离。改写字体度量则同时满足"前进宽度 = 原站"与"cap 高 = 原站"。
  *
  *   代价：常见字形横向比 Inter 原设计窄约 9%（condensed）—— 已登记在 DEVIATIONS.md。
+ *
+ *   > 原站字体的**名称与授权情况**记在 `DEVIATIONS.md` D1 与
+ *   > `docs/font-substitution.md`（二者不进产物）；本文件进产物，故不写其名。
  *
  * 为什么不用 `letter-spacing: -0.012em`（SPEC.md §4 的原提议）：§10.7 要求
  * `letter-spacing` 与基线**完全相等**，而按实测的 8.6% 偏差，补偿量需 -0.047em，
@@ -677,7 +680,7 @@ video.overlay {
     transform: translate(0, 0) rotate(360deg);
 }
 
-.btn-link.btn-left-top .cbd {
+.btn-link.btn-left-top .credit-by {
     overflow: hidden;
     position: relative;
 }
@@ -693,7 +696,7 @@ video.overlay {
     transform: translateX(-3.7em) rotate(0.001deg);
 }
 
-.btn-link.btn-left-top .dennis {
+.btn-link.btn-left-top .credit-first {
     transform: translateX(0) rotate(0.001deg);
     position: relative;
     display: inline-block;
@@ -702,12 +705,12 @@ video.overlay {
     transition: var(--animation-primary);
 }
 
-.btn-link.btn-left-top:hover .dennis {
+.btn-link.btn-left-top:hover .credit-first {
     padding-right: 2em;
     transform: translateX(-3.7em) rotate(0.001deg);
 }
 
-.btn-link.btn-left-top .snellenberg {
+.btn-link.btn-left-top .credit-last {
     position: absolute;
     opacity: 1;
     padding-left: .21em;
@@ -727,7 +730,7 @@ video.overlay {
         transform: translateX(0) rotate(0.001deg);
     }
     
-    .btn-link.btn-left-top:hover .dennis {
+    .btn-link.btn-left-top:hover .credit-first {
         padding-right: .2em;
         transform: translateX(0) rotate(0.001deg);
     }

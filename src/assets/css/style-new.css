@@ -1,4 +1,4 @@
-/* ------------------------- Style ® Code by Dennis -------------------------------------------------- */
+/* ------------------------- Style -------------------------------------------------- */
 
 main {
    box-sizing: border-box;
@@ -2282,25 +2282,25 @@ main.touch .main-wrap {
 }
 
 
-/* ------------------------- About - Split Awwwards -------------------------------------------------- */
+/* ------------------------- About - Split Award -------------------------------------------------- */
 
 
-.about-awwwards .row {
+.about-award .row {
    align-items: center;
 }
 
-.about-awwwards .flex-col:nth-child(1) {
+.about-award .flex-col:nth-child(1) {
    width: 50%;
    padding-right: calc(var(--container-padding) / 2);
 }
 
-.about-awwwards .flex-col:nth-child(2) {
+.about-award .flex-col:nth-child(2) {
    width: 50%;
    padding-left: calc(var(--container-padding) / 2);
    padding-bottom: 3em;
 }
 
-.about-awwwards .single-image {
+.about-award .single-image {
    width: 100%;
    display: block;
    background: var(--color-lightgray);
@@ -2308,14 +2308,14 @@ main.touch .main-wrap {
    position: relative;
 }
 
-.about-awwwards .single-image::before{
+.about-award .single-image::before{
    content: "";
    display: block;
    padding-top: 135%;
    padding-top: 125%;
 }
 
-.about-awwwards .single-image  .overlay:nth-child(1) {
+.about-award .single-image  .overlay:nth-child(1) {
    /* background: url("../img/DSC07292.jpg") center center no-repeat;
    background-size: cover;
    height: 130%;
@@ -2338,24 +2338,24 @@ main.touch .main-wrap {
    left: -14%; */
 }
 
-.about-awwwards .single-image  .overlay:nth-child(2) {
+.about-award .single-image  .overlay:nth-child(2) {
    background: linear-gradient(to bottom,hsla(220, 13%, 5%, .075) 0%, hsla(220, 13%, 5%, 0) 50%);
 }
 
-.about-awwwards .awwwards-badge {
+.about-award .award-badge {
    width: 6em;
    position: relative;
    margin-bottom: calc(var(--section-padding) / 4);
    border-radius: 50%;
 }
 
-.about-awwwards .awwwards-badge::before {
+.about-award .award-badge::before {
    display: block;
    content: "";
    padding-top: 100%;
 }
 
-.about-awwwards .awwwards-badge svg:nth-child(1) {
+.about-award .award-badge svg:nth-child(1) {
    width: 100%;
    position: absolute;
    top: 50%;
@@ -2363,11 +2363,11 @@ main.touch .main-wrap {
    transform: translate(-50%, -50%);
 }
 
-.about-awwwards .awwwards-badge svg:nth-child(1) g {
+.about-award .award-badge svg:nth-child(1) g {
    fill: var(--color-gray);
 }
 
-.about-awwwards .awwwards-badge svg:nth-child(2) {
+.about-award .award-badge svg:nth-child(2) {
    width: 40%;
    position: absolute;
    top: 50%;
@@ -2375,32 +2375,32 @@ main.touch .main-wrap {
    transform: translate(-50%, -50%);
 }
 
-.about-awwwards .awwwards-badge svg:nth-child(2) path {
+.about-award .award-badge svg:nth-child(2) path {
    fill: var(--color-gray);
 }
 
 @media screen and (max-width: 720px) {
 
-   .about-awwwards {
+   .about-award {
       padding-top: calc(var(--section-padding) / 1.5);
    }
-   .about-awwwards .flex-col:nth-child(1) {
+   .about-award .flex-col:nth-child(1) {
       width: 100%;
       padding-right: 0;
    }
    
-   .about-awwwards .flex-col:nth-child(2) {
+   .about-award .flex-col:nth-child(2) {
       width: 100%;
       padding-left: 0;
       padding-bottom: calc(var(--section-padding) / 2);
       order: 1;
    }
 
-   .about-awwwards .single-image::before{
+   .about-award .single-image::before{
       padding-top: 125%;
    }
    
-   .about-awwwards .single-image  .overlay:nth-child(1) {
+   .about-award .single-image  .overlay:nth-child(1) {
       background: url("../img/DSC07079.jpg") center center no-repeat;
       background-size: cover;
       top: -8%;

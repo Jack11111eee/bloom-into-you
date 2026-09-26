@@ -1,5 +1,5 @@
 {
-  "_comment": "work 列表（SPEC.md §6.3 / §7.4）。P8 必须替换文案与媒体。`.count-nr` 的三个计数**不在这里** —— 由 `src.11tydata.js` 的 `workCounts` 从本文件的 `items` 派生（`DEVIATIONS.md` B8）。",
+  "_comment": "work 列表（SPEC.md §6.3 / §7.4）。P8 已把原站文案换成占位内容（DEVIATIONS.md D2）；`.count-nr` 的三个计数**不在这里** —— 由 `src.11tydata.js` 的 `workCounts` 从本文件的 `items` 派生（`DEVIATIONS.md` B8）。",
   "items": [
     {
       "classes": [
@@ -9,9 +9,9 @@
       "href": "/work/twice",
       "target": null,
       "arrow": false,
-      "name": "TWICE",
-      "location": "Spain",
-      "services": "Interaction & Development",
+      "name": "Project 01",
+      "location": "Amsterdam",
+      "services": "Interface & Motion",
       "year": "2024",
       "tileColor": "#F1F1F1",
       "tileImage": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice.jpg"
@@ -25,9 +25,9 @@
       "href": "/work/the-damai",
       "target": null,
       "arrow": false,
-      "name": "The Damai",
-      "location": "Bali, Indonesia",
-      "services": "Design & Development",
+      "name": "Project 02",
+      "location": "Berlin",
+      "services": "Design & Build",
       "year": "2024",
       "tileColor": "#E0D9D1",
       "tileImage": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2.jpg"
@@ -41,9 +41,9 @@
       "href": "/work/fabric",
       "target": null,
       "arrow": false,
-      "name": "FABRIC™",
-      "location": "United Kingdom",
-      "services": "Design & Development",
+      "name": "Project 03",
+      "location": "London",
+      "services": "Design & Build",
       "year": "2023",
       "tileColor": "#48494A",
       "tileImage": "/media/pages/work/fabric/ac07564a5f-1688453092/thumbnail-fabric-darkgray.jpg"
@@ -57,9 +57,9 @@
       "href": "/work/aanstekelijk",
       "target": null,
       "arrow": false,
-      "name": "Aanstekelijk",
-      "location": "The Netherlands",
-      "services": "Design & Development",
+      "name": "Project 04",
+      "location": "New York",
+      "services": "Design & Build",
       "year": "2023",
       "tileColor": "#101010",
       "tileImage": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk.jpg"
@@ -73,9 +73,9 @@
       "href": "/work/base-create",
       "target": null,
       "arrow": false,
-      "name": "Base Create",
-      "location": "Hong Kong",
-      "services": "Design & Development",
+      "name": "Project 05",
+      "location": "Lisbon",
+      "services": "Design & Build",
       "year": "2023",
       "tileColor": "#363637",
       "tileImage": "/media/pages/work/base-create/1f2468ab51-1680179645/thumbnail-base-desktop.jpg"
@@ -89,9 +89,9 @@
       "href": "/work/avvr",
       "target": null,
       "arrow": false,
-      "name": "AVVR",
-      "location": "The Netherlands",
-      "services": "Design & Development",
+      "name": "Project 06",
+      "location": "Copenhagen",
+      "services": "Design & Build",
       "year": "2023",
       "tileColor": "#D8D3CD",
       "tileImage": "/media/pages/work/avvr/4d2a7758a4-1672918357/thumbnail-avvr-v2.jpg"
@@ -104,9 +104,9 @@
       "href": "/work/graphichunters",
       "target": null,
       "arrow": false,
-      "name": "GraphicHunters",
-      "location": "The Netherlands",
-      "services": "Design & Development",
+      "name": "Project 07",
+      "location": "Toronto",
+      "services": "Design & Build",
       "year": "2022",
       "tileColor": "#7E7E7E",
       "tileImage": "/media/pages/work/graphichunters/0daec771af-1660128857/thumbnail-gh.jpg"
@@ -119,9 +119,9 @@
       "href": "/work/future-goals",
       "target": null,
       "arrow": false,
-      "name": "Future Goals",
-      "location": "Curaçao",
-      "services": "Interaction & Development",
+      "name": "Project 08",
+      "location": "Melbourne",
+      "services": "Interface & Motion",
       "year": "2022",
       "tileColor": "#DCD0C2",
       "tileImage": "/media/pages/work/future-goals/614e28a662-1653057688/thumbnail-futuregoals.jpg"
@@ -134,9 +134,9 @@
       "href": "/work/atypikal",
       "target": null,
       "arrow": false,
-      "name": "Atypikal",
-      "location": "United States",
-      "services": "Interaction & Development",
+      "name": "Project 09",
+      "location": "Stockholm",
+      "services": "Interface & Motion",
       "year": "2021",
       "tileColor": "#B1A994",
       "tileImage": "/media/pages/work/atypikal/fd1951ffc9-1646837277/thumbnail-atypikal.jpg"
@@ -149,9 +149,9 @@
       "href": "/work/one-nil",
       "target": null,
       "arrow": false,
-      "name": "One:Nil",
-      "location": "The Netherlands",
-      "services": "Interaction & Development",
+      "name": "Project 10",
+      "location": "Dublin",
+      "services": "Interface & Motion",
       "year": "2021",
       "tileColor": "var(--color-lightgray)",
       "tileImage": "/media/pages/work/one-nil/288460827e-1646837272/thumbnail-onenil-v3.jpg"
@@ -164,13 +164,12 @@
       "href": "/work/andy-hardy",
       "target": null,
       "arrow": false,
-      "name": "Andy Hardy",
-      "location": "Australia",
-      "services": "Design & Development",
+      "name": "Project 11",
+      "location": "Porto",
+      "services": "Design & Build",
       "year": "2020",
       "tileColor": "#626D6E",
       "tileImage": "/media/pages/work/andy-hardy/f152b03247-1646837253/thumbnail-andyhardy.jpg"
     }
   ]
 }
-

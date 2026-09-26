@@ -48,6 +48,16 @@ export default {
     }),
     // archive.html 的 `(66)` —— 括号是原站标记的一部分，留在模板里
     archiveCount: (data) => data.archive.items.length,
+    /**
+     * 首页 `More work 11` 的派生值（`DEVIATIONS.md` B8，2026-09-26 扩大范围）。
+     *
+     * P5 时这一处**不在** B8 的登记范围内，故当时未改、登记为 `ISSUES.md` ISSUE-028；
+     * 用户 2026-09-26 裁决扩大 B8 覆盖它。口径 = `work.items.length`（与原站写死的 `11` 相同）。
+     *
+     * 与 `workCounts` / `archiveCount` 同一立场：放在**渲染期**。抽取期写进 JSON
+     * 仍然是"存下来的一份拷贝"，内容替换后又会与数据分叉。
+     */
+    homeMoreWorkCount: (data) => data.work.items.length,
     // `.rounded-div` 的内联底色（仅案例页有；其余页 `{% if %}` 判空后不输出）
     footerAccent: (data) => pick(data).footerAccent,
   },

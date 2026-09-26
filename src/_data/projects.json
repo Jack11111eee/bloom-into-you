@@ -3,39 +3,39 @@
   "projects": [
     {
       "slug": "twice",
-      "title": "TWICE - Dennis Snellenberg",
-      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "title": "Project 01 - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice-860x540-crop-q72.jpg",
       "canonical": "/work/twice",
       "loaderActive": 11,
       "navActive": 0,
       "fixedNavActive": 1,
       "cursorSpan": "Next case",
-      "name": "TWICE",
-      "liveSite": "https://twicemediahouse.com/",
+      "name": "Project 01",
+      "liveSite": "https://example.com/",
       "intro": [
         {
           "label": "Role / Services",
           "items": [
-            "Interaction & Development"
+            "Interface & Motion"
           ]
         },
         {
           "label": "Credits",
           "items": [
-            "Design: Dylan Brouwer"
+            "Design: Placeholder Studio"
           ]
         },
         {
           "label": "Location & year",
           "items": [
-            "Spain ©",
+            "Amsterdam ©",
             "2024"
           ]
         }
       ],
       "introImage": {
-        "liveSiteHref": "https://twicemediahouse.com/",
+        "liveSiteHref": "https://example.com/",
         "image": "/media/pages/work/twice/56dc0c6ce1-1710405711/dsc7458.jpg",
         "scrollSpeed": "-1",
         "overlayTop": "/media/pages/work/twice/b8d83f1720-1710411070/case-header-twice.svg",
@@ -186,48 +186,48 @@
       "footerAccent": "#C0CAC9",
       "nextCase": {
         "slug": "the-damai",
-        "name": "The Damai",
+        "name": "Project 02",
         "tileColor": "#E0D9D1",
         "tileImage": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2.jpg"
       }
     },
     {
       "slug": "the-damai",
-      "title": "The Damai - Dennis Snellenberg",
-      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "title": "Project 02 - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2-860x540-crop-q72.jpg",
       "canonical": "/work/the-damai",
       "loaderActive": 12,
       "navActive": 0,
       "fixedNavActive": 1,
       "cursorSpan": "Next case",
-      "name": "The Damai",
-      "liveSite": "https://thedamai.codebydennis.com/",
+      "name": "Project 02",
+      "liveSite": "https://example.com/",
       "intro": [
         {
           "label": "Role / Services",
           "items": [
-            "Design & Development"
+            "Design & Build"
           ]
         },
         {
           "label": "Credits",
           "items": [
-            "Design: Christy Lammerink",
-            "Design: Tom de Koning",
-            "Photography: Niké Schuurmans"
+            "Design: Placeholder Studio",
+            "Photography: Placeholder Studio",
+            "Motion: Placeholder Studio"
           ]
         },
         {
           "label": "Location & year",
           "items": [
-            "Bali, Indonesia ©",
+            "Berlin ©",
             "2024"
           ]
         }
       ],
       "introImage": {
-        "liveSiteHref": "https://thedamai.codebydennis.com/",
+        "liveSiteHref": "https://example.com/",
         "image": "/media/pages/work/the-damai/815df0128d-1710449859/case-image-2.jpg",
         "scrollSpeed": "-1",
         "overlayTop": "/media/pages/work/the-damai/57740648c2-1710449705/case-header-thedamai.svg",
@@ -425,46 +425,46 @@
       "footerAccent": null,
       "nextCase": {
         "slug": "fabric",
-        "name": "FABRIC™",
+        "name": "Project 03",
         "tileColor": "#48494A",
         "tileImage": "/media/pages/work/fabric/ac07564a5f-1688453092/thumbnail-fabric-darkgray.jpg"
       }
     },
     {
       "slug": "fabric",
-      "title": "FABRIC™ - Dennis Snellenberg",
-      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "title": "Project 03 - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/work/fabric/6e80c43c4a-1687424717/thumbnail-fabric-860x540-crop-q72.jpg",
       "canonical": "/work/fabric",
       "loaderActive": 13,
       "navActive": 0,
       "fixedNavActive": 1,
       "cursorSpan": "Next case",
-      "name": "FABRIC™",
-      "liveSite": "https://fabric.codebydennis.com/",
+      "name": "Project 03",
+      "liveSite": "https://example.com/",
       "intro": [
         {
           "label": "Role / Services",
           "items": [
-            "Design & Development"
+            "Design & Build"
           ]
         },
         {
           "label": "Credits",
           "items": [
-            "Branding: Ché Heijnen"
+            "Design: Placeholder Studio"
           ]
         },
         {
           "label": "Location & year",
           "items": [
-            "United Kingdom ©",
+            "London ©",
             "2023"
           ]
         }
       ],
       "introImage": {
-        "liveSiteHref": "https://fabric.codebydennis.com/",
+        "liveSiteHref": "https://example.com/",
         "image": "/media/pages/work/fabric/8377f6f5a6-1687432216/case-header-fabric.jpg",
         "scrollSpeed": "-1",
         "overlayTop": "/media/pages/work/fabric/8f8553d186-1687432162/case-header-fabric-2.svg",
@@ -548,46 +548,46 @@
       "footerAccent": "#E6E8EB",
       "nextCase": {
         "slug": "aanstekelijk",
-        "name": "Aanstekelijk",
+        "name": "Project 04",
         "tileColor": "#101010",
         "tileImage": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk.jpg"
       }
     },
     {
       "slug": "aanstekelijk",
-      "title": "Aanstekelijk - Dennis Snellenberg",
-      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "title": "Project 04 - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk-860x540-crop-q72.jpg",
       "canonical": "/work/aanstekelijk",
       "loaderActive": 14,
       "navActive": 0,
       "fixedNavActive": 1,
       "cursorSpan": "Next case",
-      "name": "Aanstekelijk",
-      "liveSite": "https://aanstekelijk.nl/",
+      "name": "Project 04",
+      "liveSite": "https://example.com/",
       "intro": [
         {
           "label": "Role / Services",
           "items": [
-            "Design & Development"
+            "Design & Build"
           ]
         },
         {
           "label": "Credits",
           "items": [
-            "Branding: Ché Heijnen"
+            "Design: Placeholder Studio"
           ]
         },
         {
           "label": "Location & year",
           "items": [
-            "The Netherlands ©",
+            "New York ©",
             "2023"
           ]
         }
       ],
       "introImage": {
-        "liveSiteHref": "https://aanstekelijk.nl/",
+        "liveSiteHref": "https://example.com/",
         "image": "/media/pages/work/aanstekelijk/40c9f47689-1680160244/case-header-aanstekelijk.jpg",
         "scrollSpeed": "-1",
         "overlayTop": "/media/pages/work/aanstekelijk/bb8662dc3e-1680160289/case-header-aanstekelijk.svg",
@@ -694,34 +694,34 @@
       "footerAccent": "#ddd",
       "nextCase": {
         "slug": "base-create",
-        "name": "Base Create",
+        "name": "Project 05",
         "tileColor": "#363637",
         "tileImage": "/media/pages/work/base-create/1f2468ab51-1680179645/thumbnail-base-desktop.jpg"
       }
     },
     {
       "slug": "base-create",
-      "title": "Base Create - Dennis Snellenberg",
-      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "title": "Project 05 - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/work/base-create/1f2468ab51-1680179645/thumbnail-base-desktop-860x540-crop-q72.jpg",
       "canonical": "/work/base-create",
       "loaderActive": 15,
       "navActive": 0,
       "fixedNavActive": 1,
       "cursorSpan": "Next case",
-      "name": "Base Create",
-      "liveSite": "https://basecreate.com",
+      "name": "Project 05",
+      "liveSite": "https://example.com/",
       "intro": [
         {
           "label": "Role / Services",
           "items": [
-            "Design & Development"
+            "Design & Build"
           ]
         },
         {
           "label": "Location",
           "items": [
-            "Hong Kong"
+            "Lisbon"
           ]
         },
         {
@@ -732,7 +732,7 @@
         }
       ],
       "introImage": {
-        "liveSiteHref": "https://basecreate.com",
+        "liveSiteHref": "https://example.com/",
         "image": "/media/pages/work/base-create/1b5a809c2f-1680180571/case-header-base-v2.jpg",
         "scrollSpeed": "-1",
         "overlayTop": null,
@@ -844,46 +844,46 @@
       "footerAccent": null,
       "nextCase": {
         "slug": "avvr",
-        "name": "AVVR",
+        "name": "Project 06",
         "tileColor": "#D8D3CD",
         "tileImage": "/media/pages/work/avvr/4d2a7758a4-1672918357/thumbnail-avvr-v2.jpg"
       }
     },
     {
       "slug": "avvr",
-      "title": "AVVR - Dennis Snellenberg",
-      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "title": "Project 06 - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/work/avvr/4d2a7758a4-1672918357/thumbnail-avvr-v2-860x540-crop-q72.jpg",
       "canonical": "/work/avvr",
       "loaderActive": 16,
       "navActive": 0,
       "fixedNavActive": 1,
       "cursorSpan": "Next case",
-      "name": "AVVR",
-      "liveSite": "https://avvr.nl/",
+      "name": "Project 06",
+      "liveSite": "https://example.com/",
       "intro": [
         {
           "label": "Role / Services",
           "items": [
-            "Design & Development"
+            "Design & Build"
           ]
         },
         {
           "label": "Credits",
           "items": [
-            "Branding: Ché Heijnen"
+            "Design: Placeholder Studio"
           ]
         },
         {
           "label": "Location & year",
           "items": [
-            "The Netherlands ©",
+            "Copenhagen ©",
             "2023"
           ]
         }
       ],
       "introImage": {
-        "liveSiteHref": "https://avvr.nl/",
+        "liveSiteHref": "https://example.com/",
         "image": "/media/pages/work/avvr/69dfb0e43c-1672818555/avvr_006_resized.jpg",
         "scrollSpeed": "-1",
         "overlayTop": "/media/pages/work/avvr/7a28d40c58-1672818720/case-header-avvr.svg",
@@ -1040,34 +1040,34 @@
       "footerAccent": "#E5E0DC",
       "nextCase": {
         "slug": "graphichunters",
-        "name": "GraphicHunters",
+        "name": "Project 07",
         "tileColor": "#7E7E7E",
         "tileImage": "/media/pages/work/graphichunters/0daec771af-1660128857/thumbnail-gh.jpg"
       }
     },
     {
       "slug": "graphichunters",
-      "title": "GraphicHunters - Dennis Snellenberg",
-      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "title": "Project 07 - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/work/graphichunters/0daec771af-1660128857/thumbnail-gh-860x540-crop-q72.jpg",
       "canonical": "/work/graphichunters",
       "loaderActive": 17,
       "navActive": 0,
       "fixedNavActive": 1,
       "cursorSpan": "Next case",
-      "name": "GraphicHunters",
-      "liveSite": "https://gh22.codebydennis.com/",
+      "name": "Project 07",
+      "liveSite": "https://example.com/",
       "intro": [
         {
           "label": "Role / Services",
           "items": [
-            "Design & Development"
+            "Design & Build"
           ]
         },
         {
           "label": "Location",
           "items": [
-            "The Netherlands"
+            "Toronto"
           ]
         },
         {
@@ -1078,7 +1078,7 @@
         }
       ],
       "introImage": {
-        "liveSiteHref": "https://gh22.codebydennis.com/",
+        "liveSiteHref": "https://example.com/",
         "image": "/media/pages/work/graphichunters/a2a863c4a0-1660130965/case-header-back-gh.jpg",
         "scrollSpeed": "-1",
         "overlayTop": "/media/pages/work/graphichunters/c42cfa6c3a-1660129143/case-header-gh.svg",
@@ -1211,47 +1211,47 @@
       "footerAccent": "#eeeeee",
       "nextCase": {
         "slug": "future-goals",
-        "name": "Future Goals",
+        "name": "Project 08",
         "tileColor": "#DCD0C2",
         "tileImage": "/media/pages/work/future-goals/614e28a662-1653057688/thumbnail-futuregoals.jpg"
       }
     },
     {
       "slug": "future-goals",
-      "title": "Future Goals - Dennis Snellenberg",
-      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "title": "Project 08 - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/work/future-goals/614e28a662-1653057688/thumbnail-futuregoals-860x540-crop-q72.jpg",
       "canonical": "/work/future-goals",
       "loaderActive": 18,
       "navActive": 0,
       "fixedNavActive": 1,
       "cursorSpan": "Next case",
-      "name": "Future Goals",
-      "liveSite": "https://futuregoals.com/en/",
+      "name": "Project 08",
+      "liveSite": "https://example.com/",
       "intro": [
         {
           "label": "Role / Services",
           "items": [
-            "Interaction & Development"
+            "Interface & Motion"
           ]
         },
         {
           "label": "Credits",
           "items": [
-            "Concept: One:Nil",
-            "Design: GraphicHunters"
+            "Design: Placeholder Studio",
+            "Photography: Placeholder Studio"
           ]
         },
         {
           "label": "Location & year",
           "items": [
-            "Curaçao ©",
+            "Melbourne ©",
             "2022"
           ]
         }
       ],
       "introImage": {
-        "liveSiteHref": "https://futuregoals.com/en/",
+        "liveSiteHref": "https://example.com/",
         "image": "/media/pages/work/future-goals/8c916e77f1-1653053706/futuregoals-case-header.jpg",
         "scrollSpeed": "-1",
         "overlayTop": "/media/pages/work/future-goals/98001978ba-1653053710/futuregoals-case-header-front.svg",
@@ -1375,7 +1375,7 @@
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0",
-          "textOverlay": "From the ocean, for the future",
+          "textOverlay": "Design and build, end to end",
           "textOverlayThemeDark": true
         },
         {
@@ -1396,46 +1396,46 @@
       "footerAccent": "#DCD0C2",
       "nextCase": {
         "slug": "atypikal",
-        "name": "Atypikal",
+        "name": "Project 09",
         "tileColor": "#B1A994",
         "tileImage": "/media/pages/work/atypikal/fd1951ffc9-1646837277/thumbnail-atypikal.jpg"
       }
     },
     {
       "slug": "atypikal",
-      "title": "Atypikal - Dennis Snellenberg",
-      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "title": "Project 09 - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/work/atypikal/fd1951ffc9-1646837277/thumbnail-atypikal-860x540-crop-q72.jpg",
       "canonical": "/work/atypikal",
       "loaderActive": 19,
       "navActive": 0,
       "fixedNavActive": 1,
       "cursorSpan": "Next case",
-      "name": "Atypikal",
-      "liveSite": "https://atypikal.co/",
+      "name": "Project 09",
+      "liveSite": "https://example.com/",
       "intro": [
         {
           "label": "Role / Services",
           "items": [
-            "Interaction & Development"
+            "Interface & Motion"
           ]
         },
         {
           "label": "Credits",
           "items": [
-            "Design: Robyn Cambruzzi"
+            "Design: Placeholder Studio"
           ]
         },
         {
           "label": "Location & year",
           "items": [
-            "United States ©",
+            "Stockholm ©",
             "2021"
           ]
         }
       ],
       "introImage": {
-        "liveSiteHref": "https://atypikal.co/",
+        "liveSiteHref": "https://example.com/",
         "image": "/media/pages/work/atypikal/e0f19f8847-1646837280/atypikal-case-header.jpg",
         "scrollSpeed": "-1",
         "overlayTop": "/media/pages/work/atypikal/fd65568bd5-1646837277/atypikal-case-header-overlay.svg",
@@ -1547,46 +1547,46 @@
       "footerAccent": "#d8d5cc",
       "nextCase": {
         "slug": "one-nil",
-        "name": "One:Nil",
+        "name": "Project 10",
         "tileColor": "var(--color-lightgray)",
         "tileImage": "/media/pages/work/one-nil/288460827e-1646837272/thumbnail-onenil-v3.jpg"
       }
     },
     {
       "slug": "one-nil",
-      "title": "One:Nil - Dennis Snellenberg",
-      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "title": "Project 10 - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/work/one-nil/288460827e-1646837272/thumbnail-onenil-v3-860x540-crop-q72.jpg",
       "canonical": "/work/one-nil",
       "loaderActive": 20,
       "navActive": 0,
       "fixedNavActive": 1,
       "cursorSpan": "Next case",
-      "name": "One:Nil",
-      "liveSite": "https://onenil.com/",
+      "name": "Project 10",
+      "liveSite": "https://example.com/",
       "intro": [
         {
           "label": "Role / Services",
           "items": [
-            "Interaction & Development"
+            "Interface & Motion"
           ]
         },
         {
           "label": "Credits",
           "items": [
-            "Design: GraphicHunters"
+            "Design: Placeholder Studio"
           ]
         },
         {
           "label": "Location & year",
           "items": [
-            "The Netherlands ©",
+            "Dublin ©",
             "2021"
           ]
         }
       ],
       "introImage": {
-        "liveSiteHref": "https://onenil.com/",
+        "liveSiteHref": "https://example.com/",
         "image": "/media/pages/work/one-nil/eab8a1f9e0-1646837269/image-case-onenil-v2.jpg",
         "scrollSpeed": "-1",
         "overlayTop": "/media/pages/work/one-nil/e9adff7ae4-1646837269/image-case-onenil-logo.svg",
@@ -1749,34 +1749,34 @@
       "footerAccent": "#dfdfdf",
       "nextCase": {
         "slug": "andy-hardy",
-        "name": "Andy Hardy",
+        "name": "Project 11",
         "tileColor": "#626D6E",
         "tileImage": "/media/pages/work/andy-hardy/f152b03247-1646837253/thumbnail-andyhardy.jpg"
       }
     },
     {
       "slug": "andy-hardy",
-      "title": "Andy Hardy - Dennis Snellenberg",
-      "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+      "title": "Project 11 - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/work/andy-hardy/f152b03247-1646837253/thumbnail-andyhardy-860x540-crop-q72.jpg",
       "canonical": "/work/andy-hardy",
       "loaderActive": 21,
       "navActive": 0,
       "fixedNavActive": 1,
       "cursorSpan": "Next case",
-      "name": "Andy Hardy",
-      "liveSite": "https://andyhardy.co/",
+      "name": "Project 11",
+      "liveSite": "https://example.com/",
       "intro": [
         {
           "label": "Role / Services",
           "items": [
-            "Design & Development"
+            "Design & Build"
           ]
         },
         {
           "label": "Location",
           "items": [
-            "Australia"
+            "Porto"
           ]
         },
         {
@@ -1787,7 +1787,7 @@
         }
       ],
       "introImage": {
-        "liveSiteHref": "https://andyhardy.co/",
+        "liveSiteHref": "https://example.com/",
         "image": "/media/pages/work/andy-hardy/45460186ce-1646837251/image-case-andy.png",
         "scrollSpeed": "-1",
         "overlayTop": "/media/pages/work/andy-hardy/2790d2bebd-1646837255/andy-name.svg",
@@ -1875,7 +1875,7 @@
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0.1",
-          "textOverlay": "Multidisciplinary visual creator",
+          "textOverlay": "Design and build, end to end",
           "textOverlayThemeDark": true
         },
         {
@@ -1975,11 +1975,10 @@
       "footerAccent": null,
       "nextCase": {
         "slug": "twice",
-        "name": "TWICE",
+        "name": "Project 01",
         "tileColor": "#F1F1F1",
         "tileImage": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice.jpg"
       }
     }
   ]
 }
-

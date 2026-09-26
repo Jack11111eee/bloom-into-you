@@ -17,15 +17,16 @@
  * | `[B4]` | `initScrollLetters` 内的 `const scroll` 遮蔽全局 → 改名 `dirTrigger` | `DEVIATIONS.md` B4 |
  * | `[B5]` | 删除死变量 `var strength = 100` | `DEVIATIONS.md` B5 |
  * | `[B6]` | ~~`clearProps: "true"`（字符串）→ 布尔 `true`~~ **已 REVERTED** —— 实测字符串是**空操作**，统一会改变行为 | `DEVIATIONS.md` B6 |
- * | `[B7]` | 新增 `prefers-reduced-motion` 分支（惯性 / 页面转场 / 视差三项），默认路径不变 | `DEVIATIONS.md` B7 |
+ * | `[B7]` | 新增 `prefers-reduced-motion` 分支（惯性 / 页面转场 / 视差 / **首屏 loader** 四项），默认路径不变 | `DEVIATIONS.md` B7 |
  *
  * **刻意未做的改动**（做了即为未登记的行为偏离）：
  *   · `[N3]` `initLoader()` **不**加 `scroll.stop()/start()` —— 原站如此，照抄。
  *   · `[N1]` `window.onresize = scroll.update();` 照抄（Locomotive 自带 `checkResize`，它无害）。
  *   · `[N2]` `pageTransitionIn` 里 `>540` / `≤540` 两个分支值相同，照抄。
- *   · `[B7]` 首屏 loader（`initLoaderHome` / `initLoader`）与菜单/悬停的 CSS 过渡
- *     **不在 B7 的登记范围内**，故 reduced 下仍全速播放 —— 这是**已知缺口**，
- *     登记为 `ISSUES.md` ISSUE-031，**不擅自扩大已登记偏离的范围**。
+ *   · `[B7]` 菜单/悬停的 **CSS 过渡**不在 B7 的登记范围内，故 reduced 下仍全速播放。
+ *     这是**已知缺口**（`ISSUES.md` ISSUE-031）：P8 时用户裁决**只扩大 loader**、
+ *     CSS 过渡不做，**不要顺手补**。
+ *     （首屏 loader 已于 P8 纳入 B7 —— 见 `initLoaderHome` / `initLoader` 末尾的 `[B7]`。）
  *
  * ## 三处必须记住的运行时事实（都经实测，见 `LEDGER.md` / `HANDOFF.md`）
  *
@@ -54,16 +55,18 @@ const selectAll = (e) => document.querySelectorAll(e);
  * （`[实测]` 5 个 CSS 中 `prefers-` 出现 0 次、`index-new.js` 无 reduced 分支）。
  * 故它不受"忠实复刻"约束，但**不得改变默认（非 reduced）路径的任何行为**。
  *
- * 本文件只做 B7 登记的三项，且每处都带 `[B7]` 标记：
+ * 本文件只做 B7 登记的四项，且每处都带 `[B7]` 标记：
  *   1. **去除平滑惯性** —— `initSmoothScroll` 的 `inertia: 10`（`lerp = 1`）
  *   2. **缩短/取消页面转场** —— `pageTransitionIn` / `pageTransitionOut` 的 `progress(1)`
  *      ＋ `leave` 里那段 `delay(495)`
  *   3. **关闭大幅视差** —— `initSmoothScroll` 里摘掉 `data-scroll-speed`
+ *   4. **首屏 loader 走完时间线**（2026-09-26，P8 扩大范围）—— `initLoaderHome` /
+ *      `initLoader` 末尾的 `progress(1)`
  *
- * **刻意未覆盖**：首屏 loader（`initLoaderHome` / `initLoader`，§5.2）与菜单/悬停的
- * CSS 过渡**不在 B7 登记范围内**，故保持原样。这是一处**已知缺口**，
- * 已登记为 `ISSUES.md` ISSUE-031，由用户决定是否扩大 B7 的范围 —— 与 P5 对 B8 的
- * 处置（ISSUE-028）同一做法：**不擅自扩大已登记偏离的范围**。
+ * **刻意未覆盖**：菜单/悬停的 **CSS 过渡**不在 B7 登记范围内，故保持原样。
+ * 这是一处**已知缺口**（`ISSUES.md` ISSUE-031）：P8 时用户裁决只扩大 loader，
+ * **CSS 过渡不做**。**不要顺手补** —— 那要一条 `@media (prefers-reduced-motion: reduce)`
+ * 兜底去改多个组件的时长，改动面比上面四项加起来还宽。
  *
  * 读一次即固定（与 `--vh` 一致：原站也没有 `matchMedia` 的 change 监听）。
  */
@@ -201,6 +204,12 @@ function initLoaderHome() {
     scroll.start();
   });
 
+  // [B7] reduced-motion（2026-09-26，P8 扩大范围）：让 loader 时间线**走完**而不是"跳过"。
+  // 与 `pageTransitionIn` / `pageTransitionOut` 同一手法 —— `progress(1)` 正向渲染过整条
+  // 时间线 ⇒ 里面的 `tl.call(scroll.stop/start)`、`tl.set("html", {cursor})` 等**状态性
+  // 副作用照常生效**，只是没有可见运动（reduced 下页面仍然可用、仍可滚）。
+  // **"快"不等于"取消"** —— 这一条必须实测（见 `scripts/harness/probe-p6-reduced.mjs`）。
+  if (prefersReducedMotion) tl.progress(1);
 }
 
 // Animation - First Page Load
@@ -288,6 +297,12 @@ function initLoader() {
 		cursor: "auto",
 	},"=-.8");
 
+  // [B7] reduced-motion（2026-09-26，P8 扩大范围）：让 loader 时间线**走完**而不是"跳过"。
+  // 与 `pageTransitionIn` / `pageTransitionOut` 同一手法 —— `progress(1)` 正向渲染过整条
+  // 时间线 ⇒ 里面的 `tl.call(scroll.stop/start)`、`tl.set("html", {cursor})` 等**状态性
+  // 副作用照常生效**，只是没有可见运动（reduced 下页面仍然可用、仍可滚）。
+  // **"快"不等于"取消"** —— 这一条必须实测（见 `scripts/harness/probe-p6-reduced.mjs`）。
+  if (prefersReducedMotion) tl.progress(1);
 }
 
 
@@ -1421,11 +1436,11 @@ function initScrolltriggerAnimations() {
   });
   }
 
-  if(document.querySelector(".awwwards-badge")) {
-  // Scrolltrigger Animation : Awwwards
-  $(".awwwards-badge").each(function (index) {
+  if(document.querySelector(".award-badge")) {
+  // Scrolltrigger Animation : award badge
+  $(".award-badge").each(function (index) {
     let triggerElement = $(this);
-    let targetElement = $(".awwwards-badge svg:nth-child(1)");
+    let targetElement = $(".award-badge svg:nth-child(1)");
 
     let tl = gsap.timeline({
       scrollTrigger: {

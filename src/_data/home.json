@@ -1,10 +1,10 @@
 {
-  "_comment": "首页专属内容（SPEC.md §6.2 / §7.1）。P2 阶段仍是原站文案，P8 必须替换。",
-  "introHeading": "Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.",
-  "introText": "The combination of my passion for design, code & interaction positions me in a unique place in the web design world.",
-  "heroRole": "Freelance Designer & Developer",
-  "heroName": "Dennis Snellenberg",
-  "heroLocation": "Located in the Netherlands",
+  "_comment": "首页专属内容（SPEC.md §6.2 / §7.1）。P8 已换成占位内容（DEVIATIONS.md D2）；`moreWorkCount` **有意不在此处** —— 由 `src.11tydata.js` 的 `homeMoreWorkCount` 派生（B8）。",
+  "introHeading": "Designing and building calm, precise digital products. Clear structure, considered motion, and interfaces that stay out of the way.",
+  "introText": "Design, code and interaction are where the work comes together — small details, built carefully.",
+  "heroRole": "Independent Designer & Developer",
+  "heroName": "Bloom Studio",
+  "heroLocation": "Located in Amsterdam",
   "featured": [
     {
       "classes": [
@@ -14,9 +14,9 @@
       "href": "/work/twice",
       "target": null,
       "arrow": false,
-      "name": "TWICE",
+      "name": "Project 01",
       "location": null,
-      "services": "Interaction & Development",
+      "services": "Interface & Motion",
       "year": "2024",
       "tileColor": "#F1F1F1",
       "tileImage": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice.jpg"
@@ -30,9 +30,9 @@
       "href": "/work/the-damai",
       "target": null,
       "arrow": false,
-      "name": "The Damai",
+      "name": "Project 02",
       "location": null,
-      "services": "Design & Development",
+      "services": "Design & Build",
       "year": "2024",
       "tileColor": "#E0D9D1",
       "tileImage": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2.jpg"
@@ -46,9 +46,9 @@
       "href": "/work/fabric",
       "target": null,
       "arrow": false,
-      "name": "FABRIC™",
+      "name": "Project 03",
       "location": null,
-      "services": "Design & Development",
+      "services": "Design & Build",
       "year": "2023",
       "tileColor": "#48494A",
       "tileImage": "/media/pages/work/fabric/ac07564a5f-1688453092/thumbnail-fabric-darkgray.jpg"
@@ -62,15 +62,13 @@
       "href": "/work/aanstekelijk",
       "target": null,
       "arrow": false,
-      "name": "Aanstekelijk",
+      "name": "Project 04",
       "location": null,
-      "services": "Design & Development",
+      "services": "Design & Build",
       "year": "2023",
       "tileColor": "#101010",
       "tileImage": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk.jpg"
     }
   ],
-  "moreWorkHref": "/work",
-  "moreWorkCount": "11"
+  "moreWorkHref": "/work"
 }
-

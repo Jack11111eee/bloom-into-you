@@ -8,20 +8,23 @@ ns: contact
   这是一页**一次性排版**（无重复结构），按 §9.3 / §6.6 的立场"逐字归档，不做抽象"。
   共享部件已换成 include，原站绝对 URL 已折成根相对路径。
 
-  > ⚠️ 表单的 `<label for>` **尚未按 §5.12 A1 修正** —— 当前 6 个 label 的 `for` 与
-  > 原站**逐字相同**（`tel` / `name` / `email` / `email` / `email` / `message`），
-  > 即 organization 与 service 两个 label 仍指向 email 输入框。
-  > 这里原先的注释写的是"已按 A1 修正"，**与代码不符**（`ISSUES.md` ISSUE-019）。
-  > 修正动作排在 **P8 Gate 4**（"A 类缺陷已修"），届时改这两处 `for` 并同步
-  > `DEVIATIONS.md` A1；跨站比对会因此多两处已登记差异，需要相应的归一化。
+  > ✅ 表单的 `<label for>` **已按 §5.12 A1 修正**（2026-09-26，P8 Gate 4）：
+  > organization 与 service 两个 label 从 `for="email"` 改为 `for="company"` /
+  > `for="service"`。原站的 6 个 `for` 是 `tel` / `name` / `email` / `email` / `email` /
+  > `message` —— 三个 label 共指 email 输入框，是可访问性缺陷（`ISSUES.md` ISSUE-019）。
+  > 跨站结构比对会因此多 2 处**已登记**差异。**原计划为它加一条窄归一化
+  > `normalizeLabelFor`，实测后取消** —— P8 之后跨站（保真）检查在 `--baseline local` 下
+  > **整类报 SKIP**，那 2 处差异进不了任何 Gate，写归一化是死代码（`DEVIATIONS.md` A1）。
 
-  P8「内容个性化」必须替换本页的全部原站文案与媒体引用。
+  > **P8 已换成占位内容**（`DEVIATIONS.md` D2）：文案、邮箱、电话、业务信息与 4 条社交
+  > 链接全部替换；社交链接一律指向 `example.com`（RFC 2606 的保留域名）。
+  > **各列表的条目数必须保持**（业务信息 4 条、社交 4 条），否则结构层会多出差异。
 #}
 <header class="section default-header contact-header theme-dark" data-scroll-section="">
    {% include "partials/nav-bar.njk" %}   <div class="container medium">
       <div class="row once-in">
          <div class="flex-col">
-            <h1><span><div class="profile-picture"></div> Let's start a </span><span>project together</span></h1>
+            <h1><span><div class="profile-picture"></div> Tell me about </span><span>your next project</span></h1>
          </div>
          <div class="flex-col">
             <div class="profile-picture"></div>
@@ -49,27 +52,27 @@ ns: contact
                <div class="form-col">
                   <h5>01</h5>
                   <label class="label" for="name">What's your name?</label>
-                  <input class="field" type="text" id="form-name" name="name" value="" required="" placeholder="John Doe *">
+                  <input class="field" type="text" id="form-name" name="name" value="" required="" placeholder="Jane Doe *">
                                  </div>
                <div class="form-col">
                   <h5>02</h5>
                   <label class="label" for="email">What's your email?</label>
-                  <input class="field" type="email" id="form-email" name="email" value="" required="" placeholder="john@doe.com *">
+                  <input class="field" type="email" id="form-email" name="email" value="" required="" placeholder="jane@doe.com *">
                                  </div>
                <div class="form-col">
                   <h5>03</h5>
-                  <label class="label" for="email">What's the name of your organization?</label>
-                  <input class="field" type="text" id="form-company" name="company" value="" required="" placeholder="John &amp; Doe ®">
+                  <label class="label" for="company">What's the name of your organization?</label>
+                  <input class="field" type="text" id="form-company" name="company" value="" required="" placeholder="Acme ®">
                                  </div>
                <div class="form-col">
                   <h5>04</h5>
-                  <label class="label" for="email">What services are you looking for?</label>
+                  <label class="label" for="service">What services are you looking for?</label>
                   <input class="field" type="text" id="form-service" name="service" value="" required="" placeholder="Web Design, Web Development ...">
                                  </div>
                <div class="form-col">
                   <h5>05</h5>
                   <label class="label" for="message">Your message</label>
-                  <textarea class="field" type="text" id="form-message" name="message" rows="8" required="" placeholder="Hello Dennis, can you help me with ... *"></textarea>
+                  <textarea class="field" type="text" id="form-message" name="message" rows="8" required="" placeholder="Hello, can you help me with ... *"></textarea>
                                  </div>
                <div class="btn-contact-send">
                   <div class="btn btn-round" data-scroll="" data-scroll-speed="2" data-scroll-offset="-50%, 0%">
@@ -87,54 +90,54 @@ ns: contact
             <h5>Contact Details</h5>
             <ul class="links-wrap">
                <li class="btn btn-link btn-link-external">
-                  <a href="mailto:info@dennissnellenberg.com" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                  <a href="mailto:hello@example.com" class="btn-click magnetic" data-strength="20" data-strength-text="10">
                      <span class="btn-text">
-                        <span class="btn-text-inner">info@dennissnellenberg.com</span>
+                        <span class="btn-text-inner">hello@example.com</span>
                      </span>
                   </a>
                </li>
                <li class="btn btn-link btn-link-external">
-                  <a href="tel:+31627847430" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                  <a href="tel:+31200000000" class="btn-click magnetic" data-strength="20" data-strength-text="10">
                      <span class="btn-text">
-                        <span class="btn-text-inner">+31 6 27 84 74 30</span>
+                        <span class="btn-text-inner">+31 20 000 0000</span>
                      </span>
                   </a>
                </li>
             </ul>
             <h5>Business Details</h5>
             <ul class="links-wrap">
-               <li><p>Dennis Snellenberg B.V.</p></li>
-               <li><p>CoC: 92411711</p></li>
-               <li><p>VAT: NL866034080B01</p></li>
-               <li><p>Location: The Netherlands</p></li>
+               <li><p>Bloom Studio</p></li>
+               <li><p>Independent design practice</p></li>
+               <li><p>Est. 2020</p></li>
+               <li><p>Location: Amsterdam</p></li>
             </ul>
             <h5>Socials</h5>
             <ul class="links-wrap">
                <li class="btn btn-link btn-link-external">
-                  <a href="https://www.awwwards.com/dennissnellenberg/" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                  <a href="https://example.com/journal" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
                      <span class="btn-text">
-                        <span class="btn-text-inner">Awwwards</span>
+                        <span class="btn-text-inner">Journal</span>
                      </span>
                   </a>
                </li>
                <li class="btn btn-link btn-link-external">
-                  <a href="https://www.instagram.com/codebydennis/" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                  <a href="https://example.com/photos" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
                      <span class="btn-text">
-                        <span class="btn-text-inner">Instagram</span>
+                        <span class="btn-text-inner">Photo feed</span>
                      </span>
                   </a>
                </li>
                <li class="btn btn-link btn-link-external">
-                  <a href="https://twitter.com/codebydennis" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                  <a href="https://example.com/newsletter" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
                      <span class="btn-text">
-                        <span class="btn-text-inner">Twitter</span>
+                        <span class="btn-text-inner">Newsletter</span>
                      </span>
                   </a>
                </li>
                <li class="btn btn-link btn-link-external">
-                  <a href="https://www.linkedin.com/in/dennissnellenberg/" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                  <a href="https://example.com/press" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
                      <span class="btn-text">
-                        <span class="btn-text-inner">LinkedIn</span>
+                        <span class="btn-text-inner">Press</span>
                      </span>
                   </a>
                </li>

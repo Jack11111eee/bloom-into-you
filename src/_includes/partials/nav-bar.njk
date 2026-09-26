@@ -4,15 +4,23 @@
   全站 17 页逐字一致，唯一变化是 `.links-wrap > li` 上 `active` 的位置
   （`navActive`；archive 与 styleguide 无高亮）。归一化 `active` 后比对：**1 个变体**。
 
-  左侧的 "Code by Dennis Snellenberg" 块只在 `work-header` 里出现吗？——不是：
-  它存在于全部 17 页的 `.nav-bar` 中（已逐页确认），故一并放在本 partial。
+  左侧的 credit 块存在于全部 17 页的 `.nav-bar` 中（已逐页确认），故一并放在本 partial。
+
+  > **P8 的两处改动**（`DEVIATIONS.md` E1 / D2）：
+  > ① 类名中性化 —— 原站的类名就是作者姓名（`.cbd` / `.dennis` / `.dennis-span` /
+  >    `.snellenberg`）。改为 `.credit-by` / `.credit-first` / `.credit-first-span` /
+  >    `.credit-last`。**必须与 `styleguide.css` 的选择器同步改**：只改一处会让
+  >    悬停动画静默失效（`.credit` / `.code-by` 保留，它们不含姓名）。
+  > ② 文案换成占位内容。
+  > 悬停动画的 `-3.7em` / `3.25em` 位移是按原作者姓名的字宽调的，换名后仍工作
+  > 但位移不再"刚好" —— 已登记为已知观感差异，**不要**顺手改这些常量。
 #}
 <div class="nav-bar">
     <div class="credits-top">
         <div class="btn btn-link btn-left-top">
             <a href="/" class="btn-click magnetic" data-strength="20" data-strength-text="10">
             <span class="btn-text">
-                <div class="credit"><span>©</span></div><div class="cbd"><span class="code-by">Code by </span><span class="dennis"><span class="dennis-span">Dennis</span> <span class="snellenberg">Snellenberg</span></span></div>
+                <div class="credit"><span>©</span></div><div class="credit-by"><span class="code-by">Code by </span><span class="credit-first"><span class="credit-first-span">Bloom</span> <span class="credit-last">Studio</span></span></div>
             </span>
             </a>
         </div>

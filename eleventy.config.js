@@ -14,7 +14,12 @@ export default function (eleventyConfig) {
   // 路径刻意与原站同构（`/assets/css/…`、`/assets/img/…`、`/media/…`），
   // 因为 SPEC.md §7.5 要求"保持文件名与目录结构，使 HTML 中的引用可以原样保留"，
   // 也因为跨站比对要按 URL 折叠后两侧可比（`--url-mode basename`）。
+  //
+  // `src/media/`（P8 起）是 `scripts/generate-placeholders.mjs` 产出的**占位媒体**，
+  // 对应原站的 `/media/pages/…`。它入库，因为它是产物的组成部分 ——
+  // 这样 `dist/` 是**自包含**的，`scripts/serve-dist.mjs` 不再回落到 `reference/media/`。
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
+  eleventyConfig.addPassthroughCopy({ 'src/media': 'media' });
 
   /**
    * thumb — 由原图 URL 推出 Kirby 的 -540x 缩略图 URL。

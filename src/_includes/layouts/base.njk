@@ -30,10 +30,13 @@
     · **不移植 Google Analytics**（SPEC.md §1.3 的范围边界）：原站 <head> 里有 2 个
       <script>（外部 gtag + 内联配置），产物没有。故 `script` 元素**不参与结构层比对**，
       §2.1 的加载顺序改由 motion 层的 `scripts` 有序清单专门比对（见 harness）。
-    · 两个自托管脚本的 host 与原站不同（`/assets/js/…` vs
-      `https://dennissnellenberg.com/assets/js/…`）—— 比对时由 `--url-mode path` 折叠。
+    · 两个自托管脚本的 host 与原站不同（`/assets/js/…` vs 原站的绝对 URL）
+      —— 比对时由 `--url-mode path` 折叠。
+
+  > **P8**：`<html>` 后的那句原站署名注释已换成中性的（`DEVIATIONS.md` E1 / D2）——
+  > 它是原作者的署名，产物公开后不应带走。
 #}
-<!DOCTYPE html><!--  This site was created by Dennis Snellenberg (Code by Dennis)  -->
+<!DOCTYPE html><!--  This site was built from a reconstruction of a reference design.  -->
 <html lang="{{ site.lang }}">
 {% include "partials/head.njk" %}
 

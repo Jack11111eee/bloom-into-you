@@ -1,5 +1,5 @@
 {
-  "_comment": "站点级常量（SPEC.md §7.2）。P2 阶段仍是**原站文案**，P8「内容个性化」必须全部替换。",
+  "_comment": "站点级常量（SPEC.md §7.2）。P8 已把原站文案换成占位内容（DEVIATIONS.md D2）：练习名「Bloom Studio」由仓库名派生，**不是**任何真实个人或机构的身份；社交账号一律指向 example.com（RFC 2606），标签改成不含第三方品牌的中性词。",
   "lang": "en",
   "navBar": [
     {
@@ -96,20 +96,20 @@
   ],
   "socials": [
     {
-      "label": "Awwwards",
-      "url": "https://www.awwwards.com/dennissnellenberg/"
+      "label": "Journal",
+      "url": "https://example.com/journal"
     },
     {
-      "label": "Instagram",
-      "url": "https://www.instagram.com/codebydennis/"
+      "label": "Photo feed",
+      "url": "https://example.com/photos"
     },
     {
-      "label": "Twitter",
-      "url": "https://twitter.com/codebydennis"
+      "label": "Newsletter",
+      "url": "https://example.com/newsletter"
     },
     {
-      "label": "LinkedIn",
-      "url": "https://www.linkedin.com/in/dennissnellenberg/"
+      "label": "Press",
+      "url": "https://example.com/press"
     }
   ],
   "loaderWords": [
@@ -158,47 +158,47 @@
       "cls": ""
     },
     {
-      "text": "TWICE",
+      "text": "Project 01",
       "cls": ""
     },
     {
-      "text": "The Damai",
+      "text": "Project 02",
       "cls": ""
     },
     {
-      "text": "FABRIC™",
+      "text": "Project 03",
       "cls": ""
     },
     {
-      "text": "Aanstekelijk",
+      "text": "Project 04",
       "cls": ""
     },
     {
-      "text": "Base Create",
+      "text": "Project 05",
       "cls": ""
     },
     {
-      "text": "AVVR",
+      "text": "Project 06",
       "cls": ""
     },
     {
-      "text": "GraphicHunters",
+      "text": "Project 07",
       "cls": ""
     },
     {
-      "text": "Future Goals",
+      "text": "Project 08",
       "cls": ""
     },
     {
-      "text": "Atypikal",
+      "text": "Project 09",
       "cls": ""
     },
     {
-      "text": "One:Nil",
+      "text": "Project 10",
       "cls": ""
     },
     {
-      "text": "Andy Hardy",
+      "text": "Project 11",
       "cls": ""
     },
     {
@@ -227,16 +227,16 @@
     }
   ],
   "contact": {
-    "email": "info@dennissnellenberg.com",
-    "tel": "+31 6 27 84 74 30",
-    "telHref": "tel:+31627847430",
+    "email": "hello@example.com",
+    "tel": "+31 20 000 0000",
+    "telHref": "tel:+31200000000",
     "contactHref": "/contact"
   },
   "footer": {
     "versionLabel": "Version",
-    "version": "2022 © Edition",
+    "version": "2026 © Edition",
     "timeLabel": "Local time",
-    "timeText": "09:41 PM CET",
+    "timeText": "12:00 PM CET",
     "socialsLabel": "Socials"
   }
 }
