@@ -17,13 +17,15 @@
  * | `[B4]` | `initScrollLetters` 内的 `const scroll` 遮蔽全局 → 改名 `dirTrigger` | `DEVIATIONS.md` B4 |
  * | `[B5]` | 删除死变量 `var strength = 100` | `DEVIATIONS.md` B5 |
  * | `[B6]` | ~~`clearProps: "true"`（字符串）→ 布尔 `true`~~ **已 REVERTED** —— 实测字符串是**空操作**，统一会改变行为 | `DEVIATIONS.md` B6 |
+ * | `[B7]` | 新增 `prefers-reduced-motion` 分支（惯性 / 页面转场 / 视差三项），默认路径不变 | `DEVIATIONS.md` B7 |
  *
  * **刻意未做的改动**（做了即为未登记的行为偏离）：
  *   · `[N3]` `initLoader()` **不**加 `scroll.stop()/start()` —— 原站如此，照抄。
  *   · `[N1]` `window.onresize = scroll.update();` 照抄（Locomotive 自带 `checkResize`，它无害）。
  *   · `[N2]` `pageTransitionIn` 里 `>540` / `≤540` 两个分支值相同，照抄。
- *   · `prefers-reduced-motion` **不在此处** —— 它是 P6 的新增分支（`DEVIATIONS.md` B7），
- *     且必须保证默认路径与"未加此功能"逐帧一致，故与 P6 一起做。
+ *   · `[B7]` 首屏 loader（`initLoaderHome` / `initLoader`）与菜单/悬停的 CSS 过渡
+ *     **不在 B7 的登记范围内**，故 reduced 下仍全速播放 —— 这是**已知缺口**，
+ *     登记为 `ISSUES.md` ISSUE-031，**不擅自扩大已登记偏离的范围**。
  *
  * ## 三处必须记住的运行时事实（都经实测，见 `LEDGER.md` / `HANDOFF.md`）
  *
@@ -46,6 +48,26 @@ let scroll;
 const body = document.body;
 const select = (e) => document.querySelector(e);
 const selectAll = (e) => document.querySelectorAll(e);
+
+/**
+ * [B7] `prefers-reduced-motion` —— **新增能力**，**原站完全没有**
+ * （`[实测]` 5 个 CSS 中 `prefers-` 出现 0 次、`index-new.js` 无 reduced 分支）。
+ * 故它不受"忠实复刻"约束，但**不得改变默认（非 reduced）路径的任何行为**。
+ *
+ * 本文件只做 B7 登记的三项，且每处都带 `[B7]` 标记：
+ *   1. **去除平滑惯性** —— `initSmoothScroll` 的 `inertia: 10`（`lerp = 1`）
+ *   2. **缩短/取消页面转场** —— `pageTransitionIn` / `pageTransitionOut` 的 `progress(1)`
+ *      ＋ `leave` 里那段 `delay(495)`
+ *   3. **关闭大幅视差** —— `initSmoothScroll` 里摘掉 `data-scroll-speed`
+ *
+ * **刻意未覆盖**：首屏 loader（`initLoaderHome` / `initLoader`，§5.2）与菜单/悬停的
+ * CSS 过渡**不在 B7 登记范围内**，故保持原样。这是一处**已知缺口**，
+ * 已登记为 `ISSUES.md` ISSUE-031，由用户决定是否扩大 B7 的范围 —— 与 P5 对 B8 的
+ * 处置（ISSUE-028）同一做法：**不擅自扩大已登记偏离的范围**。
+ *
+ * 读一次即固定（与 `--vh` 一致：原站也没有 `matchMedia` 的 change 监听）。
+ */
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 initPageTransitions();
 
@@ -373,6 +395,11 @@ function pageTransitionIn() {
 		opacity: 0,
 	});
 
+  // [B7] reduced-motion：把这条 2.2s 的转场**取消**成瞬时。
+  // `progress(1)` 正向渲染过整条时间线 ⇒ 全部 `tl.set` 与 `tl.call(scroll.stop)`
+  // 照常生效（"保留必要的状态变化"），只是不再有可见运动。
+  if (prefersReducedMotion) tl.progress(1);
+
 }
 
 
@@ -403,6 +430,10 @@ function pageTransitionOut() {
     // ★ 同 `initLoader`：原站此处是**字符串** `"true"`（空操作），照抄。
     clearProps: "true"
   });
+
+  // [B7] 同 `pageTransitionIn`：`progress(1)` 会走到 `y: "0vh"` 的终点并触发
+  // `tl.call(scroll.start)`，终点状态与正常播完**逐位相同**。
+  if (prefersReducedMotion) tl.progress(1);
 
 }
 
@@ -456,7 +487,16 @@ function initPageTransitions() {
       async leave(data) {
         // animate loading screen in
         pageTransitionIn(data.current);
-        await delay(495);
+        // [B7] reduced-motion：这段等待的唯一目的是"让擦除动画播出来"
+        // （§5.7 实测：`leave` 只 `await delay(495)`，而 `pageTransitionIn` 长 2.2s
+        //  ⇒ 可见转场 ≈ 495ms + `pageTransitionOut` ≈ 2.4s）。转场已被 `progress(1)`
+        // 取消，这段等待就没有对象了。**默认路径的 495ms 不动。**
+        //
+        // ⚠️ **不能写成 `delay(prefersReducedMotion ? 0 : 495)`**：`delay()` 的第一行是
+        // `n = n || 2000`，**传 0 会被换成 2000ms** —— 实测那样写转场反而由 623ms
+        // 变成 **2052ms**（`probe-p6-reduced.mjs` 的第一版就踩了这个：`0 || 2000`）。
+        // 故这里用条件跳过，而不是传一个"看起来是 0"的值。
+        if (!prefersReducedMotion) await delay(495);
         data.current.container.remove();
       },
       async enter(data) {
@@ -490,9 +530,36 @@ function initPageTransitions() {
 
   function initSmoothScroll(container) {
 
+    // [B7] reduced-motion：关闭大幅视差。
+    // 视差由 Locomotive 在 init 时读 `data-scroll-speed` 建立（`addElements` → `el.speed`
+    // → `transformElements`），故**在构造之前**摘掉属性即可，且这是唯一的作用点 ——
+    // `data-scroll-speed` 在 `index-new.js` 与全部 CSS 里都不出现（实测 grep 无命中）。
+    // 放在本函数而不是 Barba hook 里，是因为**每次客户端跳转都会调用它**（`once` /
+    // `beforeEnter`），Barba 注入的新 DOM 因此同样被覆盖。
+    if (prefersReducedMotion) {
+      container.querySelectorAll('[data-scroll-speed]').forEach((el) => el.removeAttribute('data-scroll-speed'));
+    }
+
     scroll = new LocomotiveScroll({
       el: container.querySelector('[data-scroll-container]'),
       smooth: true,
+      // [B7] reduced-motion：去除平滑惯性。
+      //
+      // `inertia` 在 `locomotive-scroll.min.js` 里**只被用在一处** ——
+      // `(e = s.call(this, i)).inertia && (e.lerp = .1 * e.inertia)`（全文 grep 仅此一次），
+      // 故 `inertia: 10` 的唯一效果就是 `lerp = 1`。
+      //
+      // `[实测]` 2026-09-26 / Chromium 153 / 1440×900（`probe-p6-inertia.mjs`）：
+      // `scrollTo(600, {duration:0})` 的收敛 —— 默认 `lerp = .1` 是 **497ms / 32 帧**，
+      // `inertia: 10`（`lerp = 1`）是 **12ms / 2 帧**；同时 `has-scroll-smooth`、
+      // `main: fixed`、`limit.y = 2747`、`[data-scroll-section]` 的 `matrix3d` 位移
+      // **全部不变** ⇒ 只去掉缓动，不动引擎。
+      //
+      // **不用 `smooth: false`**：那会让 Locomotive 换成 Native 类，而
+      // `main { position: fixed }` 在 >1024px 是**无条件**的（`style-new.css` L7），
+      // 放开它的只有 `@media (max-width:1024px)` 与 `main.touch` 两条路 ——
+      // 桌面上关掉 smooth 会得到一个"固定容器 + 原生滚动"的死页面。
+      inertia: prefersReducedMotion ? 10 : undefined,
     });
 
     // [N1] 赋值的是 `scroll.update()` 的返回值（undefined），故为 no-op。
