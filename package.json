@@ -7,7 +7,8 @@
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "gate": "node scripts/gate.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
