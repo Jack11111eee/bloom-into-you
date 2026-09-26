@@ -2063,7 +2063,7 @@ main.touch .main-wrap {
 }
 
 .single-about-image .overlay:nth-child(1) {
-   background: url("../img/DSC07312-2.jpg") center center no-repeat;
+   background: url("../img/studio-04.jpg") center center no-repeat;
    background-size: cover;
    top: -20vh;
    height: 105%;
@@ -2316,21 +2316,21 @@ main.touch .main-wrap {
 }
 
 .about-award .single-image  .overlay:nth-child(1) {
-   /* background: url("../img/DSC07292.jpg") center center no-repeat;
+   /* background: url("../img/studio-03.jpg") center center no-repeat;
    background-size: cover;
    height: 130%;
    top: -25%;
    width: 105%;
    left: -5%; */
 
-   background: url("../img/DSC07079.jpg") center center no-repeat;
+   background: url("../img/studio-02.jpg") center center no-repeat;
    background-size: cover;
    top: -3%;
    height: 106%;
    width: 140%;
    left: -40%;
 
-   /* background: url("../img/Kien_Team-16.jpg") center center no-repeat;
+   /* background: url("../img/team-16.jpg") center center no-repeat;
    background-size: cover;
    top: -3%;
    height: 106%;
@@ -2401,7 +2401,7 @@ main.touch .main-wrap {
    }
    
    .about-award .single-image  .overlay:nth-child(1) {
-      background: url("../img/DSC07079.jpg") center center no-repeat;
+      background: url("../img/studio-02.jpg") center center no-repeat;
       background-size: cover;
       top: -8%;
       height: 110%;

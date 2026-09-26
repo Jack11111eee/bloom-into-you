@@ -6,7 +6,7 @@
         "development",
         "interaction"
       ],
-      "href": "/work/twice",
+      "href": "/work/project-01",
       "target": null,
       "arrow": false,
       "name": "Project 01",
@@ -14,7 +14,7 @@
       "services": "Interface & Motion",
       "year": "2024",
       "tileColor": "#F1F1F1",
-      "tileImage": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice.jpg"
+      "tileImage": "/media/pages/work/project-01/0ab7e43954-1710404752/thumbnail-project-01.jpg"
     },
     {
       "classes": [
@@ -22,7 +22,7 @@
         "development",
         "interaction"
       ],
-      "href": "/work/the-damai",
+      "href": "/work/project-02",
       "target": null,
       "arrow": false,
       "name": "Project 02",
@@ -30,7 +30,7 @@
       "services": "Design & Build",
       "year": "2024",
       "tileColor": "#E0D9D1",
-      "tileImage": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2.jpg"
+      "tileImage": "/media/pages/work/project-02/b511d32d21-1710452224/thumbnail-project-02-v2.jpg"
     },
     {
       "classes": [
@@ -38,7 +38,7 @@
         "development",
         "interaction"
       ],
-      "href": "/work/fabric",
+      "href": "/work/project-03",
       "target": null,
       "arrow": false,
       "name": "Project 03",
@@ -46,7 +46,7 @@
       "services": "Design & Build",
       "year": "2023",
       "tileColor": "#48494A",
-      "tileImage": "/media/pages/work/fabric/ac07564a5f-1688453092/thumbnail-fabric-darkgray.jpg"
+      "tileImage": "/media/pages/work/project-03/ac07564a5f-1688453092/thumbnail-project-03-darkgray.jpg"
     },
     {
       "classes": [
@@ -54,7 +54,7 @@
         "development",
         "interaction"
       ],
-      "href": "/work/aanstekelijk",
+      "href": "/work/project-04",
       "target": null,
       "arrow": false,
       "name": "Project 04",
@@ -62,7 +62,7 @@
       "services": "Design & Build",
       "year": "2023",
       "tileColor": "#101010",
-      "tileImage": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk.jpg"
+      "tileImage": "/media/pages/work/project-04/441187fb44-1687423090/thumbnail-project-04.jpg"
     },
     {
       "classes": [
@@ -70,7 +70,7 @@
         "interaction",
         "design"
       ],
-      "href": "/work/base-create",
+      "href": "/work/project-05",
       "target": null,
       "arrow": false,
       "name": "Project 05",
@@ -78,7 +78,7 @@
       "services": "Design & Build",
       "year": "2023",
       "tileColor": "#363637",
-      "tileImage": "/media/pages/work/base-create/1f2468ab51-1680179645/thumbnail-base-desktop.jpg"
+      "tileImage": "/media/pages/work/project-05/1f2468ab51-1680179645/thumbnail-project-05-desktop.jpg"
     },
     {
       "classes": [
@@ -86,7 +86,7 @@
         "development",
         "interaction"
       ],
-      "href": "/work/avvr",
+      "href": "/work/project-06",
       "target": null,
       "arrow": false,
       "name": "Project 06",
@@ -94,14 +94,14 @@
       "services": "Design & Build",
       "year": "2023",
       "tileColor": "#D8D3CD",
-      "tileImage": "/media/pages/work/avvr/4d2a7758a4-1672918357/thumbnail-avvr-v2.jpg"
+      "tileImage": "/media/pages/work/project-06/4d2a7758a4-1672918357/thumbnail-project-06-v2.jpg"
     },
     {
       "classes": [
         "design",
         "development"
       ],
-      "href": "/work/graphichunters",
+      "href": "/work/project-07",
       "target": null,
       "arrow": false,
       "name": "Project 07",
@@ -109,14 +109,14 @@
       "services": "Design & Build",
       "year": "2022",
       "tileColor": "#7E7E7E",
-      "tileImage": "/media/pages/work/graphichunters/0daec771af-1660128857/thumbnail-gh.jpg"
+      "tileImage": "/media/pages/work/project-07/0daec771af-1660128857/thumbnail-project-07.jpg"
     },
     {
       "classes": [
         "development",
         "interaction"
       ],
-      "href": "/work/future-goals",
+      "href": "/work/project-08",
       "target": null,
       "arrow": false,
       "name": "Project 08",
@@ -124,14 +124,14 @@
       "services": "Interface & Motion",
       "year": "2022",
       "tileColor": "#DCD0C2",
-      "tileImage": "/media/pages/work/future-goals/614e28a662-1653057688/thumbnail-futuregoals.jpg"
+      "tileImage": "/media/pages/work/project-08/614e28a662-1653057688/thumbnail-project-08.jpg"
     },
     {
       "classes": [
         "development",
         "interaction"
       ],
-      "href": "/work/atypikal",
+      "href": "/work/project-09",
       "target": null,
       "arrow": false,
       "name": "Project 09",
@@ -139,14 +139,14 @@
       "services": "Interface & Motion",
       "year": "2021",
       "tileColor": "#B1A994",
-      "tileImage": "/media/pages/work/atypikal/fd1951ffc9-1646837277/thumbnail-atypikal.jpg"
+      "tileImage": "/media/pages/work/project-09/fd1951ffc9-1646837277/thumbnail-project-09.jpg"
     },
     {
       "classes": [
         "development",
         "interaction"
       ],
-      "href": "/work/one-nil",
+      "href": "/work/project-10",
       "target": null,
       "arrow": false,
       "name": "Project 10",
@@ -154,14 +154,14 @@
       "services": "Interface & Motion",
       "year": "2021",
       "tileColor": "var(--color-lightgray)",
-      "tileImage": "/media/pages/work/one-nil/288460827e-1646837272/thumbnail-onenil-v3.jpg"
+      "tileImage": "/media/pages/work/project-10/288460827e-1646837272/thumbnail-project-10-v3.jpg"
     },
     {
       "classes": [
         "design",
         "development"
       ],
-      "href": "/work/andy-hardy",
+      "href": "/work/project-11",
       "target": null,
       "arrow": false,
       "name": "Project 11",
@@ -169,7 +169,7 @@
       "services": "Design & Build",
       "year": "2020",
       "tileColor": "#626D6E",
-      "tileImage": "/media/pages/work/andy-hardy/f152b03247-1646837253/thumbnail-andyhardy.jpg"
+      "tileImage": "/media/pages/work/project-11/f152b03247-1646837253/thumbnail-project-11.jpg"
     }
   ]
 }

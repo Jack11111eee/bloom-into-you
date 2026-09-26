@@ -2,11 +2,11 @@
   "_comment": "11 个案例（SPEC.md §7.3）。blocks 是 §6.1 的逐页序列，由 reference/html 机械抽取。P8 必须替换全部文案与媒体。",
   "projects": [
     {
-      "slug": "twice",
+      "slug": "project-01",
       "title": "Project 01 - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice-860x540-crop-q72.jpg",
-      "canonical": "/work/twice",
+      "ogImage": "/media/pages/work/project-01/0ab7e43954-1710404752/thumbnail-project-01-860x540-crop-q72.jpg",
+      "canonical": "/work/project-01",
       "loaderActive": 11,
       "navActive": 0,
       "fixedNavActive": 1,
@@ -36,9 +36,9 @@
       ],
       "introImage": {
         "liveSiteHref": "https://example.com/",
-        "image": "/media/pages/work/twice/56dc0c6ce1-1710405711/dsc7458.jpg",
+        "image": "/media/pages/work/project-01/56dc0c6ce1-1710405711/project-01-photo-7458.jpg",
         "scrollSpeed": "-1",
-        "overlayTop": "/media/pages/work/twice/b8d83f1720-1710411070/case-header-twice.svg",
+        "overlayTop": "/media/pages/work/project-01/b8d83f1720-1710411070/case-header-project-01.svg",
         "paddingBottom": true
       },
       "blocks": [
@@ -51,7 +51,7 @@
           "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/twice/2a06f31598-1710406342/screen-rec-home-2.mov",
+            "src": "/media/pages/work/project-01/2a06f31598-1710406342/project-01-screen-rec-home-2.mov",
             "cls": [
               "overlay"
             ]
@@ -69,7 +69,7 @@
           "frame": null,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/twice/9c011cac90-1710411859/screen-rec-nav-hover.mp4",
+            "src": "/media/pages/work/project-01/9c011cac90-1710411859/project-01-screen-rec-nav-hover.mp4",
             "cls": [
               "overlay"
             ]
@@ -85,7 +85,7 @@
           "paddingBottom": false,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/twice/9410598988-1710411431/starvie.mp4",
+            "src": "/media/pages/work/project-01/9410598988-1710411431/project-01-screen-reel.mp4",
             "cls": [
               "overlay"
             ]
@@ -104,7 +104,7 @@
           "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/twice/49c2363f7d-1710412499/screen-rec-work.mp4",
+            "src": "/media/pages/work/project-01/49c2363f7d-1710412499/project-01-screen-rec-work.mp4",
             "cls": [
               "overlay"
             ]
@@ -128,8 +128,8 @@
               },
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/twice/076ed24f45-1710412700/screen-mobile-1.jpg",
-                "srcSmall": "/media/pages/work/twice/076ed24f45-1710412700/screen-mobile-1-540x.jpg",
+                "src": "/media/pages/work/project-01/076ed24f45-1710412700/project-01-screen-mobile-1.jpg",
+                "srcSmall": "/media/pages/work/project-01/076ed24f45-1710412700/project-01-screen-mobile-1-540x.jpg",
                 "width": 1080,
                 "height": 2191,
                 "cls": [
@@ -145,8 +145,8 @@
               "deviceAttrs": {},
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/twice/6d3469f364-1710412710/screen-mobile-2.jpg",
-                "srcSmall": "/media/pages/work/twice/6d3469f364-1710412710/screen-mobile-2-540x.jpg",
+                "src": "/media/pages/work/project-01/6d3469f364-1710412710/project-01-screen-mobile-2.jpg",
+                "srcSmall": "/media/pages/work/project-01/6d3469f364-1710412710/project-01-screen-mobile-2-540x.jpg",
                 "width": 1080,
                 "height": 2191,
                 "cls": [
@@ -166,8 +166,8 @@
               },
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/twice/4482f6c357-1710412713/screen-mobile-3.jpg",
-                "srcSmall": "/media/pages/work/twice/4482f6c357-1710412713/screen-mobile-3-540x.jpg",
+                "src": "/media/pages/work/project-01/4482f6c357-1710412713/project-01-screen-mobile-3.jpg",
+                "srcSmall": "/media/pages/work/project-01/4482f6c357-1710412713/project-01-screen-mobile-3-540x.jpg",
                 "width": 1080,
                 "height": 2186,
                 "cls": [
@@ -185,18 +185,18 @@
       "customCss": ".block-device .device-nodevice .single-image {\n   border-radius: 0.3em;\n}\n\n.block-mobile-devices .single-image {\n   border-radius: 0.3em !important;\n}\n\n.block-mobile-devices .single-image::before {\n   padding-top: 203%;\n}",
       "footerAccent": "#C0CAC9",
       "nextCase": {
-        "slug": "the-damai",
+        "slug": "project-02",
         "name": "Project 02",
         "tileColor": "#E0D9D1",
-        "tileImage": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2.jpg"
+        "tileImage": "/media/pages/work/project-02/b511d32d21-1710452224/thumbnail-project-02-v2.jpg"
       }
     },
     {
-      "slug": "the-damai",
+      "slug": "project-02",
       "title": "Project 02 - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/pages/work/the-damai/b511d32d21-1710452224/thumbnail-thedamai-v2-860x540-crop-q72.jpg",
-      "canonical": "/work/the-damai",
+      "ogImage": "/media/pages/work/project-02/b511d32d21-1710452224/thumbnail-project-02-v2-860x540-crop-q72.jpg",
+      "canonical": "/work/project-02",
       "loaderActive": 12,
       "navActive": 0,
       "fixedNavActive": 1,
@@ -228,9 +228,9 @@
       ],
       "introImage": {
         "liveSiteHref": "https://example.com/",
-        "image": "/media/pages/work/the-damai/815df0128d-1710449859/case-image-2.jpg",
+        "image": "/media/pages/work/project-02/815df0128d-1710449859/project-02-case-image-2.jpg",
         "scrollSpeed": "-1",
-        "overlayTop": "/media/pages/work/the-damai/57740648c2-1710449705/case-header-thedamai.svg",
+        "overlayTop": "/media/pages/work/project-02/57740648c2-1710449705/case-header-project-02.svg",
         "paddingBottom": true
       },
       "blocks": [
@@ -243,7 +243,7 @@
           "frame": "/assets/img/device-mbp-15-nonotch.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/the-damai/3ab44b1b58-1710450405/thedamai-nav.mp4",
+            "src": "/media/pages/work/project-02/3ab44b1b58-1710450405/project-02-nav.mp4",
             "cls": [
               "overlay"
             ]
@@ -261,7 +261,7 @@
           "frame": null,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/the-damai/be6233b462-1710450698/thedamai-home.mp4",
+            "src": "/media/pages/work/project-02/be6233b462-1710450698/project-02-home.mp4",
             "cls": [
               "overlay"
             ]
@@ -277,8 +277,8 @@
           "paddingBottom": false,
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/the-damai/0367a4932e-1710451142/kien_team-52.jpg",
-            "srcSmall": "/media/pages/work/the-damai/0367a4932e-1710451142/kien_team-52-540x.jpg",
+            "src": "/media/pages/work/project-02/0367a4932e-1710451142/project-02-team-52.jpg",
+            "srcSmall": "/media/pages/work/project-02/0367a4932e-1710451142/project-02-team-52-540x.jpg",
             "width": 5856,
             "height": 3896,
             "cls": [
@@ -302,7 +302,7 @@
           "frame": "/assets/img/device-mbp-15-nonotch.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/the-damai/595712d496-1710451331/thedamai-spa.mp4",
+            "src": "/media/pages/work/project-02/595712d496-1710451331/project-02-spa.mp4",
             "cls": [
               "overlay"
             ]
@@ -320,7 +320,7 @@
           "frame": null,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/the-damai/72be43aaa6-1710451518/thedamai-credits.mp4",
+            "src": "/media/pages/work/project-02/72be43aaa6-1710451518/project-02-credits.mp4",
             "cls": [
               "overlay"
             ]
@@ -336,8 +336,8 @@
           "paddingBottom": false,
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/the-damai/87898b3c46-1710451478/kien_team-25.jpg",
-            "srcSmall": "/media/pages/work/the-damai/87898b3c46-1710451478/kien_team-25-540x.jpg",
+            "src": "/media/pages/work/project-02/87898b3c46-1710451478/project-02-team-25.jpg",
+            "srcSmall": "/media/pages/work/project-02/87898b3c46-1710451478/project-02-team-25-540x.jpg",
             "width": 6048,
             "height": 4024,
             "cls": [
@@ -367,8 +367,8 @@
               },
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/the-damai/b67950e2d6-1710450150/mobile-1.jpg",
-                "srcSmall": "/media/pages/work/the-damai/b67950e2d6-1710450150/mobile-1-540x.jpg",
+                "src": "/media/pages/work/project-02/b67950e2d6-1710450150/project-02-mobile-1.jpg",
+                "srcSmall": "/media/pages/work/project-02/b67950e2d6-1710450150/project-02-mobile-1-540x.jpg",
                 "width": 1080,
                 "height": 2021,
                 "cls": [
@@ -384,8 +384,8 @@
               "deviceAttrs": {},
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/the-damai/f076eeb3d3-1710450154/mobile-2.jpg",
-                "srcSmall": "/media/pages/work/the-damai/f076eeb3d3-1710450154/mobile-2-540x.jpg",
+                "src": "/media/pages/work/project-02/f076eeb3d3-1710450154/project-02-mobile-2.jpg",
+                "srcSmall": "/media/pages/work/project-02/f076eeb3d3-1710450154/project-02-mobile-2-540x.jpg",
                 "width": 1080,
                 "height": 2021,
                 "cls": [
@@ -405,8 +405,8 @@
               },
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/the-damai/593d70e410-1710450158/mobile-3.jpg",
-                "srcSmall": "/media/pages/work/the-damai/593d70e410-1710450158/mobile-3-540x.jpg",
+                "src": "/media/pages/work/project-02/593d70e410-1710450158/project-02-mobile-3.jpg",
+                "srcSmall": "/media/pages/work/project-02/593d70e410-1710450158/project-02-mobile-3-540x.jpg",
                 "width": 1080,
                 "height": 2021,
                 "cls": [
@@ -424,18 +424,18 @@
       "customCss": ".block-device .single-image::before {\n   padding-top: 62%;\n}\n\n.block-device .device-mbp15 .overlay-device-image::before {\n    padding-top: 50.2%;\n}\n\n.block-mobile-devices .single-image::before {\n   padding-top: 187%;\n}",
       "footerAccent": null,
       "nextCase": {
-        "slug": "fabric",
+        "slug": "project-03",
         "name": "Project 03",
         "tileColor": "#48494A",
-        "tileImage": "/media/pages/work/fabric/ac07564a5f-1688453092/thumbnail-fabric-darkgray.jpg"
+        "tileImage": "/media/pages/work/project-03/ac07564a5f-1688453092/thumbnail-project-03-darkgray.jpg"
       }
     },
     {
-      "slug": "fabric",
+      "slug": "project-03",
       "title": "Project 03 - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/pages/work/fabric/6e80c43c4a-1687424717/thumbnail-fabric-860x540-crop-q72.jpg",
-      "canonical": "/work/fabric",
+      "ogImage": "/media/pages/work/project-03/6e80c43c4a-1687424717/thumbnail-project-03-860x540-crop-q72.jpg",
+      "canonical": "/work/project-03",
       "loaderActive": 13,
       "navActive": 0,
       "fixedNavActive": 1,
@@ -465,9 +465,9 @@
       ],
       "introImage": {
         "liveSiteHref": "https://example.com/",
-        "image": "/media/pages/work/fabric/8377f6f5a6-1687432216/case-header-fabric.jpg",
+        "image": "/media/pages/work/project-03/8377f6f5a6-1687432216/case-header-project-03.jpg",
         "scrollSpeed": "-1",
-        "overlayTop": "/media/pages/work/fabric/8f8553d186-1687432162/case-header-fabric-2.svg",
+        "overlayTop": "/media/pages/work/project-03/8f8553d186-1687432162/case-header-project-03-2.svg",
         "paddingBottom": true
       },
       "blocks": [
@@ -480,7 +480,7 @@
           "frame": "/assets/img/device-macpro-higher.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/fabric/98e09d88cf-1687429337/case-home-scroll.mp4",
+            "src": "/media/pages/work/project-03/98e09d88cf-1687429337/project-03-case-home-scroll.mp4",
             "cls": [
               "overlay"
             ]
@@ -498,7 +498,7 @@
           "frame": null,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/fabric/a12f6afedd-1687432297/case-core.mp4",
+            "src": "/media/pages/work/project-03/a12f6afedd-1687432297/project-03-case-core.mp4",
             "cls": [
               "overlay"
             ]
@@ -516,7 +516,7 @@
           "frame": null,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/fabric/c19ad20488-1687432521/case-writing.mp4",
+            "src": "/media/pages/work/project-03/c19ad20488-1687432521/project-03-case-writing.mp4",
             "cls": [
               "overlay"
             ]
@@ -534,7 +534,7 @@
           "frame": "/assets/img/device-mbp-15-nonotch.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/fabric/8b90e85341-1687432348/case-nav.mp4",
+            "src": "/media/pages/work/project-03/8b90e85341-1687432348/project-03-case-nav.mp4",
             "cls": [
               "overlay"
             ]
@@ -547,18 +547,18 @@
       "customCss": ".section.block_2 .single-image::before {\n   padding-top: 61%;\n}\n\n.section.block_2 video.overlay {\n   object-position: top;\n}\n\n.block-device .device-nodevice .single-image {\n   border-radius: 0.25em;\n}",
       "footerAccent": "#E6E8EB",
       "nextCase": {
-        "slug": "aanstekelijk",
+        "slug": "project-04",
         "name": "Project 04",
         "tileColor": "#101010",
-        "tileImage": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk.jpg"
+        "tileImage": "/media/pages/work/project-04/441187fb44-1687423090/thumbnail-project-04.jpg"
       }
     },
     {
-      "slug": "aanstekelijk",
+      "slug": "project-04",
       "title": "Project 04 - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/pages/work/aanstekelijk/441187fb44-1687423090/thumbnail-aanstekelijk-860x540-crop-q72.jpg",
-      "canonical": "/work/aanstekelijk",
+      "ogImage": "/media/pages/work/project-04/441187fb44-1687423090/thumbnail-project-04-860x540-crop-q72.jpg",
+      "canonical": "/work/project-04",
       "loaderActive": 14,
       "navActive": 0,
       "fixedNavActive": 1,
@@ -588,9 +588,9 @@
       ],
       "introImage": {
         "liveSiteHref": "https://example.com/",
-        "image": "/media/pages/work/aanstekelijk/40c9f47689-1680160244/case-header-aanstekelijk.jpg",
+        "image": "/media/pages/work/project-04/40c9f47689-1680160244/case-header-project-04.jpg",
         "scrollSpeed": "-1",
-        "overlayTop": "/media/pages/work/aanstekelijk/bb8662dc3e-1680160289/case-header-aanstekelijk.svg",
+        "overlayTop": "/media/pages/work/project-04/bb8662dc3e-1680160289/case-header-project-04.svg",
         "paddingBottom": true
       },
       "blocks": [
@@ -603,7 +603,7 @@
           "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/aanstekelijk/23e625e878-1680160784/aanstekelijk-home-scroll.mp4",
+            "src": "/media/pages/work/project-04/23e625e878-1680160784/project-04-home-scroll.mp4",
             "cls": [
               "overlay"
             ]
@@ -621,7 +621,7 @@
           "frame": null,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/aanstekelijk/ae0d5a86c3-1680161403/aanstekelijk-navigation.mp4",
+            "src": "/media/pages/work/project-04/ae0d5a86c3-1680161403/project-04-navigation.mp4",
             "cls": [
               "overlay"
             ]
@@ -637,8 +637,8 @@
           "paddingBottom": false,
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/aanstekelijk/87d540dba1-1680161125/aanstekelijk-about-1.jpg",
-            "srcSmall": "/media/pages/work/aanstekelijk/87d540dba1-1680161125/aanstekelijk-about-1-540x.jpg",
+            "src": "/media/pages/work/project-04/87d540dba1-1680161125/project-04-about-1.jpg",
+            "srcSmall": "/media/pages/work/project-04/87d540dba1-1680161125/project-04-about-1-540x.jpg",
             "width": 1378,
             "height": 969,
             "cls": [
@@ -662,7 +662,7 @@
           "frame": "/assets/img/device-mbp-16-lower.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/aanstekelijk/fc85e435e2-1680162198/aanstekelijk-work-slider.mp4",
+            "src": "/media/pages/work/project-04/fc85e435e2-1680162198/project-04-work-slider.mp4",
             "cls": [
               "overlay"
             ]
@@ -680,7 +680,7 @@
           "frame": null,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/aanstekelijk/48e89dae7b-1680162451/aanstekelijk-contact.mp4",
+            "src": "/media/pages/work/project-04/48e89dae7b-1680162451/project-04-contact.mp4",
             "cls": [
               "overlay"
             ]
@@ -693,18 +693,18 @@
       "customCss": ".block-device .device-nodevice .single-image {\n   border-radius: 0.75em;\n}\n\n.block-device .device-nodevice .single-image .overlay-image::after {\ncontent: \"\";\nposition: absolute;\ntop: 0;\nleft: 0;\nwidth: 100%;\nheight: 100%;\nborder: 2px solid #2c2c2c;\nborder-radius: 0.75em;\nz-index: 2;\n}",
       "footerAccent": "#ddd",
       "nextCase": {
-        "slug": "base-create",
+        "slug": "project-05",
         "name": "Project 05",
         "tileColor": "#363637",
-        "tileImage": "/media/pages/work/base-create/1f2468ab51-1680179645/thumbnail-base-desktop.jpg"
+        "tileImage": "/media/pages/work/project-05/1f2468ab51-1680179645/thumbnail-project-05-desktop.jpg"
       }
     },
     {
-      "slug": "base-create",
+      "slug": "project-05",
       "title": "Project 05 - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/pages/work/base-create/1f2468ab51-1680179645/thumbnail-base-desktop-860x540-crop-q72.jpg",
-      "canonical": "/work/base-create",
+      "ogImage": "/media/pages/work/project-05/1f2468ab51-1680179645/thumbnail-project-05-desktop-860x540-crop-q72.jpg",
+      "canonical": "/work/project-05",
       "loaderActive": 15,
       "navActive": 0,
       "fixedNavActive": 1,
@@ -733,7 +733,7 @@
       ],
       "introImage": {
         "liveSiteHref": "https://example.com/",
-        "image": "/media/pages/work/base-create/1b5a809c2f-1680180571/case-header-base-v2.jpg",
+        "image": "/media/pages/work/project-05/1b5a809c2f-1680180571/case-header-project-05-v2.jpg",
         "scrollSpeed": "-1",
         "overlayTop": null,
         "paddingBottom": false
@@ -748,7 +748,7 @@
           "frame": "/assets/img/device-mbp-15-nonotch.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/base-create/ac93144c69-1680181224/base-home-desktop.mp4",
+            "src": "/media/pages/work/project-05/ac93144c69-1680181224/project-05-home-desktop.mp4",
             "cls": [
               "overlay"
             ]
@@ -764,8 +764,8 @@
           "paddingBottom": false,
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/base-create/42eea181cf-1680181182/base-nothing-phone.jpg",
-            "srcSmall": "/media/pages/work/base-create/42eea181cf-1680181182/base-nothing-phone-540x.jpg",
+            "src": "/media/pages/work/project-05/42eea181cf-1680181182/project-05-nothing-phone.jpg",
+            "srcSmall": "/media/pages/work/project-05/42eea181cf-1680181182/project-05-nothing-phone-540x.jpg",
             "width": 6000,
             "height": 4500,
             "cls": [
@@ -789,7 +789,7 @@
           "frame": "/assets/img/device-mbp-15-nonotch.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/base-create/6e212750e0-1680181564/base-news.mp4",
+            "src": "/media/pages/work/project-05/6e212750e0-1680181564/project-05-news.mp4",
             "cls": [
               "overlay"
             ]
@@ -805,8 +805,8 @@
           "paddingBottom": false,
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/base-create/975fa33825-1680181783/base-mbp-1.jpg",
-            "srcSmall": "/media/pages/work/base-create/975fa33825-1680181783/base-mbp-1-540x.jpg",
+            "src": "/media/pages/work/project-05/975fa33825-1680181783/project-05-mbp-1.jpg",
+            "srcSmall": "/media/pages/work/project-05/975fa33825-1680181783/project-05-mbp-1-540x.jpg",
             "width": 6000,
             "height": 4500,
             "cls": [
@@ -830,7 +830,7 @@
           "frame": "/assets/img/device-mbp-15-nonotch.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/base-create/760b21bcc5-1680181631/base-case.mp4",
+            "src": "/media/pages/work/project-05/760b21bcc5-1680181631/project-05-case.mp4",
             "cls": [
               "overlay"
             ]
@@ -843,18 +843,18 @@
       "customCss": ".block-device .device-nodevice .single-image {\n   border-radius: 2em;\n}",
       "footerAccent": null,
       "nextCase": {
-        "slug": "avvr",
+        "slug": "project-06",
         "name": "Project 06",
         "tileColor": "#D8D3CD",
-        "tileImage": "/media/pages/work/avvr/4d2a7758a4-1672918357/thumbnail-avvr-v2.jpg"
+        "tileImage": "/media/pages/work/project-06/4d2a7758a4-1672918357/thumbnail-project-06-v2.jpg"
       }
     },
     {
-      "slug": "avvr",
+      "slug": "project-06",
       "title": "Project 06 - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/pages/work/avvr/4d2a7758a4-1672918357/thumbnail-avvr-v2-860x540-crop-q72.jpg",
-      "canonical": "/work/avvr",
+      "ogImage": "/media/pages/work/project-06/4d2a7758a4-1672918357/thumbnail-project-06-v2-860x540-crop-q72.jpg",
+      "canonical": "/work/project-06",
       "loaderActive": 16,
       "navActive": 0,
       "fixedNavActive": 1,
@@ -884,9 +884,9 @@
       ],
       "introImage": {
         "liveSiteHref": "https://example.com/",
-        "image": "/media/pages/work/avvr/69dfb0e43c-1672818555/avvr_006_resized.jpg",
+        "image": "/media/pages/work/project-06/69dfb0e43c-1672818555/project-06_006_resized.jpg",
         "scrollSpeed": "-1",
-        "overlayTop": "/media/pages/work/avvr/7a28d40c58-1672818720/case-header-avvr.svg",
+        "overlayTop": "/media/pages/work/project-06/7a28d40c58-1672818720/case-header-project-06.svg",
         "paddingBottom": true
       },
       "blocks": [
@@ -899,7 +899,7 @@
           "frame": "/assets/img/device-mbp-15-nonotch.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/avvr/cd13c30fcb-1672821256/avvr-scroll-home.mp4",
+            "src": "/media/pages/work/project-06/cd13c30fcb-1672821256/project-06-scroll-home.mp4",
             "cls": [
               "overlay"
             ]
@@ -923,8 +923,8 @@
               },
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/avvr/d90cfe7ba5-1672819746/mobile-screen-avvr-1.jpg",
-                "srcSmall": "/media/pages/work/avvr/d90cfe7ba5-1672819746/mobile-screen-avvr-1-540x.jpg",
+                "src": "/media/pages/work/project-06/d90cfe7ba5-1672819746/mobile-screen-project-06-1.jpg",
+                "srcSmall": "/media/pages/work/project-06/d90cfe7ba5-1672819746/mobile-screen-project-06-1-540x.jpg",
                 "width": 540,
                 "height": 1165,
                 "cls": [
@@ -940,8 +940,8 @@
               "deviceAttrs": {},
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/avvr/ffaf296ffc-1672820127/mobile-screen-avvr-2.jpg",
-                "srcSmall": "/media/pages/work/avvr/ffaf296ffc-1672820127/mobile-screen-avvr-2-540x.jpg",
+                "src": "/media/pages/work/project-06/ffaf296ffc-1672820127/mobile-screen-project-06-2.jpg",
+                "srcSmall": "/media/pages/work/project-06/ffaf296ffc-1672820127/mobile-screen-project-06-2-540x.jpg",
                 "width": 540,
                 "height": 1165,
                 "cls": [
@@ -961,8 +961,8 @@
               },
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/avvr/a2dd625bf2-1672820988/mobile-screen-avvr-3.jpg",
-                "srcSmall": "/media/pages/work/avvr/a2dd625bf2-1672820988/mobile-screen-avvr-3-540x.jpg",
+                "src": "/media/pages/work/project-06/a2dd625bf2-1672820988/mobile-screen-project-06-3.jpg",
+                "srcSmall": "/media/pages/work/project-06/a2dd625bf2-1672820988/mobile-screen-project-06-3-540x.jpg",
                 "width": 540,
                 "height": 1165,
                 "cls": [
@@ -983,8 +983,8 @@
           "paddingBottom": false,
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/avvr/d3533056b1-1672818970/avvr_007_resized.jpg",
-            "srcSmall": "/media/pages/work/avvr/d3533056b1-1672818970/avvr_007_resized-540x.jpg",
+            "src": "/media/pages/work/project-06/d3533056b1-1672818970/project-06_007_resized.jpg",
+            "srcSmall": "/media/pages/work/project-06/d3533056b1-1672818970/project-06_007_resized-540x.jpg",
             "width": 2880,
             "height": 1921,
             "cls": [
@@ -1008,7 +1008,7 @@
           "frame": null,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/avvr/9b9338e8bc-1672823965/avvr-scroll-news-2.mp4",
+            "src": "/media/pages/work/project-06/9b9338e8bc-1672823965/project-06-scroll-news-2.mp4",
             "cls": [
               "overlay"
             ]
@@ -1026,7 +1026,7 @@
           "frame": null,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/avvr/5137718302-1672823179/avvr-scroll-about.mp4",
+            "src": "/media/pages/work/project-06/5137718302-1672823179/project-06-scroll-about.mp4",
             "cls": [
               "overlay"
             ]
@@ -1039,18 +1039,18 @@
       "customCss": ".block_0.single-block.block-padding-bottom {\n    padding-bottom: calc(var(--section-padding) * 0.5);\n}\n\n.block-device .device-nodevice .single-image {\n   border-radius: 0.75em;\n}",
       "footerAccent": "#E5E0DC",
       "nextCase": {
-        "slug": "graphichunters",
+        "slug": "project-07",
         "name": "Project 07",
         "tileColor": "#7E7E7E",
-        "tileImage": "/media/pages/work/graphichunters/0daec771af-1660128857/thumbnail-gh.jpg"
+        "tileImage": "/media/pages/work/project-07/0daec771af-1660128857/thumbnail-project-07.jpg"
       }
     },
     {
-      "slug": "graphichunters",
+      "slug": "project-07",
       "title": "Project 07 - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/pages/work/graphichunters/0daec771af-1660128857/thumbnail-gh-860x540-crop-q72.jpg",
-      "canonical": "/work/graphichunters",
+      "ogImage": "/media/pages/work/project-07/0daec771af-1660128857/thumbnail-project-07-860x540-crop-q72.jpg",
+      "canonical": "/work/project-07",
       "loaderActive": 17,
       "navActive": 0,
       "fixedNavActive": 1,
@@ -1079,9 +1079,9 @@
       ],
       "introImage": {
         "liveSiteHref": "https://example.com/",
-        "image": "/media/pages/work/graphichunters/a2a863c4a0-1660130965/case-header-back-gh.jpg",
+        "image": "/media/pages/work/project-07/a2a863c4a0-1660130965/case-header-back-project-07.jpg",
         "scrollSpeed": "-1",
-        "overlayTop": "/media/pages/work/graphichunters/c42cfa6c3a-1660129143/case-header-gh.svg",
+        "overlayTop": "/media/pages/work/project-07/c42cfa6c3a-1660129143/case-header-project-07.svg",
         "paddingBottom": true
       },
       "blocks": [
@@ -1094,7 +1094,7 @@
           "frame": "/assets/img/device-mbp-16-lower.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/graphichunters/80d025d94b-1660129669/loading-gh.mp4",
+            "src": "/media/pages/work/project-07/80d025d94b-1660129669/loading-project-07.mp4",
             "cls": [
               "overlay"
             ]
@@ -1110,7 +1110,7 @@
           "paddingBottom": false,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/graphichunters/ea119dae77-1660131665/rotate-g-small.mp4",
+            "src": "/media/pages/work/project-07/ea119dae77-1660131665/project-07-rotate-small.mp4",
             "cls": [
               "overlay"
             ]
@@ -1135,8 +1135,8 @@
               },
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/graphichunters/adddd3362a-1660130661/screen-1.jpg",
-                "srcSmall": "/media/pages/work/graphichunters/adddd3362a-1660130661/screen-1-540x.jpg",
+                "src": "/media/pages/work/project-07/adddd3362a-1660130661/project-07-screen-1.jpg",
+                "srcSmall": "/media/pages/work/project-07/adddd3362a-1660130661/project-07-screen-1-540x.jpg",
                 "width": 540,
                 "height": 1165,
                 "cls": [
@@ -1152,8 +1152,8 @@
               "deviceAttrs": {},
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/graphichunters/fd4228d034-1660130665/screen-2.jpg",
-                "srcSmall": "/media/pages/work/graphichunters/fd4228d034-1660130665/screen-2-540x.jpg",
+                "src": "/media/pages/work/project-07/fd4228d034-1660130665/project-07-screen-2.jpg",
+                "srcSmall": "/media/pages/work/project-07/fd4228d034-1660130665/project-07-screen-2-540x.jpg",
                 "width": 540,
                 "height": 1174,
                 "cls": [
@@ -1173,8 +1173,8 @@
               },
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/graphichunters/c1121fbcf0-1660130670/screen-3.jpg",
-                "srcSmall": "/media/pages/work/graphichunters/c1121fbcf0-1660130670/screen-3-540x.jpg",
+                "src": "/media/pages/work/project-07/c1121fbcf0-1660130670/project-07-screen-3.jpg",
+                "srcSmall": "/media/pages/work/project-07/c1121fbcf0-1660130670/project-07-screen-3-540x.jpg",
                 "width": 540,
                 "height": 1169,
                 "cls": [
@@ -1197,7 +1197,7 @@
           "frame": null,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/graphichunters/d5337071c4-1660130224/archive-gh.mp4",
+            "src": "/media/pages/work/project-07/d5337071c4-1660130224/archive-project-07.mp4",
             "cls": [
               "overlay"
             ]
@@ -1210,18 +1210,18 @@
       "customCss": ".block-fullwidth video {filter: brightness(1.2) invert(1) saturate(1.5);}",
       "footerAccent": "#eeeeee",
       "nextCase": {
-        "slug": "future-goals",
+        "slug": "project-08",
         "name": "Project 08",
         "tileColor": "#DCD0C2",
-        "tileImage": "/media/pages/work/future-goals/614e28a662-1653057688/thumbnail-futuregoals.jpg"
+        "tileImage": "/media/pages/work/project-08/614e28a662-1653057688/thumbnail-project-08.jpg"
       }
     },
     {
-      "slug": "future-goals",
+      "slug": "project-08",
       "title": "Project 08 - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/pages/work/future-goals/614e28a662-1653057688/thumbnail-futuregoals-860x540-crop-q72.jpg",
-      "canonical": "/work/future-goals",
+      "ogImage": "/media/pages/work/project-08/614e28a662-1653057688/thumbnail-project-08-860x540-crop-q72.jpg",
+      "canonical": "/work/project-08",
       "loaderActive": 18,
       "navActive": 0,
       "fixedNavActive": 1,
@@ -1252,9 +1252,9 @@
       ],
       "introImage": {
         "liveSiteHref": "https://example.com/",
-        "image": "/media/pages/work/future-goals/8c916e77f1-1653053706/futuregoals-case-header.jpg",
+        "image": "/media/pages/work/project-08/8c916e77f1-1653053706/project-08-case-header.jpg",
         "scrollSpeed": "-1",
-        "overlayTop": "/media/pages/work/future-goals/98001978ba-1653053710/futuregoals-case-header-front.svg",
+        "overlayTop": "/media/pages/work/project-08/98001978ba-1653053710/project-08-case-header-front.svg",
         "paddingBottom": true
       },
       "blocks": [
@@ -1267,7 +1267,7 @@
           "frame": "/assets/img/device-ipad-pro-lower.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/future-goals/ad92afd3da-1653054674/future-goals-screen.mp4",
+            "src": "/media/pages/work/project-08/ad92afd3da-1653054674/project-08-screen.mp4",
             "cls": [
               "overlay"
             ]
@@ -1283,8 +1283,8 @@
           "paddingBottom": false,
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/future-goals/98ad2da45a-1653055060/full-size-1.jpg",
-            "srcSmall": "/media/pages/work/future-goals/98ad2da45a-1653055060/full-size-1-540x.jpg",
+            "src": "/media/pages/work/project-08/98ad2da45a-1653055060/project-08-full-size-1.jpg",
+            "srcSmall": "/media/pages/work/project-08/98ad2da45a-1653055060/project-08-full-size-1-540x.jpg",
             "width": 3000,
             "height": 2250,
             "cls": [
@@ -1314,7 +1314,7 @@
               },
               "media": {
                 "kind": "video",
-                "src": "/media/pages/work/future-goals/73fecccd91-1653055451/screen-rec-mob.mp4",
+                "src": "/media/pages/work/project-08/73fecccd91-1653055451/project-08-screen-rec-mob.mp4",
                 "cls": [
                   "overlay"
                 ]
@@ -1325,8 +1325,8 @@
               "deviceAttrs": {},
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/future-goals/7290f5da48-1653055387/futuregoals-screen-2.jpg",
-                "srcSmall": "/media/pages/work/future-goals/7290f5da48-1653055387/futuregoals-screen-2-540x.jpg",
+                "src": "/media/pages/work/project-08/7290f5da48-1653055387/project-08-screen-2.jpg",
+                "srcSmall": "/media/pages/work/project-08/7290f5da48-1653055387/project-08-screen-2-540x.jpg",
                 "width": 540,
                 "height": 1170,
                 "cls": [
@@ -1346,8 +1346,8 @@
               },
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/future-goals/69afe68ccf-1653055393/futuregoals-screen-3.jpg",
-                "srcSmall": "/media/pages/work/future-goals/69afe68ccf-1653055393/futuregoals-screen-3-540x.jpg",
+                "src": "/media/pages/work/project-08/69afe68ccf-1653055393/project-08-screen-3.jpg",
+                "srcSmall": "/media/pages/work/project-08/69afe68ccf-1653055393/project-08-screen-3-540x.jpg",
                 "width": 540,
                 "height": 1170,
                 "cls": [
@@ -1368,7 +1368,7 @@
           "paddingBottom": false,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/future-goals/c6b7159243-1653056956/high_headerfuturegoals-1.mp4",
+            "src": "/media/pages/work/project-08/c6b7159243-1653056956/high_headerproject-08-1.mp4",
             "cls": [
               "overlay"
             ]
@@ -1385,8 +1385,8 @@
           "paddingBottom": true,
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/future-goals/685adbde8d-1653055959/photo-gallery-big.jpg",
-            "srcSmall": "/media/pages/work/future-goals/685adbde8d-1653055959/photo-gallery-big-540x.jpg",
+            "src": "/media/pages/work/project-08/685adbde8d-1653055959/project-08-photo-gallery-big.jpg",
+            "srcSmall": "/media/pages/work/project-08/685adbde8d-1653055959/project-08-photo-gallery-big-540x.jpg",
             "width": 4400,
             "height": 2120
           }
@@ -1395,18 +1395,18 @@
       "customCss": ".block_4 .container {\n  padding: 0;\n}\n\n@media screen and (max-width: 540px) {\n}",
       "footerAccent": "#DCD0C2",
       "nextCase": {
-        "slug": "atypikal",
+        "slug": "project-09",
         "name": "Project 09",
         "tileColor": "#B1A994",
-        "tileImage": "/media/pages/work/atypikal/fd1951ffc9-1646837277/thumbnail-atypikal.jpg"
+        "tileImage": "/media/pages/work/project-09/fd1951ffc9-1646837277/thumbnail-project-09.jpg"
       }
     },
     {
-      "slug": "atypikal",
+      "slug": "project-09",
       "title": "Project 09 - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/pages/work/atypikal/fd1951ffc9-1646837277/thumbnail-atypikal-860x540-crop-q72.jpg",
-      "canonical": "/work/atypikal",
+      "ogImage": "/media/pages/work/project-09/fd1951ffc9-1646837277/thumbnail-project-09-860x540-crop-q72.jpg",
+      "canonical": "/work/project-09",
       "loaderActive": 19,
       "navActive": 0,
       "fixedNavActive": 1,
@@ -1436,9 +1436,9 @@
       ],
       "introImage": {
         "liveSiteHref": "https://example.com/",
-        "image": "/media/pages/work/atypikal/e0f19f8847-1646837280/atypikal-case-header.jpg",
+        "image": "/media/pages/work/project-09/e0f19f8847-1646837280/project-09-case-header.jpg",
         "scrollSpeed": "-1",
-        "overlayTop": "/media/pages/work/atypikal/fd65568bd5-1646837277/atypikal-case-header-overlay.svg",
+        "overlayTop": "/media/pages/work/project-09/fd65568bd5-1646837277/project-09-case-header-overlay.svg",
         "paddingBottom": true
       },
       "blocks": [
@@ -1451,7 +1451,7 @@
           "frame": "/assets/img/device-macpro-higher.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/atypikal/869f36be3e-1646837282/atypikal-screen-scroll.mp4",
+            "src": "/media/pages/work/project-09/869f36be3e-1646837282/project-09-screen-scroll.mp4",
             "cls": [
               "overlay"
             ]
@@ -1475,7 +1475,7 @@
               },
               "media": {
                 "kind": "video",
-                "src": "/media/pages/work/atypikal/52f224ca12-1646837279/atypikal-screen-mobile-load.mp4",
+                "src": "/media/pages/work/project-09/52f224ca12-1646837279/project-09-screen-mobile-load.mp4",
                 "cls": [
                   "overlay"
                 ]
@@ -1486,8 +1486,8 @@
               "deviceAttrs": {},
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/atypikal/6d95789446-1646837279/atypikal-mobile-2.jpg",
-                "srcSmall": "/media/pages/work/atypikal/6d95789446-1646837279/atypikal-mobile-2-540x.jpg",
+                "src": "/media/pages/work/project-09/6d95789446-1646837279/project-09-mobile-2.jpg",
+                "srcSmall": "/media/pages/work/project-09/6d95789446-1646837279/project-09-mobile-2-540x.jpg",
                 "width": 540,
                 "height": 1170,
                 "cls": [
@@ -1507,7 +1507,7 @@
               },
               "media": {
                 "kind": "video",
-                "src": "/media/pages/work/atypikal/71c55005ad-1646837277/atypikal-mobile-footer.mp4",
+                "src": "/media/pages/work/project-09/71c55005ad-1646837277/project-09-mobile-footer.mp4",
                 "cls": [
                   "overlay"
                 ]
@@ -1525,7 +1525,7 @@
           "frame": "/assets/img/device-ipad-pro-lower.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/atypikal/06caeb881e-1646837280/atypikal-screen-footer.mp4",
+            "src": "/media/pages/work/project-09/06caeb881e-1646837280/project-09-screen-footer.mp4",
             "cls": [
               "overlay"
             ]
@@ -1546,18 +1546,18 @@
       "customCss": ".block-fullwidth {background: #000;}",
       "footerAccent": "#d8d5cc",
       "nextCase": {
-        "slug": "one-nil",
+        "slug": "project-10",
         "name": "Project 10",
         "tileColor": "var(--color-lightgray)",
-        "tileImage": "/media/pages/work/one-nil/288460827e-1646837272/thumbnail-onenil-v3.jpg"
+        "tileImage": "/media/pages/work/project-10/288460827e-1646837272/thumbnail-project-10-v3.jpg"
       }
     },
     {
-      "slug": "one-nil",
+      "slug": "project-10",
       "title": "Project 10 - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/pages/work/one-nil/288460827e-1646837272/thumbnail-onenil-v3-860x540-crop-q72.jpg",
-      "canonical": "/work/one-nil",
+      "ogImage": "/media/pages/work/project-10/288460827e-1646837272/thumbnail-project-10-v3-860x540-crop-q72.jpg",
+      "canonical": "/work/project-10",
       "loaderActive": 20,
       "navActive": 0,
       "fixedNavActive": 1,
@@ -1587,9 +1587,9 @@
       ],
       "introImage": {
         "liveSiteHref": "https://example.com/",
-        "image": "/media/pages/work/one-nil/eab8a1f9e0-1646837269/image-case-onenil-v2.jpg",
+        "image": "/media/pages/work/project-10/eab8a1f9e0-1646837269/image-case-project-10-v2.jpg",
         "scrollSpeed": "-1",
-        "overlayTop": "/media/pages/work/one-nil/e9adff7ae4-1646837269/image-case-onenil-logo.svg",
+        "overlayTop": "/media/pages/work/project-10/e9adff7ae4-1646837269/image-case-project-10-logo.svg",
         "paddingBottom": false
       },
       "blocks": [
@@ -1602,7 +1602,7 @@
           "frame": "/assets/img/device-mbp-16-lower.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/one-nil/48db0808ea-1646837267/onenil-screen-load.mp4",
+            "src": "/media/pages/work/project-10/48db0808ea-1646837267/project-10-screen-load.mp4",
             "cls": [
               "overlay"
             ]
@@ -1626,7 +1626,7 @@
               },
               "media": {
                 "kind": "video",
-                "src": "/media/pages/work/one-nil/4cd9bd35fb-1646837271/onenil-screen-mobile-cases.mp4",
+                "src": "/media/pages/work/project-10/4cd9bd35fb-1646837271/project-10-screen-mobile-cases.mp4",
                 "cls": [
                   "overlay"
                 ]
@@ -1637,8 +1637,8 @@
               "deviceAttrs": {},
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/one-nil/d2d402c560-1646837270/onenil-screen-archive.jpg",
-                "srcSmall": "/media/pages/work/one-nil/d2d402c560-1646837270/onenil-screen-archive-540x.jpg",
+                "src": "/media/pages/work/project-10/d2d402c560-1646837270/project-10-screen-archive.jpg",
+                "srcSmall": "/media/pages/work/project-10/d2d402c560-1646837270/project-10-screen-archive-540x.jpg",
                 "width": 776,
                 "height": 1684,
                 "cls": [
@@ -1658,7 +1658,7 @@
               },
               "media": {
                 "kind": "video",
-                "src": "/media/pages/work/one-nil/d8aa6ace03-1646837276/onenil-screen-mobile-contact.mp4",
+                "src": "/media/pages/work/project-10/d8aa6ace03-1646837276/project-10-screen-mobile-contact.mp4",
                 "cls": [
                   "overlay"
                 ]
@@ -1674,8 +1674,8 @@
           "paddingBottom": false,
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/one-nil/86e707f8d6-1646837266/onenil-laptop.jpg",
-            "srcSmall": "/media/pages/work/one-nil/86e707f8d6-1646837266/onenil-laptop-540x.jpg",
+            "src": "/media/pages/work/project-10/86e707f8d6-1646837266/project-10-laptop.jpg",
+            "srcSmall": "/media/pages/work/project-10/86e707f8d6-1646837266/project-10-laptop-540x.jpg",
             "width": 2880,
             "height": 2160,
             "cls": [
@@ -1699,8 +1699,8 @@
           "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/one-nil/26601c386e-1646837270/parallax-archive.jpg",
-            "srcSmall": "/media/pages/work/one-nil/26601c386e-1646837270/parallax-archive-540x.jpg",
+            "src": "/media/pages/work/project-10/26601c386e-1646837270/project-10-parallax-archive.jpg",
+            "srcSmall": "/media/pages/work/project-10/26601c386e-1646837270/project-10-parallax-archive-540x.jpg",
             "width": 1728,
             "height": 1501,
             "cls": [
@@ -1709,16 +1709,16 @@
             "scrollSpeed": "1.5"
           },
           "parallax": {
-            "src": "/media/pages/work/one-nil/26601c386e-1646837270/parallax-archive.jpg",
-            "srcSmall": "/media/pages/work/one-nil/26601c386e-1646837270/parallax-archive-540x.jpg",
+            "src": "/media/pages/work/project-10/26601c386e-1646837270/project-10-parallax-archive.jpg",
+            "srcSmall": "/media/pages/work/project-10/26601c386e-1646837270/project-10-parallax-archive-540x.jpg",
             "width": 1728,
             "height": 1501,
             "scrollSpeed": "1.5"
           },
           "overlayTops": [
             {
-              "src": "/media/pages/work/one-nil/cf8d6eb3fa-1646837265/onenil-nav-bar.svg",
-              "srcSmall": "/media/pages/work/one-nil/cf8d6eb3fa-1646837265/onenil-nav-bar.svg",
+              "src": "/media/pages/work/project-10/cf8d6eb3fa-1646837265/project-10-nav-bar.svg",
+              "srcSmall": "/media/pages/work/project-10/cf8d6eb3fa-1646837265/project-10-nav-bar.svg",
               "width": 1440,
               "height": 130,
               "scrollSpeed": null
@@ -1735,7 +1735,7 @@
           "frame": "/assets/img/device-macpro-higher.png",
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/one-nil/475502238f-1646837270/onenil-screen-nav.mp4",
+            "src": "/media/pages/work/project-10/475502238f-1646837270/project-10-screen-nav.mp4",
             "cls": [
               "overlay"
             ]
@@ -1748,18 +1748,18 @@
       "customCss": null,
       "footerAccent": "#dfdfdf",
       "nextCase": {
-        "slug": "andy-hardy",
+        "slug": "project-11",
         "name": "Project 11",
         "tileColor": "#626D6E",
-        "tileImage": "/media/pages/work/andy-hardy/f152b03247-1646837253/thumbnail-andyhardy.jpg"
+        "tileImage": "/media/pages/work/project-11/f152b03247-1646837253/thumbnail-project-11.jpg"
       }
     },
     {
-      "slug": "andy-hardy",
+      "slug": "project-11",
       "title": "Project 11 - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/pages/work/andy-hardy/f152b03247-1646837253/thumbnail-andyhardy-860x540-crop-q72.jpg",
-      "canonical": "/work/andy-hardy",
+      "ogImage": "/media/pages/work/project-11/f152b03247-1646837253/thumbnail-project-11-860x540-crop-q72.jpg",
+      "canonical": "/work/project-11",
       "loaderActive": 21,
       "navActive": 0,
       "fixedNavActive": 1,
@@ -1788,9 +1788,9 @@
       ],
       "introImage": {
         "liveSiteHref": "https://example.com/",
-        "image": "/media/pages/work/andy-hardy/45460186ce-1646837251/image-case-andy.png",
+        "image": "/media/pages/work/project-11/45460186ce-1646837251/image-case-project-11.png",
         "scrollSpeed": "-1",
-        "overlayTop": "/media/pages/work/andy-hardy/2790d2bebd-1646837255/andy-name.svg",
+        "overlayTop": "/media/pages/work/project-11/2790d2bebd-1646837255/project-11-name.svg",
         "paddingBottom": true
       },
       "blocks": [
@@ -1803,8 +1803,8 @@
           "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/andy-hardy/17b0c05d2b-1646837250/landscape_background_small.jpg",
-            "srcSmall": "/media/pages/work/andy-hardy/17b0c05d2b-1646837250/landscape_background_small-540x.jpg",
+            "src": "/media/pages/work/project-11/17b0c05d2b-1646837250/project-11-landscape_background_small.jpg",
+            "srcSmall": "/media/pages/work/project-11/17b0c05d2b-1646837250/project-11-landscape_background_small-540x.jpg",
             "width": 1800,
             "height": 1344,
             "cls": [
@@ -1813,23 +1813,23 @@
             "scrollSpeed": "-1.5"
           },
           "parallax": {
-            "src": "/media/pages/work/andy-hardy/17b0c05d2b-1646837250/landscape_background_small.jpg",
-            "srcSmall": "/media/pages/work/andy-hardy/17b0c05d2b-1646837250/landscape_background_small-540x.jpg",
+            "src": "/media/pages/work/project-11/17b0c05d2b-1646837250/project-11-landscape_background_small.jpg",
+            "srcSmall": "/media/pages/work/project-11/17b0c05d2b-1646837250/project-11-landscape_background_small-540x.jpg",
             "width": 1800,
             "height": 1344,
             "scrollSpeed": "-1.5"
           },
           "overlayTops": [
             {
-              "src": "/media/pages/work/andy-hardy/74f5cb3afe-1646837250/landscape_andy.png",
-              "srcSmall": "/media/pages/work/andy-hardy/74f5cb3afe-1646837250/landscape_andy-540x.png",
+              "src": "/media/pages/work/project-11/74f5cb3afe-1646837250/landscape_project-11.png",
+              "srcSmall": "/media/pages/work/project-11/74f5cb3afe-1646837250/landscape_project-11-540x.png",
               "width": 3200,
               "height": 2150,
               "scrollSpeed": "-.75"
             },
             {
-              "src": "/media/pages/work/andy-hardy/889b4920b6-1646837252/andrew-top.png",
-              "srcSmall": "/media/pages/work/andy-hardy/889b4920b6-1646837252/andrew-top-540x.png",
+              "src": "/media/pages/work/project-11/889b4920b6-1646837252/project-11-top.png",
+              "srcSmall": "/media/pages/work/project-11/889b4920b6-1646837252/project-11-top-540x.png",
               "width": 2880,
               "height": 1800,
               "scrollSpeed": null
@@ -1846,7 +1846,7 @@
           "frame": null,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/andy-hardy/290274f2dd-1646837253/andy-portfolio.mp4",
+            "src": "/media/pages/work/project-11/290274f2dd-1646837253/project-11-portfolio.mp4",
             "cls": [
               "overlay"
             ]
@@ -1862,8 +1862,8 @@
           "paddingBottom": false,
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/andy-hardy/21ce736523-1646837255/andy-hardy-people-accomodation-photographer-filmmaker-australia-16-2160x2160.jpg",
-            "srcSmall": "/media/pages/work/andy-hardy/21ce736523-1646837255/andy-hardy-people-accomodation-photographer-filmmaker-australia-16-2160x2160-540x.jpg",
+            "src": "/media/pages/work/project-11/21ce736523-1646837255/project-11-people-accomodation-photographer-filmmaker-australia-16-2160x2160.jpg",
+            "srcSmall": "/media/pages/work/project-11/21ce736523-1646837255/project-11-people-accomodation-photographer-filmmaker-australia-16-2160x2160-540x.jpg",
             "width": 2000,
             "height": 1333,
             "cls": [
@@ -1893,8 +1893,8 @@
               },
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/andy-hardy/692c4ad8ac-1646837253/andy-mobile-1.jpg",
-                "srcSmall": "/media/pages/work/andy-hardy/692c4ad8ac-1646837253/andy-mobile-1-540x.jpg",
+                "src": "/media/pages/work/project-11/692c4ad8ac-1646837253/project-11-mobile-1.jpg",
+                "srcSmall": "/media/pages/work/project-11/692c4ad8ac-1646837253/project-11-mobile-1-540x.jpg",
                 "width": 540,
                 "height": 1170,
                 "cls": [
@@ -1910,8 +1910,8 @@
               "deviceAttrs": {},
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/andy-hardy/a804e16944-1646837251/andy-mobile-3.jpg",
-                "srcSmall": "/media/pages/work/andy-hardy/a804e16944-1646837251/andy-mobile-3-540x.jpg",
+                "src": "/media/pages/work/project-11/a804e16944-1646837251/project-11-mobile-3.jpg",
+                "srcSmall": "/media/pages/work/project-11/a804e16944-1646837251/project-11-mobile-3-540x.jpg",
                 "width": 540,
                 "height": 1170,
                 "cls": [
@@ -1931,8 +1931,8 @@
               },
               "media": {
                 "kind": "image",
-                "src": "/media/pages/work/andy-hardy/6c7ba9f412-1646837254/andy-mobile-4.jpg",
-                "srcSmall": "/media/pages/work/andy-hardy/6c7ba9f412-1646837254/andy-mobile-4-540x.jpg",
+                "src": "/media/pages/work/project-11/6c7ba9f412-1646837254/project-11-mobile-4.jpg",
+                "srcSmall": "/media/pages/work/project-11/6c7ba9f412-1646837254/project-11-mobile-4-540x.jpg",
                 "width": 540,
                 "height": 1170,
                 "cls": [
@@ -1953,8 +1953,8 @@
           "paddingBottom": false,
           "media": {
             "kind": "image",
-            "src": "/media/pages/work/andy-hardy/1081f723ef-1646837256/andy-screen-personal.jpg",
-            "srcSmall": "/media/pages/work/andy-hardy/1081f723ef-1646837256/andy-screen-personal-540x.jpg",
+            "src": "/media/pages/work/project-11/1081f723ef-1646837256/project-11-screen-personal.jpg",
+            "srcSmall": "/media/pages/work/project-11/1081f723ef-1646837256/project-11-screen-personal-540x.jpg",
             "width": 2880,
             "height": 1800
           }
@@ -1966,7 +1966,7 @@
           "paddingBottom": true,
           "media": {
             "kind": "video",
-            "src": "/media/pages/work/andy-hardy/237a0f8246-1646837254/andy-screen-interaction.mp4",
+            "src": "/media/pages/work/project-11/237a0f8246-1646837254/project-11-screen-interaction.mp4",
             "cls": []
           }
         }
@@ -1974,10 +1974,10 @@
       "customCss": null,
       "footerAccent": null,
       "nextCase": {
-        "slug": "twice",
+        "slug": "project-01",
         "name": "Project 01",
         "tileColor": "#F1F1F1",
-        "tileImage": "/media/pages/work/twice/0ab7e43954-1710404752/thumbnail-twice.jpg"
+        "tileImage": "/media/pages/work/project-01/0ab7e43954-1710404752/thumbnail-project-01.jpg"
       }
     }
   ]
