@@ -32,3 +32,11 @@ npm-debug.log*
 dist/
 .astro/
 .cache/
+
+# ─────────────────────────────────────────────────────────────
+#  previews/  —  人工复核用的临时截图（不进产物，也不进版本库）
+# ─────────────────────────────────────────────────────────────
+#  docs/content-inventory.md §13.4 用它展示"主图叠加层"的观感对照。
+#  重新生成：起 `node scripts/serve-dist.mjs`，用 Playwright 打开 /work/project-01
+#  滚到 .case-intro-image 截图（必须用裸标识符 scroll.scrollTo，不能用 window.scrollTo）。
+previews/
