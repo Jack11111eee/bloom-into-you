@@ -1,0 +1,495 @@
+{
+  "_comment": "block 样例库（P10 M1 步骤 2）。用途：删除 11 个案例页之后，block 的**每一种变体**仍各留一份完整实例，供后续新增页面（长廊的 block 序列、人物页/解读页）直接取用，不必回查已删的案例数据。**本文件不被任何模板渲染** —— 它是一份形状参考，不是数据源。",
+  "_provenance": "从 src/_data/projects.json（11 个案例页的抽取结果）派生：按变体归类，每个变体取**第一个出现**的实例，整块原样保留（含 index，那是抽取当时的块序号）。P10 M1 已删除 projects.json 与 src/media/pages/work/ 的占位媒体，故下面 media 里的路径是**抽取当时的值**（媒体本体已不在产物里）。要重建：对 reference/html/work-*.html 重跑 scripts/extract-page-data.mjs 得到 projects.json，再按同一规则归类。",
+  "_variants": {
+    "device": "按 device + 修饰（-noframe / -parallax / -overlaytop / -pencil）",
+    "mobile-devices": "按 有框(framed-)/无框(unframed-) + device",
+    "fullwidth": "按 media.kind + 可选 -textoverlay / -dark",
+    "screenshot": "按 media.kind"
+  },
+  "device": {
+    "mbp16lower": {
+      "type": "device",
+      "index": 0,
+      "background": "#C0CAC9",
+      "paddingBottom": false,
+      "device": "mbp16lower",
+      "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
+      "media": {
+        "kind": "video",
+        "src": "/media/pages/work/project-01/2a06f31598-1710406342/project-01-screen-rec-home-2.mov",
+        "cls": [
+          "overlay"
+        ]
+      },
+      "parallax": null,
+      "overlayTops": [],
+      "pencil": null
+    },
+    "nodevice-noframe": {
+      "type": "device",
+      "index": 1,
+      "background": "#C0CAC9",
+      "paddingBottom": true,
+      "device": "nodevice",
+      "frame": null,
+      "media": {
+        "kind": "video",
+        "src": "/media/pages/work/project-01/9c011cac90-1710411859/project-01-screen-rec-nav-hover.mp4",
+        "cls": [
+          "overlay"
+        ]
+      },
+      "parallax": null,
+      "overlayTops": [],
+      "pencil": null
+    },
+    "mbp15": {
+      "type": "device",
+      "index": 0,
+      "background": "#E0D9D1",
+      "paddingBottom": false,
+      "device": "mbp15",
+      "frame": "/assets/img/device-mbp-15-nonotch.png",
+      "media": {
+        "kind": "video",
+        "src": "/media/pages/work/project-02/3ab44b1b58-1710450405/project-02-nav.mp4",
+        "cls": [
+          "overlay"
+        ]
+      },
+      "parallax": null,
+      "overlayTops": [],
+      "pencil": null
+    },
+    "macprohigher": {
+      "type": "device",
+      "index": 0,
+      "background": "#E6E8EB",
+      "paddingBottom": false,
+      "device": "macprohigher",
+      "frame": "/assets/img/device-macpro-higher.png",
+      "media": {
+        "kind": "video",
+        "src": "/media/pages/work/project-03/98e09d88cf-1687429337/project-03-case-home-scroll.mp4",
+        "cls": [
+          "overlay"
+        ]
+      },
+      "parallax": null,
+      "overlayTops": [],
+      "pencil": null
+    },
+    "ipadpro": {
+      "type": "device",
+      "index": 0,
+      "background": "#DCD0C2",
+      "paddingBottom": true,
+      "device": "ipadpro",
+      "frame": "/assets/img/device-ipad-pro-lower.png",
+      "media": {
+        "kind": "video",
+        "src": "/media/pages/work/project-08/ad92afd3da-1653054674/project-08-screen.mp4",
+        "cls": [
+          "overlay"
+        ]
+      },
+      "parallax": null,
+      "overlayTops": [],
+      "pencil": null
+    },
+    "ipadpro-pencil": {
+      "type": "device",
+      "index": 2,
+      "background": "#d8d5cc",
+      "paddingBottom": true,
+      "device": "ipadpro",
+      "frame": "/assets/img/device-ipad-pro-lower.png",
+      "media": {
+        "kind": "video",
+        "src": "/media/pages/work/project-09/06caeb881e-1646837280/project-09-screen-footer.mp4",
+        "cls": [
+          "overlay"
+        ]
+      },
+      "parallax": null,
+      "overlayTops": [],
+      "pencil": {
+        "src": "/assets/img/device-apple-pencil.png",
+        "cls": [
+          "overlay",
+          "overlay-pencil",
+          "lazy"
+        ],
+        "scrollSpeed": "1.5"
+      }
+    },
+    "mbp16lower-parallax-overlaytop": {
+      "type": "device",
+      "index": 3,
+      "background": null,
+      "paddingBottom": true,
+      "device": "mbp16lower",
+      "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/work/project-10/26601c386e-1646837270/project-10-parallax-archive.jpg",
+        "srcSmall": "/media/pages/work/project-10/26601c386e-1646837270/project-10-parallax-archive-540x.jpg",
+        "width": 1728,
+        "height": 1501,
+        "cls": [
+          "lazy"
+        ],
+        "scrollSpeed": "1.5"
+      },
+      "parallax": {
+        "src": "/media/pages/work/project-10/26601c386e-1646837270/project-10-parallax-archive.jpg",
+        "srcSmall": "/media/pages/work/project-10/26601c386e-1646837270/project-10-parallax-archive-540x.jpg",
+        "width": 1728,
+        "height": 1501,
+        "scrollSpeed": "1.5"
+      },
+      "overlayTops": [
+        {
+          "src": "/media/pages/work/project-10/cf8d6eb3fa-1646837265/project-10-nav-bar.svg",
+          "srcSmall": "/media/pages/work/project-10/cf8d6eb3fa-1646837265/project-10-nav-bar.svg",
+          "width": 1440,
+          "height": 130,
+          "scrollSpeed": null
+        }
+      ],
+      "pencil": null
+    }
+  },
+  "mobile-devices": {
+    "unframed-nodevice": {
+      "type": "mobile-devices",
+      "index": 4,
+      "background": "#C0CAC9",
+      "paddingBottom": false,
+      "device": "nodevice",
+      "columns": [
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_4",
+            "data-scroll-speed": "1"
+          },
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/project-01/076ed24f45-1710412700/project-01-screen-mobile-1.jpg",
+            "srcSmall": "/media/pages/work/project-01/076ed24f45-1710412700/project-01-screen-mobile-1-540x.jpg",
+            "width": 1080,
+            "height": 2191,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": null
+        },
+        {
+          "deviceAttrs": {},
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/project-01/6d3469f364-1710412710/project-01-screen-mobile-2.jpg",
+            "srcSmall": "/media/pages/work/project-01/6d3469f364-1710412710/project-01-screen-mobile-2-540x.jpg",
+            "width": 1080,
+            "height": 2191,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": null
+        },
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_4",
+            "data-scroll-speed": "-1"
+          },
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/project-01/4482f6c357-1710412713/project-01-screen-mobile-3.jpg",
+            "srcSmall": "/media/pages/work/project-01/4482f6c357-1710412713/project-01-screen-mobile-3-540x.jpg",
+            "width": 1080,
+            "height": 2186,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": null
+        }
+      ]
+    },
+    "framed-iphone14": {
+      "type": "mobile-devices",
+      "index": 1,
+      "background": "#E5E0DC",
+      "paddingBottom": false,
+      "device": "iphone14",
+      "columns": [
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_1",
+            "data-scroll-speed": "1"
+          },
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/project-06/d90cfe7ba5-1672819746/mobile-screen-project-06-1.jpg",
+            "srcSmall": "/media/pages/work/project-06/d90cfe7ba5-1672819746/mobile-screen-project-06-1-540x.jpg",
+            "width": 540,
+            "height": 1165,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": "/assets/img/device-iphone14.png"
+        },
+        {
+          "deviceAttrs": {},
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/project-06/ffaf296ffc-1672820127/mobile-screen-project-06-2.jpg",
+            "srcSmall": "/media/pages/work/project-06/ffaf296ffc-1672820127/mobile-screen-project-06-2-540x.jpg",
+            "width": 540,
+            "height": 1165,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": "/assets/img/device-iphone14.png"
+        },
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_1",
+            "data-scroll-speed": "-1"
+          },
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/project-06/a2dd625bf2-1672820988/mobile-screen-project-06-3.jpg",
+            "srcSmall": "/media/pages/work/project-06/a2dd625bf2-1672820988/mobile-screen-project-06-3-540x.jpg",
+            "width": 540,
+            "height": 1165,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": "/assets/img/device-iphone14.png"
+        }
+      ]
+    },
+    "framed-iphone13nonotch": {
+      "type": "mobile-devices",
+      "index": 2,
+      "background": "#DCD0C2",
+      "paddingBottom": false,
+      "device": "iphone13nonotch",
+      "columns": [
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_2",
+            "data-scroll-speed": "1"
+          },
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/work/project-08/73fecccd91-1653055451/project-08-screen-rec-mob.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "frame": "/assets/img/device-iphone13-nonotch.png"
+        },
+        {
+          "deviceAttrs": {},
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/project-08/7290f5da48-1653055387/project-08-screen-2.jpg",
+            "srcSmall": "/media/pages/work/project-08/7290f5da48-1653055387/project-08-screen-2-540x.jpg",
+            "width": 540,
+            "height": 1170,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": "/assets/img/device-iphone13-nonotch.png"
+        },
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_2",
+            "data-scroll-speed": "-1"
+          },
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/work/project-08/69afe68ccf-1653055393/project-08-screen-3.jpg",
+            "srcSmall": "/media/pages/work/project-08/69afe68ccf-1653055393/project-08-screen-3-540x.jpg",
+            "width": 540,
+            "height": 1170,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": "/assets/img/device-iphone13-nonotch.png"
+        }
+      ]
+    }
+  },
+  "fullwidth": {
+    "video-dark": {
+      "type": "fullwidth",
+      "index": 2,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "video",
+        "src": "/media/pages/work/project-01/9410598988-1710411431/project-01-screen-reel.mp4",
+        "cls": [
+          "overlay"
+        ]
+      },
+      "scrollSpeed": "-3",
+      "darkOverlay": "0.2",
+      "textOverlay": null,
+      "textOverlayThemeDark": false
+    },
+    "image-dark": {
+      "type": "fullwidth",
+      "index": 2,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/work/project-02/0367a4932e-1710451142/project-02-team-52.jpg",
+        "srcSmall": "/media/pages/work/project-02/0367a4932e-1710451142/project-02-team-52-540x.jpg",
+        "width": 5856,
+        "height": 3896,
+        "cls": [
+          "overlay",
+          "overlay-image",
+          "lazy"
+        ],
+        "scrollSpeed": "-2"
+      },
+      "scrollSpeed": "-2",
+      "darkOverlay": "0",
+      "textOverlay": null,
+      "textOverlayThemeDark": false
+    },
+    "image": {
+      "type": "fullwidth",
+      "index": 1,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/work/project-08/98ad2da45a-1653055060/project-08-full-size-1.jpg",
+        "srcSmall": "/media/pages/work/project-08/98ad2da45a-1653055060/project-08-full-size-1-540x.jpg",
+        "width": 3000,
+        "height": 2250,
+        "cls": [
+          "overlay",
+          "overlay-image",
+          "lazy"
+        ],
+        "scrollSpeed": "-3"
+      },
+      "scrollSpeed": "-3",
+      "darkOverlay": null,
+      "textOverlay": null,
+      "textOverlayThemeDark": false
+    },
+    "video-textoverlay-dark": {
+      "type": "fullwidth",
+      "index": 3,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "video",
+        "src": "/media/pages/work/project-08/c6b7159243-1653056956/high_headerproject-08-1.mp4",
+        "cls": [
+          "overlay"
+        ]
+      },
+      "scrollSpeed": "-3",
+      "darkOverlay": "0",
+      "textOverlay": "Design and build, end to end",
+      "textOverlayThemeDark": true
+    },
+    "image-textoverlay-dark": {
+      "type": "fullwidth",
+      "index": 2,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/work/project-11/21ce736523-1646837255/project-11-people-accomodation-photographer-filmmaker-australia-16-2160x2160.jpg",
+        "srcSmall": "/media/pages/work/project-11/21ce736523-1646837255/project-11-people-accomodation-photographer-filmmaker-australia-16-2160x2160-540x.jpg",
+        "width": 2000,
+        "height": 1333,
+        "cls": [
+          "overlay",
+          "overlay-image",
+          "lazy"
+        ],
+        "scrollSpeed": "-3"
+      },
+      "scrollSpeed": "-3",
+      "darkOverlay": "0.1",
+      "textOverlay": "Design and build, end to end",
+      "textOverlayThemeDark": true
+    }
+  },
+  "screenshot": {
+    "image": {
+      "type": "screenshot",
+      "index": 4,
+      "background": "#DCD0C2",
+      "paddingBottom": true,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/work/project-08/685adbde8d-1653055959/project-08-photo-gallery-big.jpg",
+        "srcSmall": "/media/pages/work/project-08/685adbde8d-1653055959/project-08-photo-gallery-big-540x.jpg",
+        "width": 4400,
+        "height": 2120
+      }
+    },
+    "video": {
+      "type": "screenshot",
+      "index": 5,
+      "background": null,
+      "paddingBottom": true,
+      "media": {
+        "kind": "video",
+        "src": "/media/pages/work/project-11/237a0f8246-1646837254/project-11-screen-interaction.mp4",
+        "cls": []
+      }
+    }
+  }
+}
