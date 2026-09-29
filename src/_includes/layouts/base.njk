@@ -11,11 +11,11 @@
     ns              main 的 id 与 data-barba-namespace（§6.0 的 7 个值之一）
     title/description/ogImage/canonical   <head> 的逐页字段
     loaderActive    site.loaderWords 的索引，标 active 的那一条
-    navActive       site.navBar 的索引，或 null（archive/styleguide 无高亮）
+    navActive       site.navBar 的索引，或 null（**不在** navBar 里的页：home / contact）
     fixedNavActive  site.fixedNav 的索引，或 null
-    cursorMode      'float'（home/work，有浮动缩略图）/ 'empty'（archive/案例页）/
-                    'none'（about/contact/styleguide 完全没有光标元素）
-    cursorSpan      光标文字：'View' / 'Website' / 'Next case'
+    cursorMode      'float'（有浮动缩略图的页：home / characters）/ 'empty'（5 个详情页）/
+                    'none'（gallery / about / contact 完全不输出光标元素）
+    cursorSpan      光标文字：'View' / 'Next'（P10 起没有"案例"这个说法，故不再是 'Next case'）
     floatImages     浮动缩略图数据（仅 'float' 模式用）
 
   关于 <script> 块（SPEC.md §2.1）：P3 起按原站逐字输出，**顺序不可调换**。

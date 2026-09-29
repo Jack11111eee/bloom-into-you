@@ -1,15 +1,17 @@
 {#
   partials/cursor.njk — 光标跟随的三层元素（SPEC.md §6.7）
 
-  只在 home / work / archive / 案例页出现；about / contact / styleguide **完全没有**这三个 div。
-  三种形态（已用 cheerio 逐页确认）：
-    · float —— home / work：`.mouse-pos-list-image-bounce > .float-image-wrap > li`（浮动缩略图）
-    · empty —— archive / 案例页：`.mouse-pos-list-image` 是**空 div**（无 bounce、无 float-wrap）
-    · none  —— 不输出本 partial
+  P10 M1 起的三种形态（页名换成新路由表，形态与结构一字不动）：
+    · float —— home / characters（M4 补 `floatImages`）：`.mouse-pos-list-image-bounce > .float-image-wrap > li`
+    · empty —— 5 个详情页（`characters.json` / `insights.json` 的 `cursorMode`）：
+      `.mouse-pos-list-image` 是**空 div**（无 bounce、无 float-wrap）
+    · none  —— gallery / about / contact：不输出本 partial
 
   `.mouse-pos-list-btn` 恒为空 div（圆点由 CSS 画）。
-  光标文字（`.mouse-pos-list-span`）：home/work = `View`，archive = `Website` + 箭头，
-  案例页 = `Next case`。
+  光标文字（`.mouse-pos-list-span`）：home / characters / insights = `View`，详情页 = `Next`。
+  ⚠️ 下面那个 `cursorSpan === 'Website'` + 箭头 的分支**自 P10 M1 起没有使用者**了
+  （原站是 `/archive` 的外链指示）。**保留不删** —— 与 D3 的筛选代码同样处置：
+  退役的是用法，不是代码。
 
   > 注意 `.float-image-wrap` 里的 `<li>` **直接挂在 div 下**（原站如此，不是合法列表结构）。
   > 照抄 —— 结构 diff 会逐元素比对，改成 `<ul>` 会立刻报差异。

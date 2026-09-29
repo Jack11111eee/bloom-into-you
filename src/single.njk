@@ -1,0 +1,22 @@
+{#
+  single.njk — 两类详情页共用一个模板（P10 `docs/bloom-redesign-plan.md` §2 / §4.4 / §4.6）
+
+  `SPEC.md` §6.0 的立场在这里延续：**共用一个 Barba namespace 的页面必须共用一份模板
+  与一份数据形状**（原站是"11 条案例页共用 `work-single`"，现在是"3 个人物页 + 2 个解读页
+  共用 `single`"）。分页（pagination）正是为此 —— 数据源见 `_data/singles.js`。
+
+  `.main-wrap` 内的顺序与原站案例页逐字相同：
+  case-top-wrap → single-block × N → footer-rounded-div → footer-wrap.footer-case-wrap
+  → 逐页 <style>（有 `customCss` 时才输出）。
+
+  `blocks` 由 `blocks/dispatch.njk` 按 `type` 分派；样例形状见 `_data/_block-samples.json`。
+#}
+{% include "partials/case-top.njk" %}
+{%- for b in entry.blocks %}
+{% include "blocks/dispatch.njk" %}
+{%- endfor %}
+{% include "partials/footer-rounded.njk" %}
+{% include "partials/footer-case.njk" %}
+{%- if entry.customCss %}
+<style>{{ entry.customCss | safe }}</style>
+{%- endif %}

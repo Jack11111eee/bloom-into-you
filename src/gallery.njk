@@ -1,0 +1,24 @@
+---
+ns: gallery
+---
+{#
+  gallery.njk — 画面长廊（P10 `docs/bloom-redesign-plan.md` §4.2）
+
+  `.main-wrap` 内：页头（原 work 页的 `default-header`，h1 两个 `<span>` 断行）→
+  **主体留空** → 页脚。
+
+  > **M1 只建骨架**：主体（`gallery.json` 的 blocks，经 `blocks/dispatch.njk` 渲染、
+  > 约 10–14 个 block、2 处呼吸点、2 组视觉呼应、1–2 段视频）在 **M3** 落地。
+  > 第一版**不带筛选与行/格切换**（方案 D3）—— 那两套控件随 `/work` 删除，代码保留不删。
+#}
+<header class="section default-header work-header" data-scroll-section>
+{% include "partials/nav-bar.njk" %}   <div class="container medium">
+      <div class="row">
+         <div class="flex-col once-in">
+            <h1><span>Selected frames </span><span>and motion</span></h1>
+         </div>
+      </div>
+   </div>
+</header>
+{% include "partials/footer-rounded.njk" %}
+{% include "partials/footer.njk" %}

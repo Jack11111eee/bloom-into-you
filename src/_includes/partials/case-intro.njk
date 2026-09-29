@@ -1,13 +1,15 @@
 {#
-  partials/case-intro.njk — 案例页的 3 列元信息（SPEC.md §6.1）
+  partials/case-intro.njk — 详情页的 3 列元信息（`SPEC.md` §6.1；P10 起两类详情页共用）
 
   注意 `<li><p>…</p></li>` 的 `<li>` **直接挂在 `.flex-col` 下**（没有 `<ul>`）——
   原站如此，不是合法列表结构。照抄：结构 diff 逐元素比对，补一个 `<ul>` 会立刻报差异。
+
+  `entry` 是 `single.njk` 的 pagination alias（P10 之前读的是 `project`）。
 #}
 <section class="section case-intro once-in" data-scroll-section>
    <div class="container medium">
       <div class="row">
-{%- for col in project.intro %}
+{%- for col in entry.intro %}
          <div class="flex-col">
             <h5>{{ col.label }}</h5>
             <div class="stripe"></div>

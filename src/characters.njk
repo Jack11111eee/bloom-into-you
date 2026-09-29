@@ -1,0 +1,24 @@
+---
+ns: characters
+---
+{#
+  characters.njk — 人物索引（P10 `docs/bloom-redesign-plan.md` §4.3）
+
+  `.main-wrap` 内：页头 → **主体留空** → 页脚。
+
+  > **M1 只建骨架**：主体在 **M4** 落地 —— 行/格视图切换（`.grid-row` 两个按钮，
+  > **去掉** `.toggle-row` 的 All/Design/Development 筛选）+ 行式列表 + 卡片列表，
+  > 两套列表**同时渲染**、由 JS 改类名切换（`work.njk` 注释的 ★ 条，照旧）。
+  > 列表数据从 `_data/characters.json` **派生**，不另存一份。
+#}
+<header class="section default-header work-header" data-scroll-section>
+{% include "partials/nav-bar.njk" %}   <div class="container medium">
+      <div class="row">
+         <div class="flex-col once-in">
+            <h1><span>Three people, </span><span>one story</span></h1>
+         </div>
+      </div>
+   </div>
+</header>
+{% include "partials/footer-rounded.njk" %}
+{% include "partials/footer.njk" %}

@@ -1,0 +1,24 @@
+---
+ns: insights
+---
+{#
+  insights.njk — 解读索引（P10 `docs/bloom-redesign-plan.md` §4.5）
+
+  `.main-wrap` 内：页头 → **主体留空** → 页脚。
+
+  > **M1 只建骨架**：主体在 **M4** 落地 —— 结构同人物索引（行/格切换 + 两套列表，
+  > 去掉 `.toggle-row`），差异两处：① 页头 `h1` 下方加一行剧情提示
+  > `Contains story discussion`；② 表头改为 `Topic / Characters / …`，2 行。
+  > 列表数据从 `_data/insights.json` **派生**。
+#}
+<header class="section default-header work-header" data-scroll-section>
+{% include "partials/nav-bar.njk" %}   <div class="container medium">
+      <div class="row">
+         <div class="flex-col once-in">
+            <h1><span>Notes on </span><span>the story</span></h1>
+         </div>
+      </div>
+   </div>
+</header>
+{% include "partials/footer-rounded.njk" %}
+{% include "partials/footer.njk" %}

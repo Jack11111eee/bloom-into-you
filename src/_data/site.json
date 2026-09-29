@@ -1,10 +1,32 @@
 {
-  "_comment": "站点级常量（SPEC.md §7.2）。P8 已把原站文案换成占位内容（DEVIATIONS.md D2）：练习名「Bloom Studio」由仓库名派生，**不是**任何真实个人或机构的身份；社交账号一律指向 example.com（RFC 2606），标签改成不含第三方品牌的中性词。",
+  "_comment": "站点级常量（SPEC.md §7.2）。P8 已把原站文案换成占位内容（DEVIATIONS.md D2）：练习名「Bloom Studio」由仓库名派生，**不是**任何真实个人或机构的身份；社交账号一律指向 example.com（RFC 2606），标签改成不含第三方品牌的中性词。P10 M1 改了导航组成与 loader 词表（方案 §4.8 / §5 M1 步骤 6、7），见 DEVIATIONS.md F1 / F2。",
   "lang": "en",
   "navBar": [
     {
-      "label": "Work",
-      "href": "/work",
+      "label": "Gallery",
+      "href": "/gallery",
+      "strength": "20",
+      "strengthText": "10",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
+      "label": "Characters",
+      "href": "/characters",
+      "strength": "20",
+      "strengthText": "10",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
+      "label": "Insights",
+      "href": "/insights",
       "strength": "20",
       "strengthText": "10",
       "external": false,
@@ -16,17 +38,6 @@
     {
       "label": "About",
       "href": "/about",
-      "strength": "20",
-      "strengthText": "10",
-      "external": false,
-      "classes": [
-        "btn",
-        "btn-link"
-      ]
-    },
-    {
-      "label": "Contact",
-      "href": "/contact",
       "strength": "20",
       "strengthText": "10",
       "external": false,
@@ -61,8 +72,30 @@
       ]
     },
     {
-      "label": "Work",
-      "href": "/work",
+      "label": "Gallery",
+      "href": "/gallery",
+      "strength": "24",
+      "strengthText": "12",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
+      "label": "Characters",
+      "href": "/characters",
+      "strength": "24",
+      "strengthText": "12",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
+      "label": "Insights",
+      "href": "/insights",
       "strength": "24",
       "strengthText": "12",
       "external": false,
@@ -154,51 +187,35 @@
       "cls": ""
     },
     {
-      "text": "Work",
+      "text": "Gallery",
       "cls": ""
     },
     {
-      "text": "Project 01",
+      "text": "Characters",
       "cls": ""
     },
     {
-      "text": "Project 02",
+      "text": "Yuu Koito",
       "cls": ""
     },
     {
-      "text": "Project 03",
+      "text": "Touko Nanami",
       "cls": ""
     },
     {
-      "text": "Project 04",
+      "text": "Sayaka Saeki",
       "cls": ""
     },
     {
-      "text": "Project 05",
+      "text": "Insights",
       "cls": ""
     },
     {
-      "text": "Project 06",
+      "text": "Yuu & Touko",
       "cls": ""
     },
     {
-      "text": "Project 07",
-      "cls": ""
-    },
-    {
-      "text": "Project 08",
-      "cls": ""
-    },
-    {
-      "text": "Project 09",
-      "cls": ""
-    },
-    {
-      "text": "Project 10",
-      "cls": ""
-    },
-    {
-      "text": "Project 11",
+      "text": "Touko & Sayaka",
       "cls": ""
     },
     {
@@ -214,15 +231,7 @@
       "cls": ""
     },
     {
-      "text": "Archive",
-      "cls": ""
-    },
-    {
       "text": "Error",
-      "cls": ""
-    },
-    {
-      "text": "Styleguide",
       "cls": ""
     }
   ],

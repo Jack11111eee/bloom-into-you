@@ -1,5 +1,5 @@
 {
-  "_comment": "首页专属内容（SPEC.md §6.2 / §7.1）。P8 已换成占位内容（DEVIATIONS.md D2）；`moreWorkCount` **有意不在此处** —— 由 `src.11tydata.js` 的 `homeMoreWorkCount` 派生（B8）。",
+  "_comment": "首页专属内容（SPEC.md §6.2 / §7.1）。P8 已换成占位内容（DEVIATIONS.md D2）；`moreWorkCount` **有意不在此处** —— 由 `src.11tydata.js` 的 `homeMoreWorkCount` 派生（B8）。★ P10 M1 的最小必要修正：`moreWorkHref` 与 featured 的 `href` / `tileImage` 原先指向已删除的 /work/project-* 与 src/media/pages/work/（那会让 G-C 的链接检查与 check-leaks ⑤ 报红），现改指 M1 已存在的页面与媒体。**首页的完整改造仍留给 M5**（方案 §4.1 / §5 M5）—— 届时 `featured` 改为从 characters.json 派生 3 条人物入口，名字与文案一并换掉（现在仍是占位名 `Project 01…`）。",
   "introHeading": "Designing and building calm, precise digital products. Clear structure, considered motion, and interfaces that stay out of the way.",
   "introText": "Design, code and interaction are where the work comes together — small details, built carefully.",
   "heroRole": "Independent Designer & Developer",
@@ -11,7 +11,7 @@
         "development",
         "interaction"
       ],
-      "href": "/work/project-01",
+      "href": "/characters/yuu",
       "target": null,
       "arrow": false,
       "name": "Project 01",
@@ -19,7 +19,7 @@
       "services": "Interface & Motion",
       "year": "2024",
       "tileColor": "#F1F1F1",
-      "tileImage": "/media/pages/work/project-01/0ab7e43954-1710404752/thumbnail-project-01.jpg"
+      "tileImage": "/assets/img/home-item-1.jpg"
     },
     {
       "classes": [
@@ -27,7 +27,7 @@
         "development",
         "interaction"
       ],
-      "href": "/work/project-02",
+      "href": "/characters/touko",
       "target": null,
       "arrow": false,
       "name": "Project 02",
@@ -35,7 +35,7 @@
       "services": "Design & Build",
       "year": "2024",
       "tileColor": "#E0D9D1",
-      "tileImage": "/media/pages/work/project-02/b511d32d21-1710452224/thumbnail-project-02-v2.jpg"
+      "tileImage": "/assets/img/home-item-3.jpg"
     },
     {
       "classes": [
@@ -43,7 +43,7 @@
         "development",
         "interaction"
       ],
-      "href": "/work/project-03",
+      "href": "/characters/sayaka",
       "target": null,
       "arrow": false,
       "name": "Project 03",
@@ -51,7 +51,7 @@
       "services": "Design & Build",
       "year": "2023",
       "tileColor": "#48494A",
-      "tileImage": "/media/pages/work/project-03/ac07564a5f-1688453092/thumbnail-project-03-darkgray.jpg"
+      "tileImage": "/assets/img/home-item-6.jpg"
     },
     {
       "classes": [
@@ -59,7 +59,7 @@
         "development",
         "interaction"
       ],
-      "href": "/work/project-04",
+      "href": "/insights/yuu-touko",
       "target": null,
       "arrow": false,
       "name": "Project 04",
@@ -67,8 +67,8 @@
       "services": "Design & Build",
       "year": "2023",
       "tileColor": "#101010",
-      "tileImage": "/media/pages/work/project-04/441187fb44-1687423090/thumbnail-project-04.jpg"
+      "tileImage": "/assets/img/home-item-8.jpg"
     }
   ],
-  "moreWorkHref": "/work"
+  "moreWorkHref": "/gallery"
 }

@@ -1,21 +1,27 @@
 {#
-  partials/footer-case.njk — 案例页页脚（11 页共用）
+  partials/footer-case.njk — 详情页页脚（两类详情页共用）
 
   与默认页脚的三处差异（SPEC.md §6.1）：
     · 外层是 `<section class="section footer">`，**不是 `<footer>`** —— 原站如此，照抄
-    · 内容是 `next-case-btn`（指向下一个案例）+ “All work N” 按钮，没有箭头/圆钮/邮箱
+    · 内容是 `next-case-btn`（指向下一条）+ “All … N” 按钮，没有箭头/圆钮/邮箱
     · `.container.medium` 上多 `data-scroll-offset="-25%, 0%"`，`next-case-btn` 内含 `.tile-image`
 
-  下一个案例是**环状**的（SPEC.md §6.1 的顺序链，已验证三个样本）。
-  `.tile-image` 的内联 `background-color` 来自数据的 `nextCase.tileColor`，
+  下一条是**环状**的（原站是 11 个案例的环，P10 起是 3 个人物的环与 2 篇解读的环），
+  环由数据给出（`nextCase.href` / `.name`）。
+  `.tile-image` 的内联 `background-color` 来自 `nextCase.tileColor`，
   `data-bg` 是缩略图原图 URL（§7.5：全站唯一使用 `data-bg` 的地方之一）。
+
+  > **P10 M1**：P10 之前这里写死 `/work/{{ slug }}` 与 `All work {{ workCount }}`。
+  > 两类详情页各有自己的索引页与计数，故改为读数据的 `href` / 标签 / 计数
+  > （方案 §5 M1 步骤 4）。计数由 `src/src.11tydata.js` 的 `allLink` **派生**，不存。
+  > 可见标签 `Next case` → `Next`（方案 §4.4：不再有"案例"这个说法）。
 #}
 <div class="footer-wrap footer-case-wrap theme-dark" data-scroll-section="">
    <section class="section footer" data-scroll="" data-scroll-speed="-4" data-scroll-position="bottom" data-scroll-offset="-25%, 0%">
       <div class="container medium">
-         <a href="/work/{{ nextCase.slug }}" class="row next-case-btn">
+         <a href="{{ nextCase.href }}" class="row next-case-btn">
             <div class="flex-col">
-               <p>Next case</p>
+               <p>Next</p>
                <h2>{{ nextCase.name }}</h2>
             </div>
             <div class="tile-image-wrap">
@@ -31,10 +37,10 @@
          <div class="row">
             <div class="flex-col">
                <div class="btn btn-normal">
-                  <a href="/work" class="btn-click magnetic" data-strength="25" data-strength-text="15">
+                  <a href="{{ allLink.href }}" class="btn-click magnetic" data-strength="25" data-strength-text="15">
                      <div class="btn-fill"></div>
                      <span class="btn-text">
-                        <span class="btn-text-inner change">All work<div class="count-nr">{{ workCount }}</div></span>
+                        <span class="btn-text-inner change">{{ allLink.label }}<div class="count-nr">{{ allLink.count }}</div></span>
                      </span>
                   </a>
                </div>

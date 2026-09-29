@@ -1,5 +1,5 @@
 {
-  "_comment": "6 个非案例页的 head 字段与高亮索引（案例页的同类字段在 projects.json）。P8 已换成占位内容（DEVIATIONS.md D2）。",
+  "_comment": "非详情页的 head 字段与高亮索引（详情页的同类字段在 characters.json / insights.json，经 single.njk 的分页 alias 进入）。键**就是** namespace —— 它同时是 main 的 id 与 data-barba-namespace（layouts/base.njk:46），故每个索引页必须有独立键，否则两页会共用同一份 title / navActive / loaderActive（方案 §7.1 #4 / #6）。P10 M1：删 work / archive / styleguide 三键，加 gallery / characters / insights。 gallery / characters / insights 的 file 为 null —— 它们是 P10 新页，没有归档对应物。",
   "pages": {
     "home": {
       "file": "home.html",
@@ -21,7 +21,7 @@
             "visible"
           ],
           "tileColor": "#F1F1F1",
-          "thumbnail": "/media/pages/work/project-01/0ab7e43954-1710404752/thumbnail-project-01-810x810-crop-q72.jpg"
+          "thumbnail": "/assets/img/home-item-1.jpg"
         },
         {
           "classes": [
@@ -31,7 +31,7 @@
             "visible"
           ],
           "tileColor": "#E0D9D1",
-          "thumbnail": "/media/pages/work/project-02/b511d32d21-1710452224/thumbnail-project-02-v2-810x810-crop-q72.jpg"
+          "thumbnail": "/assets/img/home-item-3.jpg"
         },
         {
           "classes": [
@@ -41,7 +41,7 @@
             "visible"
           ],
           "tileColor": "#48494A",
-          "thumbnail": "/media/pages/work/project-03/ac07564a5f-1688453092/thumbnail-project-03-darkgray-810x810-crop-q72.jpg"
+          "thumbnail": "/assets/img/home-item-6.jpg"
         },
         {
           "classes": [
@@ -51,128 +51,51 @@
             "visible"
           ],
           "tileColor": "#101010",
-          "thumbnail": "/media/pages/work/project-04/441187fb44-1687423090/thumbnail-project-04-810x810-crop-q72.jpg"
+          "thumbnail": "/assets/img/home-item-8.jpg"
         }
       ]
     },
-    "work": {
-      "file": "work.html",
-      "ns": "work",
-      "cursorMode": "float",
-      "cursorSpan": "View",
-      "title": "Work - Bloom Studio",
+    "gallery": {
+      "file": null,
+      "ns": "gallery",
+      "cursorMode": "none",
+      "cursorSpan": null,
+      "title": "Gallery - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
-      "canonical": "/work",
+      "canonical": "/gallery",
       "loaderActive": 10,
       "navActive": 0,
       "fixedNavActive": 1,
-      "floatImages": [
-        {
-          "classes": [
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "#F1F1F1",
-          "thumbnail": "/media/pages/work/project-01/0ab7e43954-1710404752/thumbnail-project-01-810x810-crop-q72.jpg"
-        },
-        {
-          "classes": [
-            "design",
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "#E0D9D1",
-          "thumbnail": "/media/pages/work/project-02/b511d32d21-1710452224/thumbnail-project-02-v2-810x810-crop-q72.jpg"
-        },
-        {
-          "classes": [
-            "design",
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "#48494A",
-          "thumbnail": "/media/pages/work/project-03/ac07564a5f-1688453092/thumbnail-project-03-darkgray-810x810-crop-q72.jpg"
-        },
-        {
-          "classes": [
-            "design",
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "#101010",
-          "thumbnail": "/media/pages/work/project-04/441187fb44-1687423090/thumbnail-project-04-810x810-crop-q72.jpg"
-        },
-        {
-          "classes": [
-            "development",
-            "interaction",
-            "design",
-            "visible"
-          ],
-          "tileColor": "#363637",
-          "thumbnail": "/media/pages/work/project-05/1f2468ab51-1680179645/thumbnail-project-05-desktop-810x810-crop-q72.jpg"
-        },
-        {
-          "classes": [
-            "design",
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "#D8D3CD",
-          "thumbnail": "/media/pages/work/project-06/4d2a7758a4-1672918357/thumbnail-project-06-v2-810x810-crop-q72.jpg"
-        },
-        {
-          "classes": [
-            "design",
-            "development",
-            "visible"
-          ],
-          "tileColor": "#7E7E7E",
-          "thumbnail": "/media/pages/work/project-07/0daec771af-1660128857/thumbnail-project-07-810x810-crop-q72.jpg"
-        },
-        {
-          "classes": [
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "#DCD0C2",
-          "thumbnail": "/media/pages/work/project-08/614e28a662-1653057688/thumbnail-project-08-810x810-crop-q72.jpg"
-        },
-        {
-          "classes": [
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "#B1A994",
-          "thumbnail": "/media/pages/work/project-09/fd1951ffc9-1646837277/thumbnail-project-09-810x810-crop-q72.jpg"
-        },
-        {
-          "classes": [
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "var(--color-lightgray)",
-          "thumbnail": "/media/pages/work/project-10/288460827e-1646837272/thumbnail-project-10-v3-810x810-crop-q72.jpg"
-        },
-        {
-          "classes": [
-            "design",
-            "development",
-            "visible"
-          ],
-          "tileColor": "#626D6E",
-          "thumbnail": "/media/pages/work/project-11/f152b03247-1646837253/thumbnail-project-11-810x810-crop-q72.jpg"
-        }
-      ]
+      "floatImages": null
+    },
+    "characters": {
+      "file": null,
+      "ns": "characters",
+      "cursorMode": "float",
+      "cursorSpan": "View",
+      "title": "Characters - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
+      "canonical": "/characters",
+      "loaderActive": 11,
+      "navActive": 1,
+      "fixedNavActive": 2,
+      "floatImages": null
+    },
+    "insights": {
+      "file": null,
+      "ns": "insights",
+      "cursorMode": "float",
+      "cursorSpan": "View",
+      "title": "Insights - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
+      "canonical": "/insights",
+      "loaderActive": 15,
+      "navActive": 2,
+      "fixedNavActive": 3,
+      "floatImages": null
     },
     "about": {
       "file": "about.html",
@@ -183,9 +106,9 @@
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/pages/about/d289927735-1646837228/meta-about-860x540-crop-q72.jpg",
       "canonical": "/about",
-      "loaderActive": 22,
-      "navActive": 1,
-      "fixedNavActive": 2,
+      "loaderActive": 18,
+      "navActive": 3,
+      "fixedNavActive": 4,
       "floatImages": null
     },
     "contact": {
@@ -197,37 +120,9 @@
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
       "canonical": "/contact",
-      "loaderActive": 23,
-      "navActive": 2,
-      "fixedNavActive": 3,
-      "floatImages": null
-    },
-    "archive": {
-      "file": "archive.html",
-      "ns": "archive",
-      "cursorMode": "empty",
-      "cursorSpan": "Website",
-      "title": "Archive - Bloom Studio",
-      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
-      "canonical": "/archive",
-      "loaderActive": 25,
+      "loaderActive": 19,
       "navActive": null,
-      "fixedNavActive": null,
-      "floatImages": null
-    },
-    "styleguide": {
-      "file": "styleguide.html",
-      "ns": "styleguide",
-      "cursorMode": "none",
-      "cursorSpan": null,
-      "title": "Styleguide - Bloom Studio",
-      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
-      "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
-      "canonical": "/styleguide",
-      "loaderActive": 27,
-      "navActive": null,
-      "fixedNavActive": null,
+      "fixedNavActive": 5,
       "floatImages": null
     }
   }

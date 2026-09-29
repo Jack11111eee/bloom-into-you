@@ -1,0 +1,77 @@
+{
+  "_comment": "三个人物页的数据（docs/bloom-redesign-plan.md §4.4）。M1 只建**骨架**：slug / href / head 字段 / 导航高亮 / next 环 —— 让 /characters/{yuu,touko,sayaka} 存在并 200。三栏 intro、主图与 4–6 个 blocks 由 M2 充实（方案 §5 M2 步骤 1）。",
+  "characters": [
+    {
+      "href": "/characters/yuu",
+      "name": "Yuu Koito",
+      "title": "Yuu Koito - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
+      "canonical": "/characters/yuu",
+      "loaderActive": 12,
+      "navActive": 1,
+      "fixedNavActive": 2,
+      "cursorMode": "empty",
+      "cursorSpan": "Next",
+      "intro": [],
+      "introImage": {},
+      "blocks": [],
+      "customCss": null,
+      "footerAccent": null,
+      "nextCase": {
+        "href": "/characters/touko",
+        "name": "Touko Nanami",
+        "tileColor": null,
+        "tileImage": null
+      }
+    },
+    {
+      "href": "/characters/touko",
+      "name": "Touko Nanami",
+      "title": "Touko Nanami - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
+      "canonical": "/characters/touko",
+      "loaderActive": 13,
+      "navActive": 1,
+      "fixedNavActive": 2,
+      "cursorMode": "empty",
+      "cursorSpan": "Next",
+      "intro": [],
+      "introImage": {},
+      "blocks": [],
+      "customCss": null,
+      "footerAccent": null,
+      "nextCase": {
+        "href": "/characters/sayaka",
+        "name": "Sayaka Saeki",
+        "tileColor": null,
+        "tileImage": null
+      }
+    },
+    {
+      "href": "/characters/sayaka",
+      "name": "Sayaka Saeki",
+      "title": "Sayaka Saeki - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
+      "canonical": "/characters/sayaka",
+      "loaderActive": 14,
+      "navActive": 1,
+      "fixedNavActive": 2,
+      "cursorMode": "empty",
+      "cursorSpan": "Next",
+      "intro": [],
+      "introImage": {},
+      "blocks": [],
+      "customCss": null,
+      "footerAccent": null,
+      "nextCase": {
+        "href": "/characters/yuu",
+        "name": "Yuu Koito",
+        "tileColor": null,
+        "tileImage": null
+      }
+    }
+  ]
+}

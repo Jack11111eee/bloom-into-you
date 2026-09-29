@@ -1,0 +1,53 @@
+{
+  "_comment": "两篇解读页的数据（docs/bloom-redesign-plan.md §4.6）。M1 只建**骨架**：slug / href / head 字段 / 导航高亮 / next 环 —— 让 /insights/{yuu-touko,touko-sayaka} 存在并 200。三栏 intro（第一栏标签 M2 改为 `Contains story discussion`）、主图与 blocks 由 M2 充实。",
+  "insights": [
+    {
+      "href": "/insights/yuu-touko",
+      "name": "Yuu & Touko",
+      "title": "Yuu & Touko - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
+      "canonical": "/insights/yuu-touko",
+      "loaderActive": 16,
+      "navActive": 2,
+      "fixedNavActive": 3,
+      "cursorMode": "empty",
+      "cursorSpan": "Next",
+      "intro": [],
+      "introImage": {},
+      "blocks": [],
+      "customCss": null,
+      "footerAccent": null,
+      "nextCase": {
+        "href": "/insights/touko-sayaka",
+        "name": "Touko & Sayaka",
+        "tileColor": null,
+        "tileImage": null
+      }
+    },
+    {
+      "href": "/insights/touko-sayaka",
+      "name": "Touko & Sayaka",
+      "title": "Touko & Sayaka - Bloom Studio",
+      "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
+      "canonical": "/insights/touko-sayaka",
+      "loaderActive": 17,
+      "navActive": 2,
+      "fixedNavActive": 3,
+      "cursorMode": "empty",
+      "cursorSpan": "Next",
+      "intro": [],
+      "introImage": {},
+      "blocks": [],
+      "customCss": null,
+      "footerAccent": null,
+      "nextCase": {
+        "href": "/insights/yuu-touko",
+        "name": "Yuu & Touko",
+        "tileColor": null,
+        "tileImage": null
+      }
+    }
+  ]
+}
