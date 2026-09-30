@@ -1,5 +1,5 @@
 {
-  "_comment": "三个人物页的数据（docs/bloom-redesign-plan.md §4.4）。M1 只建**骨架**：slug / href / head 字段 / 导航高亮 / next 环 —— 让 /characters/{yuu,touko,sayaka} 存在并 200。三栏 intro、主图与 4–6 个 blocks 由 M2 充实（方案 §5 M2 步骤 1）。",
+  "_comment": "三个人物页的数据（docs/bloom-redesign-plan.md §4.4）。M2 填充：三栏 intro（Character / Voice / 第三栏占位）、主图（introImage）、5 个 blocks（fullwidth 图 / nodevice 视频 / fullwidth 图文叠加 / mbp16lower 视频 / fullwidth 视频）与 next 环（Yuu → Touko → Sayaka → Yuu）。**liveSite 不给值** —— 人物页没有\"访问网站\"的语义（§4.4），case-intro-image 判空后不输出那个圆钮。全部占位文案为中性英文，替换见 src/_data。",
   "characters": [
     {
       "href": "/characters/yuu",
@@ -13,16 +13,140 @@
       "fixedNavActive": 2,
       "cursorMode": "empty",
       "cursorSpan": "Next",
-      "intro": [],
-      "introImage": {},
-      "blocks": [],
+      "intro": [
+        {
+          "label": "Character",
+          "items": [
+            "Yuu Koito"
+          ]
+        },
+        {
+          "label": "Voice",
+          "items": [
+            "Placeholder voice"
+          ]
+        },
+        {
+          "label": "Notes",
+          "items": [
+            "Placeholder line one",
+            "Placeholder line two"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": null,
+        "image": "/media/pages/characters/yuu/yuu-intro.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": null,
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "fullwidth",
+          "index": 0,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/characters/yuu/yuu-full-1.jpg",
+            "srcSmall": "/media/pages/characters/yuu/yuu-full-1-540x.jpg",
+            "width": 3000,
+            "height": 2250,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0",
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "device",
+          "index": 1,
+          "background": "#E6E8EB",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/characters/yuu/yuu-device-1.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 2,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/characters/yuu/yuu-overlay-1.jpg",
+            "srcSmall": "/media/pages/characters/yuu/yuu-overlay-1-540x.jpg",
+            "width": 2000,
+            "height": 1333,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0.1",
+          "textOverlay": "A short note about this character.",
+          "textOverlayThemeDark": true
+        },
+        {
+          "type": "device",
+          "index": 3,
+          "background": "#E0D9D1",
+          "paddingBottom": true,
+          "device": "mbp16lower",
+          "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/characters/yuu/yuu-device-2.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 4,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/characters/yuu/yuu-full-2.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": null,
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        }
+      ],
       "customCss": null,
-      "footerAccent": null,
+      "footerAccent": "#C0CAC9",
       "nextCase": {
         "href": "/characters/touko",
         "name": "Touko Nanami",
-        "tileColor": null,
-        "tileImage": null
+        "tileColor": "#E0D9D1",
+        "tileImage": "/media/pages/characters/touko/touko-intro.jpg"
       }
     },
     {
@@ -37,16 +161,140 @@
       "fixedNavActive": 2,
       "cursorMode": "empty",
       "cursorSpan": "Next",
-      "intro": [],
-      "introImage": {},
-      "blocks": [],
+      "intro": [
+        {
+          "label": "Character",
+          "items": [
+            "Touko Nanami"
+          ]
+        },
+        {
+          "label": "Voice",
+          "items": [
+            "Placeholder voice"
+          ]
+        },
+        {
+          "label": "Notes",
+          "items": [
+            "Placeholder line one",
+            "Placeholder line two"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": null,
+        "image": "/media/pages/characters/touko/touko-intro.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": null,
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "fullwidth",
+          "index": 0,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/characters/touko/touko-full-1.jpg",
+            "srcSmall": "/media/pages/characters/touko/touko-full-1-540x.jpg",
+            "width": 3000,
+            "height": 2250,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0",
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "device",
+          "index": 1,
+          "background": "#E6E8EB",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/characters/touko/touko-device-1.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 2,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/characters/touko/touko-overlay-1.jpg",
+            "srcSmall": "/media/pages/characters/touko/touko-overlay-1-540x.jpg",
+            "width": 2000,
+            "height": 1333,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0.1",
+          "textOverlay": "A short note about this character.",
+          "textOverlayThemeDark": true
+        },
+        {
+          "type": "device",
+          "index": 3,
+          "background": "#E0D9D1",
+          "paddingBottom": true,
+          "device": "mbp16lower",
+          "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/characters/touko/touko-device-2.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 4,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/characters/touko/touko-full-2.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": null,
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        }
+      ],
       "customCss": null,
-      "footerAccent": null,
+      "footerAccent": "#E0D9D1",
       "nextCase": {
         "href": "/characters/sayaka",
         "name": "Sayaka Saeki",
-        "tileColor": null,
-        "tileImage": null
+        "tileColor": "#E6E8EB",
+        "tileImage": "/media/pages/characters/sayaka/sayaka-intro.jpg"
       }
     },
     {
@@ -61,16 +309,140 @@
       "fixedNavActive": 2,
       "cursorMode": "empty",
       "cursorSpan": "Next",
-      "intro": [],
-      "introImage": {},
-      "blocks": [],
+      "intro": [
+        {
+          "label": "Character",
+          "items": [
+            "Sayaka Saeki"
+          ]
+        },
+        {
+          "label": "Voice",
+          "items": [
+            "Placeholder voice"
+          ]
+        },
+        {
+          "label": "Notes",
+          "items": [
+            "Placeholder line one",
+            "Placeholder line two"
+          ]
+        }
+      ],
+      "introImage": {
+        "liveSiteHref": null,
+        "image": "/media/pages/characters/sayaka/sayaka-intro.jpg",
+        "scrollSpeed": "-1",
+        "overlayTop": null,
+        "paddingBottom": true
+      },
+      "blocks": [
+        {
+          "type": "fullwidth",
+          "index": 0,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/characters/sayaka/sayaka-full-1.jpg",
+            "srcSmall": "/media/pages/characters/sayaka/sayaka-full-1-540x.jpg",
+            "width": 3000,
+            "height": 2250,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0",
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        },
+        {
+          "type": "device",
+          "index": 1,
+          "background": "#E6E8EB",
+          "paddingBottom": true,
+          "device": "nodevice",
+          "frame": null,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/characters/sayaka/sayaka-device-1.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 2,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/characters/sayaka/sayaka-overlay-1.jpg",
+            "srcSmall": "/media/pages/characters/sayaka/sayaka-overlay-1-540x.jpg",
+            "width": 2000,
+            "height": 1333,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": "0.1",
+          "textOverlay": "A short note about this character.",
+          "textOverlayThemeDark": true
+        },
+        {
+          "type": "device",
+          "index": 3,
+          "background": "#E0D9D1",
+          "paddingBottom": true,
+          "device": "mbp16lower",
+          "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/characters/sayaka/sayaka-device-2.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "parallax": null,
+          "overlayTops": [],
+          "pencil": null
+        },
+        {
+          "type": "fullwidth",
+          "index": 4,
+          "background": null,
+          "paddingBottom": false,
+          "media": {
+            "kind": "video",
+            "src": "/media/pages/characters/sayaka/sayaka-full-2.mp4",
+            "cls": [
+              "overlay"
+            ]
+          },
+          "scrollSpeed": "-3",
+          "darkOverlay": null,
+          "textOverlay": null,
+          "textOverlayThemeDark": false
+        }
+      ],
       "customCss": null,
-      "footerAccent": null,
+      "footerAccent": "#E6E8EB",
       "nextCase": {
         "href": "/characters/yuu",
         "name": "Yuu Koito",
-        "tileColor": null,
-        "tileImage": null
+        "tileColor": "#C0CAC9",
+        "tileImage": "/media/pages/characters/yuu/yuu-intro.jpg"
       }
     }
   ]
