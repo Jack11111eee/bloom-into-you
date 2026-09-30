@@ -1,0 +1,360 @@
+{
+  "_comment": "画面长廊的 block 序列（docs/bloom-redesign-plan.md §4.2 / §5 M3）。13 个 block：fullwidth 大图 / device nodevice 中图 / mobile-devices（2 列 2 组 = 视觉呼应、3 列 1 组）/ fullwidth 短视频交替；**2 处呼吸点**（新类型 `pause`，见 _includes/blocks/pause.njk 与方案 §7 的 M3-2）。第一版**不含筛选与行/格切换**（方案 D3）—— 那两套控件的代码保留不删（DEVIATIONS.md F3）。数据形状与已删的 projects.json 的 blocks 相同（`_block-samples.json` 是各变体的形状参考）。全部为中性占位文案，替换见 src/_data。",
+  "blocks": [
+    {
+      "type": "fullwidth",
+      "index": 0,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/gallery/gallery-full-1.jpg",
+        "srcSmall": "/media/pages/gallery/gallery-full-1-540x.jpg",
+        "width": 3000,
+        "height": 2250,
+        "cls": [
+          "overlay",
+          "overlay-image",
+          "lazy"
+        ]
+      },
+      "scrollSpeed": "-3",
+      "darkOverlay": "0",
+      "textOverlay": null,
+      "textOverlayThemeDark": false
+    },
+    {
+      "type": "device",
+      "index": 1,
+      "background": "#E6E8EB",
+      "paddingBottom": true,
+      "device": "nodevice",
+      "frame": null,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/gallery/gallery-device-1.jpg",
+        "srcSmall": "/media/pages/gallery/gallery-device-1-540x.jpg",
+        "width": 2000,
+        "height": 1333,
+        "cls": [
+          "overlay",
+          "overlay-image",
+          "lazy"
+        ]
+      },
+      "parallax": null,
+      "overlayTops": [],
+      "pencil": null
+    },
+    {
+      "type": "pause",
+      "index": 2,
+      "background": null,
+      "paddingBottom": true,
+      "heading": "Frames that carry the story",
+      "text": "A placeholder line about the pacing between moments — the quiet space that lets a sequence breathe."
+    },
+    {
+      "type": "mobile-devices",
+      "index": 3,
+      "background": null,
+      "paddingBottom": false,
+      "device": "nodevice",
+      "columns": [
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_3",
+            "data-scroll-speed": "1"
+          },
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/gallery/gallery-mobile-1a.jpg",
+            "srcSmall": "/media/pages/gallery/gallery-mobile-1a-540x.jpg",
+            "width": 1080,
+            "height": 2191,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": null
+        },
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_3",
+            "data-scroll-speed": "-1"
+          },
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/gallery/gallery-mobile-1b.jpg",
+            "srcSmall": "/media/pages/gallery/gallery-mobile-1b-540x.jpg",
+            "width": 1080,
+            "height": 2191,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": null
+        }
+      ]
+    },
+    {
+      "type": "fullwidth",
+      "index": 4,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "video",
+        "src": "/media/pages/gallery/gallery-video-1.mp4",
+        "cls": [
+          "overlay"
+        ]
+      },
+      "scrollSpeed": "-3",
+      "darkOverlay": null,
+      "textOverlay": null,
+      "textOverlayThemeDark": false
+    },
+    {
+      "type": "device",
+      "index": 5,
+      "background": "#E0D9D1",
+      "paddingBottom": true,
+      "device": "nodevice",
+      "frame": null,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/gallery/gallery-device-2.jpg",
+        "srcSmall": "/media/pages/gallery/gallery-device-2-540x.jpg",
+        "width": 2000,
+        "height": 1333,
+        "cls": [
+          "overlay",
+          "overlay-image",
+          "lazy"
+        ]
+      },
+      "parallax": null,
+      "overlayTops": [],
+      "pencil": null
+    },
+    {
+      "type": "mobile-devices",
+      "index": 6,
+      "background": null,
+      "paddingBottom": false,
+      "device": "nodevice",
+      "columns": [
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_6",
+            "data-scroll-speed": "1"
+          },
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/gallery/gallery-mobile-2a.jpg",
+            "srcSmall": "/media/pages/gallery/gallery-mobile-2a-540x.jpg",
+            "width": 1080,
+            "height": 2191,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": null
+        },
+        {
+          "deviceAttrs": {},
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/gallery/gallery-mobile-2b.jpg",
+            "srcSmall": "/media/pages/gallery/gallery-mobile-2b-540x.jpg",
+            "width": 1080,
+            "height": 2191,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": null
+        },
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_6",
+            "data-scroll-speed": "-1"
+          },
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/gallery/gallery-mobile-2c.jpg",
+            "srcSmall": "/media/pages/gallery/gallery-mobile-2c-540x.jpg",
+            "width": 1080,
+            "height": 2191,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": null
+        }
+      ]
+    },
+    {
+      "type": "pause",
+      "index": 7,
+      "background": null,
+      "paddingBottom": true,
+      "heading": "Motion, held still",
+      "text": "A placeholder line about the beats between the loud ones — how a sequence slows down before it moves again."
+    },
+    {
+      "type": "mobile-devices",
+      "index": 8,
+      "background": null,
+      "paddingBottom": false,
+      "device": "nodevice",
+      "columns": [
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_8",
+            "data-scroll-speed": "1"
+          },
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/gallery/gallery-mobile-3a.jpg",
+            "srcSmall": "/media/pages/gallery/gallery-mobile-3a-540x.jpg",
+            "width": 1080,
+            "height": 2191,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": null
+        },
+        {
+          "deviceAttrs": {
+            "data-scroll": "",
+            "data-scroll-target": ".block_8",
+            "data-scroll-speed": "-1"
+          },
+          "media": {
+            "kind": "image",
+            "src": "/media/pages/gallery/gallery-mobile-3b.jpg",
+            "srcSmall": "/media/pages/gallery/gallery-mobile-3b-540x.jpg",
+            "width": 1080,
+            "height": 2191,
+            "cls": [
+              "overlay",
+              "overlay-image",
+              "lazy"
+            ],
+            "scrollSpeed": null
+          },
+          "frame": null
+        }
+      ]
+    },
+    {
+      "type": "fullwidth",
+      "index": 9,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/gallery/gallery-full-2.jpg",
+        "srcSmall": "/media/pages/gallery/gallery-full-2-540x.jpg",
+        "width": 3000,
+        "height": 2250,
+        "cls": [
+          "overlay",
+          "overlay-image",
+          "lazy"
+        ]
+      },
+      "scrollSpeed": "-3",
+      "darkOverlay": "0",
+      "textOverlay": null,
+      "textOverlayThemeDark": false
+    },
+    {
+      "type": "device",
+      "index": 10,
+      "background": "#DCD0C2",
+      "paddingBottom": true,
+      "device": "nodevice",
+      "frame": null,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/gallery/gallery-device-3.jpg",
+        "srcSmall": "/media/pages/gallery/gallery-device-3-540x.jpg",
+        "width": 2000,
+        "height": 1333,
+        "cls": [
+          "overlay",
+          "overlay-image",
+          "lazy"
+        ]
+      },
+      "parallax": null,
+      "overlayTops": [],
+      "pencil": null
+    },
+    {
+      "type": "fullwidth",
+      "index": 11,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "video",
+        "src": "/media/pages/gallery/gallery-video-2.mp4",
+        "cls": [
+          "overlay"
+        ]
+      },
+      "scrollSpeed": "-3",
+      "darkOverlay": null,
+      "textOverlay": null,
+      "textOverlayThemeDark": false
+    },
+    {
+      "type": "fullwidth",
+      "index": 12,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/gallery/gallery-full-3.jpg",
+        "srcSmall": "/media/pages/gallery/gallery-full-3-540x.jpg",
+        "width": 2000,
+        "height": 1333,
+        "cls": [
+          "overlay",
+          "overlay-image",
+          "lazy"
+        ]
+      },
+      "scrollSpeed": "-3",
+      "darkOverlay": "0.1",
+      "textOverlay": "A note on the sequence",
+      "textOverlayThemeDark": true
+    }
+  ]
+}
