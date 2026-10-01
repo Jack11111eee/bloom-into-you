@@ -4,21 +4,116 @@ ns: insights
 {#
   insights.njk — 解读索引（P10 `docs/bloom-redesign-plan.md` §4.5）
 
-  `.main-wrap` 内：页头 → **主体留空** → 页脚。
+  结构**同人物索引**（`characters.njk`）：页头 → `.work-filters`（**只有**行/格切换）
+  → `.section-wrap.section-wrap-work.once-in`（行式 + 卡片两套列表，同源数据）→ 页脚。
+  列表数据从 `insights.json` 派生（`src.11tydata.js` 的 `indexList`）。
 
-  > **M1 只建骨架**：主体在 **M4** 落地 —— 结构同人物索引（行/格切换 + 两套列表，
-  > 去掉 `.toggle-row`），差异两处：① 页头 `h1` 下方加一行剧情提示
-  > `Contains story discussion`；② 表头改为 `Topic / Characters / …`，2 行。
-  > 列表数据从 `_data/insights.json` **派生**。
+  与人物索引的两处差异（方案 §4.5）：
+    · 页头 `h1` 下方加一行提示 `Contains story discussion`（用 `<p>` —— `h4` 是
+      1.55–2.5em 的标题级字号，`p` 才是正文注记，见 `styleguide.css` 的全局规则）
+    · 表头改为 `Topic / Characters / …`（由数据派生：第 1 列按页给定，第 2/3 列取自
+      `intro` 的栏标签），2 行
+
+  行/格切换的列视图恢复依赖 `initCookieViews()` —— 见 `characters.njk` 的说明与
+  `DEVIATIONS.md` **A3**。
 #}
 <header class="section default-header work-header" data-scroll-section>
 {% include "partials/nav-bar.njk" %}   <div class="container medium">
       <div class="row">
          <div class="flex-col once-in">
             <h1><span>Notes on </span><span>the story</span></h1>
+            <p>Contains story discussion</p>
          </div>
       </div>
    </div>
 </header>
+<section class="section work-filters" data-scroll-section>
+   <div class="container once-in">
+      <div class="filter-row">
+         <div class="grid-row">
+            <div class="btn btn-normal btn-icon rows-btn active">
+               <div class="btn-click magnetic" data-strength="25" data-strength-text="15">
+                  <div class="btn-fill"></div>
+                  <span class="btn-text">
+                     <span class="btn-text-inner change"><svg style="width: 20px;" width="20" height="19" viewBox="0 0 20 19"><g fill="currentColor" fill-rule="evenodd"><path d="M0 6h20v1H0zM0 0h20v1H0zM0 12h20v1H0zM0 18h20v1H0z"></path></g></svg></span>
+                  </span>
+               </div>
+            </div>
+            <div class="btn btn-normal btn-icon columns-btn">
+               <div class="btn-click magnetic" data-strength="25" data-strength-text="15">
+                  <div class="btn-fill"></div>
+                  <span class="btn-text">
+                     <span class="btn-text-inner change"><svg style="width: 20px;" width="20" height="20" viewBox="0 0 20 20"><g fill="currentColor" fill-rule="nonzero"><path d="M8 0H0v8h8V0zM7 1v6H1V1h6zM8 12H0v8h8v-8zm-1 1v6H1v-6h6zM20 0h-8v8h8V0zm-1 1v6h-6V1h6zM20 12h-8v8h8v-8zm-1 1v6h-6v-6h6z"></path></g></svg></span>
+                  </span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="section-wrap section-wrap-work once-in" data-scroll-section>
+   <section class="section work-grid small-work-grid grid-fade grid-rows-part visible">
+      <div class="container">
+         <div class="grid-sub-title">
+{%- for h in indexList.headers %}
+            <div class="flex-col">
+               <h5>{{ h }}</h5>
+            </div>
+{%- endfor %}
+         </div>
+         <ul class="work-items mouse-pos-list-image-wrap all-active">
+{%- for item in indexList.rows %}
+                        <li class="visible">
+               <div class="stripe animate"></div>
+               <a href="{{ item.href }}" class="row">
+                  <div class="flex-col">
+                     <h4><span>{{ item.name }}</span></h4>
+                  </div>
+                  <div class="flex-col animate">
+                     <p>{{ item.col2 }}</p>
+                  </div>
+                  <div class="flex-col animate">
+                     <p>{{ item.col3 }}</p>
+                  </div>
+                  <div class="flex-col animate">
+                     <p>{{ item.col4 }}</p>
+                  </div>
+               </a>
+            </li>
+{%- endfor %}
+                        <div class="stripe last animate"></div>
+         </ul>
+      </div>
+   </section>
+   <section class="section work-tiles grid-fade grid-columns-part">
+      <div class="container">
+         <ul>
+{%- for item in indexList.rows %}
+                        <li class="visible">
+               <div class="single-tile-wrap">
+                  <a href="{{ item.href }}" class="row">
+                     <div class="flex-col">
+                        <div class="tile-image">
+                           <div class="overlay overlay-color" style="background-color: {{ item.tileColor }};"></div>
+                           <div class="overlay overlay-image lazy" style="background-position: center center; background-repeat: no-repeat; background-size: cover;" data-bg="{{ item.tileImage }}"></div>                        </div>
+                     </div>
+                     <div class="flex-col">
+                        <h4><span>{{ item.name }}</span></h4>
+                        <div class="stripe"></div>
+                     </div>
+                     <div class="flex-col">
+                        <p>{{ item.col3 }}</p>
+                     </div>
+                     <div class="flex-col">
+                        <p>{{ item.col4 }}</p>
+                     </div>
+                  </a>
+               </div>
+            </li>
+{%- endfor %}
+                     </ul>
+      </div>
+   </section>
+</section>
 {% include "partials/footer-rounded.njk" %}
 {% include "partials/footer.njk" %}

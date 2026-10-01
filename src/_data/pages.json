@@ -1,5 +1,5 @@
 {
-  "_comment": "非详情页的 head 字段与高亮索引（详情页的同类字段在 characters.json / insights.json，经 single.njk 的分页 alias 进入）。键**就是** namespace —— 它同时是 main 的 id 与 data-barba-namespace（layouts/base.njk:46），故每个索引页必须有独立键，否则两页会共用同一份 title / navActive / loaderActive（方案 §7.1 #4 / #6）。P10 M1：删 work / archive / styleguide 三键，加 gallery / characters / insights。 gallery / characters / insights 的 file 为 null —— 它们是 P10 新页，没有归档对应物。",
+  "_comment": "非详情页的 head 字段与高亮索引（详情页的同类字段在 characters.json / insights.json，经 single.njk 的分页 alias 进入）。键**就是** namespace —— 它同时是 main 的 id 与 data-barba-namespace（layouts/base.njk:46），故每个索引页必须有独立键，否则两页会共用同一份 title / navActive / loaderActive（方案 §7.1 #4 / #6）。P10 M1：删 work / archive / styleguide 三键，加 gallery / characters / insights。 gallery / characters / insights 的 file 为 null —— 它们是 P10 新页，没有归档对应物。 P10 M4：characters / insights 的 `floatImages` 仍为 null —— 它们的浮动缩略图**从 `characters.json` / `insights.json` 派生**（`src.11tydata.js`），不在这里另存一份（存两处必然漂移）。",
   "pages": {
     "home": {
       "file": "home.html",

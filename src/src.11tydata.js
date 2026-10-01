@@ -28,7 +28,26 @@ export default {
     cursorMode: (data) => pick(data).cursorMode,
     cursorSpan: (data) => pick(data).cursorSpan,
     // 光标浮动缩略图（`partials/cursor.njk` 的 'float' 形态用）
-    floatImages: (data) => pick(data).floatImages,
+    //
+    // 索引页的浮动图**从与列表同源的 json 派生**（方案 §5 M4 步骤 2 / 步骤 4）——
+    // 它必须与行式列表**同序同数**（`initStickyCursorWithDelay` 按行的序号取第 i 张图，
+    // 见 index-new.js 的 `$elements.index($(this))`）。**存两处必然漂移**：
+    // `[实测]` 往 `characters.json` 加一条 ⇒ 行变 4 而 `pages.json` 里的浮动图仍是 3，
+    // 悬停第 4 行会取到 `undefined`。故这里派生，不在 `pages.json` 里另存一份。
+    floatImages: (data) => {
+      const src =
+        data.ns === 'characters' ? (data.characters && data.characters.characters) || []
+        : data.ns === 'insights' ? (data.insights && data.insights.insights) || []
+        : null;
+      if (src) {
+        return src.map((e) => ({
+          classes: ['visible'],
+          tileColor: e.footerAccent,
+          thumbnail: e.introImage && e.introImage.image,
+        }));
+      }
+      return pick(data).floatImages;
+    },
     // 详情页页脚（`partials/footer-case.njk`）：下一个 + "All … N"
     nextCase: (data) => pick(data).nextCase,
     /**
@@ -71,6 +90,44 @@ export default {
      * **M5 之前首页仍用它**；M5 把那个按钮改成 `Gallery`（方案 §4.1 第 6 项）后另行处置。
      */
     homeMoreWorkCount: (data) => data.work.items.length,
+    /**
+     * 索引页（`/characters` / `/insights`）的列表数据 —— **从两份 json 派生，不另存一份**
+     * （方案 §5 M4 步骤 2；与 B8 同一立场：两处存必然漂移）。
+     *
+     * 行式列表与卡片列表**共用 `rows`**（方案 §4.3 / §4.5 的"与行式同源数据"）。
+     * 表头也由数据派生 —— 第 2/3 列的标签取自该条 `intro` 的第 2/3 栏，它们本来就写着
+     * `Voice` / `Notes`（人物页）与 `Characters` / `Notes`（解读页）；第 1 列按页给定
+     * （`Character` / `Topic`）。
+     *
+     * 卡片的两项取自条目自身：`tileColor` = `footerAccent`、`tileImage` = `introImage.image`
+     * （详情页的主视觉）—— 不新增字段、不另存一份缩略图。
+     *
+     * ⚠️ **第 4 列（`Year`）没有数据支撑** —— 第一版是**占位值**，登记在方案 §8 待定事项。
+     * 它不参与任何 Gate；站主给真实口径后改这一处即可。
+     *
+     * 返回 `null` 表示"本页不是索引页"（其余 9 页），模板据此不渲染主体。
+     */
+    indexList: (data) => {
+      const src =
+        data.ns === 'characters' ? (data.characters && data.characters.characters) || []
+        : data.ns === 'insights' ? (data.insights && data.insights.insights) || []
+        : null;
+      if (!src) return null;
+      const introAt = (e, i) => (e.intro && e.intro[i] && e.intro[i].items) || [];
+      const labelAt = (i) => (src[0] && src[0].intro && src[0].intro[i] && src[0].intro[i].label) || '';
+      return {
+        headers: [data.ns === 'characters' ? 'Character' : 'Topic', labelAt(1), labelAt(2), 'Year'],
+        rows: src.map((e) => ({
+          href: e.href,
+          name: e.name,
+          col2: introAt(e, 1).join(', '),
+          col3: introAt(e, 2).join(', '),
+          col4: '2024',
+          tileColor: e.footerAccent,
+          tileImage: e.introImage && e.introImage.image,
+        })),
+      };
+    },
     // `.rounded-div` 的内联底色（仅详情页有；其余页 `{% if %}` 判空后不输出）
     footerAccent: (data) => pick(data).footerAccent,
   },

@@ -1101,6 +1101,14 @@ function initVisualFilter() {
 *
 * 只用于 grid 的 rows/columns 视图（cookie `view`，`expires: 14`）。
 * 筛选 cookie（`filter`）在原站**全部被注释掉**，故筛选不持久化 —— 照抄。
+*
+* [A3] 原站：`$('#work .grid-rows-part')` / `$('#work .grid-columns-part')` —— 选择器写死
+* 在 `main#work` 内（`#work` 就是 work 页的 namespace，即 `main` 的 id）。原站只有 work
+* 一页有行/格切换，故该前缀恒成立。P10 把行/格切换复制到 `/characters` 与 `/insights`
+* （方案 §4.3 / §4.5）后它**不成立**，且不报错、不抛异常 —— jQuery 对空集合静默无操作，
+* 带 cookie `view=columns` 的访客进这两页时列视图**不会恢复**，控制台与门禁都看不见。
+* 此处修正为 `main`（保住原选择器"限定在本页容器内"的意图）；`main` 包住全部内容，
+* 故在 `/work` 上**选择集逐元素相同**、对现有页面中性。见 `DEVIATIONS.md` A3。
 */
 function initCookieViews() {
   // Set cookie for columns/rows view
@@ -1108,8 +1116,8 @@ function initCookieViews() {
   if (Cookies.get("view") == "columns") {
     $('.grid-row .rows-btn').removeClass('active');
     $('.grid-row .columns-btn').addClass('active');
-    $('#work .grid-rows-part').removeClass('visible');
-    $('#work .grid-columns-part').addClass('visible');
+    $('main .grid-rows-part').removeClass('visible');     // [A3]
+    $('main .grid-columns-part').addClass('visible');     // [A3]
     scroll.update();
     ScrollTrigger.refresh();
   }
