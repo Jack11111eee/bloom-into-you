@@ -1,11 +1,13 @@
 {#
   partials/footer.njk — 默认页脚（P10 M1 起：home / gallery / characters / insights / about）
 
-  `.footer-wrap.footer-footer-wrap.theme-dark`：箭头 + “Let’s work together” + 圆钮
+  `.footer-wrap.footer-footer-wrap.theme-dark`：箭头 + 页脚大字 + 圆钮
   “Get in touch” + email/tel 按钮 + 底部信息。全站逐字一致（5 页同一实例）。
 
-  > `Let’s` 用的是**弯引号 U+2019**，且 “work” 后有两个空格 —— 原站如此。
-  > 文本内容是逐字比较的，不能"顺手修正"排版。
+  > **P10 M6**（方案 §4.8）：页脚大字由 `Let's work together`（P8 的占位）换成站点口吻的
+  > `Say hello` / `anytime`。**长度量级与 `span` 切分点保持不变** —— 它是巨型标题，
+  > 长度一变就影响换行（`DEVIATIONS.md` D2 的同一纪律）；两个空格是原站留下的排版，
+  > 一并保留（文本内容是逐字比较的，不能"顺手修正"排版）。
 #}
 <div class="footer-wrap footer-footer-wrap theme-dark" data-scroll-section="">
                     <footer class="section footer" data-scroll="" data-scroll-speed="-4" data-scroll-position="bottom">
@@ -13,7 +15,7 @@
                             <div class="row">
                                 <div class="flex-col">
                                     <div class="arrow">{% include "partials/icon-arrow.njk" %}</div>
-                                    <h2><span><div class="profile-picture"></div> Open for  </span><span>new work</span></h2>
+                                    <h2><span><div class="profile-picture"></div> Say hello  </span><span>anytime</span></h2>
                                 </div>
                             </div>
                             <div class="row">

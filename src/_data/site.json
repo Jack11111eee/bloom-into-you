@@ -1,5 +1,5 @@
 {
-  "_comment": "站点级常量（SPEC.md §7.2）。P8 已把原站文案换成占位内容（DEVIATIONS.md D2）：练习名「Bloom Studio」由仓库名派生，**不是**任何真实个人或机构的身份；社交账号一律指向 example.com（RFC 2606），标签改成不含第三方品牌的中性词。P10 M1 改了导航组成与 loader 词表（方案 §4.8 / §5 M1 步骤 6、7），见 DEVIATIONS.md F1 / F2。",
+  "_comment": "站点级常量（SPEC.md §7.2）。P8 已把原站文案换成占位内容（DEVIATIONS.md D2）：社交账号一律指向 example.com（RFC 2606），标签改成不含第三方品牌的中性词。P10 M1 改了导航组成与 loader 词表（方案 §4.8 / §5 M1 步骤 6、7），见 DEVIATIONS.md F1 / F2。 P10 M6：**P8 的练习名「Bloom Studio」已退役** —— 站名统一为作品英文名 **「Bloom Into You」**（M5-2 定的站名，M6 铺到 og:site_name / 页 title / 左上角署名 / contact 页，见方案 §4.8 与 DEVIATIONS.md E1 / D2）。",
   "lang": "en",
   "navBar": [
     {

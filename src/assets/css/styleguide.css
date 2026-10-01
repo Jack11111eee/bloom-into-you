@@ -707,17 +707,34 @@ video.overlay {
 
 .btn-link.btn-left-top:hover .credit-first {
     padding-right: 2em;
-    transform: translateX(-3.7em) rotate(0.001deg);
+    transform: translateX(-3.23em) rotate(0.001deg);   /* [P10 M6] 原为 -3.7em，按新文案重算，见下方说明 */
 }
 
+/* [P10 M6] 署名由 `Code by Bloom Studio` 改为站名 `Bloom Into You`（方案 §4.8）后，
+   本组规则的两处标定失效，按新文案重算 —— 见 DEVIATIONS.md E1 的「P10 M6」栏。
+
+   ⚠️ **本注释进产物**（`dist/assets/css/styleguide.css`）：`check-leaks.mjs` 的 ④
+   会扫 dist 的**文本文件**（含 CSS）。**不要在这里写出原作者的姓名** ——
+   第一版写了（用来解释常量是按谁的字宽定的），④ 当场报 FAIL。
+   下文的"两段式"指原站署名的结构（前缀 + 首词 + 尾词），不含姓名。
+
+   ① `.credit-last` 原为 `position: absolute; left: 0; transform: translateX(3.25em)`：
+      那个偏移是**按前缀 `Code by ` 的宽度**定的，用来让尾词落在首词之后。
+      **它同时决定了裁剪窗**：`.credit-by` 是 shrink-to-fit（宽度 = 在流内容的宽度），
+      绝对定位的 `.credit-last` **不计入**它 ⇒ 静止态落在窗外、被 `overflow: hidden` 裁掉。
+      原站的设计正是如此（静止 = 前缀 + 首词，悬停才露出尾词）。
+      本产物只要站名、不要前缀，故把 `.credit-last` **放回文档流** ——
+      静止态即显示完整站名，`3.25em` 那个偏移随之作废（删掉）。
+   ② `.credit-first` 悬停的 `translateX(-3.7em)` 同样是**按前缀的宽度**定的
+      （滑出前缀、把后一段带到裁剪窗左沿）。去掉前缀后它多滑了，
+      会把 `Into You` 的头几个字母切掉。改按实测的 `Bloom ` 宽度重算：**-3.23em**。
+      `[实测]` 2026-10-01（1440×900，本地产物）：font-size 17.26px，
+      `Bloom` 47.13px、`Bloom`+空格+`.credit-last` 的 `padding-left` = 55.75px ⇒ 3.23em。 */
 .btn-link.btn-left-top .credit-last {
-    position: absolute;
-    opacity: 1;
+    position: relative;
+    display: inline-block;
     padding-left: .21em;
     transition: var(--animation-primary);
-    top: 0;
-    left: 0;
-    transform: translateX(3.25em);
     white-space: nowrap;
 }
 

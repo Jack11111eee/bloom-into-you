@@ -16,13 +16,26 @@
   > ② 文案换成占位内容。
   > 悬停动画的 `-3.7em` / `3.25em` 位移是按原作者姓名的字宽调的，换名后仍工作
   > 但位移不再"刚好" —— 已登记为已知观感差异，**不要**顺手改这些常量。
+  >
+  > **P10 M6**（方案 §4.8「左上角署名换成站名」）：署名由 `Code by Bloom Studio`
+  > 改为**只留站名** `Bloom Into You`（用户 2026-10-02 裁决）。故 `.code-by`（`Code by ` 那一段）
+  > **从 DOM 移除** —— 它是悬停时向左滑出的那一段，去掉后悬停变成"`Bloom` 滑出、`Into You` 滑入"。
+  >
+  > ⚠️ **这一裁决使上面那条"不要动位移常量"不再成立**：`-3.7em` / `3.25em` 的**唯一作用**
+  > 就是抵消前缀 `Code by ` 的宽度。`[实测]` 只改文案而不动常量时，**静止态只显示 `Bloom`、
+  > 悬停显示 `nto You`**（`.credit-by` 是 shrink-to-fit + `overflow: hidden`，
+  > 绝对定位的 `.credit-last` 不计入裁剪窗）。故 `styleguide.css` 的那两条规则已按新文案重算
+  > （`.credit-last` 放回文档流 + 悬停位移 `-3.7em → -3.23em`）—— **完整推导与读数见
+  > `DEVIATIONS.md` E1 的「P10 M6」栏与 `styleguide.css` 的规则注释**。
+  > **改这里的文案要连带复核那两条常量。**
+  > 词的分段沿用原站的两段式（首词 / 其余）。
 #}
 <div class="nav-bar">
     <div class="credits-top">
         <div class="btn btn-link btn-left-top">
             <a href="/" class="btn-click magnetic" data-strength="20" data-strength-text="10">
             <span class="btn-text">
-                <div class="credit"><span>©</span></div><div class="credit-by"><span class="code-by">Code by </span><span class="credit-first"><span class="credit-first-span">Bloom</span> <span class="credit-last">Studio</span></span></div>
+                <div class="credit"><span>©</span></div><div class="credit-by"><span class="credit-first"><span class="credit-first-span">Bloom</span> <span class="credit-last">Into You</span></span></div>
             </span>
             </a>
         </div>

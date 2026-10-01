@@ -19,12 +19,20 @@ ns: contact
   > **P8 已换成占位内容**（`DEVIATIONS.md` D2）：文案、邮箱、电话、业务信息与 4 条社交
   > 链接全部替换；社交链接一律指向 `example.com`（RFC 2606 的保留域名）。
   > **各列表的条目数必须保持**（业务信息 4 条、社交 4 条），否则结构层会多出差异。
+  >
+  > **P10 M6**：按方案 §4.8「标题与表单标签换文案」把本页改成**站点口吻**
+  > （本产物不是设计工作室，"组织名 / 需要哪些服务"那类问句没有对应物）：
+  > ① `h1`；② 表单 01–05 的 `label` 与 `placeholder`；③ 右栏第二组
+  > `Business Details` → `Site Details`（4 条内容换成站点信息）。
+  > **表单的结构一字未动** —— 字段数、`name`、`for`/`id` 配对（`DEVIATIONS.md` A1）、
+  > 蜜罐字段、`action` / `method` 全部原样；它仍然没有后端（现状即如此）。
+  > `Send it!` / `Your message` / `Contact Details` / `Socials` 是通用功能性文案，保留。
 #}
 <header class="section default-header contact-header theme-dark" data-scroll-section="">
    {% include "partials/nav-bar.njk" %}   <div class="container medium">
       <div class="row once-in">
          <div class="flex-col">
-            <h1><span><div class="profile-picture"></div> Tell me about </span><span>your next project</span></h1>
+            <h1><span><div class="profile-picture"></div> Say hello, </span><span>or tell me what you think</span></h1>
          </div>
          <div class="flex-col">
             <div class="profile-picture"></div>
@@ -51,28 +59,28 @@ ns: contact
                </div>
                <div class="form-col">
                   <h5>01</h5>
-                  <label class="label" for="name">What's your name?</label>
-                  <input class="field" type="text" id="form-name" name="name" value="" required="" placeholder="Jane Doe *">
+                  <label class="label" for="name">What should I call you?</label>
+                  <input class="field" type="text" id="form-name" name="name" value="" required="" placeholder="Your name *">
                                  </div>
                <div class="form-col">
                   <h5>02</h5>
-                  <label class="label" for="email">What's your email?</label>
-                  <input class="field" type="email" id="form-email" name="email" value="" required="" placeholder="jane@doe.com *">
+                  <label class="label" for="email">Where can I reach you?</label>
+                  <input class="field" type="email" id="form-email" name="email" value="" required="" placeholder="you@example.com *">
                                  </div>
                <div class="form-col">
                   <h5>03</h5>
-                  <label class="label" for="company">What's the name of your organization?</label>
-                  <input class="field" type="text" id="form-company" name="company" value="" required="" placeholder="Acme ®">
+                  <label class="label" for="company">Which part of the story?</label>
+                  <input class="field" type="text" id="form-company" name="company" value="" required="" placeholder="Yuu, Touko, the gallery ...">
                                  </div>
                <div class="form-col">
                   <h5>04</h5>
-                  <label class="label" for="service">What services are you looking for?</label>
-                  <input class="field" type="text" id="form-service" name="service" value="" required="" placeholder="Web Design, Web Development ...">
+                  <label class="label" for="service">What would you like to talk about?</label>
+                  <input class="field" type="text" id="form-service" name="service" value="" required="" placeholder="A scene, a reading, a question ...">
                                  </div>
                <div class="form-col">
                   <h5>05</h5>
                   <label class="label" for="message">Your message</label>
-                  <textarea class="field" type="text" id="form-message" name="message" rows="8" required="" placeholder="Hello, can you help me with ... *"></textarea>
+                  <textarea class="field" type="text" id="form-message" name="message" rows="8" required="" placeholder="Hello, I wanted to say ... *"></textarea>
                                  </div>
                <div class="btn-contact-send">
                   <div class="btn btn-round" data-scroll="" data-scroll-speed="2" data-scroll-offset="-50%, 0%">
@@ -104,12 +112,12 @@ ns: contact
                   </a>
                </li>
             </ul>
-            <h5>Business Details</h5>
+            <h5>Site Details</h5>
             <ul class="links-wrap">
-               <li><p>Bloom Studio</p></li>
-               <li><p>Independent design practice</p></li>
-               <li><p>Est. 2020</p></li>
-               <li><p>Location: Amsterdam</p></li>
+               <li><p>Bloom Into You</p></li>
+               <li><p>A personal reading site</p></li>
+               <li><p>Est. 2026</p></li>
+               <li><p>Location: Online</p></li>
             </ul>
             <h5>Socials</h5>
             <ul class="links-wrap">

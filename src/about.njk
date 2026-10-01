@@ -8,13 +8,29 @@ ns: about
   这是一页**一次性排版**（无重复结构），按 §9.3 / §6.6 的立场"逐字归档，不做抽象"。
   共享部件已换成 include，原站绝对 URL 已折成根相对路径。
 
-  P8「内容个性化」必须替换本页的全部原站文案与媒体引用。
+  P8「内容个性化」替换了本页的全部原站文案与媒体引用（DEVIATIONS.md D2）。
+
+  > **P10 M6**：按 `docs/bloom-redesign-plan.md` §4.7 改造本页 ——
+  > ① `about-header` 两行 `h1` 换成站点口吻；② `line-globe` **原样保留**（纯装饰动效）；
+  > ③ `about-image` 的图文换成 **why this work / why this site**；
+  > ④ `about-services` 三栏**保留结构**，改为 `Content` / `Sources` / `Credits` 三项说明；
+  > ⑤ **删除 `about-award` 区块**（没有对应内容，方案 §4.7 明文要求）。
+  >
+  > **⑤ 的连带后果（务必知道）**：该区块带一条 `.award-badge` 的 ScrollTrigger
+  > （`index-new.js:1419`）⇒ about 路由的 `st` 由 **8 降到 7**，`route-expectations.mjs`
+  > 已同步。`DEVIATIONS.md` E2 当初"**保留结构位**以免改动运动层"的处置**已被本条取代**
+  > （见 `DEVIATIONS.md` F6）。
+  >
+  > **本页的 CSS 一字未动**：`.about-award` 的一组规则随之成为死规则（§7.1 #3 的同一处置：
+  > 死规则无副作用，删 CSS 属"改视觉层"的另一件事）。`.single-about-image` 的配图
+  > （`studio-04.jpg`）**复用现有占位图**，不新增文件、不改生成器（方案 §7 的 M6-3 裁决）。
+  > （M6 确实改过 `styleguide.css`，但改的是**左上角署名**那两条规则，与本页无关 —— 见 `DEVIATIONS.md` E1。）
 #}
 <header class="section default-header about-header" data-scroll-section="">
    {% include "partials/nav-bar.njk" %}   <div class="container medium once-in">
       <div class="row">
          <div class="flex-col">
-            <h1><span>Designing calm, precise </span><span>digital products</span></h1>
+            <h1><span>A personal site about </span><span>a story I love</span></h1>
          </div>
       </div>
    </div>
@@ -57,8 +73,8 @@ ns: about
         </g>
     </g>
 </svg></div>
-            <p data-scroll="" data-scroll-speed="-1" data-scroll-position="top" data-scroll-offset="0%, -50%">I work with companies of all sizes on tailored digital products. Each project gets the same attention to structure, motion and the details that carry a page.</p>
-            <p data-scroll="" data-scroll-speed="-1" data-scroll-position="top" data-scroll-offset="0%, -50%"><span style="opacity: .5; display: block; padding-top: .5em;">Open to selected projects<span class="animate-dot">.</span><span class="animate-dot">.</span><span class="animate-dot">.</span></span></p>
+            <p data-scroll="" data-scroll-speed="-1" data-scroll-position="top" data-scroll-offset="0%, -50%">It is a quiet story about not rushing a feeling, and about how long it can take to understand what you actually want.</p>
+            <p data-scroll="" data-scroll-speed="-1" data-scroll-position="top" data-scroll-offset="0%, -50%"><span style="opacity: .5; display: block; padding-top: .5em;">So I made a place to look at it closely<span class="animate-dot">.</span><span class="animate-dot">.</span><span class="animate-dot">.</span></span></p>
          </div>
          <div class="flex-col">
             <div class="single-about-image">
@@ -73,21 +89,21 @@ ns: about
    <div class="container">
       <div class="row">
          <div class="flex-col">
-            <h2>What I can help with <span class="animate-dot">.</span><span class="animate-dot">.</span><span class="animate-dot">.</span></h2>
+            <h2>What's in here <span class="animate-dot">.</span><span class="animate-dot">.</span><span class="animate-dot">.</span></h2>
          </div>
       </div>
       <div class="row">
          <div class="flex-col">
             <h5>01</h5>
             <div class="stripe"></div>
-            <h4>Design</h4>
-            <p>Interface design grounded in structure, typography and rhythm. Every screen is built to be read, not only looked at.</p>
+            <h4>Content</h4>
+            <p>Frames from the story, three character pages, and two close readings — everything this site holds, in one place.</p>
          </div>
          <div class="flex-col">
             <h5>02</h5>
             <div class="stripe"></div>
-            <h4>Development</h4>
-            <p>Front-end development from scratch: semantic markup, considered motion, and performance that holds up under real content.</p>
+            <h4>Sources</h4>
+            <p>An unofficial, non-commercial reading. Every image here stands in for the original work, and all rights stay with its creators.</p>
          </div>
          <div class="flex-col">
             <h5>03</h5>
@@ -102,33 +118,8 @@ ns: about
             </g>
         </g>
     </g>
-</svg></span>Concept to launch</h4>
-            <p>Concept, design and build in one pass — no loss between the drawing and the code that ships.</p>
-         </div>
-      </div>
-   </div>
-</section>
-{# P8（DEVIATIONS.md E2）：原站此处是 Awwwards 官方徽标 + "我是 Awwwards 评委"的自述。
-   徽标是第三方的注册商标，那句话对本产物的主人也不成立，故一并换成中性的「奖项」区。
-   ★ **结构位必须保留**：区块本身、`h2` + `p` + 徽标容器、以及容器里的**两张 SVG**
-     （CSS 按 `svg:nth-child(1)` / `:nth-child(2)` 定位并上色，`index-new.js` 旋转第 1 张，
-     故少一张会让该路由的 ScrollTrigger 数变化，被 gate-invariants 抓到）。 #}
-<section class="section about-award" data-scroll-section>
-   <div class="container medium">
-      <div class="row">
-         <div class="flex-col">
-            <div class="single-image">
-               <div class="overlay" data-scroll="" data-scroll-speed="-1"></div>
-               <div class="overlay"></div>
-            </div>
-         </div>
-         <div class="flex-col">
-            <div class="award-badge">
-               <svg width="102" height="101" viewBox="0 0 102 101"><g><path d="M54.08 21.23L55.96 3.29L70.31 7.13L62.97 23.61ZM68.30 26.69L78.90 12.10L89.40 22.60L74.81 33.20ZM77.89 38.53L94.37 31.19L98.21 45.54L80.27 47.42ZM80.27 53.58L98.21 55.46L94.37 69.81L77.89 62.47ZM74.81 67.80L89.40 78.40L78.90 88.90L68.30 74.31ZM62.97 77.39L70.31 93.87L55.96 97.71L54.08 79.77ZM47.92 79.77L46.04 97.71L31.69 93.87L39.03 77.39ZM33.70 74.31L23.10 88.90L12.60 78.40L27.19 67.80ZM24.11 62.47L7.63 69.81L3.79 55.46L21.73 53.58ZM21.73 47.42L3.79 45.54L7.63 31.19L24.11 38.53ZM27.19 33.20L12.60 22.60L23.10 12.10L33.70 26.69ZM39.03 23.61L31.69 7.13L46.04 3.29L47.92 21.23Z"></path><path d="M51.00 38.14A12.36 12.36 0 1 0 51.00 62.86A12.36 12.36 0 1 0 51.00 38.14Z"></path></g></svg>
-               <svg width="49" height="30" viewBox="0 0 49 30"><path d="M6 3h9v24H6zM19 3h9v24h-9zM32 3h11l-5.5 12 5.5 12h-11l-5.5-12z"></path></svg>
-            </div>
-            <h2>Awards<br>&amp; recognition</h2>
-            <p>Selected work has been featured by independent design and development showcases. Craft, motion and detail are the parts that get noticed.</p>
+</svg></span>Credits</h4>
+            <p>Layout, code and motion are mine; the story is not. Built as a study in type, spacing and movement.</p>
          </div>
       </div>
    </div>
