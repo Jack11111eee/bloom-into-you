@@ -1,5 +1,5 @@
 {
-  "_comment": "非详情页的 head 字段与高亮索引（详情页的同类字段在 characters.json / insights.json，经 single.njk 的分页 alias 进入）。键**就是** namespace —— 它同时是 main 的 id 与 data-barba-namespace（layouts/base.njk:46），故每个索引页必须有独立键，否则两页会共用同一份 title / navActive / loaderActive（方案 §7.1 #4 / #6）。P10 M1：删 work / archive / styleguide 三键，加 gallery / characters / insights。 gallery / characters / insights 的 file 为 null —— 它们是 P10 新页，没有归档对应物。 P10 M4：characters / insights 的 `floatImages` 仍为 null —— 它们的浮动缩略图**从 `characters.json` / `insights.json` 派生**（`src.11tydata.js`），不在这里另存一份（存两处必然漂移）。",
+  "_comment": "非详情页的 head 字段与高亮索引（详情页的同类字段在 characters.json / insights.json，经 single.njk 的分页 alias 进入）。键**就是** namespace —— 它同时是 main 的 id 与 data-barba-namespace（layouts/base.njk:46），故每个索引页必须有独立键，否则两页会共用同一份 title / navActive / loaderActive（方案 §7.1 #4 / #6）。P10 M1：删 work / archive / styleguide 三键，加 gallery / characters / insights。 gallery / characters / insights 的 file 为 null —— 它们是 P10 新页，没有归档对应物。 P10 M4：characters / insights 的 `floatImages` 为 null —— 它们的浮动缩略图**从 `characters.json` / `insights.json` 派生**（`src.11tydata.js`），不在这里另存一份（存两处必然漂移）。 P10 M5：home 的 `floatImages` 同样改为 null —— 首页三人物入口与浮动图都从 `characters.json` 派生（`src.11tydata.js` 的 `homeFeatured` / `floatImages`）。",
   "pages": {
     "home": {
       "file": "home.html",
@@ -13,47 +13,7 @@
       "loaderActive": 9,
       "navActive": null,
       "fixedNavActive": 0,
-      "floatImages": [
-        {
-          "classes": [
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "#F1F1F1",
-          "thumbnail": "/assets/img/home-item-1.jpg"
-        },
-        {
-          "classes": [
-            "design",
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "#E0D9D1",
-          "thumbnail": "/assets/img/home-item-3.jpg"
-        },
-        {
-          "classes": [
-            "design",
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "#48494A",
-          "thumbnail": "/assets/img/home-item-6.jpg"
-        },
-        {
-          "classes": [
-            "design",
-            "development",
-            "interaction",
-            "visible"
-          ],
-          "tileColor": "#101010",
-          "thumbnail": "/assets/img/home-item-8.jpg"
-        }
-      ]
+      "floatImages": null
     },
     "gallery": {
       "file": null,

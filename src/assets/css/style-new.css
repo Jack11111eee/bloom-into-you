@@ -1585,10 +1585,12 @@ main.touch .main-wrap {
       padding-top: 0;
    }
 
-   .work-tiles-home .container ul li:nth-child(3){
-      display: none;
-   }
-
+   /* [F5] 原站此处还有一条 `.work-tiles-home .container ul li:nth-child(3){ display: none; }`
+      —— 原站首页有 4 条入口，≤1024px 时只显示前 2 条。P10 M5 把入口改成 **3 位人物**
+      （方案 §4.1 第 4 项），保留它会**在手机上隐藏第 3 位（Sayaka）**，而手机上行式列表
+      （`.large-work-grid`）是 `display: none` ⇒ 该入口在手机上完全不可达。
+      故删掉 `:nth-child(3)` 这一条（`:nth-child(4)` 保留 —— 它对应已不存在的第 4 条，无作用但不动）。
+      见 `DEVIATIONS.md` F5。 */
    .work-tiles-home .container ul li:nth-child(4){
       display: none;
    }

@@ -1,9 +1,10 @@
 {
-  "_comment": "三个人物页的数据（docs/bloom-redesign-plan.md §4.4）。M2 填充：三栏 intro（Character / Voice / 第三栏占位）、主图（introImage）、5 个 blocks（fullwidth 图 / nodevice 视频 / fullwidth 图文叠加 / mbp16lower 视频 / fullwidth 视频）与 next 环（Yuu → Touko → Sayaka → Yuu）。**liveSite 不给值** —— 人物页没有\"访问网站\"的语义（§4.4），case-intro-image 判空后不输出那个圆钮。全部占位文案为中性英文，替换见 src/_data。",
+  "_comment": "三个人物页的数据（docs/bloom-redesign-plan.md §4.4）。M2 填充：三栏 intro（Character / Voice / 第三栏占位）、主图（introImage）、5 个 blocks（fullwidth 图 / nodevice 视频 / fullwidth 图文叠加 / mbp16lower 视频 / fullwidth 视频）与 next 环（Yuu → Touko → Sayaka → Yuu）。**liveSite 不给值** —— 人物页没有\"访问网站\"的语义（§4.4），case-intro-image 判空后不输出那个圆钮。全部占位文案为中性英文，替换见 src/_data。 P10 M5：新增 `homeLine` —— 首页三人物入口的「一句短语」（方案 §4.1 第 4 项）。首页的行式/卡片列表与浮动缩略图**都从本文件派生**（src.11tydata.js 的 `homeFeatured` / `floatImages`），不另存一份。",
   "characters": [
     {
       "href": "/characters/yuu",
       "name": "Yuu Koito",
+      "homeLine": "Still learning what she feels",
       "title": "Yuu Koito - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
@@ -152,6 +153,7 @@
     {
       "href": "/characters/touko",
       "name": "Touko Nanami",
+      "homeLine": "Composed, but only on the surface",
       "title": "Touko Nanami - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",
@@ -300,6 +302,7 @@
     {
       "href": "/characters/sayaka",
       "name": "Sayaka Saeki",
+      "homeLine": "Warm, watchful, always a step ahead",
       "title": "Sayaka Saeki - Bloom Studio",
       "description": "Placeholder content for a personal portfolio. Replace the copy in src/_data before publishing.",
       "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-studio-860x540-crop-q72.jpg",

@@ -1,73 +1,54 @@
 {
-  "_comment": "首页专属内容（SPEC.md §6.2 / §7.1）。P8 已换成占位内容（DEVIATIONS.md D2）；`moreWorkCount` **有意不在此处** —— 由 `src.11tydata.js` 的 `homeMoreWorkCount` 派生（B8）。★ P10 M1 的最小必要修正：`moreWorkHref` 与 featured 的 `href` / `tileImage` 原先指向已删除的 /work/project-* 与 src/media/pages/work/（那会让 G-C 的链接检查与 check-leaks ⑤ 报红），现改指 M1 已存在的页面与媒体。**首页的完整改造仍留给 M5**（方案 §4.1 / §5 M5）—— 届时 `featured` 改为从 characters.json 派生 3 条人物入口，名字与文案一并换掉（现在仍是占位名 `Project 01…`）。",
-  "introHeading": "Designing and building calm, precise digital products. Clear structure, considered motion, and interfaces that stay out of the way.",
-  "introText": "Design, code and interaction are where the work comes together — small details, built carefully.",
-  "heroRole": "Independent Designer & Developer",
-  "heroName": "Bloom Studio",
-  "heroLocation": "Located in Amsterdam",
-  "featured": [
+  "_comment": "首页专属内容（SPEC.md §6.2 / §7.1）。P8 已换成占位内容（DEVIATIONS.md D2）。★ P10 M5 的改造（方案 §4.1 / §5 M5）：① `featured` **删除** —— 三人物入口改为从 `characters.json` 派生（`src.11tydata.js` 的 `homeFeatured`，与 `floatImages` 同源，方案 §5 M5 步骤 4）；② 新增 `blocks`（两张 fullwidth「精选画面」，方案 §4.1 第 3 项）—— 媒体**复用长廊的占位图**（M5 决定，见方案 §7 的 M5-1），不新增文件；③ intro 文案换成贴合主题的占位英文。⚠️ `heroRole` / `heroName` / `heroLocation` 是**死字段**（没有模板读它们，首屏文案硬编码在 `index.njk`）—— 保留只为 `extract-page-data.mjs` 的 `guardPersonalized()` 拿 `heroName` 当哨兵（ISSUE-045），值已随 M5 的新站名更新。",
+  "introHeading": "A quiet place for the frames, the pauses, and the feelings between them.",
+  "introText": "A personal site about a story I keep coming back to — its pictures, its characters, and the small moments that stay.",
+  "heroRole": "A personal look at a story I love",
+  "heroName": "Bloom Into You",
+  "heroLocation": "A story about first love",
+  "blocks": [
     {
-      "classes": [
-        "development",
-        "interaction"
-      ],
-      "href": "/characters/yuu",
-      "target": null,
-      "arrow": false,
-      "name": "Project 01",
-      "location": null,
-      "services": "Interface & Motion",
-      "year": "2024",
-      "tileColor": "#F1F1F1",
-      "tileImage": "/assets/img/home-item-1.jpg"
+      "type": "fullwidth",
+      "index": 0,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/gallery/gallery-full-1.jpg",
+        "srcSmall": "/media/pages/gallery/gallery-full-1-540x.jpg",
+        "width": 3000,
+        "height": 2250,
+        "cls": [
+          "overlay",
+          "overlay-image",
+          "lazy"
+        ]
+      },
+      "scrollSpeed": "-3",
+      "darkOverlay": "0",
+      "textOverlay": null,
+      "textOverlayThemeDark": false
     },
     {
-      "classes": [
-        "design",
-        "development",
-        "interaction"
-      ],
-      "href": "/characters/touko",
-      "target": null,
-      "arrow": false,
-      "name": "Project 02",
-      "location": null,
-      "services": "Design & Build",
-      "year": "2024",
-      "tileColor": "#E0D9D1",
-      "tileImage": "/assets/img/home-item-3.jpg"
-    },
-    {
-      "classes": [
-        "design",
-        "development",
-        "interaction"
-      ],
-      "href": "/characters/sayaka",
-      "target": null,
-      "arrow": false,
-      "name": "Project 03",
-      "location": null,
-      "services": "Design & Build",
-      "year": "2023",
-      "tileColor": "#48494A",
-      "tileImage": "/assets/img/home-item-6.jpg"
-    },
-    {
-      "classes": [
-        "design",
-        "development",
-        "interaction"
-      ],
-      "href": "/insights/yuu-touko",
-      "target": null,
-      "arrow": false,
-      "name": "Project 04",
-      "location": null,
-      "services": "Design & Build",
-      "year": "2023",
-      "tileColor": "#101010",
-      "tileImage": "/assets/img/home-item-8.jpg"
+      "type": "fullwidth",
+      "index": 1,
+      "background": null,
+      "paddingBottom": false,
+      "media": {
+        "kind": "image",
+        "src": "/media/pages/gallery/gallery-full-2.jpg",
+        "srcSmall": "/media/pages/gallery/gallery-full-2-540x.jpg",
+        "width": 3000,
+        "height": 2250,
+        "cls": [
+          "overlay",
+          "overlay-image",
+          "lazy"
+        ]
+      },
+      "scrollSpeed": "-3",
+      "darkOverlay": "0",
+      "textOverlay": null,
+      "textOverlayThemeDark": false
     }
   ],
   "moreWorkHref": "/gallery"

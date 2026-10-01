@@ -29,14 +29,17 @@ export default {
     cursorSpan: (data) => pick(data).cursorSpan,
     // 光标浮动缩略图（`partials/cursor.njk` 的 'float' 形态用）
     //
-    // 索引页的浮动图**从与列表同源的 json 派生**（方案 §5 M4 步骤 2 / 步骤 4）——
+    // 索引页与首页的浮动图**从与列表同源的 json 派生**（方案 §5 M4 步骤 2 / M5 步骤 4）——
     // 它必须与行式列表**同序同数**（`initStickyCursorWithDelay` 按行的序号取第 i 张图，
     // 见 index-new.js 的 `$elements.index($(this))`）。**存两处必然漂移**：
     // `[实测]` 往 `characters.json` 加一条 ⇒ 行变 4 而 `pages.json` 里的浮动图仍是 3，
     // 悬停第 4 行会取到 `undefined`。故这里派生，不在 `pages.json` 里另存一份。
+    //
+    // home 与 characters 同源（都读 `characters.json`）—— 首页的三人物入口是同一批人物
+    // （方案 §5 M5 步骤 4 的"`floatImages` 同源"）。
     floatImages: (data) => {
       const src =
-        data.ns === 'characters' ? (data.characters && data.characters.characters) || []
+        data.ns === 'characters' || data.ns === 'home' ? (data.characters && data.characters.characters) || []
         : data.ns === 'insights' ? (data.insights && data.insights.insights) || []
         : null;
       if (src) {
@@ -47,6 +50,31 @@ export default {
         }));
       }
       return pick(data).floatImages;
+    },
+    /**
+     * 首页三人物入口的行式/卡片列表（方案 §4.1 第 4 项 / §5 M5 步骤 4）。
+     *
+     * **从 `characters.json` 派生，不在 `home.json` 另存一份** —— 与 B8 同一立场：
+     * 两处存必然漂移（人物加一条而首页入口没跟上）。两套列表**共用这一份数据**
+     * （行式在桌面显示、卡片在 ≤1024px 显示，由 CSS 决定，见 `style-new.css` 的
+     * `.large-work-grid` / `.work-tiles-home`）。
+     *
+     * 每行 = 人物名 + 一句短语（`homeLine`）+ 悬停预览（`footerAccent` / `introImage.image`）。
+     * 返回 `null` 表示"本页不是首页"（其余 10 页），模板据此不渲染。
+     */
+    homeFeatured: (data) => {
+      if (data.ns !== 'home') return null;
+      const chars = (data.characters && data.characters.characters) || [];
+      return chars.map((e) => ({
+        href: e.href,
+        name: e.name,
+        line: e.homeLine,
+        // 原站的 `classes`（design / development）服务于已退役的筛选（方案 D3）——
+        // 人物入口没有分类维度，故为空数组；模板另行追加 `visible`（浮动图按 `.visible` 配对）。
+        classes: [],
+        tileColor: e.footerAccent,
+        tileImage: e.introImage && e.introImage.image,
+      }));
     },
     // 详情页页脚（`partials/footer-case.njk`）：下一个 + "All … N"
     nextCase: (data) => pick(data).nextCase,

@@ -2,19 +2,29 @@
 ns: home
 ---
 {#
-  index.njk — 首页（SPEC.md §6.2）
+  index.njk — 首页（SPEC.md §6.2；P10 M5 按 `docs/bloom-redesign-plan.md` §4.1 改造）
 
-  `.main-wrap` 内 7 段，其中**第 6 段（`.horizontal-items`）在原站被整段 HTML 注释掉**，
-  不渲染。本模板**不输出**它：注释节点不进 DOM，输出它只会让产物多带一段
-  引用原站媒体的死代码。§6.2 已登记该段不渲染。
+  `.main-wrap` 内 7 段（方案 §4.1 的 7 项）：
+    `.home-header` → `.home-intro` → 精选画面 ×2（`blocks/fullwidth.njk`）→
+    `.work-grid.large-work-grid`（三人物行式，桌面）→ `.work-tiles.work-tiles-home`（同源卡片，≤1024px）→
+    `.center-grid-btn`（解读入口）→ `.center-grid-btn-home`（画廊入口）→ 页脚。
 
-  首屏（`.home-header`）的文案（角色、地点、大名字）按 §7.1 的口径**直接写在模板里** ——
-  `home.json` 只承载 §7.1 明确列出的"intro 文案 + 4 条 featured"。
+  **第 6 段（`.horizontal-items`）在原站被整段 HTML 注释掉**，不渲染。本模板**不输出**它：
+  注释节点不进 DOM，输出它只会让产物多带一段引用原站媒体的死代码。§6.2 已登记该段不渲染。
 
-  > **P8 已换成占位内容**（`DEVIATIONS.md` D2）：练习名「Bloom Studio」由仓库名派生，
-  > **不是**任何真实个人或机构的身份。地点那三个 `<span>` 的**数量与顺序必须保持**
-  > （`.hanger` 的排版按它们断行）；大名字里的 `<span class="spacer">—</span>` 同理。
-  > 最终个性化只需改本文件与 `_data/`。
+  **P10 M5 的四处**（方案 §5 M5）：
+    ① 首屏文案换成站名 + 作品相关短句（`DEVIATIONS.md` D2 的占位口径：英文、中性、可整体替换）；
+    ② `.home-intro` 文案与圆钮 `About this site`（方案 §4.1 第 2 项）；
+    ③ 两张 fullwidth「精选画面」——媒体**复用长廊的占位图**（M5 决定，见方案 §7 的 M5-1），
+       由 `home.blocks` 经 `blocks/dispatch.njk` 渲染（与长廊同一条代码路径）；
+    ④ 三人物入口改为**从 `characters.json` 派生**（`src.11tydata.js` 的 `homeFeatured`），
+       解读入口 `.center-grid-btn`（按钮 `Insights` + 旁注 `Contains story discussion`），
+       画廊入口 `More work 11` → `Gallery`（`.count-nr` 删除 —— 方案 §4.1 第 6 项）。
+
+  > **首屏文案硬编码在本文件**（`home.json` 的 `heroName` / `heroRole` / `heroLocation` 是死字段，
+  > 见 `content-inventory.md` §2.1）。跑马灯里的 `<span class="spacer">—</span>` **必须保留**，
+  > 挂绳那三个 `<span>` 的**数量与顺序也必须保持**（`.hanger` 的排版按它们断行）。
+  > 站名 = `Bloom Into You`（用户 2026-10-01 裁决；署名 / og:site_name / 页 title 在 **M6** 同步）。
 #}
 <header class="section home-header theme-dark" data-scroll-section>
    <div class="overlay personal-image no-select once-in" data-scroll data-scroll-speed="-3" data-scroll-position="top">
@@ -22,7 +32,7 @@ ns: home
    </div>
    <div class="overlay get-height once-in once-in-secondary">
       <div class="hanger">
-         <p><span>Located </span><span>in </span><span>Amsterdam</span></p>
+         <p><span>A story </span><span>about </span><span>first love</span></p>
          {% include "partials/icon-hanger.njk" %}
          <div class="digital-ball">
             <div class="overlay"></div>
@@ -44,14 +54,14 @@ ns: home
             <div class="header-above-h4" data-scroll data-scroll-speed="1">
                <div class="arrow big">{% include "partials/icon-arrow.njk" %}</div>
             </div>
-            <h4><span>Independent</span> Designer &amp; Developer</h4>
+            <h4><span>A personal</span> look at a story I love</h4>
          </div>
       </div>
    </div>
    <div class="big-name">
       <div class="name-h1" data-scroll data-scroll-direction="horizontal" data-scroll-speed="4" data-scroll-position="top">
          <div class="name-wrap">
-            <h1 class="no-select once-in once-in-secondary">Bloom Studio<span class="spacer">—</span></h1>
+            <h1 class="no-select once-in once-in-secondary">Bloom Into You<span class="spacer">—</span></h1>
          </div>
       </div>
    </div>
@@ -71,7 +81,7 @@ ns: home
                <a href="/about" class="btn-click magnetic " data-strength="100" data-strength-text="50">
                   <div class="btn-fill"></div>
                   <span class="btn-text">
-                     <span class="btn-text-inner">About me</span>
+                     <span class="btn-text-inner">About this site</span>
                   </span>
                </a>
             </div>
@@ -79,15 +89,19 @@ ns: home
       </div>
    </div>
 </section>
+{# 精选画面 ×2（方案 §4.1 第 3 项）—— 走与长廊同一条 dispatch 路径，媒体复用长廊占位图（M5-1） #}
+{%- for b in home.blocks %}
+{% include "blocks/dispatch.njk" %}
+{%- endfor %}
 <section class="section work-grid large-work-grid" data-scroll-section>
    <div class="container">
       <div class="grid-sub-title">
          <div class="flex-col">
-            <h5>Recent work</h5>
+            <h5>Characters</h5>
          </div>
       </div>
       <ul class="work-items mouse-pos-list-image-wrap">
-{%- for item in home.featured %}
+{%- for item in homeFeatured %}
                      <li class="{{ item.classes | join(' ') }} visible">
             <div class="stripe animate"></div>
             <a href="{{ item.href }}" class="row">
@@ -95,7 +109,7 @@ ns: home
                   <h4><span>{{ item.name }}</span></h4>
                </div>
                <div class="flex-col animate">
-                  <p>{{ item.services }}</p>
+                  <p>{{ item.line }}</p>
                </div>
             </a>
          </li>
@@ -107,7 +121,7 @@ ns: home
 <section class="section work-tiles work-tiles-home" data-scroll-section>
    <div class="container">
       <ul>
-{%- for item in home.featured %}
+{%- for item in homeFeatured %}
                   <li class="{{ item.classes | join(' ') }} visible">
             <div class="single-tile-wrap">
                <a href="{{ item.href }}" class="row">
@@ -120,16 +134,28 @@ ns: home
                      <div class="stripe"></div>
                   </div>
                   <div class="flex-col">
-                     <p>{{ item.services }}</p>
-                  </div>
-                  <div class="flex-col">
-                     <p>{{ item.year }}</p>
+                     <p>{{ item.line }}</p>
                   </div>
                </a>
             </div>
          </li>
 {%- endfor %}
                </ul>
+   </div>
+</section>
+<section class="section center-grid-btn" data-scroll-section>
+   <div class="container">
+      <div class="grid-after-btn">
+         <div class="btn btn-normal">
+            <a href="/insights" class="btn-click magnetic" data-strength="25" data-strength-text="15">
+               <div class="btn-fill"></div>
+               <span class="btn-text">
+                  <span class="btn-text-inner change">Insights</span>
+               </span>
+            </a>
+         </div>
+      </div>
+      <p>Contains story discussion</p>
    </div>
 </section>
 <section class="section center-grid-btn center-grid-btn-home" data-scroll-section style="padding-bottom: calc(var(--section-padding) - 2.5vw);">
@@ -139,7 +165,7 @@ ns: home
             <a href="{{ home.moreWorkHref }}" class="btn-click magnetic" data-strength="25" data-strength-text="15">
                <div class="btn-fill"></div>
                <span class="btn-text">
-                  <span class="btn-text-inner change">More work<div class="count-nr">{{ homeMoreWorkCount }}</div></span>
+                  <span class="btn-text-inner change">Gallery</span>
                </span>
             </a>
          </div>
