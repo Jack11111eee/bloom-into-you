@@ -92,32 +92,13 @@ export default {
         ? { href: '/characters', label: 'All characters', count: (data.characters.characters || []).length }
         : { href: '/insights', label: 'All insights', count: (data.insights.insights || []).length };
     },
-    workCount: (data) => data.work.items.length,
-    /**
-     * `.count-nr` 的派生值（`DEVIATIONS.md` B8）。
-     *
-     * 原站**写死**：work.html 是 `7 / 11`（Design 数 / Development 数）。
-     * 口径与原站一致 —— 原站那两个数就是 `li.design` / `li.development` 的个数
-     * （`[实测]` work.html：design 7、development 11）。
-     *
-     * 放在**渲染期**而不是抽取期：计数与 `items` 同源，改数据不可能只改一个。
-     *
-     * ⚠️ **P10 M1 之后这两个值暂无消费者**（work.njk 已删，索引页在 M4 重建）——
-     * 按方案 §5 M1 步骤 1 的原文只移除 `.archive` 那一支（`_data/archive.json` 已删，
-     * 留着会引用不存在的数据）。整块的去留登记在 `ISSUES.md` ISSUE-047。
-     */
-    workCounts: (data) => ({
-      design: data.work.items.filter((i) => i.classes.includes('design')).length,
-      development: data.work.items.filter((i) => i.classes.includes('development')).length,
-    }),
-    /**
-     * 首页 `More work 11` 的派生值（`DEVIATIONS.md` B8，2026-09-26 扩大范围）。
-     *
-     * P5 时这一处**不在** B8 的登记范围内，故当时未改、登记为 `ISSUES.md` ISSUE-028；
-     * 用户 2026-09-26 裁决扩大 B8 覆盖它。口径 = `work.items.length`（与原站写死的 `11` 相同）。
-     * **M5 之前首页仍用它**；M5 把那个按钮改成 `Gallery`（方案 §4.1 第 6 项）后另行处置。
-     */
-    homeMoreWorkCount: (data) => data.work.items.length,
+    // ⚠️ **P10 M7 删除**（`ISSUES.md` ISSUE-047，用户 2026-10-02 裁决）：
+    // 原站这里有三条派生量 —— `workCount` / `workCounts`（Design / Development 条数）/
+    // `homeMoreWorkCount`（首页 `More work 11`）。它们的唯一消费者是 `work.njk`（M1 删除）
+    // 与首页那个按钮（M5 改成 `Gallery` 并删掉 `.count-nr`）⇒ 自 M5 起**零消费者**。
+    // 数据源 `_data/work.json` 一并删除。`DEVIATIONS.md` B8 记的是"计数由数据派生"这一
+    // 命题本身，它的载体现在是 `allLink`（详情页页脚的 `All characters N` / `All insights N`）。
+    // **不要再加回来**：这三条读的是已删除的 `work.json`。
     /**
      * 索引页（`/characters` / `/insights`）的列表数据 —— **从两份 json 派生，不另存一份**
      * （方案 §5 M4 步骤 2；与 B8 同一立场：两处存必然漂移）。
