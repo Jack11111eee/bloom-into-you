@@ -26,7 +26,9 @@
 {%- elif b.media.kind === 'video' %}
                   <div class="overlay overlay-image playpauze"><video class="overlay" src="{{ b.media.src }}" loop muted playsinline></video></div>
 {%- else %}
-                  <img class="overlay overlay-image lazy" src="{{ b.media.srcSmall }}" data-src="{{ b.media.src }}" width="{{ b.media.width }}" height="{{ b.media.height }}">
+{#- 取景（`DEVIATIONS.md` G1）。本分支的 img **不带** `data-scroll`（`data-scroll` 在 `.device` 上），
+    但仍走 wrapper —— 与 fullwidth 同一套机制，避免"有的块这样、有的块那样"。#}
+                  {{ b.media.framing | framingZoomOpen | safe }}<img class="overlay overlay-image lazy"{{ b.media.framing | framingAttr('object') | safe }} src="{{ b.media.srcSmall }}" data-src="{{ b.media.src }}" width="{{ b.media.width }}" height="{{ b.media.height }}">{{ b.media.framing | framingZoomClose | safe }}
 {%- endif %}
                </div>
 {% if b.frame %}

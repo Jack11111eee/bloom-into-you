@@ -1,5 +1,7 @@
 ---
 ns: about
+# 取景（DEVIATIONS.md G1）—— about 人像（机制②，只平移）。null = 原站居中
+aboutImageFraming: null
 ---
 {#
   about.njk — about 页（SPEC.md §6.4）
@@ -78,7 +80,7 @@ ns: about
          </div>
          <div class="flex-col">
             <div class="single-about-image">
-               <div class="overlay overlay-image" data-scroll="" data-scroll-speed="-2" data-scroll-position="top"></div>
+               <div class="overlay overlay-image" data-scroll="" data-scroll-speed="-2" data-scroll-position="top"{{ aboutImageFraming | framingAttr('background') | safe }}></div>
                <div class="overlay"></div>
             </div>
          </div>

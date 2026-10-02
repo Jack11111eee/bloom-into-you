@@ -30,7 +30,8 @@
 {%- endif %}
 {%- if entry.introImage.image %}
             <div class="single-image">
-               <img class="overlay lazy" data-scroll data-scroll-speed="{{ entry.introImage.scrollSpeed }}" src="{{ entry.introImage.image | thumb }}" data-src="{{ entry.introImage.image }}">
+{#- 取景（`DEVIATIONS.md` G1）：本 img 带 `data-scroll`，缩放必须走 wrapper（见 blocks/fullwidth.njk 的同一说明）。#}
+               {{ entry.introImage.framing | framingZoomOpen | safe }}<img class="overlay lazy"{{ entry.introImage.framing | framingAttr('object') | safe }} data-scroll data-scroll-speed="{{ entry.introImage.scrollSpeed }}" src="{{ entry.introImage.image | thumb }}" data-src="{{ entry.introImage.image }}">{{ entry.introImage.framing | framingZoomClose | safe }}
 {%- if entry.introImage.overlayTop %}
                <img class="overlay overlay-image-top lazy" data-src="{{ entry.introImage.overlayTop }}">
 {%- endif %}

@@ -25,7 +25,8 @@
 {% if col.media.kind === 'video' %}
                   <div class="overlay overlay-image playpauze"><video class="overlay" src="{{ col.media.src }}" loop muted playsinline></video></div>
 {%- else %}
-                  <img class="overlay overlay-image lazy" src="{{ col.media.srcSmall }}" data-src="{{ col.media.src }}" width="{{ col.media.width }}" height="{{ col.media.height }}">
+{#- 取景（`DEVIATIONS.md` G1）—— 逐列各自可调（粒度按槽位）。#}
+                  {{ col.media.framing | framingZoomOpen | safe }}<img class="overlay overlay-image lazy"{{ col.media.framing | framingAttr('object') | safe }} src="{{ col.media.srcSmall }}" data-src="{{ col.media.src }}" width="{{ col.media.width }}" height="{{ col.media.height }}">{{ col.media.framing | framingZoomClose | safe }}
 {%- endif %}
                </div>
 {% if col.frame %}

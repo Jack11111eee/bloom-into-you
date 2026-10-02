@@ -17,7 +17,11 @@
 {% if b.media.kind === 'video' %}
             <div class="overlay overlay-image playpauze" data-scroll data-scroll-speed="{{ b.scrollSpeed }}"><video class="overlay" src="{{ b.media.src }}" loop muted playsinline></video></div>
 {%- else %}
-            <img class="overlay overlay-image lazy" data-scroll data-scroll-speed="{{ b.scrollSpeed }}" src="{{ b.media.srcSmall }}" data-src="{{ b.media.src }}" width="{{ b.media.width }}" height="{{ b.media.height }}">
+{#- 取景（`DEVIATIONS.md` G1）：`object-position` 直接内联（内联胜过后面的 `.device-macpro` 之类覆盖规则）；
+    缩放走 wrapper —— 本块的 img 带 `data-scroll`，Locomotive 会**整体覆盖**它的 `transform`，
+    故 `scale` 只能放外层 wrapper（`[实测]` 嵌套相乘成立，见 `LEDGER.md` 2026-10-02 第 5 条）。
+    开合标签紧贴 `<img>` 同行，故未配置取景时这一行与改动前逐字符相同。#}
+            {{ b.media.framing | framingZoomOpen | safe }}<img class="overlay overlay-image lazy"{{ b.media.framing | framingAttr('object') | safe }} data-scroll data-scroll-speed="{{ b.scrollSpeed }}" src="{{ b.media.srcSmall }}" data-src="{{ b.media.src }}" width="{{ b.media.width }}" height="{{ b.media.height }}">{{ b.media.framing | framingZoomClose | safe }}
 {%- endif %}
 {% if b.darkOverlay !== null %}
                         <div class="overlay dark-overlay" style="opacity: {{ b.darkOverlay }};"></div>
