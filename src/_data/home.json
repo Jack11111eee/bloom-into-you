@@ -21,7 +21,12 @@
           "overlay",
           "overlay-image",
           "lazy"
-        ]
+        ],
+        "framing": {
+          "fx": 0,
+          "fy": 50,
+          "z": 1
+        }
       },
       "scrollSpeed": "-3",
       "darkOverlay": "0",
@@ -43,7 +48,12 @@
           "overlay",
           "overlay-image",
           "lazy"
-        ]
+        ],
+        "framing": {
+          "fx": 42.5,
+          "fy": 49.5,
+          "z": 1
+        }
       },
       "scrollSpeed": "-3",
       "darkOverlay": "0",
