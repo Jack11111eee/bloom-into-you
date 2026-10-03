@@ -267,7 +267,16 @@ main.touch .main-wrap {
 .fixed-nav-inner {
    display: flex;
    flex-direction: column;
-   justify-content: space-between;
+   /* [P12] 原为 `space-between` —— 原站这一栏有**两个**子节点（`.nav-row` 导航 +
+      `.social-row` 社交），`space-between` 把导航推到顶、社交推到底。
+      文案方案（DEVIATIONS.md F7）删除社交栏后**只剩一个子节点** ⇒ `space-between`
+      退化成 `flex-start`：六项贴顶、下方留一大片空白
+      （`[实测]` 2026-10-03 1440×900：末项下方余 169px，而上方仅 15vh 的内边距）。
+      改为 `center` 让导航块**垂直居中** —— 同一读数下上下余量变成各 ~40px。
+      **站主 2026-10-03 裁决"补一条"**。
+      ⚠️ 这条作用于**全站 11 页**的共享外壳（菜单只在 `.nav-active` 时可见），
+      是本轮第三处动视觉层，已登记 `DEVIATIONS.md` F7。 */
+   justify-content: center;
    height: 100%;
    padding: 15vh 7.5vw 10vh 7.5vw;
    position: relative;
@@ -953,8 +962,7 @@ main.touch .main-wrap {
 
    作用域按**页**限定（`#home` 是本页 `main` 的 id，见 layouts/base.njk 的 `id="{{ ns }}"`），
    与既有的 `#contact .btn-hamburger` 同一写法。**只覆盖文字色与指示点**：
-   深色区域（展开菜单 `.fixed-nav`、深色页脚）与首屏副标 `h4` / 挂绳三行**都不动** ——
-   方案只点名导航与站名（副标与挂绳仍是白字，见 DEVIATIONS.md F7 的"需报告项"）。
+   深色区域（展开菜单 `.fixed-nav`、深色页脚）**不动**。
    `.nav-bar` 是 `position: absolute`（随页头滚走），故不存在"滚到浅色区仍是黑字"的状态。 */
 #home .home-header .nav-bar .btn-link .btn-text {
    color: #000000;
@@ -962,6 +970,25 @@ main.touch .main-wrap {
 
 #home .home-header .nav-bar .btn-link .btn-click::after {
    background: #000000;
+}
+
+/* 副标 `h4` 与它上方的小箭头 —— 站主 2026-10-03 裁决"一并改黑"（DEVIATIONS.md F7）。
+   `[实测]` 1440×900：副标落在**亮窗插画**上（`rgb(255,255,255)` 白字对比度不足），
+   故与导航同一处置。
+
+   ⚠️ **挂绳那三行不在本条里，且不能改** —— `[实测]` 它们坐在**自己的深色药丸**上：
+   `.hanger > svg` 渲染为 257×104（fill `#1C1D20`），几何上**完整盖住**文字矩形
+   （药丸 `[0,398,257,104]` vs 文字 `[0,419,221,62]`）。白字**正是**它的正确配色，
+   改黑会变成黑字压深底。站主"一并改黑"的授权覆盖的是副标与箭头这两处。 */
+#home .home-header .row .flex-col h4 {
+   color: #000000;
+}
+
+/* 小箭头是**内联 SVG**，它的描边写在 `g` 的**表现属性** `stroke="#FFFFFF"` 上
+   （`icon-arrow.njk`，该实例与页脚共用同一个 include，故只能按后代选择器限定）。
+   CSS 的 `stroke` 覆盖表现属性 ⇒ 无需改 SVG、也不影响页脚那一份。 */
+#home .home-header .row .flex-col .header-above-h4 svg > g > g {
+   stroke: #000000;
 }
 
 /* ------------------------- Home - Intro -------------------------------------------------- */
