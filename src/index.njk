@@ -23,6 +23,12 @@ heroFraming: {"fx":57,"fy":50}
        解读入口 `.center-grid-btn`（按钮 `Insights` + 旁注 `Contains story discussion`），
        画廊入口 `More work 11` → `Gallery`（`.count-nr` 删除 —— 方案 §4.1 第 6 项）。
 
+  **文案方案落地**（`DEVIATIONS.md` F7，`docs/copy-proposal.md` §4）：
+    ① 副标 `h4` → `A feeling,` / `still unnamed`（第一个 `<span>` 是 `display:block`，
+       故它自己占一行）；② 挂绳三 `<span>` → `A story` / `of becoming` / `yourself`；
+    ③ 解读入口旁注 → `Personal readings · Manga ending spoilers`（比原注多一句剧透范围）。
+    `About this site` / `Insights` / `Gallery` 三个圆钮与列表悬停光标 `View` 按方案**保留**。
+
   > **首屏文案硬编码在本文件**（`home.json` 的 `heroName` / `heroRole` / `heroLocation` 是死字段，
   > 见 `content-inventory.md` §2.1）。跑马灯里的 `<span class="spacer">—</span>` **必须保留**，
   > 挂绳那三个 `<span>` 的**数量与顺序也必须保持**（`.hanger` 的排版按它们断行）。
@@ -34,7 +40,7 @@ heroFraming: {"fx":57,"fy":50}
    </div>
    <div class="overlay get-height once-in once-in-secondary">
       <div class="hanger">
-         <p><span>A story </span><span>about </span><span>first love</span></p>
+         <p><span>A story </span><span>of becoming </span><span>yourself</span></p>
          {% include "partials/icon-hanger.njk" %}
          <div class="digital-ball">
             <div class="overlay"></div>
@@ -56,7 +62,7 @@ heroFraming: {"fx":57,"fy":50}
             <div class="header-above-h4" data-scroll data-scroll-speed="1">
                <div class="arrow big">{% include "partials/icon-arrow.njk" %}</div>
             </div>
-            <h4><span>A personal</span> look at a story I love</h4>
+            <h4><span>A feeling,</span> still unnamed</h4>
          </div>
       </div>
    </div>
@@ -157,7 +163,7 @@ heroFraming: {"fx":57,"fy":50}
             </a>
          </div>
       </div>
-      <p>Contains story discussion</p>
+      <p>Personal readings · Manga ending spoilers</p>
    </div>
 </section>
 <section class="section center-grid-btn center-grid-btn-home" data-scroll-section style="padding-bottom: calc(var(--section-padding) - 2.5vw);">

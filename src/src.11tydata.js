@@ -111,8 +111,10 @@ export default {
      * 卡片的两项取自条目自身：`tileColor` = `footerAccent`、`tileImage` = `introImage.image`
      * （详情页的主视觉）—— 不新增字段、不另存一份缩略图。
      *
-     * ⚠️ **第 4 列（`Year`）没有数据支撑** —— 第一版是**占位值**，登记在方案 §8 待定事项。
-     * 它不参与任何 Gate；站主给真实口径后改这一处即可。
+     * ⚠️ **第 4 列的口径由站主定下**（`docs/copy-proposal.md` §5.2，DEVIATIONS.md F7）：
+     * 原为占位值 `Year / 2024`（"年份"没有真实口径 —— 填 2018 或 2026 会混淆动画发行
+     * 时间与网站写作时间）。现改为 **`Scope` / `Manga 1–8`**：说明这份解读依据的版本，
+     * 与页面上的剧透边界相互印证，也不虚构发布日期。
      *
      * 返回 `null` 表示"本页不是索引页"（其余 9 页），模板据此不渲染主体。
      */
@@ -125,13 +127,13 @@ export default {
       const introAt = (e, i) => (e.intro && e.intro[i] && e.intro[i].items) || [];
       const labelAt = (i) => (src[0] && src[0].intro && src[0].intro[i] && src[0].intro[i].label) || '';
       return {
-        headers: [data.ns === 'characters' ? 'Character' : 'Topic', labelAt(1), labelAt(2), 'Year'],
+        headers: [data.ns === 'characters' ? 'Character' : 'Topic', labelAt(1), labelAt(2), 'Scope'],
         rows: src.map((e) => ({
           href: e.href,
           name: e.name,
           col2: introAt(e, 1).join(', '),
           col3: introAt(e, 2).join(', '),
-          col4: '2024',
+          col4: 'Manga 1–8',
           tileColor: e.footerAccent,
           tileImage: e.introImage && e.introImage.image,
         })),

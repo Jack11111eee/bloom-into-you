@@ -1,12 +1,12 @@
 {
-  "_comment": "三个人物页的数据（docs/bloom-redesign-plan.md §4.4）。M2 填充：三栏 intro（Character / Voice / 第三栏占位）、主图（introImage）、5 个 blocks（fullwidth 图 / nodevice 视频 / fullwidth 图文叠加 / mbp16lower 视频 / fullwidth 视频）与 next 环（Yuu → Touko → Sayaka → Yuu）。**liveSite 不给值** —— 人物页没有\"访问网站\"的语义（§4.4），case-intro-image 判空后不输出那个圆钮。全部占位文案为中性英文，替换见 src/_data。 P10 M5：新增 `homeLine` —— 首页三人物入口的「一句短语」（方案 §4.1 第 4 项）。首页的行式/卡片列表与浮动缩略图**都从本文件派生**（src.11tydata.js 的 `homeFeatured` / `floatImages`），不另存一份。",
+  "_comment": "三个人物页的数据（docs/bloom-redesign-plan.md §4.4）。M2 填充：三栏 intro（Character / Voice / 第三栏占位）、主图（introImage）、5 个 blocks（fullwidth 图 / nodevice 视频 / fullwidth 图文叠加 / mbp16lower 视频 / fullwidth 视频）与 next 环（Yuu → Touko → Sayaka → Yuu）。**liveSite 不给值** —— 人物页没有\"访问网站\"的语义（§4.4），case-intro-image 判空后不输出那个圆钮。全部占位文案为中性英文，替换见 src/_data。 P10 M5：新增 `homeLine` —— 首页三人物入口的「一句短语」（方案 §4.1 第 4 项）。首页的行式/卡片列表与浮动缩略图**都从本文件派生**（src.11tydata.js 的 `homeFeatured` / `floatImages`），不另存一份。 ★ 文案方案落地（DEVIATIONS.md F7）：`homeLine` / `title` / `description` / 三栏 `intro`（标签改为 Character / Voice (TV) / Focus，中文名与动画声优）与图文叠加那句 `textOverlay` 换成 `docs/copy-proposal.md` §6 的文案；三栏 `intro[2].items` 只放两个短关键词（它会被 `indexList` 拼成索引第三列，放不下长文）。**每页新增 2 个 `reading` block**（`blocks/reading.njk`）：介绍阅读稿作第一个 block（紧跟主图），心得作最后一个 block（紧接\"下一个\"卡片）—— 故全部 block 的 `index` 已重排。",
   "characters": [
     {
       "href": "/characters/yuu",
       "name": "Yuu Koito",
-      "homeLine": "Still learning what she feels",
-      "title": "Yuu Koito - Bloom Into You",
-      "description": "A personal site about a story I love — its frames, its characters, and the quiet moments between them.",
+      "homeLine": "A feeling she learns to call her own",
+      "title": "Yuu Koito — Bloom Into You",
+      "description": "Yuu Koito: from waiting for a feeling to speaking for herself. A personal reading of Bloom Into You with spoilers through the manga ending.",
       "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-into-you-860x540-crop-q72.jpg",
       "canonical": "/characters/yuu",
       "loaderActive": 12,
@@ -18,20 +18,20 @@
         {
           "label": "Character",
           "items": [
-            "Yuu Koito"
+            "小糸 侑"
           ]
         },
         {
-          "label": "Voice",
+          "label": "Voice (TV)",
           "items": [
-            "Placeholder voice"
+            "高田憂希"
           ]
         },
         {
-          "label": "Notes",
+          "label": "Focus",
           "items": [
-            "Placeholder line one",
-            "Placeholder line two"
+            "Recognition",
+            "Choice"
           ]
         }
       ],
@@ -44,8 +44,17 @@
       },
       "blocks": [
         {
-          "type": "fullwidth",
+          "type": "reading",
           "index": 0,
+          "background": null,
+          "paddingBottom": true,
+          "paragraphs": [
+            "Yuu begins with an idea of how love should feel, and with the quiet embarrassment of not feeling it that way. Touko gives that uncertainty a person to turn towards. Over the course of the manga, Yuu's attention becomes a desire she can acknowledge and speak aloud. By the ending, she is participating in the relationship she once watched from a distance, with wishes of her own and a voice that can ask for more."
+          ]
+        },
+        {
+          "type": "fullwidth",
+          "index": 1,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -67,7 +76,7 @@
         },
         {
           "type": "device",
-          "index": 1,
+          "index": 2,
           "background": "#E6E8EB",
           "paddingBottom": true,
           "device": "nodevice",
@@ -85,7 +94,7 @@
         },
         {
           "type": "fullwidth",
-          "index": 2,
+          "index": 3,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -107,12 +116,12 @@
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0.1",
-          "textOverlay": "A short note about this character.",
+          "textOverlay": "The feeling is hers. So is the choice.",
           "textOverlayThemeDark": true
         },
         {
           "type": "device",
-          "index": 3,
+          "index": 4,
           "background": "#E0D9D1",
           "paddingBottom": true,
           "device": "mbp16lower",
@@ -130,7 +139,7 @@
         },
         {
           "type": "fullwidth",
-          "index": 4,
+          "index": 5,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -144,6 +153,16 @@
           "darkOverlay": null,
           "textOverlay": null,
           "textOverlayThemeDark": false
+        },
+        {
+          "type": "reading",
+          "index": 6,
+          "background": null,
+          "paddingBottom": true,
+          "paragraphs": [
+            "What stays with me about Yuu is the time between noticing and speaking. The world has already offered her an image of love; she has to find words that belong to her own experience. Her confession makes that search visible. It also breaks the comfortable arrangement in which her feelings were allowed only if they stayed unchanged.",
+            "The ending gives her something quieter than a sudden revelation: a relationship she can take part in, day after day. I like the way that ordinary future changes the earlier silence. Looking back, I can see a person learning to trust what she notices and to decide what she will do with it. Her path belongs to her; it does not make romance a test that everyone must eventually pass."
+          ]
         }
       ],
       "customCss": null,
@@ -158,9 +177,9 @@
     {
       "href": "/characters/touko",
       "name": "Touko Nanami",
-      "homeLine": "Composed, but only on the surface",
-      "title": "Touko Nanami - Bloom Into You",
-      "description": "A personal site about a story I love — its frames, its characters, and the quiet moments between them.",
+      "homeLine": "A life beyond the borrowed role",
+      "title": "Touko Nanami — Bloom Into You",
+      "description": "Touko Nanami: a borrowed ideal, the fear of being loved, and a life she begins to choose. Includes spoilers through the manga ending.",
       "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-into-you-860x540-crop-q72.jpg",
       "canonical": "/characters/touko",
       "loaderActive": 13,
@@ -172,20 +191,20 @@
         {
           "label": "Character",
           "items": [
-            "Touko Nanami"
+            "七海 燈子"
           ]
         },
         {
-          "label": "Voice",
+          "label": "Voice (TV)",
           "items": [
-            "Placeholder voice"
+            "寿 美菜子"
           ]
         },
         {
-          "label": "Notes",
+          "label": "Focus",
           "items": [
-            "Placeholder line one",
-            "Placeholder line two"
+            "Self-image",
+            "Change"
           ]
         }
       ],
@@ -198,8 +217,17 @@
       },
       "blocks": [
         {
-          "type": "fullwidth",
+          "type": "reading",
           "index": 0,
+          "background": null,
+          "paddingBottom": true,
+          "paragraphs": [
+            "Touko has made excellence into a way of staying close to the sister she lost. The image she sustains earns admiration, but leaves little room for uncertainty. The student council play unsettles that image; the relationships around it make change personal. In the manga's later chapters, Touko begins to accept a love that can answer her back. Acting remains in her future, gradually becoming something she pursues in her own life."
+          ]
+        },
+        {
+          "type": "fullwidth",
+          "index": 1,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -226,7 +254,7 @@
         },
         {
           "type": "device",
-          "index": 1,
+          "index": 2,
           "background": "#E6E8EB",
           "paddingBottom": true,
           "device": "nodevice",
@@ -244,7 +272,7 @@
         },
         {
           "type": "fullwidth",
-          "index": 2,
+          "index": 3,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -266,12 +294,12 @@
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0.1",
-          "textOverlay": "A short note about this character.",
+          "textOverlay": "She can change and still be loved.",
           "textOverlayThemeDark": true
         },
         {
           "type": "device",
-          "index": 3,
+          "index": 4,
           "background": "#E0D9D1",
           "paddingBottom": true,
           "device": "mbp16lower",
@@ -289,7 +317,7 @@
         },
         {
           "type": "fullwidth",
-          "index": 4,
+          "index": 5,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -303,6 +331,16 @@
           "darkOverlay": null,
           "textOverlay": null,
           "textOverlayThemeDark": false
+        },
+        {
+          "type": "reading",
+          "index": 6,
+          "background": null,
+          "paddingBottom": true,
+          "paragraphs": [
+            "The difficult thing about Touko is that praise can help her disappear. Everyone sees the capable person, while she keeps working to keep another self out of sight. Yuu's changing feelings disturb that shelter. They ask Touko to consider a closeness she cannot preserve by deciding in advance who the other person is allowed to be.",
+            "I find the continuation of her acting especially moving. Becoming herself does not require her to throw away every part of the life built around her sister. Something once carried as an obligation can become a pursuit of her own. The ending lets her keep a history and still have a future. There is room for the affection she receives, and room for the person she has yet to become."
+          ]
         }
       ],
       "customCss": null,
@@ -317,9 +355,9 @@
     {
       "href": "/characters/sayaka",
       "name": "Sayaka Saeki",
-      "homeLine": "Warm, watchful, always a step ahead",
-      "title": "Sayaka Saeki - Bloom Into You",
-      "description": "A personal site about a story I love — its frames, its characters, and the quiet moments between them.",
+      "homeLine": "Her story goes on",
+      "title": "Sayaka Saeki — Bloom Into You",
+      "description": "Sayaka Saeki: a feeling spoken, an answer accepted, and a future beyond one love. Includes spoilers through the manga ending.",
       "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-into-you-860x540-crop-q72.jpg",
       "canonical": "/characters/sayaka",
       "loaderActive": 14,
@@ -331,20 +369,20 @@
         {
           "label": "Character",
           "items": [
-            "Sayaka Saeki"
+            "佐伯沙弥香"
           ]
         },
         {
-          "label": "Voice",
+          "label": "Voice (TV)",
           "items": [
-            "Placeholder voice"
+            "茅野愛衣"
           ]
         },
         {
-          "label": "Notes",
+          "label": "Focus",
           "items": [
-            "Placeholder line one",
-            "Placeholder line two"
+            "Honesty",
+            "Continuance"
           ]
         }
       ],
@@ -362,8 +400,17 @@
       },
       "blocks": [
         {
-          "type": "fullwidth",
+          "type": "reading",
           "index": 0,
+          "background": null,
+          "paddingBottom": true,
+          "paragraphs": [
+            "Sayaka knows whom she loves long before she chooses to say it. Beside Touko, her care holds a wish of her own, even when she keeps that wish quiet. In the manga, she eventually confesses and receives an answer she cannot change. The story allows her to carry the hurt without stopping there. Its later glimpse of her life includes another relationship, a future that belongs to her rather than to the place she once held beside Touko."
+          ]
+        },
+        {
+          "type": "fullwidth",
+          "index": 1,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -385,7 +432,7 @@
         },
         {
           "type": "device",
-          "index": 1,
+          "index": 2,
           "background": "#E6E8EB",
           "paddingBottom": true,
           "device": "nodevice",
@@ -403,7 +450,7 @@
         },
         {
           "type": "fullwidth",
-          "index": 2,
+          "index": 3,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -425,12 +472,12 @@
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0.1",
-          "textOverlay": "A short note about this character.",
+          "textOverlay": "There is a life beyond this love.",
           "textOverlayThemeDark": true
         },
         {
           "type": "device",
-          "index": 3,
+          "index": 4,
           "background": "#E0D9D1",
           "paddingBottom": true,
           "device": "mbp16lower",
@@ -448,7 +495,7 @@
         },
         {
           "type": "fullwidth",
-          "index": 4,
+          "index": 5,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -462,6 +509,16 @@
           "darkOverlay": null,
           "textOverlay": null,
           "textOverlayThemeDark": false
+        },
+        {
+          "type": "reading",
+          "index": 6,
+          "background": null,
+          "paddingBottom": true,
+          "paragraphs": [
+            "Sayaka's confession matters even though it does not bring the relationship she wants. She lets her own desire take up space in a friendship that has taught her to be careful. Touko's answer hurts because the feeling is real. It deserves to be heard without becoming a debt Touko must repay.",
+            "I am glad the manga looks beyond that answer. A later love does not erase what came before, and the earlier love does not have to occupy her whole future. Her restraint, her decision to speak, and her life afterwards can all belong to the same person. I want this page to follow her through that movement, far enough to see her turn towards a life of her own."
+          ]
         }
       ],
       "customCss": null,

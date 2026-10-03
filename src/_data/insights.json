@@ -1,11 +1,11 @@
 {
-  "_comment": "两篇解读页的数据（docs/bloom-redesign-plan.md §4.6）。M2 填充：三栏 intro（第一栏标签 = `Contains story discussion`）、主图（introImage）、4 个 blocks（fullwidth 图 / nodevice 视频 / fullwidth 图文叠加 / mbp16lower 视频）与 next 环（yuu-touko ↔ touko-sayaka）。**liveSite 不给值**（§4.4 同款）。第一版文字只放在 case-intro 与 fullwidth 的 textOverlay —— 专门的阅读模块不在第一版内。全部占位文案为中性英文，替换见 src/_data。",
+  "_comment": "两篇解读页的数据（docs/bloom-redesign-plan.md §4.6）。M2 填充：三栏 intro（第一栏标签 = `Contains story discussion`）、主图（introImage）、4 个 blocks（fullwidth 图 / nodevice 视频 / fullwidth 图文叠加 / mbp16lower 视频）与 next 环（yuu-touko ↔ touko-sayaka）。**liveSite 不给值**（§4.4 同款）。第一版文字只放在 case-intro 与 fullwidth 的 textOverlay —— 专门的阅读模块不在第一版内。全部占位文案为中性英文，替换见 src/_data。 ★ 文案方案落地（DEVIATIONS.md F7）：`title` / `description` / 三栏 `intro`（标签改为 Reading scope / Characters / Focus）与图文叠加那句 `textOverlay` 换成 `docs/copy-proposal.md` §7 的文案；**每页新增 1 个 `reading` block**（`blocks/reading.njk`）作第一个 block，承载 §7 的四段阅读稿 —— 这正是方案 §8 待定项「解读页的专门阅读模块」的落地（方案 §12 明写长文不得塞进 `intro[2].items`、也不得用 `textOverlay` 代替正文）。故全部 block 的 `index` 已重排。",
   "insights": [
     {
       "href": "/insights/yuu-touko",
       "name": "Yuu & Touko",
-      "title": "Yuu & Touko - Bloom Into You",
-      "description": "A personal site about a story I love — its frames, its characters, and the quiet moments between them.",
+      "title": "Yuu & Touko — Bloom Into You",
+      "description": "Yuu and Touko: from an unequal promise to a relationship with room for change. A personal reading with full manga spoilers.",
       "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-into-you-860x540-crop-q72.jpg",
       "canonical": "/insights/yuu-touko",
       "loaderActive": 16,
@@ -15,9 +15,9 @@
       "cursorSpan": "Next",
       "intro": [
         {
-          "label": "Contains story discussion",
+          "label": "Reading scope",
           "items": [
-            "Placeholder note"
+            "Complete manga · Volumes 1–8 · Ending spoilers"
           ]
         },
         {
@@ -27,10 +27,10 @@
           ]
         },
         {
-          "label": "Notes",
+          "label": "Focus",
           "items": [
-            "Placeholder line one",
-            "Placeholder line two"
+            "Unequal promise",
+            "Mutual choice"
           ]
         }
       ],
@@ -43,8 +43,20 @@
       },
       "blocks": [
         {
-          "type": "fullwidth",
+          "type": "reading",
           "index": 0,
+          "background": null,
+          "paddingBottom": true,
+          "paragraphs": [
+            "At first, Yuu's uncertainty seems to offer Touko a place to rest. Touko can love without being loved in return; she can loosen the image everyone admires without having to accept that someone might want the person beneath it. Yuu can come close, on the condition that her own feelings remain where they began.",
+            "The promise becomes difficult because Yuu does not remain there. Attention gathers weight. She wants to help Touko, but she also wants something from their relationship. The student council play opens a path away from an inherited self; it cannot, by itself, tell either of them how to receive the other's changing desire. When Yuu confesses, the old arrangement can no longer contain them.",
+            "The later chapters give both girls work to do. Touko must face what her condition has asked of Yuu. Yuu must decide how to speak for a feeling she once believed would never arrive. Their eventual reunion matters because the relationship can now include an answer. Affection moves in both directions, with room for each person to ask, hesitate, and choose.",
+            "The ending carries that choice into life beyond school. I find its ordinary continuation more moving than a grand declaration could be: affection has somewhere to live after the moment of confession. They can remember the beginning without being required to repeat it forever. The first promise kept them close by asking them to stay the same. The life that follows lets them keep coming closer as they change."
+          ]
+        },
+        {
+          "type": "fullwidth",
+          "index": 1,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -71,7 +83,7 @@
         },
         {
           "type": "device",
-          "index": 1,
+          "index": 2,
           "background": "#E6E8EB",
           "paddingBottom": true,
           "device": "nodevice",
@@ -89,7 +101,7 @@
         },
         {
           "type": "fullwidth",
-          "index": 2,
+          "index": 3,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -111,12 +123,12 @@
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0.1",
-          "textOverlay": "A short note about this pairing.",
+          "textOverlay": "Love needs room for both of them to change.",
           "textOverlayThemeDark": true
         },
         {
           "type": "device",
-          "index": 3,
+          "index": 4,
           "background": "#E0D9D1",
           "paddingBottom": true,
           "device": "mbp16lower",
@@ -145,8 +157,8 @@
     {
       "href": "/insights/touko-sayaka",
       "name": "Touko & Sayaka",
-      "title": "Touko & Sayaka - Bloom Into You",
-      "description": "A personal site about a story I love — its frames, its characters, and the quiet moments between them.",
+      "title": "Touko & Sayaka — Bloom Into You",
+      "description": "Touko and Sayaka: familiar closeness, a confession, and the life beyond its answer. A personal reading with full manga spoilers.",
       "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-into-you-860x540-crop-q72.jpg",
       "canonical": "/insights/touko-sayaka",
       "loaderActive": 17,
@@ -156,9 +168,9 @@
       "cursorSpan": "Next",
       "intro": [
         {
-          "label": "Contains story discussion",
+          "label": "Reading scope",
           "items": [
-            "Placeholder note"
+            "Complete manga · Volumes 1–8 · Ending spoilers"
           ]
         },
         {
@@ -168,10 +180,10 @@
           ]
         },
         {
-          "label": "Notes",
+          "label": "Focus",
           "items": [
-            "Placeholder line one",
-            "Placeholder line two"
+            "Confession",
+            "Life beyond it"
           ]
         }
       ],
@@ -189,8 +201,20 @@
       },
       "blocks": [
         {
-          "type": "fullwidth",
+          "type": "reading",
           "index": 0,
+          "background": null,
+          "paddingBottom": true,
+          "paragraphs": [
+            "Touko and Sayaka know how to stand beside each other. They share work, expectations, and the small ease of familiar habits. Sayaka also knows that familiarity has its limits. There are parts of Touko she can sense without being invited into, and a wish of her own that the everyday rhythm gives her little room to express.",
+            "Her confession changes that rhythm. She asks for a place as a lover, making a desire visible that friendship has never fully contained. Touko does not give the answer she hopes for. Yet the feeling reaches her, and in responding to it Touko has to face whom she herself loves. That consequence belongs to their story; it does not exhaust the meaning of what Sayaka has done for herself.",
+            "What hurts here is that sincerity cannot determine another person's answer. Sayaka's understanding and care remain real, even when they do not lead to the relationship she wants. I want to read the scene without measuring her against Yuu, or finding the supposedly correct moment when she should have spoken. Her life is larger than a comparison between two confessions.",
+            "The manga later lets us hear that she has another relationship. It is a brief opening onto a future, not a full account of how she reached it. For this page, that is enough to change where the eye rests: after the answer, after the hurt, there is still a person making a life. Her love for Touko can remain part of her history while the days ahead acquire other names."
+          ]
+        },
+        {
+          "type": "fullwidth",
+          "index": 1,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -217,7 +241,7 @@
         },
         {
           "type": "device",
-          "index": 1,
+          "index": 2,
           "background": "#E6E8EB",
           "paddingBottom": true,
           "device": "nodevice",
@@ -235,7 +259,7 @@
         },
         {
           "type": "fullwidth",
-          "index": 2,
+          "index": 3,
           "background": null,
           "paddingBottom": false,
           "media": {
@@ -257,12 +281,12 @@
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0.1",
-          "textOverlay": "A short note about this pairing.",
+          "textOverlay": "The words are spoken. Life keeps unfolding.",
           "textOverlayThemeDark": true
         },
         {
           "type": "device",
-          "index": 3,
+          "index": 4,
           "background": "#E0D9D1",
           "paddingBottom": true,
           "device": "mbp16lower",

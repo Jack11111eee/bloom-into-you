@@ -491,5 +491,18 @@
         "cls": []
       }
     }
+  },
+  "reading": {
+    "_note": "**不是从 projects.json 派生的变体** —— `reading` 是 P12 新增的第 6 类 block（长文阅读稿，`DEVIATIONS.md` F7 / `docs/copy-proposal.md` §12），原站没有它。形状只有一种：`paragraphs[]` 是段落数组，**没有标题**（方案没给阅读稿标题，不替站主发明文案）。上面的 `pause`（P10 M3 的第 5 类）当时漏了没补，一并记在此处。",
+    "default": {
+      "type": "reading",
+      "index": 0,
+      "background": null,
+      "paddingBottom": true,
+      "paragraphs": [
+        "A long-form reading of the work. Paragraphs are plain strings; the template renders one <p> per entry.",
+        "The module has no heading by design, and its measure is capped at 38em by .block-reading in style-new.css."
+      ]
+    }
   }
 }

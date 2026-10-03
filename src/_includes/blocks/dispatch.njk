@@ -5,10 +5,15 @@
 
   `pause` 是 **P10 M3 新增的第 5 类**（呼吸点，见 `blocks/pause.njk` 与方案 §7 的 M3-2）——
   它不是原站 §6.1 的 block，故**只在长廊（`gallery.json`）出现**，详情页的数据里没有它。
+
+  `reading` 是 **P12 新增的第 6 类**（长文阅读稿，见 `blocks/reading.njk` 与
+  `docs/copy-proposal.md` §12）—— 同样不是原站的 block，**只在 5 条详情页出现**
+  （人物页 2 个、解读页 1 个）。
 #}
 {%- if b.type === 'device' %}{% include "blocks/device.njk" %}
 {%- elif b.type === 'fullwidth' %}{% include "blocks/fullwidth.njk" %}
 {%- elif b.type === 'mobile-devices' %}{% include "blocks/mobile-devices.njk" %}
 {%- elif b.type === 'screenshot' %}{% include "blocks/screenshot.njk" %}
 {%- elif b.type === 'pause' %}{% include "blocks/pause.njk" %}
+{%- elif b.type === 'reading' %}{% include "blocks/reading.njk" %}
 {%- endif %}

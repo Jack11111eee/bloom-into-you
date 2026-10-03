@@ -27,12 +27,32 @@ ns: contact
   > **表单的结构一字未动** —— 字段数、`name`、`for`/`id` 配对（`DEVIATIONS.md` A1）、
   > 蜜罐字段、`action` / `method` 全部原样；它仍然没有后端（现状即如此）。
   > `Send it!` / `Your message` / `Contact Details` / `Socials` 是通用功能性文案，保留。
+  >
+  > **文案方案落地**（`DEVIATIONS.md` F7，`docs/copy-proposal.md` §10）：
+  > ① `h1` → `A thought to share,` / `a detail to keep`；② **新增邀请句**（h1 下的 `<p>`，
+  > 地址做成 mailto —— 方案 §10.1 说"当前页面没有这段说明的渲染点，未来如采用，应明确加在
+  > 联系区"，这就是那个渲染点）；③ 表单 02–05 的 `label` / `placeholder`（01 组与现状相同，
+  > 未动）；④ 右栏 `Contact Details` **只留邮箱**（电话删除）、`Site Details` 换成站点可核实
+  > 的四行、`Socials` **整组删除**。
+  >
+  > ⚠️ **两处与方案字面的偏差，都在这里，改前先读 `DEVIATIONS.md` F7**：
+  > · **提交控件改为 `disabled` 的 `Form unavailable`** —— 方案 §10.2 明写"不能只把 `Send it!`
+  >   改名却继续 POST"。`action="/contact"` 一字未动（它仍然是那个没有后端的表单），
+  >   但**提交动作不再可达**；表单下方给一句 `The form is not connected yet. Please write by email.`
+  >   与一个可用的 `Write by email` → mailto 入口。等后端接通并验证后才换回 `Send message`。
+  > · **邮箱 `jackkkkk1e@proton.me` 在本文件里有三处**（邀请句的链接、右栏 `Contact Details`、
+  >   新加的 `Write by email` 按钮）—— 与 `site.json` 的 `contact.email`（喂页脚）是**两份**，
+  >   改一处要连带改另一处（清单第 07 节第 13 条记的同一件事）。
 #}
 <header class="section default-header contact-header theme-dark" data-scroll-section="">
    {% include "partials/nav-bar.njk" %}   <div class="container medium">
       <div class="row once-in">
          <div class="flex-col">
-            <h1><span><div class="profile-picture"{{ site.avatarFraming | framingAttr('background') | safe }}></div> Say hello, </span><span>or tell me what you think</span></h1>
+            <h1><span><div class="profile-picture"{{ site.avatarFraming | framingAttr('background') | safe }}></div> A thought to share, </span><span>a detail to keep</span></h1>
+            {# 邀请句（`docs/copy-proposal.md` §10.1，DEVIATIONS.md F7）—— 方案说"当前页面没有
+               这段说明的渲染点，未来如采用，应明确加在联系区"，这就是那个渲染点。
+               地址做成 mailto（与右栏的 Contact Details 同一份字符串，两处都要改）。 #}
+            <p>A different reading, a small detail, or a question about an image — write to me at <a href="mailto:jackkkkk1e@proton.me">jackkkkk1e@proton.me</a>.</p>
          </div>
          <div class="flex-col">
             <div class="profile-picture"{{ site.avatarFraming | framingAttr('background') | safe }}></div>
@@ -64,50 +84,59 @@ ns: contact
                                  </div>
                <div class="form-col">
                   <h5>02</h5>
-                  <label class="label" for="email">Where can I reach you?</label>
-                  <input class="field" type="email" id="form-email" name="email" value="" required="" placeholder="you@example.com *">
+                  <label class="label" for="email">Where can I write back?</label>
+                  <input class="field" type="email" id="form-email" name="email" value="" required="" placeholder="Your email address *">
                                  </div>
                <div class="form-col">
                   <h5>03</h5>
-                  <label class="label" for="company">Which part of the story?</label>
-                  <input class="field" type="text" id="form-company" name="company" value="" required="" placeholder="Yuu, Touko, the gallery ...">
+                  <label class="label" for="company">Which part stayed with you?</label>
+                  <input class="field" type="text" id="form-company" name="company" value="" required="" placeholder="A character, a scene, or a small detail *">
                                  </div>
                <div class="form-col">
                   <h5>04</h5>
-                  <label class="label" for="service">What would you like to talk about?</label>
-                  <input class="field" type="text" id="form-service" name="service" value="" required="" placeholder="A scene, a reading, a question ...">
+                  <label class="label" for="service">What would you like to share?</label>
+                  <input class="field" type="text" id="form-service" name="service" value="" required="" placeholder="A reading, a question, or an image credit *">
                                  </div>
                <div class="form-col">
                   <h5>05</h5>
-                  <label class="label" for="message">Your message</label>
-                  <textarea class="field" type="text" id="form-message" name="message" rows="8" required="" placeholder="Hello, I wanted to say ... *"></textarea>
+                  <label class="label" for="message">Leave me a few words</label>
+                  <textarea class="field" type="text" id="form-message" name="message" rows="8" required="" placeholder="Take your time. What would you like to tell me? *"></textarea>
                                  </div>
                <div class="btn-contact-send">
                   <div class="btn btn-round" data-scroll="" data-scroll-speed="2" data-scroll-offset="-50%, 0%">
                      <div class="btn-click magnetic" data-strength="100" data-strength-text="50">
                         <div class="btn-fill"></div>
                         <span class="btn-text">
-                           <input type="submit" name="submit" value="Send it!" class="form-btn">
+                           {# ⚠️ **表单没有后端**（`action="/contact"` 在静态产物里不会真的发信）。
+                              `docs/copy-proposal.md` §10.2 明写"不能只把 `Send it!` 改名却继续 POST"，
+                              故提交控件改为 `disabled` + 文案 `Form unavailable`（`DEVIATIONS.md` F7）。
+                              等发送后端真正接通并验证后，才换回 `Send message` 并去掉 `disabled`。
+                              **结构一字未动**：字段数、`name`、A1 的 `for`/`id`、蜜罐、`action`/`method` 全部原样。 #}
+                           <input type="submit" name="submit" value="Form unavailable" class="form-btn" disabled>
                         </span>
                      </div>
                   </div>
                </div>
             </form>
+            {# 表单未接通时的诚实出口（`docs/copy-proposal.md` §10.2）——
+               一个可用的动作 + 一句说明，替代"提交了却什么也没发生"。 #}
+            <p class="small">The form is not connected yet. Please write by email.</p>
+            <div class="btn btn-normal">
+               <a href="mailto:jackkkkk1e@proton.me" class="btn-click magnetic" data-strength="25" data-strength-text="15">
+                  <div class="btn-fill"></div>
+                  <span class="btn-text">
+                     <span class="btn-text-inner change">Write by email</span>
+                  </span>
+               </a>
+            </div>
          </div>
          <div class="flex-col">
             <h5>Contact Details</h5>
             <ul class="links-wrap">
                <li class="btn btn-link btn-link-external">
-                  <a href="mailto:hello@example.com" class="btn-click magnetic" data-strength="20" data-strength-text="10">
+                  <a href="mailto:jackkkkk1e@proton.me" class="btn-click magnetic" data-strength="20" data-strength-text="10">
                      <span class="btn-text">
-                        <span class="btn-text-inner">hello@example.com</span>
-                     </span>
-                  </a>
-               </li>
-               <li class="btn btn-link btn-link-external">
-                  <a href="tel:+31200000000" class="btn-click magnetic" data-strength="20" data-strength-text="10">
-                     <span class="btn-text">
-                        <span class="btn-text-inner">+31 20 000 0000</span>
+                        <span class="btn-text-inner">jackkkkk1e@proton.me</span>
                      </span>
                   </a>
                </li>
@@ -116,39 +145,8 @@ ns: contact
             <ul class="links-wrap">
                <li><p>Bloom Into You</p></li>
                <li><p>A personal reading site</p></li>
-               <li><p>Est. 2026</p></li>
-               <li><p>Location: Online</p></li>
-            </ul>
-            <h5>Socials</h5>
-            <ul class="links-wrap">
-               <li class="btn btn-link btn-link-external">
-                  <a href="https://example.com/journal" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
-                     <span class="btn-text">
-                        <span class="btn-text-inner">Journal</span>
-                     </span>
-                  </a>
-               </li>
-               <li class="btn btn-link btn-link-external">
-                  <a href="https://example.com/photos" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
-                     <span class="btn-text">
-                        <span class="btn-text-inner">Photo feed</span>
-                     </span>
-                  </a>
-               </li>
-               <li class="btn btn-link btn-link-external">
-                  <a href="https://example.com/newsletter" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
-                     <span class="btn-text">
-                        <span class="btn-text-inner">Newsletter</span>
-                     </span>
-                  </a>
-               </li>
-               <li class="btn btn-link btn-link-external">
-                  <a href="https://example.com/press" target="_blank" class="btn-click magnetic" data-strength="20" data-strength-text="10">
-                     <span class="btn-text">
-                        <span class="btn-text-inner">Press</span>
-                     </span>
-                  </a>
-               </li>
+               <li><p>Complete manga · Volumes 1–8</p></li>
+               <li><p>Images, characters, and close readings</p></li>
             </ul>
          </div>
       </div>

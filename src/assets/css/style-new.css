@@ -943,6 +943,27 @@ main.touch .main-wrap {
 }
 
 
+/* ------------------------- Home - Header nav text (black) ------------------------------- */
+
+/* 文案方案 §2.1（DEVIATIONS.md F7）：**首页页头是浅色背景，导航文字改为黑色 `#000000`。**
+   实测依据：换图后首屏 `studio-01.jpg` 是亮窗插画，而 `.home-header` 带 `theme-dark`
+   ⇒ `.theme-dark .btn-link .btn-text`（styleguide.css:580）把导航与站名都染成白字，
+   对比度不足。方案点名要覆盖的四处：顶部四个入口、移动端 `Menu`、左上角返回首页的站名，
+   外加"悬停字与指示点也要能看清"。
+
+   作用域按**页**限定（`#home` 是本页 `main` 的 id，见 layouts/base.njk 的 `id="{{ ns }}"`），
+   与既有的 `#contact .btn-hamburger` 同一写法。**只覆盖文字色与指示点**：
+   深色区域（展开菜单 `.fixed-nav`、深色页脚）与首屏副标 `h4` / 挂绳三行**都不动** ——
+   方案只点名导航与站名（副标与挂绳仍是白字，见 DEVIATIONS.md F7 的"需报告项"）。
+   `.nav-bar` 是 `position: absolute`（随页头滚走），故不存在"滚到浅色区仍是黑字"的状态。 */
+#home .home-header .nav-bar .btn-link .btn-text {
+   color: #000000;
+}
+
+#home .home-header .nav-bar .btn-link .btn-click::after {
+   background: #000000;
+}
+
 /* ------------------------- Home - Intro -------------------------------------------------- */
 
 .home-intro {
@@ -1007,6 +1028,33 @@ main.touch .main-wrap {
       right: 0;
       transform: translate(-20%, 50%);
    }
+}
+
+/* ------------------------- Reading block (long-form prose) ------------------------------ */
+
+/* `blocks/reading.njk` —— 详情页的长文阅读稿模块（DEVIATIONS.md F7）。
+   它是 `pause` 之后的第 6 类 block，但**不能**像 `pause` 那样整体复用 `.home-intro`：
+   `.home-intro .flex-col:nth-child(2) p` 的 `max-width: 14em`（≈240–266px）是给**一句**
+   拉引言调的，四段正文放进去会变成一条极窄的长条。全站此前**没有**任何多段正文版式。
+
+   故这里给三条**以 `.block-reading` 为前缀**的规则（不改任何共享选择器）：
+   ① 行宽上限 `38em`（19px 基准下 ≈722px ≈ 65 字符/行，落在舒适阅读区间）并居中；
+   ② 段间距 —— 全局 `p` 的 `margin-bottom: 1em` 对长文偏紧；
+   ③ 末段归零（`.single-block` 内的段落若留底边距会与下一块的 `padding-bottom` 叠加）。
+   **不需要媒体查询**：≤540px 时 `.container.medium` 的 padding 收窄，且视口本身
+   （390px ≈ 20.5em）已小于 `38em`，上限自然失效。 */
+.block-reading .text-wrap {
+   max-width: 38em;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.block-reading .text-wrap p {
+   margin-bottom: 1.5em;
+}
+
+.block-reading .text-wrap p:last-child {
+   margin-bottom: 0;
 }
 
 /* ------------------------- Wrap Work Grid -------------------------------------------------- */
@@ -2564,7 +2612,16 @@ main.touch .main-wrap {
 }
 
 .contact-header .row:nth-child(2) .links-wrap li {
-   height: 2em;
+   /* [P12] 原为 `height: 2em` —— 原站右栏两组都是**单行短条目**
+      （`hello@example.com` / `+31 20 000 0000` / `Est. 2026` / `Location: Online`），
+      固定高够用。文案方案（DEVIATIONS.md F7）把 `Site Details` 换成整句后，
+      「Complete manga · Volumes 1–8」与「Images, characters, and close readings」
+      在 27% 宽的栏里**换行**，而固定高不随内容增长 ⇒ 相邻条目**互相重叠**
+      （`[实测]` 2026-10-03 1440×900：`Site Details` 第 3/4 行压在一起）。
+      改 `min-height` 后：单行条目与原来**逐像素相同**（都取 2em），多行条目自然撑开。
+      上面那条链接条目不受影响 —— 它的 `.btn-click` 在本文件下一行被覆盖成 `height: 2em`。 */
+   min-height: 2em;
+   height: auto;
    display: flex;
    align-items: center;
 }
@@ -2619,11 +2676,12 @@ main.touch .main-wrap {
       font-size: 1.15em;
    }
 
-   .contact-header .row:nth-child(2) .flex-col:nth-child(2) h5:last-of-type,
-   .contact-header .row:nth-child(2) .flex-col:nth-child(2) ul:last-of-type {
-      display: none;
-   }
-
+   /* [P12] 原站右栏有**三**组（Contact Details / Business Details / Socials），
+      这里把 `:last-of-type` 那组在 ≤720px 藏起来 —— 藏的是 **Socials**。
+      文案方案（DEVIATIONS.md F7）把 Socials 整组删除后，`:last-of-type` 变成了
+      **Site Details**，于是手机上会**丢掉阅读范围那两行**（`[实测]` 2026-10-03 390×844：
+      该组 `getBoundingClientRect().height === 0`）。Socials 已不存在，这条规则失去标的，
+      故删除；手机上两组都显示。 */
    .contact-header .row:nth-child(2) {
       padding-top: 0;
    }
