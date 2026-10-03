@@ -10,13 +10,18 @@
         "kind": "image",
         "src": "/media/pages/gallery/gallery-full-1.jpg",
         "srcSmall": "/media/pages/gallery/gallery-full-1-540x.jpg",
-        "width": 3000,
-        "height": 2250,
+        "width": 8760,
+        "height": 4928,
         "cls": [
           "overlay",
           "overlay-image",
           "lazy"
-        ]
+        ],
+        "framing": {
+          "fx": 0,
+          "fy": 50,
+          "z": 1
+        }
       },
       "scrollSpeed": "-3",
       "darkOverlay": "0",
@@ -34,13 +39,18 @@
         "kind": "image",
         "src": "/media/pages/gallery/gallery-device-1.jpg",
         "srcSmall": "/media/pages/gallery/gallery-device-1-540x.jpg",
-        "width": 2000,
-        "height": 1333,
+        "width": 5600,
+        "height": 4008,
         "cls": [
           "overlay",
           "overlay-image",
           "lazy"
-        ]
+        ],
+        "framing": {
+          "fx": 50,
+          "fy": 100,
+          "z": 1
+        }
       },
       "parallax": null,
       "overlayTops": [],
@@ -71,14 +81,19 @@
             "kind": "image",
             "src": "/media/pages/gallery/gallery-mobile-1a.jpg",
             "srcSmall": "/media/pages/gallery/gallery-mobile-1a-540x.jpg",
-            "width": 1080,
-            "height": 2191,
+            "width": 3088,
+            "height": 4000,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
             ],
-            "scrollSpeed": null
+            "scrollSpeed": null,
+            "framing": {
+              "fx": 38.5,
+              "fy": 50,
+              "z": 1
+            }
           },
           "frame": null
         },
@@ -92,14 +107,19 @@
             "kind": "image",
             "src": "/media/pages/gallery/gallery-mobile-1b.jpg",
             "srcSmall": "/media/pages/gallery/gallery-mobile-1b-540x.jpg",
-            "width": 1080,
-            "height": 2191,
+            "width": 3016,
+            "height": 4000,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
             ],
-            "scrollSpeed": null
+            "scrollSpeed": null,
+            "framing": {
+              "fx": 43.5,
+              "fy": 50,
+              "z": 1
+            }
           },
           "frame": null
         }
@@ -133,13 +153,18 @@
         "kind": "image",
         "src": "/media/pages/gallery/gallery-device-2.jpg",
         "srcSmall": "/media/pages/gallery/gallery-device-2-540x.jpg",
-        "width": 2000,
-        "height": 1333,
+        "width": 7112,
+        "height": 3992,
         "cls": [
           "overlay",
           "overlay-image",
           "lazy"
-        ]
+        ],
+        "framing": {
+          "fx": 13.5,
+          "fy": 50,
+          "z": 1
+        }
       },
       "parallax": null,
       "overlayTops": [],
@@ -162,8 +187,8 @@
             "kind": "image",
             "src": "/media/pages/gallery/gallery-mobile-2a.jpg",
             "srcSmall": "/media/pages/gallery/gallery-mobile-2a-540x.jpg",
-            "width": 1080,
-            "height": 2191,
+            "width": 1864,
+            "height": 3896,
             "cls": [
               "overlay",
               "overlay-image",
@@ -179,14 +204,19 @@
             "kind": "image",
             "src": "/media/pages/gallery/gallery-mobile-2b.jpg",
             "srcSmall": "/media/pages/gallery/gallery-mobile-2b-540x.jpg",
-            "width": 1080,
-            "height": 2191,
+            "width": 2624,
+            "height": 3936,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
             ],
-            "scrollSpeed": null
+            "scrollSpeed": null,
+            "framing": {
+              "fx": 56.1,
+              "fy": 50,
+              "z": 1
+            }
           },
           "frame": null
         },
@@ -200,14 +230,19 @@
             "kind": "image",
             "src": "/media/pages/gallery/gallery-mobile-2c.jpg",
             "srcSmall": "/media/pages/gallery/gallery-mobile-2c-540x.jpg",
-            "width": 1080,
-            "height": 2191,
+            "width": 2784,
+            "height": 4000,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
             ],
-            "scrollSpeed": null
+            "scrollSpeed": null,
+            "framing": {
+              "fx": 60.6,
+              "fy": 50,
+              "z": 1
+            }
           },
           "frame": null
         }
@@ -238,8 +273,8 @@
             "kind": "image",
             "src": "/media/pages/gallery/gallery-mobile-3a.jpg",
             "srcSmall": "/media/pages/gallery/gallery-mobile-3a-540x.jpg",
-            "width": 1080,
-            "height": 2191,
+            "width": 2952,
+            "height": 3992,
             "cls": [
               "overlay",
               "overlay-image",
@@ -259,14 +294,19 @@
             "kind": "image",
             "src": "/media/pages/gallery/gallery-mobile-3b.jpg",
             "srcSmall": "/media/pages/gallery/gallery-mobile-3b-540x.jpg",
-            "width": 1080,
-            "height": 2191,
+            "width": 2256,
+            "height": 4008,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
             ],
-            "scrollSpeed": null
+            "scrollSpeed": null,
+            "framing": {
+              "fx": 43.2,
+              "fy": 50,
+              "z": 1
+            }
           },
           "frame": null
         }
@@ -281,13 +321,18 @@
         "kind": "image",
         "src": "/media/pages/gallery/gallery-full-2.jpg",
         "srcSmall": "/media/pages/gallery/gallery-full-2-540x.jpg",
-        "width": 3000,
-        "height": 2250,
+        "width": 7112,
+        "height": 3984,
         "cls": [
           "overlay",
           "overlay-image",
           "lazy"
-        ]
+        ],
+        "framing": {
+          "fx": 42.5,
+          "fy": 49.5,
+          "z": 1
+        }
       },
       "scrollSpeed": "-3",
       "darkOverlay": "0",
@@ -305,13 +350,18 @@
         "kind": "image",
         "src": "/media/pages/gallery/gallery-device-3.jpg",
         "srcSmall": "/media/pages/gallery/gallery-device-3-540x.jpg",
-        "width": 2000,
-        "height": 1333,
+        "width": 7104,
+        "height": 4000,
         "cls": [
           "overlay",
           "overlay-image",
           "lazy"
-        ]
+        ],
+        "framing": {
+          "fx": 55.5,
+          "fy": 50,
+          "z": 1
+        }
       },
       "parallax": null,
       "overlayTops": [],
@@ -343,13 +393,18 @@
         "kind": "image",
         "src": "/media/pages/gallery/gallery-full-3.jpg",
         "srcSmall": "/media/pages/gallery/gallery-full-3-540x.jpg",
-        "width": 2000,
-        "height": 1333,
+        "width": 5888,
+        "height": 3992,
         "cls": [
           "overlay",
           "overlay-image",
           "lazy"
-        ]
+        ],
+        "framing": {
+          "fx": 39.5,
+          "fy": 50,
+          "z": 1
+        }
       },
       "scrollSpeed": "-3",
       "darkOverlay": "0.1",

@@ -51,13 +51,18 @@
             "kind": "image",
             "src": "/media/pages/insights/yuu-touko/yuu-touko-full-1.jpg",
             "srcSmall": "/media/pages/insights/yuu-touko/yuu-touko-full-1-540x.jpg",
-            "width": 3000,
-            "height": 2250,
+            "width": 7120,
+            "height": 3992,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
-            ]
+            ],
+            "framing": {
+              "fx": 32.5,
+              "fy": 50,
+              "z": 1
+            }
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0",
@@ -91,13 +96,18 @@
             "kind": "image",
             "src": "/media/pages/insights/yuu-touko/yuu-touko-overlay-1.jpg",
             "srcSmall": "/media/pages/insights/yuu-touko/yuu-touko-overlay-1-540x.jpg",
-            "width": 2000,
-            "height": 1333,
+            "width": 5720,
+            "height": 3992,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
-            ]
+            ],
+            "framing": {
+              "fx": 1.5,
+              "fy": 50,
+              "z": 1
+            }
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0.1",
@@ -170,7 +180,12 @@
         "image": "/media/pages/insights/touko-sayaka/touko-sayaka-intro.jpg",
         "scrollSpeed": "-1",
         "overlayTop": null,
-        "paddingBottom": true
+        "paddingBottom": true,
+        "framing": {
+          "fx": 100,
+          "fy": 50,
+          "z": 1
+        }
       },
       "blocks": [
         {
@@ -182,13 +197,18 @@
             "kind": "image",
             "src": "/media/pages/insights/touko-sayaka/touko-sayaka-full-1.jpg",
             "srcSmall": "/media/pages/insights/touko-sayaka/touko-sayaka-full-1-540x.jpg",
-            "width": 3000,
-            "height": 2250,
+            "width": 8160,
+            "height": 4584,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
-            ]
+            ],
+            "framing": {
+              "fx": 63.5,
+              "fy": 50,
+              "z": 1
+            }
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0",
@@ -222,13 +242,18 @@
             "kind": "image",
             "src": "/media/pages/insights/touko-sayaka/touko-sayaka-overlay-1.jpg",
             "srcSmall": "/media/pages/insights/touko-sayaka/touko-sayaka-overlay-1-540x.jpg",
-            "width": 2000,
-            "height": 1333,
+            "width": 7368,
+            "height": 4400,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
-            ]
+            ],
+            "framing": {
+              "fx": 0,
+              "fy": 50,
+              "z": 1
+            }
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0.1",

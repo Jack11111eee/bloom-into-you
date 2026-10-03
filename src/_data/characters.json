@@ -52,8 +52,8 @@
             "kind": "image",
             "src": "/media/pages/characters/yuu/yuu-full-1.jpg",
             "srcSmall": "/media/pages/characters/yuu/yuu-full-1-540x.jpg",
-            "width": 3000,
-            "height": 2250,
+            "width": 8440,
+            "height": 5272,
             "cls": [
               "overlay",
               "overlay-image",
@@ -92,13 +92,18 @@
             "kind": "image",
             "src": "/media/pages/characters/yuu/yuu-overlay-1.jpg",
             "srcSmall": "/media/pages/characters/yuu/yuu-overlay-1-540x.jpg",
-            "width": 2000,
-            "height": 1333,
+            "width": 8424,
+            "height": 5248,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
-            ]
+            ],
+            "framing": {
+              "fx": 100,
+              "fy": 50,
+              "z": 1
+            }
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0.1",
@@ -201,13 +206,18 @@
             "kind": "image",
             "src": "/media/pages/characters/touko/touko-full-1.jpg",
             "srcSmall": "/media/pages/characters/touko/touko-full-1-540x.jpg",
-            "width": 3000,
-            "height": 2250,
+            "width": 5104,
+            "height": 2872,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
-            ]
+            ],
+            "framing": {
+              "fx": 33,
+              "fy": 50,
+              "z": 1
+            }
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0",
@@ -241,13 +251,18 @@
             "kind": "image",
             "src": "/media/pages/characters/touko/touko-overlay-1.jpg",
             "srcSmall": "/media/pages/characters/touko/touko-overlay-1-540x.jpg",
-            "width": 2000,
-            "height": 1333,
+            "width": 5104,
+            "height": 2864,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
-            ]
+            ],
+            "framing": {
+              "fx": 100,
+              "fy": 50,
+              "z": 1
+            }
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0.1",
@@ -338,7 +353,12 @@
         "image": "/media/pages/characters/sayaka/sayaka-intro.jpg",
         "scrollSpeed": "-1",
         "overlayTop": null,
-        "paddingBottom": true
+        "paddingBottom": true,
+        "framing": {
+          "fx": 100,
+          "fy": 50,
+          "z": 1
+        }
       },
       "blocks": [
         {
@@ -350,8 +370,8 @@
             "kind": "image",
             "src": "/media/pages/characters/sayaka/sayaka-full-1.jpg",
             "srcSmall": "/media/pages/characters/sayaka/sayaka-full-1-540x.jpg",
-            "width": 3000,
-            "height": 2250,
+            "width": 5112,
+            "height": 2872,
             "cls": [
               "overlay",
               "overlay-image",
@@ -390,13 +410,18 @@
             "kind": "image",
             "src": "/media/pages/characters/sayaka/sayaka-overlay-1.jpg",
             "srcSmall": "/media/pages/characters/sayaka/sayaka-overlay-1-540x.jpg",
-            "width": 2000,
-            "height": 1333,
+            "width": 3264,
+            "height": 2128,
             "cls": [
               "overlay",
               "overlay-image",
               "lazy"
-            ]
+            ],
+            "framing": {
+              "fx": 0,
+              "fy": 50,
+              "z": 1
+            }
           },
           "scrollSpeed": "-3",
           "darkOverlay": "0.1",

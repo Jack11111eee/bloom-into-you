@@ -15,8 +15,8 @@
         "kind": "image",
         "src": "/media/pages/gallery/gallery-full-1.jpg",
         "srcSmall": "/media/pages/gallery/gallery-full-1-540x.jpg",
-        "width": 3000,
-        "height": 2250,
+        "width": 8760,
+        "height": 4928,
         "cls": [
           "overlay",
           "overlay-image",
@@ -37,8 +37,8 @@
         "kind": "image",
         "src": "/media/pages/gallery/gallery-full-2.jpg",
         "srcSmall": "/media/pages/gallery/gallery-full-2-540x.jpg",
-        "width": 3000,
-        "height": 2250,
+        "width": 7112,
+        "height": 3984,
         "cls": [
           "overlay",
           "overlay-image",
