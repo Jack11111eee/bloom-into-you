@@ -1,6 +1,6 @@
 {
   "_comment": "站点级常量（SPEC.md §7.2）。P8 已把原站文案换成占位内容（DEVIATIONS.md D2）：社交账号一律指向 example.com（RFC 2606），标签改成不含第三方品牌的中性词。P10 M1 改了导航组成与 loader 词表（方案 §4.8 / §5 M1 步骤 6、7），见 DEVIATIONS.md F1 / F2。 P10 M6：**P8 的练习名「Bloom Studio」已退役** —— 站名统一为作品英文名 **「Bloom Into You」**（M5-2 定的站名，M6 铺到 og:site_name / 页 title / 左上角署名 / contact 页，见方案 §4.8 与 DEVIATIONS.md E1 / D2）。 ★ P11 取景（DEVIATIONS.md G1）：新增 `avatarFraming`（头像圆点，机制②，只平移）。null = 原站居中（`center center`）。 ★ 文案方案落地（DEVIATIONS.md F7）：`loaderWords[0..8]` 换成同一部作品名在九种文字里的写法（**仍是 9 条**，`home-active-first` / `home-active-last` 与 `jap` 的位置见 `loader.njk` 注释）；`socials` 整块**删除**（三处消费者一并删）；`contact` 只留 `email`（`jackkkkk1e@proton.me`）与 `contactHref` —— `tel` / `telHref` 随页脚电话按钮删除；`footer` 只留 `versionLabel` / `version` —— `timeLabel` / `timeText` / `socialsLabel` 随 `Local time` 与 `Socials` 两栏删除。",
-  "_i18n": "H1：英文源 loader 前九项统一作品英文名，构建期翻成当前语言；类名及时间线结构保留。翻译词表 src/_data/translations。",
+  "_i18n": "H1/H2：普通页面词构建期翻成当前语言；首页前九项保留原有九语言作品名，作为站主指定的单语例外。类名及时间线结构保留。翻译词表 src/_data/translations。",
   "lang": "en",
   "navBar": [
     {
@@ -130,15 +130,15 @@
   ],
   "loaderWords": [
     {
-      "text": "Bloom Into You",
+      "text": "终将成为你",
       "cls": "home-active home-active-first"
     },
     {
-      "text": "Bloom Into You",
+      "text": "終將成為妳",
       "cls": "home-active"
     },
     {
-      "text": "Bloom Into You",
+      "text": "やがて君になる",
       "cls": "home-active jap"
     },
     {
@@ -146,23 +146,23 @@
       "cls": "home-active"
     },
     {
-      "text": "Bloom Into You",
+      "text": "이윽고 네가 된다",
       "cls": "home-active"
     },
     {
-      "text": "Bloom Into You",
+      "text": "Gdy zakwitnie w nas miłość",
       "cls": "home-active"
     },
     {
-      "text": "Bloom Into You",
+      "text": "В конечном счёте я стану твоей",
       "cls": "home-active"
     },
     {
-      "text": "Bloom Into You",
+      "text": "Θα γίνω τελικά εσύ",
       "cls": "home-active"
     },
     {
-      "text": "Bloom Into You",
+      "text": "ท้ายที่สุดฉันจะกลายเป็นเธอ",
       "cls": "home-active-last"
     },
     {

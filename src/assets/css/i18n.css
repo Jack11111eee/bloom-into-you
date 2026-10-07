@@ -10,8 +10,10 @@ html:not([lang="en"]) input, html:not([lang="en"]) textarea, html:not([lang="en"
 html:not([lang="en"]) .span-lines { line-break: strict; word-break: normal; }
 html:not([lang="en"]) .btn-link.btn-left-top:hover .credit-first { transform: none; padding-right: .2em; }
 html:not([lang="en"]) .credit-first-span { white-space: nowrap; }
-html:not([lang="en"]) .loading-words h2,
-html:not([lang="en"]) .loading-words h2.jap { font-family: var(--locale-font); font-size: clamp(1.5em, 4vw, 3.5em); }
+html:not([lang="en"]) .loading-words h2:not(.home-active):not(.home-active-last) { font-family: var(--locale-font); font-size: clamp(1.5em, 4vw, 3.5em); }
+/* H2: preserve the original home opening type, including the smaller Japanese word. */
+.loading-container .loading-words h2.home-active,
+.loading-container .loading-words h2.home-active-last { font-family: 'Inter', sans-serif; }
 .language-switch { position: relative; margin-left: auto; margin-right: 1.5em; font-size: .85em; }
 .language-switch summary { cursor: pointer; list-style: none; padding: .75em .5em; }
 .language-switch summary::-webkit-details-marker { display: none; }

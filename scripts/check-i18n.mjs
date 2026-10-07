@@ -32,7 +32,8 @@ for (const locale of LOCALES) {
     assert($('meta[property="og:title"]').attr('content') === title && $('meta[property="twitter:title"]').attr('content') === title, `${url}: title mismatch`);
     assert($('main[data-barba=container]').length === 1, `${url}: container count`);
     assert($('.loading-words h2').length === 22, `${url}: loader topology`);
-    assert($('.loading-words h2').slice(0,9).toArray().every(e=>$(e).text().trim()===catalog['Bloom Into You']), `${url}: mixed home loader`);
+    const opening = ['终将成为你', '終將成為妳', 'やがて君になる', 'Bloom Into You', '이윽고 네가 된다', 'Gdy zakwitnie w nas miłość', 'В конечном счёте я стану твоей', 'Θα γίνω τελικά εσύ', 'ท้ายที่สุดฉันจะกลายเป็นเธอ'];
+    assert(JSON.stringify($('.loading-words > h2.home-active, .loading-words > h2.home-active-last').map((_,e)=>$(e).text().trim()).get()) === JSON.stringify(opening), `${url}: original multilingual home opening changed`);
     assert($('.language-row a').length === 4, `${url}: missing language choices`);
     $('a[data-language]').each((_, node) => {
       const code = node.attribs['data-language'];
@@ -48,7 +49,7 @@ for (const locale of LOCALES) {
     const values = [];
     function walk(node) {
       if(node.type==='text') {
-        if(!['style','script'].includes(node.parent?.name) && !$(node.parent).hasClass('locale-code')) values.push(node.data.trim());
+        if(!['style','script'].includes(node.parent?.name) && !$(node.parent).hasClass('locale-code') && !$(node.parent).closest('.loading-words > h2.home-active, .loading-words > h2.home-active-last').length) values.push(node.data.trim());
       } else if(node.children) node.children.forEach(walk);
     }
     walk($.root()[0]);
