@@ -624,6 +624,15 @@ function initNextWord(data) {
   let dom = parser.parseFromString(data.next.html, 'text/html');
   let nextProjects = dom.querySelector('.loading-words');
   document.querySelector('.loading-words').innerHTML = nextProjects.innerHTML;
+  // [H1] Barba replaces the container; keep document metadata aligned with the target page.
+  document.documentElement.lang = dom.documentElement.lang;
+  document.documentElement.dataset.locale = dom.documentElement.dataset.locale;
+  document.documentElement.dataset.path = dom.documentElement.dataset.path;
+  document.title = dom.title;
+  const metadata = 'meta[name="description"], meta[property^="og:"], meta[property^="twitter:"], link[rel="canonical"], link[rel="alternate"]';
+  document.head.querySelectorAll(metadata).forEach(node => node.remove());
+  dom.head.querySelectorAll(metadata).forEach(node => document.head.appendChild(node.cloneNode(true)));
+
 }
 
 function delay(n) {

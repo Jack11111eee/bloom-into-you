@@ -12,10 +12,13 @@
  * `kind` 由本文件打上，是**派生的**，不写进两个 json —— 否则同一件事存两处必然漂移。
  */
 import fs from 'node:fs';
+import { LOCALES } from '../../lib/i18n.mjs';
 
 const read = (name) => JSON.parse(fs.readFileSync(new URL(name, import.meta.url), 'utf8'));
 
-export default [
+const entries = [
   ...read('./characters.json').characters.map((e) => ({ ...e, kind: 'character' })),
   ...read('./insights.json').insights.map((e) => ({ ...e, kind: 'insight' })),
 ];
+
+export default entries.flatMap(entry => LOCALES.map(locale => ({ ...entry, language: locale.code })));

@@ -1,13 +1,20 @@
 /**
  * eleventy.config.js — 构建期模板层配置
  *
- * 约束（SPEC.md §9.1）：模板层只负责把内容注入 HTML，不得引入任何客户端运行时、
- * 不得改变 DOM 结构、不得重排属性顺序。因此这里刻意保持最小配置：
- * 不做 HTML 重写、不加任何 transform、不注入任何客户端脚本。
+ * 模板仍共用原有布局和媒体。H1 的用户授权新增构建期严格文字本地化、
+ * 语言路由与入口（DEVIATIONS.md H1），替代 §9.1 原先禁止 HTML transform 的限制。
+ * 翻译缺项直接失败；无客户端翻译运行时。
  */
+
+import { localizeHtml, clearCatalogCache } from './lib/i18n.mjs';
 
 export default function (eleventyConfig) {
   eleventyConfig.setQuietMode(true);
+  eleventyConfig.on('eleventy.before', clearCatalogCache);
+  // H1: strict build-time localization shares the existing structure and media.
+  eleventyConfig.addTransform('localize', function (content, outputPath) {
+    return outputPath?.endsWith('.html') ? localizeHtml(content) : content;
+  });
 
   // ── 静态资源（P2 起）────────────────────────────────────────────────────
   // CSS / 字体 / 占位媒体原样复制到 dist，不做任何处理 —— 模板层不碰它们。

@@ -1,5 +1,10 @@
 ---
 ns: contact
+pagination:
+  data: locales
+  size: 1
+  alias: language
+permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/contact/index.html"
 ---
 {#
   contact.njk — contact 页（SPEC.md §6.5）

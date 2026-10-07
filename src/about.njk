@@ -2,6 +2,11 @@
 ns: about
 # 取景（DEVIATIONS.md G1）—— about 人像（机制②，只平移）。null = 原站居中
 aboutImageFraming: null
+pagination:
+  data: locales
+  size: 1
+  alias: language
+permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/about/index.html"
 ---
 {#
   about.njk — about 页（SPEC.md §6.4）

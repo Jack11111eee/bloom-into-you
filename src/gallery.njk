@@ -1,5 +1,10 @@
 ---
 ns: gallery
+pagination:
+  data: locales
+  size: 1
+  alias: language
+permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/gallery/index.html"
 ---
 {#
   gallery.njk — 画面长廊（P10 `docs/bloom-redesign-plan.md` §4.2）

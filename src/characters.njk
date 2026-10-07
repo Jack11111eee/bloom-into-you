@@ -1,5 +1,10 @@
 ---
 ns: characters
+pagination:
+  data: locales
+  size: 1
+  alias: language
+permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/characters/index.html"
 ---
 {#
   characters.njk — 人物索引（P10 `docs/bloom-redesign-plan.md` §4.3）

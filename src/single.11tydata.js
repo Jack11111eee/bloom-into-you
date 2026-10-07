@@ -13,6 +13,8 @@
  * `permalink` 由每条的 `href` 派生，**不另存一个 slug** —— 两处存必然漂移，
  * 而漂移的表现是"页面落在 A、链接指向 B"，构建却成功（`ISSUE-037` 的改名教训）。
  */
+import { localizedPath } from '../lib/i18n.mjs';
+
 export default {
   ns: 'single',
   pagination: {
@@ -20,5 +22,5 @@ export default {
     size: 1,
     alias: 'entry',
   },
-  permalink: (data) => `${data.entry.href}/index.html`,
+  permalink: (data) => `${localizedPath(data.entry.href, data.entry.language)}/index.html`,
 };

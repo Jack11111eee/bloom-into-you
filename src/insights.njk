@@ -1,5 +1,10 @@
 ---
 ns: insights
+pagination:
+  data: locales
+  size: 1
+  alias: language
+permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/insights/index.html"
 ---
 {#
   insights.njk — 解读索引（P10 `docs/bloom-redesign-plan.md` §4.5）

@@ -18,6 +18,7 @@ const pick = (data) => (data.ns === 'single' ? data.entry : (data.pages.pages[da
 export default {
   layout: 'layouts/base.njk',
   eleventyComputed: {
+    locale: data => data.language || data.entry?.language || 'en',
     title: (data) => pick(data).title,
     description: (data) => pick(data).description,
     ogImage: (data) => pick(data).ogImage,
