@@ -1,5 +1,5 @@
 {
-  "_comment": "三个人物页的数据（docs/bloom-redesign-plan.md §4.4）。M2 填充：三栏 intro（Character / Voice / 第三栏占位）、主图（introImage）、5 个 blocks（fullwidth 图 / nodevice 视频 / fullwidth 图文叠加 / mbp16lower 视频 / fullwidth 视频）与 next 环（Yuu → Touko → Sayaka → Yuu）。**liveSite 不给值** —— 人物页没有\"访问网站\"的语义（§4.4），case-intro-image 判空后不输出那个圆钮。全部占位文案为中性英文，替换见 src/_data。 P10 M5：新增 `homeLine` —— 首页三人物入口的「一句短语」（方案 §4.1 第 4 项）。首页的行式/卡片列表与浮动缩略图**都从本文件派生**（src.11tydata.js 的 `homeFeatured` / `floatImages`），不另存一份。 ★ 文案方案落地（DEVIATIONS.md F7）：`homeLine` / `title` / `description` / 三栏 `intro`（标签改为 Character / Voice (TV) / Focus，中文名与动画声优）与图文叠加那句 `textOverlay` 换成 `docs/copy-proposal.md` §6 的文案；三栏 `intro[2].items` 只放两个短关键词（它会被 `indexList` 拼成索引第三列，放不下长文）。**每页新增 2 个 `reading` block**（`blocks/reading.njk`）：介绍阅读稿作第一个 block（紧跟主图），心得作最后一个 block（紧接\"下一个\"卡片）—— 故全部 block 的 `index` 已重排。",
+  "_comment": "21 owner-supplied crops replace all video placeholders. Character introductions and closing reflections remain unchanged; retired ending videos leave no empty blocks.",
   "characters": [
     {
       "href": "/characters/yuu",
@@ -75,22 +75,19 @@
           "textOverlayThemeDark": false
         },
         {
-          "type": "device",
-          "index": 2,
-          "background": "#E6E8EB",
-          "paddingBottom": true,
-          "device": "nodevice",
-          "frame": null,
-          "media": {
-            "kind": "video",
-            "src": "/media/pages/characters/yuu/yuu-device-1.mp4",
-            "cls": [
-              "overlay"
-            ]
-          },
-          "parallax": null,
-          "overlayTops": [],
-          "pencil": null
+          "type": "editorial",
+          "id": "Y1",
+          "layout": "detail",
+          "images": [
+            {
+              "slot": "Y1-A",
+              "alt": "A detail of Yuu in Bloom Into You"
+            }
+          ],
+          "paragraphs": [
+            "I keep returning to the time Yuu gives a feeling before she names it. Attention can gather slowly, through ordinary moments whose meaning becomes clearer only later."
+          ],
+          "index": 2
         },
         {
           "type": "fullwidth",
@@ -120,43 +117,29 @@
           "textOverlayThemeDark": true
         },
         {
-          "type": "device",
-          "index": 4,
-          "background": "#E0D9D1",
-          "paddingBottom": true,
-          "device": "mbp16lower",
-          "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
-          "media": {
-            "kind": "video",
-            "src": "/media/pages/characters/yuu/yuu-device-2.mp4",
-            "cls": [
-              "overlay"
-            ]
-          },
-          "parallax": null,
-          "overlayTops": [],
-          "pencil": null
-        },
-        {
-          "type": "fullwidth",
-          "index": 5,
-          "background": null,
-          "paddingBottom": false,
-          "media": {
-            "kind": "video",
-            "src": "/media/pages/characters/yuu/yuu-full-2.mp4",
-            "cls": [
-              "overlay"
-            ]
-          },
-          "scrollSpeed": "-3",
-          "darkOverlay": null,
-          "textOverlay": null,
-          "textOverlayThemeDark": false
+          "type": "editorial",
+          "id": "Y2",
+          "layout": "pair",
+          "images": [
+            {
+              "slot": "Y2-A",
+              "alt": "Yuu, a moment of attention",
+              "caption": "Attention"
+            },
+            {
+              "slot": "Y2-B",
+              "alt": "Yuu, a moment of expression",
+              "caption": "A voice of her own"
+            }
+          ],
+          "paragraphs": [
+            "I read these moments through Yuu's growing agency: she learns to give her wishes a place in the relationship, and to take part in deciding what happens next."
+          ],
+          "index": 4
         },
         {
           "type": "reading",
-          "index": 6,
+          "index": 5,
           "background": null,
           "paddingBottom": true,
           "paragraphs": [
@@ -253,22 +236,25 @@
           "textOverlayThemeDark": false
         },
         {
-          "type": "device",
-          "index": 2,
-          "background": "#E6E8EB",
-          "paddingBottom": true,
-          "device": "nodevice",
-          "frame": null,
-          "media": {
-            "kind": "video",
-            "src": "/media/pages/characters/touko/touko-device-1.mp4",
-            "cls": [
-              "overlay"
-            ]
-          },
-          "parallax": null,
-          "overlayTops": [],
-          "pencil": null
+          "type": "editorial",
+          "id": "T1",
+          "layout": "contrast",
+          "images": [
+            {
+              "slot": "T1-A",
+              "alt": "Touko in company",
+              "caption": "In company"
+            },
+            {
+              "slot": "T1-B",
+              "alt": "Touko in a quieter moment",
+              "caption": "A quieter space"
+            }
+          ],
+          "paragraphs": [
+            "I notice how much room a person's role can take up in a relationship. With Touko, I also want to leave space for uncertainty, weariness, and the wish to be known."
+          ],
+          "index": 2
         },
         {
           "type": "fullwidth",
@@ -298,43 +284,34 @@
           "textOverlayThemeDark": true
         },
         {
-          "type": "device",
-          "index": 4,
-          "background": "#E0D9D1",
-          "paddingBottom": true,
-          "device": "mbp16lower",
-          "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
-          "media": {
-            "kind": "video",
-            "src": "/media/pages/characters/touko/touko-device-2.mp4",
-            "cls": [
-              "overlay"
-            ]
-          },
-          "parallax": null,
-          "overlayTops": [],
-          "pencil": null
-        },
-        {
-          "type": "fullwidth",
-          "index": 5,
-          "background": null,
-          "paddingBottom": false,
-          "media": {
-            "kind": "video",
-            "src": "/media/pages/characters/touko/touko-full-2.mp4",
-            "cls": [
-              "overlay"
-            ]
-          },
-          "scrollSpeed": "-3",
-          "darkOverlay": null,
-          "textOverlay": null,
-          "textOverlayThemeDark": false
+          "type": "editorial",
+          "id": "T2",
+          "layout": "sequence",
+          "images": [
+            {
+              "slot": "T2-A",
+              "alt": "Touko and expectations",
+              "caption": "Expectations"
+            },
+            {
+              "slot": "T2-B",
+              "alt": "Touko and performance",
+              "caption": "The role"
+            },
+            {
+              "slot": "T2-C",
+              "alt": "Touko and a direction to choose",
+              "caption": "A direction to choose"
+            }
+          ],
+          "paragraphs": [
+            "For me, the play brings Touko's inherited role and her own choices into the same space. What she carries can become something she works with, in a life that keeps changing."
+          ],
+          "index": 4
         },
         {
           "type": "reading",
-          "index": 6,
+          "index": 5,
           "background": null,
           "paddingBottom": true,
           "paragraphs": [
@@ -431,22 +408,19 @@
           "textOverlayThemeDark": false
         },
         {
-          "type": "device",
-          "index": 2,
-          "background": "#E6E8EB",
-          "paddingBottom": true,
-          "device": "nodevice",
-          "frame": null,
-          "media": {
-            "kind": "video",
-            "src": "/media/pages/characters/sayaka/sayaka-device-1.mp4",
-            "cls": [
-              "overlay"
-            ]
-          },
-          "parallax": null,
-          "overlayTops": [],
-          "pencil": null
+          "type": "editorial",
+          "id": "S1",
+          "layout": "detail",
+          "images": [
+            {
+              "slot": "S1-A",
+              "alt": "An everyday moment with Sayaka"
+            }
+          ],
+          "paragraphs": [
+            "What stays with me is the care Sayaka gives to everyday closeness. I also read her as someone with a private point of view, even in moments spent listening to others."
+          ],
+          "index": 2
         },
         {
           "type": "fullwidth",
@@ -476,43 +450,23 @@
           "textOverlayThemeDark": true
         },
         {
-          "type": "device",
-          "index": 4,
-          "background": "#E0D9D1",
-          "paddingBottom": true,
-          "device": "mbp16lower",
-          "frame": "/assets/img/device-mbp-16-lower-nonotch.png",
-          "media": {
-            "kind": "video",
-            "src": "/media/pages/characters/sayaka/sayaka-device-2.mp4",
-            "cls": [
-              "overlay"
-            ]
-          },
-          "parallax": null,
-          "overlayTops": [],
-          "pencil": null
-        },
-        {
-          "type": "fullwidth",
-          "index": 5,
-          "background": null,
-          "paddingBottom": false,
-          "media": {
-            "kind": "video",
-            "src": "/media/pages/characters/sayaka/sayaka-full-2.mp4",
-            "cls": [
-              "overlay"
-            ]
-          },
-          "scrollSpeed": "-3",
-          "darkOverlay": null,
-          "textOverlay": null,
-          "textOverlayThemeDark": false
+          "type": "editorial",
+          "id": "S2",
+          "layout": "portrait",
+          "images": [
+            {
+              "slot": "S2-A",
+              "alt": "Sayaka expressing her feelings"
+            }
+          ],
+          "paragraphs": [
+            "Saying what she wants gives Sayaka's feeling a form she has chosen. I want to stay with the courage of that act, while allowing the answer to belong to the person receiving it."
+          ],
+          "index": 4
         },
         {
           "type": "reading",
-          "index": 6,
+          "index": 5,
           "background": null,
           "paddingBottom": true,
           "paragraphs": [

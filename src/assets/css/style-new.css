@@ -1086,6 +1086,40 @@ main.touch .main-wrap {
 
 /* ------------------------- Wrap Work Grid -------------------------------------------------- */
 
+/* Owner-approved video replacement: natural-height, already cropped images. */
+.block-editorial { background: var(--color-white); }
+.block-editorial .editorial-grid { display: grid; gap: 1.5em; align-items: start; }
+.block-editorial .editorial-figure { min-width: 0; margin: 0; }
+.block-editorial .editorial-image { width: 100%; overflow: hidden; }
+.block-editorial .editorial-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.block-editorial figcaption { font-size: .85em; line-height: 1.5; margin-top: .85em; color: var(--color-text); }
+.block-editorial .editorial-copy { min-width: 0; max-width: 38em; }
+.block-editorial .editorial-copy p { margin-bottom: 1.5em; }
+.block-editorial .editorial-copy p:last-child { margin-bottom: 0; }
+.block-editorial .editorial-after { margin: 2em auto 0; }
+.block-editorial .editorial-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3em; align-items: center; }
+.editorial-detail .editorial-row { grid-template-columns: 1.65fr 1fr; }
+.editorial-portrait .editorial-row { grid-template-columns: .8fr 1fr; }
+.editorial-sequence .editorial-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.editorial-pair .editorial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.editorial-contrast .editorial-grid { grid-template-columns: 5fr 3fr; }
+.editorial-daily .editorial-grid { grid-template-columns: 3fr 2fr; }
+.editorial-quiet .editorial-grid { width: 58%; margin: 0 auto; }
+.editorial-steps .editorial-row + .editorial-row { margin-top: clamp(3em, 6vw, 6em); }
+@media screen and (max-width: 1200px) {
+   .block-editorial .editorial-row { grid-template-columns: minmax(0, 1fr); gap: 2em; }
+   .block-editorial .editorial-copy { margin-left: auto; margin-right: auto; width: 100%; }
+   .editorial-portrait .editorial-figure { width: 100%; max-width: 32em; margin: 0 auto; }
+}
+@media screen and (max-width: 840px) {
+   .block-editorial .editorial-grid { grid-template-columns: minmax(0, 1fr); gap: 2em; }
+   .editorial-quiet .editorial-grid { width: 100%; }
+   .editorial-daily .editorial-figure:nth-child(2) { width: 80%; margin: 0 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+   .block-editorial .editorial-motion { opacity: 1 !important; transform: none !important; }
+}
+
 .section-wrap-work {
    background: var(--color-white);
 }

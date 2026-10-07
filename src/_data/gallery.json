@@ -126,21 +126,27 @@
       ]
     },
     {
-      "type": "fullwidth",
-      "index": 4,
-      "background": null,
-      "paddingBottom": false,
-      "media": {
-        "kind": "video",
-        "src": "/media/pages/gallery/gallery-video-1.mp4",
-        "cls": [
-          "overlay"
-        ]
-      },
-      "scrollSpeed": "-3",
-      "darkOverlay": null,
-      "textOverlay": null,
-      "textOverlayThemeDark": false
+      "type": "editorial",
+      "id": "G1",
+      "layout": "sequence",
+      "images": [
+        {
+          "slot": "G1-A",
+          "alt": "A consecutive moment from Bloom Into You, frame 1"
+        },
+        {
+          "slot": "G1-B",
+          "alt": "A consecutive moment from Bloom Into You, frame 2"
+        },
+        {
+          "slot": "G1-C",
+          "alt": "A consecutive moment from Bloom Into You, frame 3"
+        }
+      ],
+      "paragraphs": [
+        "The moment changes, one frame at a time."
+      ],
+      "index": 4
     },
     {
       "type": "device",
@@ -368,21 +374,16 @@
       "pencil": null
     },
     {
-      "type": "fullwidth",
-      "index": 11,
-      "background": null,
-      "paddingBottom": false,
-      "media": {
-        "kind": "video",
-        "src": "/media/pages/gallery/gallery-video-2.mp4",
-        "cls": [
-          "overlay"
-        ]
-      },
-      "scrollSpeed": "-3",
-      "darkOverlay": null,
-      "textOverlay": null,
-      "textOverlayThemeDark": false
+      "type": "editorial",
+      "id": "G2",
+      "layout": "quiet",
+      "images": [
+        {
+          "slot": "G2-A",
+          "alt": "An environment frame from Bloom Into You"
+        }
+      ],
+      "index": 11
     },
     {
       "type": "fullwidth",
