@@ -8,7 +8,9 @@
     "build": "eleventy",
     "serve": "eleventy --serve",
     "clean": "rm -rf dist",
-    "gate": "node scripts/gate.mjs"
+    "gate": "node scripts/gate.mjs",
+    "copy-editor:build": "npm run build && node scripts/build-copy-editor.mjs",
+    "copy-editor": "node scripts/serve-copy-editor.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
