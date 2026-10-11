@@ -45,7 +45,7 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/about/index.html
   > 保留，只是不点名。**改这一句前先读 `DEVIATIONS.md` F7。**
   > ⑤ `Sources` 采用方案里"来源仍在整理"的版本（`docs/asset-sources.md` 记的是本地图源文件名，
   > 不能据此识别插画作者与原发布链接）；真实来源补齐后才换成方案给的完成态文字。
-  > H4（2026-10-11）：第二段改为两行完整句子，移除该句尾部的三个省略号节点；随笔正文下一轮。
+  > H4（2026-10-11）：第二段改为两行完整句子，移除该句尾部的三个省略号节点；随笔正文由下方 H5 区块接续。
 #}
 <header class="section default-header about-header" data-scroll-section="">
    {% include "partials/nav-bar.njk" %}   <div class="container medium once-in">
@@ -102,6 +102,21 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/about/index.html
                <div class="overlay overlay-image" data-scroll="" data-scroll-speed="-2" data-scroll-position="top"{{ aboutImageFraming | framingAttr('background') | safe }}></div>
                <div class="overlay"></div>
             </div>
+         </div>
+      </div>
+   </div>
+</section>
+{# H5：站主碎碎念；九段原文，单栏阅读，强调保留，不新增入场触发器。 #}
+<section class="section about-essay block-reading" data-scroll-section="">
+   <div class="container medium">
+      <div class="row">
+         <div class="flex-col">
+            <article class="text-wrap" id="ramblings" aria-labelledby="ramblings-title">
+               <h2 id="ramblings-title">{{ aboutEssay.title }}</h2>
+               {% for paragraph in aboutEssay.paragraphs %}
+               <p>{% for part in paragraph %}{% if part.emphasis %}<strong>{{ part.text }}</strong>{% else %}{{ part.text }}{% endif %}{% endfor %}</p>
+               {% endfor %}
+            </article>
          </div>
       </div>
    </div>
