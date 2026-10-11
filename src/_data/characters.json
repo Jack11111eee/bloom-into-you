@@ -30,9 +30,9 @@
         {
           "label": "Focus",
           "items": [
-            "Recognition",
-            "Choice"
-          ]
+            "Recognition"
+          ],
+          "summary": "Recognition, Choice"
         }
       ],
       "introImage": {
@@ -186,9 +186,9 @@
         {
           "label": "Focus",
           "items": [
-            "Self-image",
-            "Change"
-          ]
+            "Self-image"
+          ],
+          "summary": "Self-image, Change"
         }
       ],
       "introImage": {
@@ -358,9 +358,9 @@
         {
           "label": "Focus",
           "items": [
-            "Honesty",
-            "Continuance"
-          ]
+            "Honesty"
+          ],
+          "summary": "Honesty, Continuance"
         }
       ],
       "introImage": {

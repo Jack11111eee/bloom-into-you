@@ -17,6 +17,7 @@
   > 页脚底部的 `Local time` 与 `Socials` 两栏见 `bottom-footer.njk`。
   > ⚠️ 改文案要连带看**长度**：这是巨型标题，`A thought` / `to share` 与原来的
   > `Say hello` / `anytime` 同量级，但换更长的词会影响断行。
+  > H4（2026-10-11）：站主删除第一段文字，第二段改为完整问句；保留头像，合为一个 span。
 #}
 <div class="footer-wrap footer-footer-wrap theme-dark" data-scroll-section="">
                     <footer class="section footer" data-scroll="" data-scroll-speed="-4" data-scroll-position="bottom">
@@ -24,7 +25,7 @@
                             <div class="row">
                                 <div class="flex-col">
                                     <div class="arrow">{% include "partials/icon-arrow.njk" %}</div>
-                                    <h2><span><div class="profile-picture"{{ site.avatarFraming | framingAttr('background') | safe }}></div> A thought  </span><span>to share</span></h2>
+                                    <h2><span><div class="profile-picture"{{ site.avatarFraming | framingAttr('background') | safe }}></div> to share</span></h2>
                                 </div>
                             </div>
                             <div class="row">

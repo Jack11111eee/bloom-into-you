@@ -29,9 +29,9 @@
         {
           "label": "Focus",
           "items": [
-            "Unequal promise",
-            "Mutual choice"
-          ]
+            "Unequal promise"
+          ],
+          "summary": "Unequal promise, Mutual choice"
         }
       ],
       "introImage": {
@@ -191,9 +191,9 @@
         {
           "label": "Focus",
           "items": [
-            "Confession",
-            "Life beyond it"
-          ]
+            "Confession"
+          ],
+          "summary": "Confession, Life beyond it"
         }
       ],
       "introImage": {

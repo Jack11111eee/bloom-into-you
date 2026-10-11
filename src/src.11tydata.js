@@ -133,7 +133,7 @@ export default {
           href: e.href,
           name: e.name,
           col2: introAt(e, 1).join(', '),
-          col3: introAt(e, 2).join(', '),
+          col3: e.intro?.[2]?.summary ?? introAt(e, 2).join(', '),
           col4: 'Manga 1–8',
           tileColor: e.footerAccent,
           tileImage: e.introImage && e.introImage.image,

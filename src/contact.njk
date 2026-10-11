@@ -53,7 +53,7 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/contact/index.ht
    {% include "partials/nav-bar.njk" %}   <div class="container medium">
       <div class="row once-in">
          <div class="flex-col">
-            <h1><span><div class="profile-picture"{{ site.avatarFraming | framingAttr('background') | safe }}></div> A thought to share, </span><span>a detail to keep</span></h1>
+            <h1><span><div class="profile-picture"{{ site.avatarFraming | framingAttr('background') | safe }}></div> A thought to share, </span></h1>
             {# 邀请句（`docs/copy-proposal.md` §10.1，DEVIATIONS.md F7）—— 方案说"当前页面没有
                这段说明的渲染点，未来如采用，应明确加在联系区"，这就是那个渲染点。
                地址做成 mailto（与右栏的 Contact Details 同一份字符串，两处都要改）。 #}
@@ -79,7 +79,6 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/contact/index.ht
          <div class="flex-col">
             <form class="form" method="post" action="/contact" enctype="multipart/form-data" novalidate="">
                <div class="website-field">
-                  <label class="label" for="tel">Phone Number</label>
                   <input class="field" type="text" id="form-tel" name="tel" tabindex="-1">
                </div>
                <div class="form-col">

@@ -45,3 +45,4 @@ html:not([lang="en"]) .loading-words h2:not(.home-active):not(.home-active-last)
 .theme-dark .language-switch { color: var(--color-white); }
 
 #home .home-header .language-switch { color: var(--color-dark); }
+.copy-multiline { white-space: pre-line; }
