@@ -8,12 +8,17 @@ const assert = (condition, message) => { if (!condition) fails.push(message); };
 const fileFor = route => path.join('dist', route, 'index.html');
 const assetSignature = $ => $('img,source,[style]').map((_, node) => ({tag:node.name,...Object.fromEntries(Object.entries(node.attribs).filter(([key]) => ['src','data-src','srcset','sizes','width','height','style'].includes(key)))})).get();
 const source = JSON.parse(fs.readFileSync('docs/i18n/source.json', 'utf8'));
+const essay = JSON.parse(fs.readFileSync('src/_data/aboutEssay.json', 'utf8'));
 assert(JSON.stringify(Object.keys(source).sort()) === JSON.stringify(Object.keys(catalogFor('en')).sort()), 'English catalog/source keys differ');
 try { translate('Unregistered wording must stop a build', 'en'); fails.push('Missing source text was silently accepted'); } catch (error) { assert(error.message.includes('Unregistered text'), 'Wrong missing-text error'); }
 let checked = 0;
 for (const locale of LOCALES) {
   const catalog = catalogFor(locale.code);
   const allowed = new Set(Object.values(catalog).map(s=>s.trim()));
+  // H4: four user-authored fan asides explicitly retain their style markers.
+  const styleAsides = new Set(['Recognition, Choice', 'Attention', 'A direction to choose', 'Confession'].map(k=>catalog[k]));
+  // H5: only these three essay fields may retain the author's four fan tokens.
+  const essayAsides = new Set([2,4,5].map(i=>catalog[essay.paragraphs[i][0].text]));
   for (const route of ROUTES) {
     const url = localizedPath(route, locale.code);
     const file = fileFor(url);
@@ -59,7 +64,8 @@ for (const locale of LOCALES) {
     $('meta[name=description],meta[property="og:title"],meta[property="og:description"],meta[property="og:site_name"],meta[property="twitter:title"],meta[property="twitter:description"]').each((_,node)=>values.push(node.attribs.content.trim()));
     for(const value of values.filter(meaningfulText)) {
       assert(allowed.has(value), `${url}: text absent from locale catalog: ${value}`);
-      assert(locale.code === 'en' ? !/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}\p{Script=Thai}\p{Script=Cyrillic}\p{Script=Greek}]/u.test(value) : !/[A-Za-z]/.test(value.replace(/[^\s@]+@[^\s@]+\.[^\s@。]+/g, '')), `${url}: foreign-language residue: ${value}`);
+      const languageText=essayAsides.has(value) ? value.replace(/\b(?:www|xp|he|ACG)\b/g, '') : styleAsides.has(value) ? value.replace(/(?:www|ing|T-T)$/, '') : value;
+      assert(locale.code === 'en' ? !/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}\p{Script=Thai}\p{Script=Cyrillic}\p{Script=Greek}]/u.test(value) : !/[A-Za-z]/.test(languageText.replace(/[^\s@]+@[^\s@]+\.[^\s@。]+/g, '')), `${url}: foreign-language residue: ${value}`);
     }
     assert($('svg:not([aria-hidden=true])').length === 0 && $('svg title').length===0, `${url}: decorative SVG exposes title`);
     const english = load(fs.readFileSync(fileFor(route),'utf8'));
