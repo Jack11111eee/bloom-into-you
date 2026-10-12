@@ -40,3 +40,6 @@ dist/
 #  重新生成：起 `node scripts/serve-dist.mjs`，用 Playwright 打开 /work/project-01
 #  滚到 .case-intro-image 截图（必须用裸标识符 scroll.scrollTo，不能用 window.scrollTo）。
 previews/
+
+# GitHub Pages project-path build
+dist-pages/

@@ -2,11 +2,12 @@
 (function () {
   const codes = ['en', 'zh-cn', 'zh-tw', 'ja'];
   const key = 'bloom-language';
+  const base = document.documentElement.dataset.siteBase || '';
   try {
     const saved = localStorage.getItem(key);
-    if (location.pathname === '/' && codes.includes(saved) && saved !== 'en') {
+    if (location.pathname === base + '/' && codes.includes(saved) && saved !== 'en') {
       document.documentElement.style.visibility = 'hidden';
-      location.replace('/' + saved + '/' + location.search + location.hash);
+      location.replace(base + '/' + saved + '/' + location.search + location.hash);
     }
   } catch (_) { /* Private/storage-restricted browsing still supports all explicit routes. */ }
   document.addEventListener('keydown', function (event) {

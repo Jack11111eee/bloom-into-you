@@ -10,7 +10,8 @@
     "clean": "rm -rf dist",
     "gate": "node scripts/gate.mjs",
     "copy-editor:build": "npm run build && node scripts/build-copy-editor.mjs",
-    "copy-editor": "node scripts/serve-copy-editor.mjs"
+    "copy-editor": "node scripts/serve-copy-editor.mjs",
+    "build:pages": "node scripts/build-pages.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
