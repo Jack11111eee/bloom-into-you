@@ -54,5 +54,5 @@ for (const file of fs.readdirSync(root, { recursive: true })) {
   if (!file.endsWith('.css')) continue;
   for (const match of fs.readFileSync(path.join(root, file), 'utf8').matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g)) check(match[1], new URL(file, site));
 }
-assert.equal(pages, 44);
+assert.equal(pages, ROUTES.length * LOCALES.length);
 console.log(`PAGES CHECK PASS: ${pages} pages, ${references} references, unchanged copy, four-language routes and metadata`);

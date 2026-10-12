@@ -4,7 +4,7 @@
   每个页面唯一改动的 loader 字段：把当前页对应的那个 <h2> 标为 `active`
   （home→Home、详情页→该人物/解读名…），索引由 frontmatter 的 `loaderActive` 给出。
 
-  词表在 `site.loaderWords`，**P10 M1 起共 22 条**（`DEVIATIONS.md` **F2**）：
+  词表在 `site.loaderWords`，**P10 M1 时共 22 条**（`DEVIATIONS.md` **F2**）：
     · 0–8   F7/H2 的九语言作品名，带 `home-active*` 类；所有语言首页保持同一开屏词表
     · 9–21  13 条页面/状态词（Home…Error），当前页那条带 `active`
   其中 `Success` / `Error` 是**表单结果页用词，不是路由**（`reference/html/` 无对应文件）。
@@ -21,6 +21,8 @@
   > **不在 loader 里** —— 它在页脚（`.footer-wrap` 的 h2）。逐页用 cheerio 复核：
   > 17/17 页的 `.loading-words h2` 都是 28 条。已回改 §6.0。
   > （上句的"28 条 / 17 页"是 **P10 之前**的读数，保留为历史记录。）
+
+  H11：在末尾追加版权页页名，下标22，总数23；所有旧页下标与九语言首页开屏不变。
 
   每个 <h2> 内含 `<div class="dot"></div>`（loader 的逐词动画用）。
 #}

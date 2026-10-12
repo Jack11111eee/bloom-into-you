@@ -84,6 +84,20 @@
       "navActive": null,
       "fixedNavActive": 5,
       "floatImages": null
+    },
+    "copyright": {
+      "file": null,
+      "ns": "copyright",
+      "cursorMode": "none",
+      "cursorSpan": null,
+      "title": "Copyright notice — Bloom Into You",
+      "description": "Copyright ownership, unofficial status and contact information for material and rights concerns.",
+      "ogImage": "/media/site/89d468b455-1646837228/meta-image-bloom-into-you-860x540-crop-q72.jpg",
+      "canonical": "/copyright/",
+      "loaderActive": 22,
+      "navActive": null,
+      "fixedNavActive": null,
+      "floatImages": null
     }
   }
 }

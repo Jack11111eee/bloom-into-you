@@ -34,6 +34,9 @@ node scripts/check-pages.mjs
 `build:pages` 和 `check-pages.mjs`，地址需以 `/` 结尾。推送到 `main` 后由
 `.github/workflows/pages.yml` 构建、检查并发布。
 
+每页页脚提供版权声明与联系页链接。完整声明位于 `/copyright/`，
+简体中文、繁体中文和日文分别位于对应语言前缀下。
+
 ## 文件边界
 
 仓库保留 `src/`（模板、内容、四语词表和全部网站资源）、`lib/`（构建期本地化）、

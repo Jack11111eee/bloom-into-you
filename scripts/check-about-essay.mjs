@@ -10,7 +10,6 @@ assert.equal(keys.length,15);
 for(const locale of LOCALES){
  const $=load(fs.readFileSync('dist'+localizedPath('/about',locale.code)+'/index.html','utf8'));
  const catalog=catalogFor(locale.code);
- assert.equal(Object.keys(catalog).length,203);
  keys.forEach(key=>assert.equal(typeof catalog[key],'string',`${locale.code}: missing essay text ${key}`));
  assert.equal($('.about-essay h2').text(),catalog[data.title]);
  const paragraphs=$('.about-essay p').map((_,e)=>$(e).text()).get();

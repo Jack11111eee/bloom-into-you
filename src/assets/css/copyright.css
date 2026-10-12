@@ -1,0 +1,53 @@
+/* H11: the shared footer notice and the standalone reading page. */
+@font-face {
+  font-family: 'Bloom Serif ja';
+  src: url('../fonts/reading/serif-ja-copyright.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 250 900;
+  font-display: swap;
+  unicode-range: U+54E1,U+59D4,U+8457,U+88FD,U+FF0F,U+FF21,U+FF24,U+FF2B,U+FF2F,U+FF37;
+}
+.bottom-footer { flex-direction: column; align-items: stretch; }
+.bottom-footer > .flex-col:first-child { order: 0; }
+.footer-legal {
+  order: 1;
+  margin-top: 1.75em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--color-border-light);
+  min-width: 0;
+}
+.footer-legal p {
+  max-width: 80em;
+  margin: 0 0 .85em;
+  color: #b5b5b8;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.85;
+}
+.footer-legal p:last-child { margin-bottom: 0; }
+.footer-legal a { color: var(--color-white); }
+.footer-legal a, .copyright-reading a {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.copyright-credit {
+  font-family: 'Bloom Serif ja', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.copyright-header { padding-bottom: 0; }
+.copyright-header h1 { font-size: clamp(2em, 5vw, 4em); line-height: 1.25; }
+.copyright-content { padding-top: calc(var(--section-padding) / 2); }
+.copyright-reading { max-width: 42em; }
+.copyright-reading p, .copyright-reading li { line-height: 1.85; }
+.copyright-reading h2 { font-size: clamp(1.4em, 3vw, 1.8em); margin: 1.75em 0 .75em; }
+.copyright-reading ul { list-style: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
+.copyright-reading li { list-style: disc; margin: .65em 0; }
+.copyright-reading .copyright-credit { font-size: 1em; }
+.copyright-reading a { color: var(--color-dark); overflow-wrap: anywhere; }
+@media screen and (max-width: 720px) {
+  .footer-legal { margin: 0 var(--container-padding); }
+  .copyright-reading { max-width: 100%; }
+}

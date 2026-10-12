@@ -1,5 +1,5 @@
 {#
-  partials/bottom-footer.njk — 页脚底部（只留 Version）
+  partials/bottom-footer.njk — 页脚底部（Version + 精简版权声明）
 
   三种页脚共用这一块：默认页脚、案例页页脚、contact 的简化页脚。
 
@@ -18,6 +18,9 @@
 
   ⚠️ **删掉的东西不要"顺手"加回来**：`#timeSpan` 的初值曾是原站写死的 `09:41 PM CET`，
   运行时由 JS 覆写；`site.footer` 里对应的时间字段也已随之删除。
+
+  H11：在版本栏后增加独立版权声明，三种页脚共用。`copyright.css`
+  将底栏设为单列，并明确重置版本栏的移动端 order；不恢复旧时间或社交栏。
 #}
                         <div class="container no-padding">
                             <div class="row bottom-footer">
@@ -26,6 +29,11 @@
                                         <h5>{{ site.footer.versionLabel }}</h5>
                                         <p>{{ site.footer.version }}</p>
                                     </div>
+                                </div>
+                                <div class="footer-legal">
+                                    <p>{{ copyright.footerIntro }}</p>
+                                    <p>{{ copyright.ownership }}<br><span class="copyright-credit" lang="ja">{{ copyright.animeCredit }}</span></p>
+                                    <p>{{ copyright.footerLinks.before }}<a href="/copyright/">{{ copyright.footerLinks.label }}</a>{{ copyright.footerLinks.between }}<a href="{{ site.contact.contactHref }}">{{ copyright.footerLinks.contact }}</a>{{ copyright.footerLinks.after }}</p>
                                 </div>
                             </div>
                         </div>

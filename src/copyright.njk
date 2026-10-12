@@ -1,0 +1,38 @@
+---
+ns: copyright
+pagination:
+  data: locales
+  size: 1
+  alias: language
+permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/copyright/index.html"
+---
+<header class="section default-header copyright-header" data-scroll-section="">
+   {% include "partials/nav-bar.njk" %}
+   <div class="container medium once-in">
+      <div class="row"><div class="flex-col"><h1 id="copyright-page-title">{{ copyright.title }}</h1></div></div>
+   </div>
+</header>
+<section class="section copyright-content" data-scroll-section="">
+   <div class="container medium">
+      <article class="copyright-reading" aria-labelledby="copyright-page-title">
+         <p>{{ copyright.intro }}</p>
+         <p>{{ copyright.affiliation }}</p>
+         <h2>{{ copyright.ownershipTitle }}</h2>
+         <p>{{ copyright.materials }}</p>
+         <ul>
+            <li><strong>{{ copyright.mangaLabel }}</strong> {{ copyright.mangaCredit }}</li>
+            <li><strong>{{ copyright.animeLabel }}</strong> <span class="copyright-credit" lang="ja">{{ copyright.animeCredit }}</span></li>
+            <li><strong>{{ copyright.publisherLabel }}</strong> {{ copyright.publisherCredit }}</li>
+         </ul>
+         <p>{{ copyright.permission }}</p>
+         <h2>{{ copyright.rightsTitle }}</h2>
+         <p>{{ copyright.respect }}</p>
+         <p>{{ copyright.request }}</p>
+         <p><strong>{{ copyright.emailLabel }}</strong> <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+         <p>{{ copyright.response }}</p>
+         <p>{{ copyright.corrections }}</p>
+         <p>{{ copyright.thanks }}</p>
+      </article>
+   </div>
+</section>
+{% include "partials/footer-contact.njk" %}
