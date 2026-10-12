@@ -116,6 +116,7 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/about/index.html
                {% for paragraph in aboutEssay.paragraphs %}
                <p>{% for part in paragraph %}{% if part.emphasis %}<strong>{{ part.text }}</strong>{% else %}{{ part.text }}{% endif %}{% endfor %}</p>
                {% endfor %}
+               <small class="quotation-source">{{ quotationSources.englishLabel }} <a href="{{ quotationSources.englishUrl }}" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ quotationSources.englishCitation }}</a></small>
             </article>
          </div>
       </div>

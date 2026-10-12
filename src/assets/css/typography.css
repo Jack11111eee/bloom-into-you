@@ -26,6 +26,8 @@ h1, h2, h3, h4 {
 h1 span, h2 span, h3 span, h4 span { font-weight: inherit; }
 strong { font-weight: 700; }
 .block-reading p { line-height: 1.85; }
+.quotation-source { display: block; margin-top: 1.75em; font-family: var(--font-reading); font-size: .8em; line-height: 1.8; font-weight: 400; }
+.quotation-source a { color: inherit; text-decoration: underline; text-underline-offset: .2em; }
 
 /* H8: headings stand out; controls and short explanations use WenKai Medium.
    Keep the two kinds of long reading blocks, essay prose and opening untouched. */

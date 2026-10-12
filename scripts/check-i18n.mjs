@@ -10,6 +10,7 @@ const assetSignature = $ => $('img,source,[style]').map((_, node) => ({tag:node.
 const essay = JSON.parse(fs.readFileSync('src/_data/aboutEssay.json', 'utf8'));
 const copyright = JSON.parse(fs.readFileSync('src/_data/copyright.json', 'utf8'));
 const site = JSON.parse(fs.readFileSync('src/_data/site.json', 'utf8'));
+const quotationSources = JSON.parse(fs.readFileSync('src/_data/quotationSources.json', 'utf8'));
 // H11: remove only the owner's exact work/publisher identifiers from the
 // language-purity check, and only in their registered declaration fields.
 const rightsKeys = ['footerIntro', 'intro', 'affiliation', 'mangaCredit', 'animeCredit'].map(key => copyright[key]);
@@ -85,6 +86,8 @@ for (const locale of LOCALES) {
       assert(allowed.has(value), `${url}: text absent from locale catalog: ${value}`);
       let languageText=essayAsides.has(value) ? value.replace(/\b(?:www|xp|he|ACG)\b/g, '') : styleAsides.has(value) ? value.replace(/(?:www|ing|T-T)$/, '') : value;
       if (rightsFields.has(value)) languageText = languageText.replace(copyright.animeCredit, '').replaceAll('やがて君になる', '').replaceAll('Bloom Into You', '').replaceAll('KADOKAWA', '');
+      // Keep this single registered bibliographic citation in its original script.
+      if (value === catalog[quotationSources.englishCitation]) languageText = '';
       assert(locale.code === 'en' ? !/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}\p{Script=Thai}\p{Script=Cyrillic}\p{Script=Greek}]/u.test(languageText) : !/[A-Za-z]/.test(languageText.replace(/[^\s@]+@[^\s@]+\.[^\s@。]+/g, '')), `${url}: foreign-language residue: ${value}`);
     }
     assert($('svg:not([aria-hidden=true])').length === 0 && $('svg title').length===0, `${url}: decorative SVG exposes title`);

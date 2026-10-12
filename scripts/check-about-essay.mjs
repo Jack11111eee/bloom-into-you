@@ -5,6 +5,7 @@ import { load } from 'cheerio';
 import { LOCALES, localizedPath, catalogFor } from '../lib/i18n.mjs';
 const json=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const data=json('src/_data/aboutEssay.json');
+const quotationSources=json('src/_data/quotationSources.json');
 const keys=[data.title,...data.paragraphs.flat().map(p=>p.text)];
 assert.equal(keys.length,15);
 for(const locale of LOCALES){
@@ -20,5 +21,8 @@ for(const locale of LOCALES){
  assert.equal($('.about-essay .animate,.about-essay .fade-in').length,0);
  assert($('.about-essay').prev().hasClass('about-image'));
  assert($('.about-essay').next().hasClass('about-services'));
+ assert.equal($('.quotation-source a').text(),catalog[quotationSources.englishCitation]);
+ assert.equal($('.quotation-source a').attr('href'),quotationSources.englishUrl);
+ assert.equal($('.quotation-source a').attr('data-barba-prevent'),'');
 }
 console.log('ABOUT ESSAY PASS: current source and catalogs, 9 paragraphs + dated sign-off, 2 emphases, 15 fields in four locales, section placement');

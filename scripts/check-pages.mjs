@@ -48,6 +48,11 @@ for (const locale of LOCALES) for (const route of ROUTES) {
   const styles = $('style').text() + $('[style]').map((_, node) => $(node).attr('style')).get().join('\n');
   for (const match of styles.matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g)) check(match[1], pageUrl);
   $('meta[property="og:image"],meta[property="twitter:image"]').each((_, node) => check($(node).attr('content'), pageUrl));
+  for (const selector of ['meta[property="og:image"]', 'meta[property="twitter:image"]']) {
+    assert.equal($(selector).attr('content'), new URL(`${base}/assets/img/share-card.png`, site).href,
+      `${logical}: expected original share artwork`);
+  }
+  assert.equal($('.nav-bar .credit').text().includes('©'), false, `${logical}: ambiguous work copyright mark`);
   pages++;
 }
 for (const file of fs.readdirSync(root, { recursive: true })) {
@@ -68,6 +73,10 @@ for (const entry of licenses.entries) {
 for (const output of ['dist', 'dist-pages']) {
   assert.equal(fs.readFileSync(path.join(output, 'assets/licenses/THIRD_PARTY_NOTICES.md'), 'utf8'),
     fs.readFileSync('THIRD_PARTY_NOTICES.md', 'utf8'), `${output}: missing rights boundaries`);
+  for (const file of [
+    'media/site/89d468b455-1646837228/meta-image-bloom-into-you-860x540-crop-q72.jpg',
+    'media/pages/about/d289927735-1646837228/meta-about-860x540-crop-q72.jpg',
+  ]) assert(!fs.existsSync(path.join(output, file)), `${output}: obsolete third-party share copy ${file}`);
 }
 console.log(`PAGES CHECK PASS: ${pages} pages, ${references} references, unchanged copy, four-language routes and metadata`);
 console.log(`LICENSE CHECK PASS: ${licenses.entries.length} complete license/notice copies and rights boundaries in both outputs`);

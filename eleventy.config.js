@@ -7,6 +7,14 @@
  */
 
 import { localizeHtml, clearCatalogCache } from './lib/i18n.mjs';
+import { rmSync } from 'node:fs';
+import path from 'node:path';
+
+// Preserve the original source files, but stop distributing obsolete share copies.
+const retiredShareCopies = [
+  'site/89d468b455-1646837228/meta-image-bloom-into-you-860x540-crop-q72.jpg',
+  'pages/about/d289927735-1646837228/meta-about-860x540-crop-q72.jpg',
+];
 
 export default function (eleventyConfig) {
   eleventyConfig.setQuietMode(true);
@@ -26,7 +34,16 @@ export default function (eleventyConfig) {
   // 对应原站的 `/media/pages/…`。它入库，因为它是产物的组成部分 ——
   // 这样 `dist/` 是**自包含**的，`scripts/serve-dist.mjs` 不再回落到 `reference/media/`。
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
-  eleventyConfig.addPassthroughCopy({ 'src/media': 'media' });
+  eleventyConfig.addPassthroughCopy({ 'src/media': 'media' }, {
+    filter: ['**/*', ...retiredShareCopies.map(file => `!${file}`)],
+  });
+  // Incremental/repeated builds may already contain the former copies.
+  eleventyConfig.on('eleventy.after', ({ directories, outputMode }) => {
+    if (outputMode !== 'fs') return;
+    for (const file of retiredShareCopies) {
+      rmSync(path.join(directories.output, 'media', file), { force: true });
+    }
+  });
   // Distribute rights boundaries alongside the exact component license texts.
   eleventyConfig.addPassthroughCopy({ 'THIRD_PARTY_NOTICES.md': 'assets/licenses/THIRD_PARTY_NOTICES.md' });
 
