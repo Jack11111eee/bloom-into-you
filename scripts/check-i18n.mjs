@@ -18,7 +18,7 @@ for (const locale of LOCALES) {
   // H4: four user-authored fan asides explicitly retain their style markers.
   const styleAsides = new Set(['Recognition, Choice', 'Attention', 'A direction to choose', 'Confession'].map(k=>catalog[k]));
   // H5: only these three essay fields may retain the author's four fan tokens.
-  const essayAsides = new Set([2,4,5].map(i=>catalog[essay.paragraphs[i][0].text]));
+  const essayAsides = new Set([2,4,5].flatMap(i=>essay.paragraphs[i].map(part=>catalog[part.text])));
   for (const route of ROUTES) {
     const url = localizedPath(route, locale.code);
     const file = fileFor(url);
