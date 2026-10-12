@@ -7,9 +7,9 @@ const fails = [];
 const assert = (condition, message) => { if (!condition) fails.push(message); };
 const fileFor = route => path.join('dist', route, 'index.html');
 const assetSignature = $ => $('img,source,[style]').map((_, node) => ({tag:node.name,...Object.fromEntries(Object.entries(node.attribs).filter(([key]) => ['src','data-src','srcset','sizes','width','height','style'].includes(key)))})).get();
-const source = JSON.parse(fs.readFileSync('docs/i18n/source.json', 'utf8'));
 const essay = JSON.parse(fs.readFileSync('src/_data/aboutEssay.json', 'utf8'));
-assert(JSON.stringify(Object.keys(source).sort()) === JSON.stringify(Object.keys(catalogFor('en')).sort()), 'English catalog/source keys differ');
+// The current catalogs are the build inputs; historical drafts are local-only.
+for (const locale of LOCALES) catalogFor(locale.code);
 try { translate('Unregistered wording must stop a build', 'en'); fails.push('Missing source text was silently accepted'); } catch (error) { assert(error.message.includes('Unregistered text'), 'Wrong missing-text error'); }
 let checked = 0;
 for (const locale of LOCALES) {

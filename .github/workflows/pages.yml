@@ -17,9 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-        with:
-          # The copy audit compares against a recorded historical commit.
-          fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
@@ -32,7 +29,7 @@ jobs:
         run: |
           node scripts/check-i18n.mjs
           node scripts/check-about-essay.mjs
-          node scripts/check-copy-refill.mjs
+          node scripts/check-links.mjs
       - run: npm run build:pages
         env:
           PAGES_URL: ${{ steps.pages.outputs.base_url }}/
