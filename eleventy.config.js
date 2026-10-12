@@ -27,6 +27,8 @@ export default function (eleventyConfig) {
   // 这样 `dist/` 是**自包含**的，`scripts/serve-dist.mjs` 不再回落到 `reference/media/`。
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
   eleventyConfig.addPassthroughCopy({ 'src/media': 'media' });
+  // Distribute rights boundaries alongside the exact component license texts.
+  eleventyConfig.addPassthroughCopy({ 'THIRD_PARTY_NOTICES.md': 'assets/licenses/THIRD_PARTY_NOTICES.md' });
 
   /**
    * thumb — 由原图 URL 推出 Kirby 的 -540x 缩略图 URL。

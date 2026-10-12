@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { load } from 'cheerio';
 import { ROUTES, LOCALES, localizedPath } from '../lib/i18n.mjs';
 
@@ -55,4 +56,18 @@ for (const file of fs.readdirSync(root, { recursive: true })) {
   for (const match of fs.readFileSync(path.join(root, file), 'utf8').matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g)) check(match[1], new URL(file, site));
 }
 assert.equal(pages, ROUTES.length * LOCALES.length);
+// Public copies must carry the complete notices, not just a license URL in a header.
+const licenses = JSON.parse(fs.readFileSync('src/assets/licenses/manifest.json', 'utf8'));
+for (const entry of licenses.entries) {
+  for (const output of ['dist', 'dist-pages']) {
+    const file = path.join(output, entry.file);
+    const bytes = fs.readFileSync(file);
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), entry.sha256, `Changed/missing license: ${file}`);
+  }
+}
+for (const output of ['dist', 'dist-pages']) {
+  assert.equal(fs.readFileSync(path.join(output, 'assets/licenses/THIRD_PARTY_NOTICES.md'), 'utf8'),
+    fs.readFileSync('THIRD_PARTY_NOTICES.md', 'utf8'), `${output}: missing rights boundaries`);
+}
 console.log(`PAGES CHECK PASS: ${pages} pages, ${references} references, unchanged copy, four-language routes and metadata`);
+console.log(`LICENSE CHECK PASS: ${licenses.entries.length} complete license/notice copies and rights boundaries in both outputs`);

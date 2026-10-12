@@ -1,0 +1,184 @@
+{
+  "verifiedOn": "2026-10-12",
+  "locomotivePublishedBundleSha256": "351253ae16600278c6a8b3f4945424faeb2566b955e4cfb3dde7d61823194005",
+  "entries": [
+    {
+      "name": "locomotive-scroll",
+      "licenseSourceVersion": "4.1.3",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/locomotive-scroll/4.1.3",
+      "file": "/assets/licenses/locomotive-scroll-4.1.3.txt",
+      "sha256": "66e9f37a3882498a1e227be8d5afdcf50c855289ca68debe30008664fe96c256",
+      "note": ""
+    },
+    {
+      "name": "jquery",
+      "licenseSourceVersion": "3.5.1",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/jquery/3.5.1",
+      "file": "/assets/licenses/jquery-3.5.1.txt",
+      "sha256": "1ff603118efdb313799567cb4a408594954384f40843ca6f29c596f5b1f8907d",
+      "note": ""
+    },
+    {
+      "name": "jquery",
+      "licenseSourceVersion": "3.5.1",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/jquery/3.5.1",
+      "file": "/assets/licenses/jquery-3.5.1-sizzle.txt",
+      "sha256": "a078a8f80016416042c2e5f04dbb7f499f0f6deebb086511f3a3b72633a2d761",
+      "note": ""
+    },
+    {
+      "name": "js-cookie",
+      "licenseSourceVersion": "2.2.0",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/js-cookie/2.2.0",
+      "file": "/assets/licenses/js-cookie-2.2.0.txt",
+      "sha256": "40425fa4f8f2fbcd017d7d40e47e8a72886f08251275eb05e3ab7e4d37132570",
+      "note": ""
+    },
+    {
+      "name": "@barba/core",
+      "licenseSourceVersion": "2.10.3",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/@barba/core/2.10.3",
+      "file": "/assets/licenses/@barba-core-2.10.3.txt",
+      "sha256": "7ad51d7c566c1036afc2266b505f4b70c4d71b4a2ca8852514a746fd87385ee3",
+      "note": ""
+    },
+    {
+      "name": "vanilla-lazyload",
+      "licenseSourceVersion": "17.6.1",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/vanilla-lazyload/17.6.1",
+      "file": "/assets/licenses/vanilla-lazyload-17.6.1.txt",
+      "sha256": "c7d094b1fa2bd1097d50191c0a4a6c9e482ff6263bc5329e364e23db7b1a28a7",
+      "note": ""
+    },
+    {
+      "name": "normalize.css",
+      "licenseSourceVersion": "3.0.3",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/normalize.css/3.0.3",
+      "file": "/assets/licenses/normalize.css-3.0.3.txt",
+      "sha256": "8781bc9996713938f6baea8a10c8426f9ae06778e562fafe5353669ae6c05f07",
+      "note": ""
+    },
+    {
+      "name": "virtual-scroll",
+      "licenseSourceVersion": "1.5.2",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/virtual-scroll/1.5.2",
+      "file": "/assets/licenses/virtual-scroll-1.5.2.txt",
+      "sha256": "4adb26e303347617f69f9234fd51f6d168c152caee43f4da2453205f3e2556ba",
+      "note": "License source version is not proof of the exact transitive version embedded in a bundle."
+    },
+    {
+      "name": "bezier-easing",
+      "licenseSourceVersion": "2.1.0",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/bezier-easing/2.1.0",
+      "file": "/assets/licenses/bezier-easing-2.1.0.txt",
+      "sha256": "32bfd1097d45b41ca6792bf07b389b26ee4045e7f7db28349f4199eef889c516",
+      "note": "License source version is not proof of the exact transitive version embedded in a bundle."
+    },
+    {
+      "name": "smoothscroll-polyfill",
+      "licenseSourceVersion": "0.4.4",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/smoothscroll-polyfill/0.4.4",
+      "file": "/assets/licenses/smoothscroll-polyfill-0.4.4.txt",
+      "sha256": "b9acf6628f3233fde0d1c1f17ce555b4712b078c12db9e89f61a23187a35748d",
+      "note": "License source version is not proof of the exact transitive version embedded in a bundle."
+    },
+    {
+      "name": "object-assign",
+      "licenseSourceVersion": "4.1.1",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/object-assign/4.1.1",
+      "file": "/assets/licenses/object-assign-4.1.1.txt",
+      "sha256": "6fb9754611c20f6649f68805e8c990e83261f29316e29de9e6cedae607b8634c",
+      "note": "License source version is not proof of the exact transitive version embedded in a bundle."
+    },
+    {
+      "name": "tiny-emitter",
+      "licenseSourceVersion": "2.1.0",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/tiny-emitter/2.1.0",
+      "file": "/assets/licenses/tiny-emitter-2.1.0.txt",
+      "sha256": "aada4c7da6a5be46beadf9d4f40d7dba9e222e57180d46289b2bb9112e65daae",
+      "note": "License source version is not proof of the exact transitive version embedded in a bundle."
+    },
+    {
+      "name": "lethargy",
+      "licenseSourceVersion": "1.0.9",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/lethargy/1.0.9",
+      "file": "/assets/licenses/lethargy-1.0.9.txt",
+      "sha256": "3a5b825538c50766e94c752f672976a1900d5bcc266188f55c308db02dba3e83",
+      "note": "License source version is not proof of the exact transitive version embedded in a bundle."
+    },
+    {
+      "name": "bindall-standalone",
+      "licenseSourceVersion": "1.0.5",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/bindall-standalone/1.0.5",
+      "file": "/assets/licenses/bindall-standalone-1.0.5.txt",
+      "sha256": "674f9afdeb316132491774d0ef19665e9481a7d405d98b63fc9c2cb05efdd74a",
+      "note": "License source version is not proof of the exact transitive version embedded in a bundle."
+    },
+    {
+      "name": "is-promise",
+      "licenseSourceVersion": "4.0.0",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/is-promise/4.0.0",
+      "file": "/assets/licenses/is-promise-4.0.0.txt",
+      "sha256": "44191656d296391e0ec97e32f5385f0d02b6f2992694082d22ea04ba0f66f9e4",
+      "note": "License source version is not proof of the exact transitive version embedded in a bundle."
+    },
+    {
+      "name": "path-to-regexp",
+      "licenseSourceVersion": "6.2.2",
+      "license": "MIT",
+      "source": "https://registry.npmjs.org/path-to-regexp/6.2.2",
+      "file": "/assets/licenses/path-to-regexp-6.2.2.txt",
+      "sha256": "4eeb3271453a891df609e5a9f4ee79a68307f730c13417a3bfeffa604ac8cf25",
+      "note": "License source version is not proof of the exact transitive version embedded in a bundle."
+    },
+    {
+      "name": "Inter modified static fonts",
+      "license": "OFL-1.1",
+      "source": "https://github.com/rsms/inter/blob/master/LICENSE.txt",
+      "file": "/assets/fonts/LICENSE.txt",
+      "sha256": "3340d04c9e385fb45c2248decb080fe81a1f93b2c8536d9ef9414c10483d1f0b"
+    },
+    {
+      "name": "Source Han Serif subsets",
+      "license": "OFL-1.1",
+      "file": "/assets/fonts/reading/source-han-license.txt",
+      "sha256": "9ff5bb567e1b92c801fc1069e5fbf992ff8efccacb9db94e5959a5b3ba9bb903"
+    },
+    {
+      "name": "LXGW WenKai subsets",
+      "license": "OFL-1.1",
+      "file": "/assets/fonts/reading/wenkai-license.txt",
+      "sha256": "94ca862eaded6a1af228b2d4e268b3c0f73d4333098bc0a1c63a34ff9d1b13bf"
+    },
+    {
+      "name": "GSAP / ScrollTrigger",
+      "runtimeVersion": "3.9.1",
+      "license": "GSAP Standard License (not MIT)",
+      "source": "https://gsap.com/community/standard-license/",
+      "edition": "Effective 2025-04-30, modified 2025-05-30; current terms, not a recovered 2021 license",
+      "file": "/assets/licenses/gsap-standard-license-2025.txt",
+      "sha256": "f040dfd2400b2a029863d850ab620207022708f4c4a59be9812473b7867fc389"
+    },
+    {
+      "name": "GSAP 3.9.1 provenance",
+      "file": "/assets/licenses/gsap-3.9.1-package-notice.txt",
+      "source": "https://registry.npmjs.org/gsap/3.9.1",
+      "sha256": "5637902002a6e7005c525698b8a740e442b7dde995cdba0c369bb9a4f9ef918e"
+    }
+  ]
+}

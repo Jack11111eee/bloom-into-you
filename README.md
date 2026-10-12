@@ -37,6 +37,10 @@ node scripts/check-pages.mjs
 每页页脚提供版权声明与联系页链接。完整声明位于 `/copyright/`，
 简体中文、繁体中文和日文分别位于对应语言前缀下。
 
+第三方代码、字体许可及尚待核实的权属边界见
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。具体许可文本随站发布在
+`assets/licenses/` 和 `assets/fonts/`；这些说明不授予原作图片或参考站代码的使用许可。
+
 ## 文件边界
 
 仓库保留 `src/`（模板、内容、四语词表和全部网站资源）、`lib/`（构建期本地化）、
