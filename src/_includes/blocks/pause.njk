@@ -8,7 +8,7 @@
 
   **不新增一行 CSS**（方案 §0）：`.home-intro` / `.text-wrap` / `.fade-in` / `.animate` /
   `.span-lines` / `.single-block` / `.block-padding-bottom` 全是现有类。动效也走现有代码路径 ——
-  `initTricksWords()` 按词切分、`initScrolltriggerAnimations()` 的 `.span-lines.animate`
+  `initWordSpans()` 按词切分、`initScrolltriggerAnimations()` 的 `.span-lines.animate`
   与 `.fade-in.animate` 两个触发器（后者见 B 类探针 `probe-p10-gallery.mjs`）。
 
   `.single-block` 有意保留：它与其余 block 共用 `.section` 的间距体系

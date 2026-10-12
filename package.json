@@ -2,7 +2,7 @@
   "name": "bloom-into-you",
   "version": "0.1.0",
   "private": true,
-  "description": "dennissnellenberg.com 的忠实复刻（构建期模板层：11ty + Nunjucks）",
+  "description": "Eleventy/Nunjucks 构建的《终将成为你》非官方粉丝站，含源自参考作品集的布局与交互实现。",
   "type": "module",
   "scripts": {
     "build": "eleventy",

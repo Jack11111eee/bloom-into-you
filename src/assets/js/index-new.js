@@ -18,6 +18,7 @@
  * | `[B5]` | 删除死变量 `var strength = 100` | `DEVIATIONS.md` B5 |
  * | `[B6]` | ~~`clearProps: "true"`（字符串）→ 布尔 `true`~~ **已 REVERTED** —— 实测字符串是**空操作**，统一会改变行为 | `DEVIATIONS.md` B6 |
  * | `[B7]` | 新增 `prefers-reduced-motion` 分支（惯性 / 页面转场 / 视差 / **首屏 loader** 四项），默认路径不变 | `DEVIATIONS.md` B7 |
+ * | `[C04]` | 独立实现 `initWordSpans`，替换受再分发限制的拆词片段；其余参考实现来源仍保留 | 本地版权修复记录 |
  *
  * **刻意未做的改动**（做了即为未登记的行为偏离）：
  *   · `[N3]` `initLoader()` **不**加 `scroll.stop()/start()` —— 原站如此，照抄。
@@ -664,7 +665,7 @@ function initScript() {
   initVisualFilter();
   initScrolltriggerNav();
   initScrollLetters();
-  initTricksWords();
+  initWordSpans();
   initContactForm();
   initTimeZone();
   initLazyLoad();
@@ -1236,12 +1237,12 @@ function initScrollLetters() {
 
 
 /**
-* Scrolltrigger Nav
+* Word animation spans
 *
 * 按**词**拆分（不是按行、不是按字符），生成
 * `<span class="span-line"><span class="span-line-inner">词</span></span>`。
 */
-function initTricksWords() {
+function initWordSpans() {
   // Independently implemented from the word-animation DOM contract. Work on
   // text nodes so links, attributes, entities and repeated visits stay intact.
   const language = document.documentElement.lang || 'en';

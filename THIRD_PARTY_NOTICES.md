@@ -7,7 +7,7 @@ This notice identifies third-party components and unresolved rights questions. I
 - This is an unofficial, non-commercial fan website for *Bloom Into You* / *やがて君になる*. Manga, animation stills, illustrations and any associated translations belong to their respective rights holders. The website has not obtained official authorization for these materials; individual sources and usage grounds remain under review. They are excluded from any permission covering the website owner's original work.
 - The original manga is by Nio Nakatani, published by KADOKAWA. The TV animation credit is **©2018 仲谷 鳰／ＫＡＤＯＫＡＷＡ／やがて君になる製作委員会**. This animation credit is not a blanket attribution for every illustration, manga translation or fan artwork.
 - The layout and interaction implementation originated in a reconstruction of [Dennis Snellenberg's portfolio](https://www.dennissnellenberg.com/). Portions of the CSS, JavaScript and templates derive from that reference. No permission to redistribute its proprietary implementation has been established. Attribution is not a substitute for permission; the reference-derived code is not offered as an independently authored, freely licensed template.
-- The current word-animation implementation includes a snippet credited to T.RICKS / Timothy Ricks, with a restriction on redistribution. Its original notice is retained while that implementation is being replaced. No broader redistribution permission is implied.
+- Earlier versions included a word-animation snippet credited to T.RICKS / Timothy Ricks, with a restriction on redistribution. The current `initWordSpans` independently implements the text-node wrapping contract and replaces that snippet. This change does not clear historical copies or the separate provenance of the surrounding reference-derived runtime.
 - Original commentary, owner-authored text, translations and independently authored tooling are not automatically offered under MIT or Creative Commons. No repository-wide reuse license is granted by this notice. Third-party components retain their own terms.
 
 ## Runtime libraries and styles
@@ -47,5 +47,7 @@ The Source Han Serif and WenKai license files remain unchanged, including origin
 Eleventy, Cheerio, Playwright Core and their npm dependencies are development dependencies governed by the license files in their respective packages. They are installed by `npm ci` and are not copied into the published website. This notice does not relicense those packages.
 
 ## Rights concerns
+
+The English Salinger quotation in the About essay is attributed to *The Heart of a Broken Story*, *Esquire*, September 1941, with a link to the publisher's official archive. The archive confirms the bibliographic information; its article text requires sign-in, and it is not represented here as a fresh verification of the full text. The website owner's multilingual wording is preserved. Source and translation questions concerning the other short literary quotation remain under review.
 
 The four-language website provides a copyright notice and contact page. Rights concerns can also be sent to [jackkkkk1e@proton.me](mailto:jackkkkk1e@proton.me), identifying the relevant page or resource. A contact mechanism does not confer authorization or waive existing rights.
