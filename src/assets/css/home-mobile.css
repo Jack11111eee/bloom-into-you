@@ -1,0 +1,63 @@
+/* H10: a phone-sized frame focused on the two faces, with readable text below. */
+@media screen and (max-width: 720px),
+       screen and (max-width: 1024px) and (max-height: 600px) and (hover: none) and (pointer: coarse) {
+  #home .home-header {
+    min-height: 100vh;
+    min-height: 100svh;
+    max-height: none;
+    align-items: flex-end;
+    padding: calc(var(--gap-padding) * 2) 0;
+  }
+
+  #home .home-header .personal-image {
+    top: 0;
+    height: 100%;
+  }
+
+  #home .home-header .personal-image img {
+    width: 100%;
+    height: 100%;
+    left: 0 !important; /* The saved 57% framing belongs to the desktop composition. */
+    transform: none;
+    object-position: 22% 50%;
+  }
+
+  #home .home-header .personal-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 42%, rgba(255, 250, 238, .66) 65%, rgba(255, 250, 238, .96));
+    pointer-events: none;
+  }
+
+  #home .home-header .big-name { bottom: 33svh; }
+  #home .home-header .container { padding-bottom: 9svh; }
+  #home .home-header .header-above-h4 { top: -8svh; }
+  #home .home-header .get-height { height: 100svh; }
+  #home .home-header .hanger { top: 100svh; }
+
+  #home .home-header .big-name h1 {
+    font-size: clamp(2rem, 12vw, 5rem);
+    color: var(--color-dark);
+  }
+
+  #home .home-header .row .flex-col h4 {
+    font-size: clamp(1.125rem, 4.8vw, 1.4rem);
+  }
+}
+
+/* Taller portrait screens need the crop a little farther to the right. */
+@media screen and (max-width: 720px) and (max-aspect-ratio: 1/2) {
+  #home .home-header .personal-image img { object-position: 26% 50%; }
+}
+
+/* Keep the faces clear when a phone is turned sideways. */
+@media screen and (max-width: 720px) and (max-height: 600px) and (orientation: landscape),
+       screen and (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+  #home .home-header .personal-image img { object-position: 22% 20%; }
+  #home .home-header .big-name { bottom: 2rem; padding-bottom: 0; }
+  #home .home-header .big-name h1 { font-size: clamp(2rem, 6vw, 3rem); }
+  #home .home-header .row { justify-content: flex-end; }
+  #home .home-header .container { padding-bottom: 5rem; }
+  #home .home-header .hanger { display: none; }
+}
