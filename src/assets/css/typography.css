@@ -1,0 +1,28 @@
+/* H6: the owner's chosen reading type. The home opening retains H2's Inter. */
+:root {
+  --font-heading: 'Bloom Serif en', 'Songti SC', serif;
+  --font-reading: 'WenKai en', 'WenKai Extra', serif;
+}
+html[lang="zh-Hans"] {
+  --font-heading: 'Bloom Serif zh-cn', 'Songti SC', serif;
+  --font-reading: 'WenKai zh-cn', 'WenKai Extra', 'Kaiti SC', serif;
+}
+html[lang="zh-Hant"] {
+  --font-heading: 'Bloom Serif zh-tw', 'Songti TC', serif;
+  --font-reading: 'WenKai zh-tw', 'WenKai Extra', 'Kaiti TC', serif;
+}
+html[lang="ja"] {
+  --font-heading: 'Bloom Serif ja', 'Hiragino Mincho ProN', serif;
+  --font-reading: 'WenKai ja', 'WenKai Extra', 'Yu Mincho', serif;
+}
+body, p, h5, h6, button, input, textarea, select {
+  font-family: var(--font-reading);
+  font-weight: 400;
+}
+h1, h2, h3, h4, .fixed-nav .nav-row .btn-text-inner {
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+h1 span, h2 span, h3 span, h4 span { font-weight: inherit; }
+strong { font-weight: 700; }
+.block-reading p { line-height: 1.85; }

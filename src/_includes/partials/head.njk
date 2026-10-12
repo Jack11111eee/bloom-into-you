@@ -11,8 +11,9 @@
       且两处缩进不同。是冗余，但照抄以保持结构一致。
     · 5 个 CSS 的加载顺序固定（§2.1）：normalize → locomotive-scroll → styleguide →
       components → style-new。**styleguide.css 是设计令牌层**（§3），不能调换。
-    · 字体预载只预载一个文件（§4 实测：原站运行时只有 450 那一个进入 loaded）——
+    · 原始字体预载只预载一个文件（§4 实测：原站运行时只有 450 那一个进入 loaded）——
       原站预载其 Regular 那一档（自托管 `.otf`），对应本产物的 `Inter-450.woff2`。
+      H6 保留它供原首页开屏使用，并预载当前语言的霞鹜文楷正文子集。
 
   两处**有意的不同**（都已在文档登记，跨站比对时由 `--font-mode sub` 折叠）：
     · 字体文件名与 MIME：原站是自托管的 `.otf` / `font/otf`，本产物
@@ -40,6 +41,10 @@
       <link rel="canonical" href="{{ canonical }}">
 
       <link rel="preload" as="font" href="/assets/fonts/Inter-450.woff2" type="font/woff2" crossorigin="anonymous">
+      {# H6: regular reading face is local and language-specific. #}
+      <link rel="preload" as="font" href="/assets/fonts/reading/wenkai-{{ locale }}.woff2" type="font/woff2" crossorigin="anonymous">
 
       <link href="/assets/css/normalize.css" rel="stylesheet">      <link href="/assets/css/locomotive-scroll.css" rel="stylesheet">      <link href="/assets/css/styleguide.css" rel="stylesheet">      <link href="/assets/css/components.css" rel="stylesheet">      <link href="/assets/css/style-new.css" rel="stylesheet">
+      <link href="/assets/css/reading-fonts.css" rel="stylesheet">
+      <link href="/assets/css/typography.css" rel="stylesheet">
    </head>

@@ -1,19 +1,11 @@
-/* H1: Locale-specific type, wrapping and language controls. English keeps its existing type. */
-html[lang="zh-Hans"] { --locale-font: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; }
-html[lang="zh-Hant"] { --locale-font: "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif; }
-html[lang="ja"] { --locale-font: "Hiragino Sans", "Yu Gothic", "Meiryo", "Noto Sans CJK JP", sans-serif; }
-html:not([lang="en"]) body,
-html:not([lang="en"]) h1, html:not([lang="en"]) h2, html:not([lang="en"]) h3,
-html:not([lang="en"]) h4, html:not([lang="en"]) h5, html:not([lang="en"]) h6,
-html:not([lang="en"]) p, html:not([lang="en"]) a, html:not([lang="en"]) button,
-html:not([lang="en"]) input, html:not([lang="en"]) textarea, html:not([lang="en"]) select { font-family: var(--locale-font); }
+/* H1/H6: locale wrapping and language controls; typography.css supplies fonts. */
 html:not([lang="en"]) .span-lines { line-break: strict; word-break: normal; }
 html:not([lang="en"]) .btn-link.btn-left-top:hover .credit-first { transform: none; padding-right: .2em; }
 html:not([lang="en"]) .credit-first-span { white-space: nowrap; }
-html:not([lang="en"]) .loading-words h2:not(.home-active):not(.home-active-last) { font-family: var(--locale-font); font-size: clamp(1.5em, 4vw, 3.5em); }
+html:not([lang="en"]) .loading-words h2:not(.home-active):not(.home-active-last) { font-size: clamp(1.5em, 4vw, 3.5em); }
 /* H2: preserve the original home opening type, including the smaller Japanese word. */
 .loading-container .loading-words h2.home-active,
-.loading-container .loading-words h2.home-active-last { font-family: 'Inter', sans-serif; }
+.loading-container .loading-words h2.home-active-last { font-family: 'Inter', sans-serif; font-weight: 450; }
 .language-switch { position: relative; margin-left: auto; margin-right: 1.5em; font-size: .85em; }
 .language-switch summary { cursor: pointer; list-style: none; padding: .75em .5em; }
 .language-switch summary::-webkit-details-marker { display: none; }

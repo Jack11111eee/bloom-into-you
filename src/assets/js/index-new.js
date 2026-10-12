@@ -45,6 +45,8 @@
 gsap.registerPlugin(ScrollTrigger);
 
 let scroll;
+let readingLayoutRoot;
+let readingLayoutFrame;
 
 const body = document.body;
 const select = (e) => document.querySelector(e);
@@ -668,7 +670,25 @@ function initScript() {
   initLazyLoad();
   initPlayVideoInview();
   initScrolltriggerAnimations();
+  initReadingLayout();
 }
+
+// [H6] Fonts can arrive after the initial scroll measurement.
+// Chrome preflight: adding 1800px left limit.y at 1200 until update/refresh,
+// then 2960. Refresh once fonts settle; old-page callbacks cannot refresh it.
+function refreshReadingLayout() {
+  cancelAnimationFrame(readingLayoutFrame);
+  readingLayoutFrame = requestAnimationFrame(() => {
+    if (!readingLayoutRoot?.isConnected) return;
+    scroll.update();
+    ScrollTrigger.refresh();
+  });
+}
+function initReadingLayout() {
+  readingLayoutRoot = document.querySelector('main .main-wrap');
+  document.fonts.ready.then(refreshReadingLayout);
+}
+document.fonts.addEventListener('loadingdone', refreshReadingLayout);
 
 /**
 * Window Inner Height Check
@@ -1184,6 +1204,8 @@ function initScrollLetters() {
     const tl = gsap.timeline({
             repeat: -1,
             onReverseComplete() {
+              // [H6 / ISSUE-084] No text means duration=0; rewinding it can recurse.
+              if (this.duration() === 0) return;
               this.totalTime(this.rawTime() + this.duration() * 10); // otherwise when the playhead gets back to the beginning, it'd stop. So push the playhead forward 10 iterations (it could be any number)
             }
           }),
@@ -1195,6 +1217,10 @@ function initScrollLetters() {
           }),
           positionClones = () => elements.forEach((el, i) => gsap.set(clones[i], {position: "absolute", overwrite: false, top: el.offsetTop, left: el.offsetLeft + (reverse ? -el.offsetWidth : el.offsetWidth)}));
     positionClones();
+    // [H6 / ISSUE-085] Web fonts can change width after this initial position.
+    document.fonts.ready.then(() => {
+      if (elements.every(el => el.isConnected)) positionClones();
+    });
     elements.forEach((el, i) => tl.to([el, clones[i]], {xPercent: reverse ? 100 : -100, ...vars}, 0));
     window.addEventListener("resize", () => {
       let time = tl.totalTime(); // record the current time
