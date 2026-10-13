@@ -26,8 +26,8 @@ for (const file of fs.readdirSync(out, { recursive: true })) {
   if (!file.endsWith('.html')) continue;
   const $ = load(fs.readFileSync(dest, 'utf8'));
   $('html').attr('data-site-base', base);
-  $('[href],[src],[action],[poster],[data-src],[data-background]').each((_, node) => {
-    for (const attr of ['href', 'src', 'action', 'poster', 'data-src', 'data-background']) {
+  $('[href],[src],[action],[poster],[data-src],[data-background],[data-bg]').each((_, node) => {
+    for (const attr of ['href', 'src', 'action', 'poster', 'data-src', 'data-background', 'data-bg']) {
       const value = $(node).attr(attr);
       if (value) $(node).attr(attr, url(value));
     }

@@ -40,8 +40,8 @@ for (const locale of LOCALES) for (const route of ROUTES) {
     const expected = base + localizedPath(route, code);
     assert.equal($(node).attr('href'), expected + (expected.endsWith('/') ? '' : '/'));
   });
-  $('[href],[src],[action],[poster],[data-src],[data-background]').each((_, node) => {
-    for (const attr of ['href', 'src', 'action', 'poster', 'data-src', 'data-background']) check($(node).attr(attr), pageUrl);
+  $('[href],[src],[action],[poster],[data-src],[data-background],[data-bg]').each((_, node) => {
+    for (const attr of ['href', 'src', 'action', 'poster', 'data-src', 'data-background', 'data-bg']) check($(node).attr(attr), pageUrl);
   });
   $('[srcset],[data-srcset]').each((_, node) => {
     for (const attr of ['srcset', 'data-srcset']) for (const item of ($(node).attr(attr) || '').split(',')) check(item.trim().split(/\s+/)[0], pageUrl);
