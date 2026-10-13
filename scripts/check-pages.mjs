@@ -74,6 +74,8 @@ for (const entry of licenses.entries) {
 for (const output of ['dist', 'dist-pages']) {
   assert.equal(fs.readFileSync(path.join(output, 'assets/licenses/THIRD_PARTY_NOTICES.md'), 'utf8'),
     fs.readFileSync('THIRD_PARTY_NOTICES.md', 'utf8'), `${output}: missing rights boundaries`);
+  assert.equal(fs.readFileSync(path.join(output, 'assets/licenses/CONTENT-LICENSING.md'), 'utf8'),
+    fs.readFileSync('LICENSING.md', 'utf8'), `${output}: missing original-content licence scope`);
   for (const file of [
     'media/site/89d468b455-1646837228/meta-image-bloom-into-you-860x540-crop-q72.jpg',
     'media/pages/about/d289927735-1646837228/meta-about-860x540-crop-q72.jpg',

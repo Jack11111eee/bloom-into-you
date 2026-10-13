@@ -261,5 +261,9 @@
   "Privacy of requests": "お問い合わせ資料のプライバシー",
   "Private correspondence and evidence stay outside the public website and source repository. Only information needed to explain a material’s source or handling decision is made public. See the privacy notice for contact-data handling.": "私信や証拠資料は公開サイトやソースのリポジトリには含めません。素材の出典や対応方針の説明に必要な情報だけを公開します。連絡先の取り扱いについてはプライバシーの説明をご覧ください。",
   "Contact form preview": "お問い合わせフォームの表示",
-  "The preview fields are disabled and do not send or save a message. Email opens your own mail application.": "表示用の入力欄は無効で、メッセージを送信したり保存したりしません。メールのリンクはご自身のメールアプリを開きます。"
+  "The preview fields are disabled and do not send or save a message. Email opens your own mail application.": "表示用の入力欄は無効で、メッセージを送信したり保存したりしません。メールのリンクはご自身のメールアプリを開きます。",
+  "The website owner's original article prose is offered under": "サイト運営者が許諾する権限を持つ独自の記事本文には、次のライセンスを適用します：",
+  "Images, quotations, third-party translations, templates, design, code and fonts are excluded.": "画像、引用文、第三者による翻訳、テンプレート、デザイン、コード、フォントは、この許諾の対象外です。",
+  "Article licence scope and attribution": "記事の許諾範囲と著作者表示",
+  "CC BY-NC-ND 4.0": "CC BY-NC-ND 4.0"
 }

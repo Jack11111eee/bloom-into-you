@@ -47,6 +47,7 @@ export default function (eleventyConfig) {
   });
   // Distribute rights boundaries alongside the exact component license texts.
   eleventyConfig.addPassthroughCopy({ 'THIRD_PARTY_NOTICES.md': 'assets/licenses/THIRD_PARTY_NOTICES.md' });
+  eleventyConfig.addPassthroughCopy({ 'LICENSING.md': 'assets/licenses/CONTENT-LICENSING.md' });
 
   /**
    * thumb — 由原图 URL 推出 Kirby 的 -540x 缩略图 URL。

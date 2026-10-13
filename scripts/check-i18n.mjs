@@ -12,6 +12,7 @@ const copyright = JSON.parse(fs.readFileSync('src/_data/copyright.json', 'utf8')
 const site = JSON.parse(fs.readFileSync('src/_data/site.json', 'utf8'));
 const quotationSources = JSON.parse(fs.readFileSync('src/_data/quotationSources.json', 'utf8'));
 const privacy = JSON.parse(fs.readFileSync('src/_data/privacy.json', 'utf8'));
+const contentLicense = JSON.parse(fs.readFileSync('src/_data/contentLicense.json', 'utf8'));
 // H11: remove only the owner's exact work/publisher identifiers from the
 // language-purity check, and only in their registered declaration fields.
 const rightsKeys = ['footerIntro', 'intro', 'affiliation', 'mangaCredit', 'animeCredit'].map(key => copyright[key]);
@@ -59,6 +60,10 @@ for (const locale of LOCALES) {
       const paragraphs = ['intro', 'affiliation', 'materials', 'permission', 'respect', 'request', 'emailLabel', 'response', 'corrections', 'thanks'].map(key => catalog[copyright[key]] + (key === 'emailLabel' ? ' ' + site.contact.email : ''));
       assert(JSON.stringify($('.copyright-reading p').map((_, node) => $(node).text()).get()) === JSON.stringify(paragraphs), `${url}: full notice changed or omitted`);
       assert($('.copyright-reading .copyright-credit[lang=ja]').text() === copyright.animeCredit, `${url}: wrong full-page anime credit`);
+      assert($('.content-license-reading').length === 1, `${url}: missing scoped content licence`);
+      assert($('.content-license-reading .license-identifier').text() === contentLicense.identifier, `${url}: wrong content licence identifier`);
+      assert($('.content-license-reading .license-identifier').attr('href') === contentLicense.legalUrl, `${url}: wrong CC terms link`);
+      assert($('.content-license-reading a').last().attr('href') === '/assets/licenses/CONTENT-LICENSING.md', `${url}: missing article scope and exclusions`);
     }
     const opening = ['终将成为你', '終將成為妳', 'やがて君になる', 'Bloom Into You', '이윽고 네가 된다', 'Gdy zakwitnie w nas miłość', 'В конечном счёте я стану твоей', 'Θα γίνω τελικά εσύ', 'ท้ายที่สุดฉันจะกลายเป็นเธอ'];
     assert(JSON.stringify($('.loading-words > h2.home-active, .loading-words > h2.home-active-last').map((_,e)=>$(e).text().trim()).get()) === JSON.stringify(opening), `${url}: original multilingual home opening changed`);
@@ -92,6 +97,7 @@ for (const locale of LOCALES) {
       // Keep this single registered bibliographic citation in its original script.
       if (value === catalog[quotationSources.englishCitation]) languageText = '';
       if (privacyNameFields.has(value)) languageText = languageText.replaceAll('GitHub Pages', '');
+      if (value === catalog[contentLicense.identifier]) languageText = '';
       assert(locale.code === 'en' ? !/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}\p{Script=Thai}\p{Script=Cyrillic}\p{Script=Greek}]/u.test(languageText) : !/[A-Za-z]/.test(languageText.replace(/[^\s@]+@[^\s@]+\.[^\s@。]+/g, '')), `${url}: foreign-language residue: ${value}`);
     }
     assert($('svg:not([aria-hidden=true])').length === 0 && $('svg title').length===0, `${url}: decorative SVG exposes title`);

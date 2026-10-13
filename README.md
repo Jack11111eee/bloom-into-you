@@ -37,6 +37,11 @@ node scripts/check-pages.mjs
 每页页脚提供版权声明、联系页与隐私说明链接。完整声明位于 `/copyright/`，
 简体中文、繁体中文和日文分别位于对应语言前缀下。
 
+站主有权授权的原创随笔/人物与关系评论正文按
+[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) 提供。
+具体六篇文章、署名方式和第三方引文排除范围见 [LICENSING.md](LICENSING.md)。
+参考站模板、设计、动效、代码、图片及字体不在该授权内；这不是全仓库许可。
+
 ## 权利检查与联系
 
 每次构建会核对 `lib/rights-register.json`、固定素材基线和脚本来源哈希。

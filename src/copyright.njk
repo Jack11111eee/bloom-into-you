@@ -43,6 +43,7 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/copyright/index.
          <h3>{{ section.title }}</h3>
          {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
          {% endfor %}
+         <p class="content-license-reading"><span>{{ contentLicense.intro }}</span> <a class="license-identifier" href="{{ contentLicense.legalUrl }}" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ contentLicense.identifier }}</a> · <span>{{ contentLicense.exclusions }}</span> <a href="/assets/licenses/CONTENT-LICENSING.md" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ contentLicense.scopeLabel }}</a></p>
          <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a> · <a href="/privacy/">{{ privacy.title }}</a></p>
       </article>
    </div>

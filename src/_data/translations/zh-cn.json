@@ -261,5 +261,9 @@
   "Privacy of requests": "请求材料的隐私",
   "Private correspondence and evidence stay outside the public website and source repository. Only information needed to explain a material’s source or handling decision is made public. See the privacy notice for contact-data handling.": "私人往来与证明材料不进入公开网站或源码仓库。仅公开说明素材来源或处理决定所必需的信息。联系方式相关处理请参阅隐私说明。",
   "Contact form preview": "联系表单展示",
-  "The preview fields are disabled and do not send or save a message. Email opens your own mail application.": "展示字段已停用，不发送或保存消息。邮箱入口会打开你自己的邮件应用。"
+  "The preview fields are disabled and do not send or save a message. Email opens your own mail application.": "展示字段已停用，不发送或保存消息。邮箱入口会打开你自己的邮件应用。",
+  "The website owner's original article prose is offered under": "本站站主有权授权的原创文章正文采用",
+  "Images, quotations, third-party translations, templates, design, code and fonts are excluded.": "图片、引文、第三方译文、模板、设计、代码及字体不在此授权范围内。",
+  "Article licence scope and attribution": "文章授权范围与署名要求",
+  "CC BY-NC-ND 4.0": "CC BY-NC-ND 4.0"
 }

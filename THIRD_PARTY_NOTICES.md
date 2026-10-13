@@ -8,7 +8,7 @@ This notice identifies third-party components and unresolved rights questions. I
 - The original manga is by Nio Nakatani, published by KADOKAWA. The TV animation credit is **©2018 仲谷 鳰／ＫＡＤＯＫＡＷＡ／やがて君になる製作委員会**. This animation credit is not a blanket attribution for every illustration, manga translation or fan artwork.
 - The layout and interaction implementation originated in a reconstruction of [Dennis Snellenberg's portfolio](https://www.dennissnellenberg.com/). Portions of the CSS, JavaScript and templates derive from that reference. No permission to redistribute its proprietary implementation has been established. Attribution is not a substitute for permission; the reference-derived code is not offered as an independently authored, freely licensed template.
 - Earlier versions included a word-animation snippet credited to T.RICKS / Timothy Ricks, with a restriction on redistribution. The current `initWordSpans` independently implements the text-node wrapping contract and replaces that snippet. This change does not clear historical copies or the separate provenance of the surrounding reference-derived runtime.
-- Original commentary, owner-authored text, translations and independently authored tooling are not automatically offered under MIT or Creative Commons. No repository-wide reuse license is granted by this notice. Third-party components retain their own terms.
+- The owner's original prose in the six articles listed in [LICENSING.md](LICENSING.md) is licensed under CC BY-NC-ND 4.0, only to the extent the owner has authority to license it. Third-party quotations, translations and all media are excluded. Templates, design, CSS, JavaScript, tooling and fonts are outside that content grant. No repository-wide reuse licence is granted; third-party components retain their own terms.
 
 ## Runtime libraries and styles
 
@@ -39,6 +39,15 @@ The GSAP 3.9.1 npm package carries GreenSock's 2021 copyright notice and a refer
 | LXGW WenKai subsets | LXGW WenKai contributors; SIL OFL 1.1 | `assets/fonts/reading/wenkai-license.txt` |
 
 The Inter files are modified faces rather than untouched upstream Inter. Their existing modification record is retained. The commercial reference-font metrics used during the original generation remain a separate unresolved provenance question; attaching OFL does not resolve that question. Commercial reference-font files are not included in the website or repository. The current website build uses the existing WOFF2 assets and does not require those reference files.
+
+Pangram Pangram's [official FAQ](https://pangrampangram.com/pages/faq), checked on
+13 October 2026, permits free personal use of its trial fonts in noncommercial
+projects, including web portfolios and small-audience artistic projects. Thus
+noncommercial personal use alone is not treated here as requiring a commercial
+purchase. That statement does not specifically address extracting reference
+metrics to calibrate and publicly distribute another font. The original file
+acquisition/terms record and that particular use remain unconfirmed; the current
+Inter binaries are retained without claiming the FAQ clears that question.
 
 The Source Han Serif and WenKai license files remain unchanged, including original notices and naming conditions. Any future font changes must continue to comply with their own licenses.
 
