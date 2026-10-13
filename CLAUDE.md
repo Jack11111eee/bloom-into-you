@@ -32,11 +32,14 @@ They are optional for a fresh clone; normal website work must not depend on
 their presence. Original-site drift checks belong to original-site comparisons,
 not routine builds of the personalized website.
 
-No files were deleted from the original development directory during cleanup.
-The complete previous tracked version remains at commit
-`4223186913a93059dcda73d00fd50baebfdc1238`; local original-file hashes and backups
-are in `docs/repository-cleanup/`. Recover or inspect those before discarding
-information. Do not rewrite history to remove these files.
+No original authoring files were deleted from the owner's development directory.
+The complete previous tracked version, including historical commit
+`4223186913a93059dcda73d00fd50baebfdc1238`, is preserved in the owner's private
+recovery bundles under `docs/copyright-history/backup/` and original checkout.
+Those backups are optional local materials, not part of a fresh public clone.
+Never merge or push their original refs back into the cleaned public history.
+Do not rewrite shared history without explicit owner approval and a reviewed
+backup, exact ref scope and recovery plan.
 
 ## Scope and verification
 
