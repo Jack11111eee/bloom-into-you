@@ -1,24 +1,25 @@
-[![在线访问](https://img.shields.io/badge/Bloom_Into_You-%E5%9C%A8%E7%BA%BF%E8%AE%BF%E9%97%AE-ff9bb2?style=for-the-badge&logo=githubpages&logoColor=white)](https://jack11111eee.github.io/bloom-into-you/)
+[English](README.md) | [简体中文](README.zh-CN.md)
 
 # Bloom Into You 🌸
 
-> **网站已上线！**
->
-> 戳这里直接在线体验 👉 [**传送门：Bloom Into You Web**](https://jack11111eee.github.io/bloom-into-you/)
+An unofficial, noncommercial fan website for *Bloom Into You*, with personal essays, character and relationship commentaries, and a gallery. Available in English, Simplified Chinese, Traditional Chinese and Japanese.
 
-## 本地运行
+[Visit the website](https://jack11111eee.github.io/bloom-into-you/)
 
-需要 Node.js 24 和 npm。
+The layout and parts of the interaction implementation derive from a reconstruction of [Dennis Snellenberg's portfolio](https://www.dennissnellenberg.com/). Permission to redistribute that reference implementation has not been established. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the rights boundaries.
+
+## Run locally
+
+Requires Node.js 24 and npm.
 
 ```bash
 npm ci
 npm run serve
 ```
 
-访问终端显示的本地地址。`npm run build` 生成 `dist/`；`npm run build:pages`
-将已有 `dist/` 转为 GitHub Pages 项目路径，生成 `dist-pages/`。
+Open the local address printed in the terminal. `npm run build` generates `dist/`. `npm run build:pages` converts an existing `dist/` to the GitHub Pages project path and writes `dist-pages/`.
 
-## 构建与检查
+## Build and check
 
 ```bash
 npm run build
@@ -30,35 +31,21 @@ npm run build:pages
 node scripts/check-pages.mjs
 ```
 
-默认 Pages 地址为上述在线地址。其它部署地址可通过 `PAGES_URL` 环境变量传给
-`build:pages` 和 `check-pages.mjs`，地址需以 `/` 结尾。推送到 `main` 后由
-`.github/workflows/pages.yml` 构建、检查并发布。
+The default Pages address is the live URL above. For another deployment address, pass a `PAGES_URL` environment variable ending in `/` to `build:pages` and `check-pages.mjs`. Pushes to `main` run `.github/workflows/pages.yml`, which builds, checks and publishes the site.
 
-每页页脚提供版权声明、联系页与隐私说明链接。完整声明位于 `/copyright/`，
-简体中文、繁体中文和日文分别位于对应语言前缀下。
+Every page footer links to the copyright notice, contact page and privacy notice. The full copyright notice is at `/copyright/`, with corresponding routes under the three other language prefixes. Its final section links to image-source references at `/image-sources/`. These references document matching images found on the web; they do not establish the original acquisition channel or permission to reuse them. The source index is not linked from ordinary page footers.
 
-站主有权授权的原创随笔/人物与关系评论正文按
-[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) 提供。
-具体六篇文章、署名方式和第三方引文排除范围见 [LICENSING.md](LICENSING.md)。
-参考站模板、设计、动效、代码、图片及字体不在该授权内；这不是全仓库许可。
+The owner's original essay and character/relationship commentary prose, only where the owner has authority to license it, is available under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/). See [LICENSING.md](LICENSING.md) for the six articles, attribution and exclusions. Reference templates, design, motion, code, images and fonts are outside that grant. There is no repository-wide licence.
 
-## 权利检查与联系
+## Rights checks and contact
 
-每次构建会核对 `lib/rights-register.json`、固定素材基线和脚本来源哈希。
-现有待核实素材只允许保留原字节；增加或修改图片/字体必须记录来源、权利依据、
-适用范围、审核人与审核日期。授权到期会阻止构建。`suspended`/`retired` 资源
-不得进入发布目录或页面引用；登记为待核实不代表已取得授权。
+Every build checks `lib/rights-register.json`, the fixed asset baseline and script provenance hashes. Existing unverified assets may retain only their established bytes. New or modified images/fonts need recorded sources, usage grounds, scope, reviewer and review date. Expired permissions block the build. Assets marked `suspended` or `retired` must not enter the output or page links. An unverified record is not evidence of permission.
 
-运行 `node --test lib/rights.test.mjs` 验证这些防回流条件。
-运行 `node lib/setup-git-hooks.mjs` 安装本仓库的提交邮箱检查；它保留现有姓名、
-邮箱与全局设置，已有其它 hooks 时会要求手动整合。检查作者与提交者邮箱，
-以及将要推送的新提交；持续集成也检查新增提交范围。
+Run `node --test lib/rights.test.mjs` to exercise these safeguards. Run `node lib/setup-git-hooks.mjs` to install this checkout's commit-email checks. It preserves your existing name, email and global settings; existing hooks need manual integration. Checks cover author/committer emails and new commits being pushed. Continuous integration also checks the new commit range.
 
-权利人可通过 `/copyright/` 的说明及邮箱提出问题。联系页的字段仅展示，全部禁用，
-没有表单提交端点。邮箱链接使用访客自己的邮件程序；本仓库不发送邮件。
-需要用自己的邮箱手动确认联系地址可收件、可回复，并管理邮件服务的账户安全。
+Rights holders can follow the instructions at `/copyright/` and contact the published email address. Contact-page fields are disabled previews with no form submission endpoint. Email links use the visitor's own mail application. This repository does not send email. The owner must verify receipt/replies using their own account and manage the mail service's account security.
 
-处理记录工具为 `node lib/rights-cases.mjs`：
+The private handling tool is `node lib/rights-cases.mjs`:
 
 ```bash
 node lib/rights-cases.mjs create CR-YYYYMMDD-short-name /private/path/received.json
@@ -66,27 +53,14 @@ node lib/rights-cases.mjs event CR-YYYYMMDD-short-name acknowledged /private/pat
 node lib/rights-cases.mjs due
 ```
 
-工具列出各阶段必填项，要求经过收件、确认、审查、决定、核验处理、通知和结案。
-记录写入被忽略的 `docs/rights-private/`，不要把私人往来或证明材料提交到 Git。
-通知记录只代表你手动发送后登记，不会触发发送。结案90天后提示保留期限复查，
-不会自动删除；附件、邮箱与备份需要另行检查。
+The tool lists required fields for receipt, acknowledgement, review, decision, verified action, notification and closure. Records go into ignored `docs/rights-private/`. Do not commit private correspondence or evidence. A notification event records a message you have already sent manually; it sends nothing. A retention review is prompted 90 days after closure, with no automatic deletion. Attachments, mail accounts and backups need separate review.
 
-第三方代码、字体许可及尚待核实的权属边界见
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。具体许可文本随站发布在
-`assets/licenses/` 和 `assets/fonts/`；这些说明不授予原作图片或参考站代码的使用许可。
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) covers component/font licences and unresolved provenance. Their licence texts ship under `assets/licenses/` and `assets/fonts/`. These notices do not grant permission to use original-work images or reference-site code.
 
-## 文件边界
+## Repository boundaries
 
-仓库保留 `src/`（模板、内容、四语词表和全部网站资源）、`lib/`（构建期本地化）、
-依赖配置、部署工作流和六个基本脚本。字体许可证保留在 `src/assets/fonts/`。
-网站运行时的 JavaScript、字体和媒体均自托管，固定版本脚本的来源与哈希记录在
-`src/assets/vendor/manifest.json`。页面提供四语隐私说明；联系表单停用，使用邮箱联系。
+The public repository contains `src/` (templates, content, four-language catalogs and website assets), `lib/` (localization and build checks), dependency configuration, the deployment workflow and six basic scripts. Font licences remain in `src/assets/fonts/`. Runtime JavaScript, fonts and media are self-hosted. Fixed script versions, sources and hashes are recorded in `src/assets/vendor/manifest.json`. Privacy information is available in all four languages; the contact form is disabled and contact uses email.
 
-2026-10-12 将过程文档、证据、预览与研究/开发辅助脚本停止 Git 跟踪，原开发目录
-中的文件全部保留。`docs/`、根目录过程文档和其余 `scripts/` 由 `.gitignore` 排除，
-新克隆不需要这些文件或历史提交即可构建和部署。完整原版本保留在站主的本地恢复
-备份中；清理后的公开历史不保证含旧研究文件，请勿把公开提交页面作为原件备份。
+On 12 October 2026, process documents, evidence, previews and research/authoring tools stopped being tracked. All original files remain in the owner's original development directory. `.gitignore` excludes `docs/`, root process documents and other scripts. A fresh clone builds and deploys without those local files or historical commits. The complete original version is retained in the owner's private recovery backups. The cleaned public history is not a backup of the earlier research files.
 
-原开发目录仍可直接运行 `node scripts/build-copy-editor.mjs`（先构建网站）、
-`node scripts/serve-copy-editor.mjs` 以及素材工具；这些辅助工具不随新克隆提供。
-本地精简清单、原文件哈希和旧规则备份在 `docs/repository-cleanup/`。
+The original development directory still provides `node scripts/build-copy-editor.mjs` (after building), `node scripts/serve-copy-editor.mjs` and asset tools. Those helpers are not included in fresh public clones. Local cleanup lists, original file hashes and previous rules are kept in `docs/repository-cleanup/`.
