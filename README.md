@@ -1,12 +1,12 @@
 [English](README.md) | [简体中文](README.zh-CN.md)
 
+[![Live site](https://img.shields.io/badge/Bloom_Into_You-Live_site-ff9bb2?style=for-the-badge&logo=githubpages&logoColor=white)](https://jack11111eee.github.io/bloom-into-you/)
+
 # Bloom Into You 🌸
 
 An unofficial, noncommercial fan website for *Bloom Into You*, with personal essays, character and relationship commentaries, and a gallery. Available in English, Simplified Chinese, Traditional Chinese and Japanese.
 
 [Visit the website](https://jack11111eee.github.io/bloom-into-you/)
-
-The layout and parts of the interaction implementation derive from a reconstruction of [Dennis Snellenberg's portfolio](https://www.dennissnellenberg.com/). Permission to redistribute that reference implementation has not been established. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the rights boundaries.
 
 ## Run locally
 
