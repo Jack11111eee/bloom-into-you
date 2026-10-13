@@ -12,7 +12,7 @@ This notice identifies third-party components and unresolved rights questions. I
 
 ## Runtime libraries and styles
 
-The following versions are used by the website. License texts are published under `assets/licenses/`; the file manifest records their sources and hashes. CDN scripts retain their distributed headers and load order.
+The following versions are used by the website. License texts are published under `assets/licenses/`; the file manifest records their sources and hashes. All active scripts are self-hosted and retain their distributed headers and load order. `assets/vendor/manifest.json` records the exact fixed-version CDN responses used for the self-hosted copies; no runtime CDN request is needed.
 
 | Component | Runtime version | License / bundled text |
 |---|---|---|

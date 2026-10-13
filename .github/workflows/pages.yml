@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
@@ -24,7 +26,10 @@ jobs:
       - uses: actions/configure-pages@v5
         id: pages
       - run: npm ci
+      - name: Check newly published commit identities
+        run: node lib/git-email-check.mjs --ci
       - run: npm run build
+      - run: node --test lib/rights.test.mjs
       - name: Check content and locales
         run: |
           node scripts/check-i18n.mjs

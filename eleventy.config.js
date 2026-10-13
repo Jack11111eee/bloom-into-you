@@ -9,15 +9,15 @@
 import { localizeHtml, clearCatalogCache } from './lib/i18n.mjs';
 import { rmSync } from 'node:fs';
 import path from 'node:path';
-
-// Preserve the original source files, but stop distributing obsolete share copies.
-const retiredShareCopies = [
-  'site/89d468b455-1646837228/meta-image-bloom-into-you-860x540-crop-q72.jpg',
-  'pages/about/d289927735-1646837228/meta-about-860x540-crop-q72.jpg',
-];
+import { validateRightsSources, validatePublishedRights } from './lib/rights.mjs';
 
 export default function (eleventyConfig) {
   eleventyConfig.setQuietMode(true);
+  let withdrawn = new Set();
+  eleventyConfig.on('eleventy.before', () => {
+    const policy = validateRightsSources();
+    withdrawn = new Set(policy.assets.filter(entry => ['retired', 'suspended'].includes(entry.status)).map(entry => entry.path.slice(4)));
+  });
   eleventyConfig.on('eleventy.before', clearCatalogCache);
   // H1: strict build-time localization shares the existing structure and media.
   eleventyConfig.addTransform('localize', function (content, outputPath) {
@@ -33,16 +33,17 @@ export default function (eleventyConfig) {
   // `src/media/`（P8 起）是 `scripts/generate-placeholders.mjs` 产出的**占位媒体**，
   // 对应原站的 `/media/pages/…`。它入库，因为它是产物的组成部分 ——
   // 这样 `dist/` 是**自包含**的，`scripts/serve-dist.mjs` 不再回落到 `reference/media/`。
-  eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
+  eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' }, {
+    filter: relative => !withdrawn.has(`assets/${relative.split(path.sep).join('/')}`),
+  });
   eleventyConfig.addPassthroughCopy({ 'src/media': 'media' }, {
-    filter: ['**/*', ...retiredShareCopies.map(file => `!${file}`)],
+    filter: relative => !withdrawn.has(`media/${relative.split(path.sep).join('/')}`),
   });
   // Incremental/repeated builds may already contain the former copies.
   eleventyConfig.on('eleventy.after', ({ directories, outputMode }) => {
     if (outputMode !== 'fs') return;
-    for (const file of retiredShareCopies) {
-      rmSync(path.join(directories.output, 'media', file), { force: true });
-    }
+    for (const file of withdrawn) rmSync(path.join(directories.output, file), { force: true });
+    validatePublishedRights(directories.output);
   });
   // Distribute rights boundaries alongside the exact component license texts.
   eleventyConfig.addPassthroughCopy({ 'THIRD_PARTY_NOTICES.md': 'assets/licenses/THIRD_PARTY_NOTICES.md' });

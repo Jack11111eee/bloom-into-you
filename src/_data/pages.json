@@ -98,6 +98,20 @@
       "navActive": null,
       "fixedNavActive": null,
       "floatImages": null
+    },
+    "privacy": {
+      "file": null,
+      "ns": "privacy",
+      "cursorMode": "none",
+      "cursorSpan": null,
+      "title": "Privacy notice — Bloom Into You",
+      "description": "How this unofficial fan website handles hosting requests, browser preferences, email and rights concerns.",
+      "ogImage": "/assets/img/share-card.png",
+      "canonical": "/privacy/",
+      "loaderActive": 23,
+      "navActive": null,
+      "fixedNavActive": null,
+      "floatImages": null
     }
   }
 }

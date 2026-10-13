@@ -35,4 +35,16 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/copyright/index.
       </article>
    </div>
 </section>
+<section class="section copyright-content rights-handling" data-scroll-section="">
+   <div class="container medium">
+      <article class="rights-reading" aria-labelledby="rights-handling-title">
+         <h2 id="rights-handling-title">{{ rightsHandling.title }}</h2>
+         {% for section in rightsHandling.sections %}
+         <h3>{{ section.title }}</h3>
+         {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+         {% endfor %}
+         <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a> · <a href="/privacy/">{{ privacy.title }}</a></p>
+      </article>
+   </div>
+</section>
 {% include "partials/footer-contact.njk" %}

@@ -1,0 +1,51 @@
+{
+  "title": "Privacy notice",
+  "updated": "Last updated: 13 October 2026",
+  "intro": "This is a personal, non-commercial fan website. There are no accounts, payment features, advertising trackers or audience analytics.",
+  "sections": [
+    {
+      "title": "Hosting and page resources",
+      "paragraphs": [
+        "The website is hosted on GitHub Pages. Scripts, fonts and media are served with the website; the page does not automatically load them from third-party script or font services.",
+        "Providing the website necessarily sends a request to the hosting service, including information such as an IP address and browser request headers. The hosting provider may process this information under its own privacy statement."
+      ],
+      "links": [
+        {
+          "label": "Hosting platform privacy statement",
+          "href": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+        }
+      ]
+    },
+    {
+      "title": "Browser preferences",
+      "paragraphs": [
+        "Your language choice is stored locally in your browser until you clear this site’s data. List-layout preferences are remembered in a preference cookie for 14 days. These settings contain no contact details and are not used for cross-site tracking.",
+        "You can clear these preferences in your browser’s site-data settings. The website remains readable without saved preferences."
+      ]
+    },
+    {
+      "title": "Contact and rights requests",
+      "paragraphs": [
+        "The contact form is an inactive preview. Its fields are disabled and it has no submission endpoint. It does not send or save a message. Email links open your own mail application.",
+        "If you email us, your address and message are used to reply and, where relevant, investigate the identified rights concern. Your email provider and the receiving email service also handle the message under their own policies.",
+        "Rights-request correspondence and evidence are kept privately for as long as needed to handle the matter, explain the outcome or meet applicable obligations. We do not publish private messages or identity documents. You may contact us to request correction or deletion; any necessary retention will be explained."
+      ],
+      "links": [
+        {
+          "label": "Receiving email service privacy policy",
+          "href": "https://proton.me/legal/privacy"
+        }
+      ]
+    },
+    {
+      "title": "External links and updates",
+      "paragraphs": [
+        "Following an external link or sending email connects you to the service you choose. This notice covers this website; linked services have their own policies. Material changes to this notice will be reflected in its update date."
+      ]
+    }
+  ],
+  "contactLabel": "Questions about privacy",
+  "properNameFields": [
+    "The website is hosted on GitHub Pages. Scripts, fonts and media are served with the website; the page does not automatically load them from third-party script or font services."
+  ]
+}

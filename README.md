@@ -34,8 +34,37 @@ node scripts/check-pages.mjs
 `build:pages` 和 `check-pages.mjs`，地址需以 `/` 结尾。推送到 `main` 后由
 `.github/workflows/pages.yml` 构建、检查并发布。
 
-每页页脚提供版权声明与联系页链接。完整声明位于 `/copyright/`，
+每页页脚提供版权声明、联系页与隐私说明链接。完整声明位于 `/copyright/`，
 简体中文、繁体中文和日文分别位于对应语言前缀下。
+
+## 权利检查与联系
+
+每次构建会核对 `lib/rights-register.json`、固定素材基线和脚本来源哈希。
+现有待核实素材只允许保留原字节；增加或修改图片/字体必须记录来源、权利依据、
+适用范围、审核人与审核日期。授权到期会阻止构建。`suspended`/`retired` 资源
+不得进入发布目录或页面引用；登记为待核实不代表已取得授权。
+
+运行 `node --test lib/rights.test.mjs` 验证这些防回流条件。
+运行 `node lib/setup-git-hooks.mjs` 安装本仓库的提交邮箱检查；它保留现有姓名、
+邮箱与全局设置，已有其它 hooks 时会要求手动整合。检查作者与提交者邮箱，
+以及将要推送的新提交；持续集成也检查新增提交范围。
+
+权利人可通过 `/copyright/` 的说明及邮箱提出问题。联系页的字段仅展示，全部禁用，
+没有表单提交端点。邮箱链接使用访客自己的邮件程序；本仓库不发送邮件。
+需要用自己的邮箱手动确认联系地址可收件、可回复，并管理邮件服务的账户安全。
+
+处理记录工具为 `node lib/rights-cases.mjs`：
+
+```bash
+node lib/rights-cases.mjs create CR-YYYYMMDD-short-name /private/path/received.json
+node lib/rights-cases.mjs event CR-YYYYMMDD-short-name acknowledged /private/path/acknowledged.json
+node lib/rights-cases.mjs due
+```
+
+工具列出各阶段必填项，要求经过收件、确认、审查、决定、核验处理、通知和结案。
+记录写入被忽略的 `docs/rights-private/`，不要把私人往来或证明材料提交到 Git。
+通知记录只代表你手动发送后登记，不会触发发送。结案90天后提示保留期限复查，
+不会自动删除；附件、邮箱与备份需要另行检查。
 
 第三方代码、字体许可及尚待核实的权属边界见
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。具体许可文本随站发布在
@@ -45,7 +74,8 @@ node scripts/check-pages.mjs
 
 仓库保留 `src/`（模板、内容、四语词表和全部网站资源）、`lib/`（构建期本地化）、
 依赖配置、部署工作流和六个基本脚本。字体许可证保留在 `src/assets/fonts/`。
-网站运行时仍使用模板中声明的外部 JavaScript CDN。
+网站运行时的 JavaScript、字体和媒体均自托管，固定版本脚本的来源与哈希记录在
+`src/assets/vendor/manifest.json`。页面提供四语隐私说明；联系表单停用，使用邮箱联系。
 
 2026-10-12 将过程文档、证据、预览与研究/开发辅助脚本停止 Git 跟踪，原开发目录
 中的文件全部保留。`docs/`、根目录过程文档和其余 `scripts/` 由 `.gitignore` 排除，

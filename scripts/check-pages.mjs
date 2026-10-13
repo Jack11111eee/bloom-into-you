@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { load } from 'cheerio';
 import { ROUTES, LOCALES, localizedPath } from '../lib/i18n.mjs';
+import { validatePublishedRights } from '../lib/rights.mjs';
 
 const site = new URL(process.env.PAGES_URL || 'https://jack11111eee.github.io/bloom-into-you/');
 const base = site.pathname.replace(/\/$/, '');
@@ -80,3 +81,4 @@ for (const output of ['dist', 'dist-pages']) {
 }
 console.log(`PAGES CHECK PASS: ${pages} pages, ${references} references, unchanged copy, four-language routes and metadata`);
 console.log(`LICENSE CHECK PASS: ${licenses.entries.length} complete license/notice copies and rights boundaries in both outputs`);
+console.log(`RIGHTS CHECK PASS: ${validatePublishedRights(root, process.cwd(), site.origin)} registered resources; local runtime, inactive form, pinned vendor bodies and withdrawal checks`);

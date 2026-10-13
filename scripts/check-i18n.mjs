@@ -11,6 +11,7 @@ const essay = JSON.parse(fs.readFileSync('src/_data/aboutEssay.json', 'utf8'));
 const copyright = JSON.parse(fs.readFileSync('src/_data/copyright.json', 'utf8'));
 const site = JSON.parse(fs.readFileSync('src/_data/site.json', 'utf8'));
 const quotationSources = JSON.parse(fs.readFileSync('src/_data/quotationSources.json', 'utf8'));
+const privacy = JSON.parse(fs.readFileSync('src/_data/privacy.json', 'utf8'));
 // H11: remove only the owner's exact work/publisher identifiers from the
 // language-purity check, and only in their registered declaration fields.
 const rightsKeys = ['footerIntro', 'intro', 'affiliation', 'mangaCredit', 'animeCredit'].map(key => copyright[key]);
@@ -26,6 +27,7 @@ for (const locale of LOCALES) {
   // H5: only these three essay fields may retain the author's four fan tokens.
   const essayAsides = new Set([2,4,5].flatMap(i=>essay.paragraphs[i].map(part=>catalog[part.text])));
   const rightsFields = new Set(rightsKeys.map(key => catalog[key]));
+  const privacyNameFields = new Set(privacy.properNameFields.map(key => catalog[key]));
   assert(catalog[copyright.animeCredit] === '©2018 仲谷 鳰／ＫＡＤＯＫＡＷＡ／やがて君になる製作委員会', `${locale.code}: official anime credit changed`);
   for (const route of ROUTES) {
     const url = localizedPath(route, locale.code);
@@ -48,6 +50,7 @@ for (const locale of LOCALES) {
     assert($('.footer-legal').length === 1, `${url}: missing shared copyright notice`);
     assert($('.footer-legal a').eq(0).attr('href') === localizedPath('/copyright/', locale.code), `${url}: wrong copyright link`);
     assert($('.footer-legal a').eq(1).attr('href') === localizedPath('/contact', locale.code), `${url}: lost contact link`);
+    assert($('.footer-legal a').last().attr('href') === localizedPath('/privacy/', locale.code), `${url}: missing privacy link`);
     assert($('.footer-legal .copyright-credit[lang=ja]').text() === copyright.animeCredit, `${url}: wrong footer anime credit`);
     assert($('.footer-legal > p').eq(0).text() === catalog[copyright.footerIntro], `${url}: altered short notice`);
     assert($('.footer-legal > p').eq(2).text() === Object.values(copyright.footerLinks).map(key => catalog[key]).join(''), `${url}: altered legal/contact wording`);
@@ -88,6 +91,7 @@ for (const locale of LOCALES) {
       if (rightsFields.has(value)) languageText = languageText.replace(copyright.animeCredit, '').replaceAll('やがて君になる', '').replaceAll('Bloom Into You', '').replaceAll('KADOKAWA', '');
       // Keep this single registered bibliographic citation in its original script.
       if (value === catalog[quotationSources.englishCitation]) languageText = '';
+      if (privacyNameFields.has(value)) languageText = languageText.replaceAll('GitHub Pages', '');
       assert(locale.code === 'en' ? !/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}\p{Script=Thai}\p{Script=Cyrillic}\p{Script=Greek}]/u.test(languageText) : !/[A-Za-z]/.test(languageText.replace(/[^\s@]+@[^\s@]+\.[^\s@。]+/g, '')), `${url}: foreign-language residue: ${value}`);
     }
     assert($('svg:not([aria-hidden=true])').length === 0 && $('svg title').length===0, `${url}: decorative SVG exposes title`);

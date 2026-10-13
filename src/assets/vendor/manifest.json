@@ -1,0 +1,115 @@
+{
+  "retrievedOn": "2026-10-13",
+  "scripts": [
+    {
+      "file": "/assets/vendor/jquery-3.5.1.min.js",
+      "name": "jQuery",
+      "version": "3.5.1",
+      "source": "https://code.jquery.com/jquery-3.5.1.min.js",
+      "upstreamSha256": "f7f6a5894f1d19ddad6fa392b2ece2c5e578cbf7da4ea805b6885eb6985b6e3d",
+      "upstreamBytes": 89476,
+      "licenseFiles": [
+        "/assets/licenses/jquery-3.5.1.txt",
+        "/assets/licenses/jquery-3.5.1-sizzle.txt"
+      ],
+      "licenseHeaderBytes": 2710,
+      "sha256": "77b145cdf424f72d5ca765a7195d06a755bd61a5d363c61d6c9fc0aec1f9b8e0",
+      "bytes": 92186
+    },
+    {
+      "file": "/assets/vendor/js-cookie-2.2.0.min.js",
+      "name": "js-cookie",
+      "version": "2.2.0",
+      "source": "https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js",
+      "upstreamSha256": "f4db76afeb499d277603609152f9e382c0fe112d44c6f8db8c136a89d9bd7682",
+      "upstreamBytes": 1689,
+      "licenseFiles": [
+        "/assets/licenses/js-cookie-2.2.0.txt"
+      ],
+      "licenseHeaderBytes": 1059,
+      "sha256": "7c31721cb4fec4e647b3f1bc0d3bb587ed6d5f92f13e54facd3374c1eb1ae803",
+      "bytes": 2748
+    },
+    {
+      "file": "/assets/vendor/gsap-3.9.1.min.js",
+      "name": "GSAP",
+      "version": "3.9.1",
+      "source": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js",
+      "upstreamSha256": "6dbe9c2e13cf06c6633ea3fcf6d7bd30452561202a205c75a035cd1d8b93368f",
+      "upstreamBytes": 64148,
+      "licenseFiles": [
+        "/assets/licenses/gsap-3.9.1-package-notice.txt",
+        "/assets/licenses/gsap-standard-license-2025.txt"
+      ],
+      "licenseHeaderBytes": 0,
+      "sha256": "6dbe9c2e13cf06c6633ea3fcf6d7bd30452561202a205c75a035cd1d8b93368f",
+      "bytes": 64148
+    },
+    {
+      "file": "/assets/vendor/ScrollTrigger-3.9.1.min.js",
+      "name": "ScrollTrigger",
+      "version": "3.9.1",
+      "source": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js",
+      "upstreamSha256": "068b6cce4ba0c45621e5c2947ebcc3f6701a90c841ce4f210c935f0047a19ead",
+      "upstreamBytes": 24528,
+      "licenseFiles": [
+        "/assets/licenses/gsap-3.9.1-package-notice.txt",
+        "/assets/licenses/gsap-standard-license-2025.txt"
+      ],
+      "licenseHeaderBytes": 0,
+      "sha256": "068b6cce4ba0c45621e5c2947ebcc3f6701a90c841ce4f210c935f0047a19ead",
+      "bytes": 24528
+    },
+    {
+      "file": "/assets/vendor/barba-core-2.10.3.js",
+      "name": "Barba core",
+      "version": "2.10.3",
+      "source": "https://cdn.jsdelivr.net/npm/@barba/core@2.10.3",
+      "upstreamSha256": "c191c66ccd69a2bdd8121d8451319c668d04efe9a098aff1510cd92d859c74ab",
+      "upstreamBytes": 32095,
+      "licenseFiles": [
+        "/assets/licenses/@barba-core-2.10.3.txt",
+        "/assets/licenses/is-promise-4.0.0.txt",
+        "/assets/licenses/path-to-regexp-6.2.2.txt"
+      ],
+      "licenseHeaderBytes": 3276,
+      "sha256": "f6aa6cc811a45e0c58bedff92776d6f3f460129bef9f39eee48aa05f7002e31e",
+      "bytes": 35371
+    },
+    {
+      "file": "/assets/vendor/lazyload-17.6.1.min.js",
+      "name": "vanilla-lazyload",
+      "version": "17.6.1",
+      "source": "https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.6.1/dist/lazyload.min.js",
+      "upstreamSha256": "958f80903c3b00a541c8fe1fde4dfe88c3c4b5aaed4e7497d2fdd2262f3417da",
+      "upstreamBytes": 8399,
+      "licenseFiles": [
+        "/assets/licenses/vanilla-lazyload-17.6.1.txt"
+      ],
+      "licenseHeaderBytes": 1081,
+      "sha256": "76078290fc40a834f07257496df14ec9d6e484a6449a855d640796e77a313644",
+      "bytes": 9480
+    },
+    {
+      "file": "/assets/js/locomotive-scroll.min.js",
+      "name": "Locomotive Scroll",
+      "version": "4.1.3",
+      "source": "https://registry.npmjs.org/locomotive-scroll/4.1.3",
+      "upstreamSha256": "351253ae16600278c6a8b3f4945424faeb2566b955e4cfb3dde7d61823194005",
+      "upstreamBytes": 47164,
+      "licenseHeaderBytes": 8672,
+      "licenseFiles": [
+        "/assets/licenses/locomotive-scroll-4.1.3.txt",
+        "/assets/licenses/virtual-scroll-1.5.2.txt",
+        "/assets/licenses/bezier-easing-2.1.0.txt",
+        "/assets/licenses/smoothscroll-polyfill-0.4.4.txt",
+        "/assets/licenses/object-assign-4.1.1.txt",
+        "/assets/licenses/tiny-emitter-2.1.0.txt",
+        "/assets/licenses/lethargy-1.0.9.txt",
+        "/assets/licenses/bindall-standalone-1.0.5.txt"
+      ],
+      "sha256": "04e35c12ba67a7a171dbf7858bcd16f59460635b79702b53cfb0795abb38ce0e",
+      "bytes": 55836
+    }
+  ]
+}

@@ -77,34 +77,34 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/contact/index.ht
       </div>
       <div class="row once-in">
          <div class="flex-col">
-            <form class="form" method="post" action="/contact" enctype="multipart/form-data" novalidate="">
+            <div class="form" role="group" aria-label="Contact form preview" data-form-unavailable>
                <div class="website-field">
-                  <input class="field" type="text" id="form-tel" name="tel" tabindex="-1">
+                  <input class="field" type="text" id="form-tel" name="tel" tabindex="-1" disabled>
                </div>
                <div class="form-col">
                   <h5>01</h5>
-                  <label class="label" for="name">What should I call you?</label>
-                  <input class="field" type="text" id="form-name" name="name" value="" required="" placeholder="Your name *">
+                  <label class="label" for="form-name">What should I call you?</label>
+                  <input class="field" type="text" id="form-name" name="name" value="" placeholder="Your name *" disabled>
                                  </div>
                <div class="form-col">
                   <h5>02</h5>
-                  <label class="label" for="email">Where can I write back?</label>
-                  <input class="field" type="email" id="form-email" name="email" value="" required="" placeholder="Your email address *">
+                  <label class="label" for="form-email">Where can I write back?</label>
+                  <input class="field" type="email" id="form-email" name="email" value="" placeholder="Your email address *" disabled>
                                  </div>
                <div class="form-col">
                   <h5>03</h5>
-                  <label class="label" for="company">Which part stayed with you?</label>
-                  <input class="field" type="text" id="form-company" name="company" value="" required="" placeholder="A character, a scene, or a small detail *">
+                  <label class="label" for="form-company">Which part stayed with you?</label>
+                  <input class="field" type="text" id="form-company" name="company" value="" placeholder="A character, a scene, or a small detail *" disabled>
                                  </div>
                <div class="form-col">
                   <h5>04</h5>
-                  <label class="label" for="service">What would you like to share?</label>
-                  <input class="field" type="text" id="form-service" name="service" value="" required="" placeholder="A reading, a question, or an image credit *">
+                  <label class="label" for="form-service">What would you like to share?</label>
+                  <input class="field" type="text" id="form-service" name="service" value="" placeholder="A reading, a question, or an image credit *" disabled>
                                  </div>
                <div class="form-col">
                   <h5>05</h5>
-                  <label class="label" for="message">Leave me a few words</label>
-                  <textarea class="field" type="text" id="form-message" name="message" rows="8" required="" placeholder="Take your time. What would you like to tell me? *"></textarea>
+                  <label class="label" for="form-message">Leave me a few words</label>
+                  <textarea class="field" id="form-message" name="message" rows="8" placeholder="Take your time. What would you like to tell me? *" disabled></textarea>
                                  </div>
                <div class="btn-contact-send">
                   <div class="btn btn-round" data-scroll="" data-scroll-speed="2" data-scroll-offset="-50%, 0%">
@@ -121,10 +121,11 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/contact/index.ht
                      </div>
                   </div>
                </div>
-            </form>
+            </div>
             {# 表单未接通时的诚实出口（`docs/copy-proposal.md` §10.2）——
                一个可用的动作 + 一句说明，替代"提交了却什么也没发生"。 #}
             <p class="small">The form is not connected yet. Please write by email.</p>
+            <p class="small">The preview fields are disabled and do not send or save a message. Email opens your own mail application.</p>
             <div class="btn btn-normal">
                <a href="mailto:jackkkkk1e@proton.me" class="btn-click magnetic" data-strength="25" data-strength-text="15">
                   <div class="btn-fill"></div>
