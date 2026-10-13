@@ -112,6 +112,20 @@
       "navActive": null,
       "fixedNavActive": null,
       "floatImages": null
+    },
+    "imageSources": {
+      "file": null,
+      "ns": "imageSources",
+      "cursorMode": "none",
+      "cursorSpan": null,
+      "title": "Image sources — Bloom Into You",
+      "description": "Recorded same-image web references for this unofficial fan website. Source links do not establish reuse permission.",
+      "ogImage": "/assets/img/share-card.png",
+      "canonical": "/image-sources/",
+      "loaderActive": 22,
+      "navActive": null,
+      "fixedNavActive": null,
+      "floatImages": null
     }
   }
 }

@@ -13,6 +13,9 @@ const site = JSON.parse(fs.readFileSync('src/_data/site.json', 'utf8'));
 const quotationSources = JSON.parse(fs.readFileSync('src/_data/quotationSources.json', 'utf8'));
 const privacy = JSON.parse(fs.readFileSync('src/_data/privacy.json', 'utf8'));
 const contentLicense = JSON.parse(fs.readFileSync('src/_data/contentLicense.json', 'utf8'));
+const imageSources = JSON.parse(fs.readFileSync('src/_data/imageSources.json', 'utf8'));
+const imageSourceEntries = imageSources.groups.flatMap(group => group.entries);
+const imageSourceIds = new Set(imageSourceEntries.map(entry => entry.id));
 // H11: remove only the owner's exact work/publisher identifiers from the
 // language-purity check, and only in their registered declaration fields.
 const rightsKeys = ['footerIntro', 'intro', 'affiliation', 'mangaCredit', 'animeCredit'].map(key => copyright[key]);
@@ -52,6 +55,7 @@ for (const locale of LOCALES) {
     assert($('.footer-legal a').eq(0).attr('href') === localizedPath('/copyright/', locale.code), `${url}: wrong copyright link`);
     assert($('.footer-legal a').eq(1).attr('href') === localizedPath('/contact', locale.code), `${url}: lost contact link`);
     assert($('.footer-legal a').last().attr('href') === localizedPath('/privacy/', locale.code), `${url}: missing privacy link`);
+    assert($('.footer-legal a').toArray().every(node => node.attribs.href !== localizedPath('/image-sources/', locale.code)), `${url}: source index must not be linked in ordinary footers`);
     assert($('.footer-legal .copyright-credit[lang=ja]').text() === copyright.animeCredit, `${url}: wrong footer anime credit`);
     assert($('.footer-legal > p').eq(0).text() === catalog[copyright.footerIntro], `${url}: altered short notice`);
     assert($('.footer-legal > p').eq(2).text() === Object.values(copyright.footerLinks).map(key => catalog[key]).join(''), `${url}: altered legal/contact wording`);
@@ -64,6 +68,17 @@ for (const locale of LOCALES) {
       assert($('.content-license-reading .license-identifier').text() === contentLicense.identifier, `${url}: wrong content licence identifier`);
       assert($('.content-license-reading .license-identifier').attr('href') === contentLicense.legalUrl, `${url}: wrong CC terms link`);
       assert($('.content-license-reading a').last().attr('href') === '/assets/licenses/CONTENT-LICENSING.md', `${url}: missing article scope and exclusions`);
+      assert($('.rights-reading > p').last().find('a').attr('href') === localizedPath('/image-sources/', locale.code), `${url}: source index must be at the bottom of the copyright page`);
+    }
+    if (route === '/image-sources/') {
+      assert($('.image-source-entry').length === imageSourceEntries.length, `${url}: source entry count mismatch`);
+      for (const entry of imageSourceEntries) {
+        const item = $(`.image-source-entry[data-source-id="${entry.id}"]`);
+        assert(item.find('.image-source-id').text() === entry.id, `${url}: wrong source identifier`);
+        assert(item.find('.site-image-link').attr('href') === entry.asset, `${url}: wrong local image`);
+        assert(JSON.stringify(item.find('.source-page-link').map((_, node) => node.attribs.href).get()) === JSON.stringify([entry.sourcePage, ...entry.additionalPages]), `${url}: wrong source-page references`);
+        assert(item.find('a').toArray().every(node => node.attribs.target === '_blank' && node.attribs.rel === 'noopener noreferrer' && Object.hasOwn(node.attribs, 'data-barba-prevent')), `${url}: unsafe image reference navigation`);
+      }
     }
     const opening = ['终将成为你', '終將成為妳', 'やがて君になる', 'Bloom Into You', '이윽고 네가 된다', 'Gdy zakwitnie w nas miłość', 'В конечном счёте я стану твоей', 'Θα γίνω τελικά εσύ', 'ท้ายที่สุดฉันจะกลายเป็นเธอ'];
     assert(JSON.stringify($('.loading-words > h2.home-active, .loading-words > h2.home-active-last').map((_,e)=>$(e).text().trim()).get()) === JSON.stringify(opening), `${url}: original multilingual home opening changed`);
@@ -98,6 +113,8 @@ for (const locale of LOCALES) {
       if (value === catalog[quotationSources.englishCitation]) languageText = '';
       if (privacyNameFields.has(value)) languageText = languageText.replaceAll('GitHub Pages', '');
       if (value === catalog[contentLicense.identifier]) languageText = '';
+      // Only registered image identifiers on this page retain their literal spelling.
+      if (route === '/image-sources/' && imageSourceIds.has(value)) languageText = '';
       assert(locale.code === 'en' ? !/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}\p{Script=Thai}\p{Script=Cyrillic}\p{Script=Greek}]/u.test(languageText) : !/[A-Za-z]/.test(languageText.replace(/[^\s@]+@[^\s@]+\.[^\s@。]+/g, '')), `${url}: foreign-language residue: ${value}`);
     }
     assert($('svg:not([aria-hidden=true])').length === 0 && $('svg title').length===0, `${url}: decorative SVG exposes title`);

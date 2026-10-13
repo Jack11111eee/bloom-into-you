@@ -1,0 +1,473 @@
+{
+  "title": "Image sources",
+  "updated": "Source references recorded on 13 October 2026.",
+  "intro": "These links identify matching images recorded in a source audit. They are references to existing web pages, not proof of where this site originally acquired a file or permission to reproduce it.",
+  "limitations": "Some references are reposts, product photographs or cropped previews. Matching images may differ in crop, text, size or AI enhancement. Rights holders and permission for public website and source-code distribution remain unconfirmed.",
+  "coverage": "Only recorded same-image references are listed. Adjacent-frame candidates and unconfirmed matches are omitted.",
+  "imageLabel": "Image on this site",
+  "sourceLabel": "Matching-image page",
+  "alternativeLabel": "Another matching-image page",
+  "backLabel": "Back to copyright notice",
+  "entryLabel": "View image sources",
+  "groups": [
+    {
+      "heading": "Gallery",
+      "entries": [
+        {
+          "id": "gallery-full-1.jpg",
+          "asset": "/media/pages/gallery/gallery-full-1.jpg",
+          "variants": [
+            "/media/pages/gallery/gallery-full-1-540x.jpg",
+            "/media/pages/gallery/gallery-full-1.jpg"
+          ],
+          "sourcePage": "https://anihonetwallpaper.com/tag/%E3%82%84%E3%81%8C%E5%90%9Bpc%E5%A3%81%E7%B4%99",
+          "imageUrl": "https://anihonetwallpaper.com/image/2018/10/46295-YagaKimi-PC-Wallpaper.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "gallery-device-1.jpg",
+          "asset": "/media/pages/gallery/gallery-device-1.jpg",
+          "variants": [
+            "/media/pages/gallery/gallery-device-1-540x.jpg",
+            "/media/pages/gallery/gallery-device-1.jpg"
+          ],
+          "sourcePage": "https://www.suruga-ya.jp/product/detail/873049987",
+          "imageUrl": "https://www.suruga-ya.jp/database/pics_light/game/873049987.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "gallery-mobile-1a.jpg",
+          "asset": "/media/pages/gallery/gallery-mobile-1a.jpg",
+          "variants": [
+            "/media/pages/gallery/gallery-mobile-1a-540x.jpg",
+            "/media/pages/gallery/gallery-mobile-1a.jpg"
+          ],
+          "sourcePage": "https://wall.alphacoders.com/big.php?i=1178783",
+          "imageUrl": "https://images6.alphacoders.com/117/1178783.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "gallery-mobile-1b.jpg",
+          "asset": "/media/pages/gallery/gallery-mobile-1b.jpg",
+          "variants": [
+            "/media/pages/gallery/gallery-mobile-1b-540x.jpg",
+            "/media/pages/gallery/gallery-mobile-1b.jpg"
+          ],
+          "sourcePage": "https://www.zerochan.net/3136449",
+          "imageUrl": "https://s1.zerochan.net/Yagate.Kimi.ni.Naru.600.3136449.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "gallery-mobile-2b.jpg",
+          "asset": "/media/pages/gallery/gallery-mobile-2b.jpg",
+          "variants": [
+            "/media/pages/gallery/gallery-mobile-2b-540x.jpg",
+            "/media/pages/gallery/gallery-mobile-2b.jpg"
+          ],
+          "sourcePage": "https://www.zerochan.net/3142324",
+          "imageUrl": "https://static.zerochan.net/Yagate.Kimi.ni.Naru.full.3142324.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "gallery-mobile-2c.jpg",
+          "asset": "/media/pages/gallery/gallery-mobile-2c.jpg",
+          "variants": [
+            "/media/pages/gallery/gallery-mobile-2c-540x.jpg",
+            "/media/pages/gallery/gallery-mobile-2c.jpg"
+          ],
+          "sourcePage": "https://www.zerochan.net/3166045",
+          "imageUrl": "https://static.zerochan.net/Yagate.Kimi.ni.Naru.full.3166045.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "gallery-mobile-3a.jpg",
+          "asset": "/media/pages/gallery/gallery-mobile-3a.jpg",
+          "variants": [
+            "/media/pages/gallery/gallery-mobile-3a-540x.jpg",
+            "/media/pages/gallery/gallery-mobile-3a.jpg"
+          ],
+          "sourcePage": "https://wall.alphacoders.com/big.php?i=1178759",
+          "imageUrl": "https://images2.alphacoders.com/117/1178759.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": [],
+          "auditPage": "https://wall.alphacoders.com/big.php?i=1178806"
+        },
+        {
+          "id": "gallery-mobile-3b.jpg",
+          "asset": "/media/pages/gallery/gallery-mobile-3b.jpg",
+          "variants": [
+            "/media/pages/gallery/gallery-mobile-3b-540x.jpg",
+            "/media/pages/gallery/gallery-mobile-3b.jpg"
+          ],
+          "sourcePage": "https://www.pinterest.com/pin/700943129500974632/",
+          "imageUrl": "https://i.pinimg.com/736x/e2/a0/a5/e2a0a5c1e2357c7d3d839cee2b0fcf50.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "gallery-full-2.jpg",
+          "asset": "/media/pages/gallery/gallery-full-2.jpg",
+          "variants": [
+            "/media/pages/gallery/gallery-full-2-540x.jpg",
+            "/media/pages/gallery/gallery-full-2.jpg"
+          ],
+          "sourcePage": "https://m.imdb.com/es/title/tt8993464/episodes/",
+          "imageUrl": "https://m.media-amazon.com/images/M/MV5BNWJhNGNmYzctNWQ4Zi00NTcwLWEzZTktNzk5MzBkOWEzYzZlXkEyXkFqcGc%40._V1_.jpg",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": [
+            "https://www.timeoutmexico.mx/ciudad-de-mexico/gay-y-lesbico/top-10-animes-lgbttti"
+          ]
+        },
+        {
+          "id": "gallery-full-3.jpg",
+          "asset": "/media/pages/gallery/gallery-full-3.jpg",
+          "variants": [
+            "/media/pages/gallery/gallery-full-3-540x.jpg",
+            "/media/pages/gallery/gallery-full-3.jpg"
+          ],
+          "sourcePage": "https://tnhelearning.edu.vn/anime-lesbian-wallpaper/",
+          "imageUrl": "https://wallpapers.com/images/hd/anime-lesbians-constellation-art-jlltg2p72npi0mi8.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "G1-A",
+          "asset": "/media/replacements/g1-a-1280w.webp",
+          "variants": [
+            "/media/replacements/g1-a-1280w.webp",
+            "/media/replacements/g1-a-1920w.webp",
+            "/media/replacements/g1-a-2560w.webp",
+            "/media/replacements/g1-a-640w.webp",
+            "/media/replacements/g1-a-960w.webp"
+          ],
+          "sourcePage": "https://www.animeclick.it/anime/24261/yagate-kimi-ni-naru",
+          "imageUrl": "https://www.animeclick.it/immagini/anime/Yagate_Kimi_ni_Naru/gallery_original/Yagate_Kimi_ni_Naru-5bb91dc8ea674.jpg",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "G1-B",
+          "asset": "/media/replacements/g1-b-1280w.webp",
+          "variants": [
+            "/media/replacements/g1-b-1280w.webp",
+            "/media/replacements/g1-b-1920w.webp",
+            "/media/replacements/g1-b-2560w.webp",
+            "/media/replacements/g1-b-640w.webp",
+            "/media/replacements/g1-b-960w.webp"
+          ],
+          "sourcePage": "https://ddnavi.com/article/d492338/a/",
+          "imageUrl": "https://ddnavi.com/uploads/2018/10/01_still_0029.jpg",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "G2-A",
+          "asset": "/media/replacements/g2-a-1280w.webp",
+          "variants": [
+            "/media/replacements/g2-a-1280w.webp",
+            "/media/replacements/g2-a-1920w.webp",
+            "/media/replacements/g2-a-2560w.webp",
+            "/media/replacements/g2-a-640w.webp",
+            "/media/replacements/g2-a-960w.webp"
+          ],
+          "sourcePage": "https://www.reddit.com/r/anime/comments/1n7scz2/",
+          "imageUrl": "https://i.imgur.com/WgzGZr1.png",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        }
+      ]
+    },
+    {
+      "heading": "Sayaka Saeki",
+      "entries": [
+        {
+          "id": "sayaka-overlay-1.jpg",
+          "asset": "/media/pages/characters/sayaka/sayaka-overlay-1.jpg",
+          "variants": [
+            "/media/pages/characters/sayaka/sayaka-overlay-1-540x.jpg",
+            "/media/pages/characters/sayaka/sayaka-overlay-1.jpg"
+          ],
+          "sourcePage": "https://dengekibunko.jp/product/yagakimi/321807000013.html",
+          "imageUrl": "https://dengekibunko.jp/archives/003/201811/e0d45bf06ea7b3205e06a1e639c60f04.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "S2-A",
+          "asset": "/media/replacements/s2-a-1280w.webp",
+          "variants": [
+            "/media/replacements/s2-a-1280w.webp",
+            "/media/replacements/s2-a-1920w.webp",
+            "/media/replacements/s2-a-2360w.webp",
+            "/media/replacements/s2-a-640w.webp",
+            "/media/replacements/s2-a-960w.webp"
+          ],
+          "sourcePage": "https://anisoku01.hatenadiary.jp/entry/2019/05/03/131057",
+          "imageUrl": "https://cdn-ak.f.st-hatena.com/images/fotolife/a/anisoku01/20190503/20190503105118.jpg",
+          "matching": "Matching manga panel",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        }
+      ]
+    },
+    {
+      "heading": "Yuu & Touko",
+      "entries": [
+        {
+          "id": "yuu-touko-intro.jpg",
+          "asset": "/media/pages/insights/yuu-touko/yuu-touko-intro.jpg",
+          "variants": [
+            "/media/pages/insights/yuu-touko/yuu-touko-intro-540x.jpg",
+            "/media/pages/insights/yuu-touko/yuu-touko-intro.jpg"
+          ],
+          "sourcePage": "https://gnn.gamer.com.tw/detail.php?sn=169624",
+          "imageUrl": "https://p2.bahamut.com.tw/B/2KU/44/6daf8966ec8ab7300472c27ff512m2w5.JPG",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "yuu-touko-overlay-1.jpg",
+          "asset": "/media/pages/insights/yuu-touko/yuu-touko-overlay-1.jpg",
+          "variants": [
+            "/media/pages/insights/yuu-touko/yuu-touko-overlay-1-540x.jpg",
+            "/media/pages/insights/yuu-touko/yuu-touko-overlay-1.jpg"
+          ],
+          "sourcePage": "https://www.zerochan.net/3144923",
+          "imageUrl": "https://static.zerochan.net/Yagate.Kimi.ni.Naru.full.3144923.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "YT1-A",
+          "asset": "/media/replacements/yt1-a-1280w.webp",
+          "variants": [
+            "/media/replacements/yt1-a-1280w.webp",
+            "/media/replacements/yt1-a-1920w.webp",
+            "/media/replacements/yt1-a-2560w.webp",
+            "/media/replacements/yt1-a-640w.webp",
+            "/media/replacements/yt1-a-960w.webp"
+          ],
+          "sourcePage": "https://www.animatetimes.com/news/details.php?id=1539844556",
+          "imageUrl": "https://img.animatetimes.com/news/visual/2018/1539844556/1539845303777.jpg",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "YT2-A",
+          "asset": "/media/replacements/yt2-a-1280w.webp",
+          "variants": [
+            "/media/replacements/yt2-a-1280w.webp",
+            "/media/replacements/yt2-a-1920w.webp",
+            "/media/replacements/yt2-a-2560w.webp",
+            "/media/replacements/yt2-a-640w.webp",
+            "/media/replacements/yt2-a-960w.webp"
+          ],
+          "sourcePage": "https://laquari.hatenablog.jp/entry/2019/01/21/162809",
+          "imageUrl": "https://cdn-ak.f.st-hatena.com/images/fotolife/l/laquari/20190530/20190530165055.png",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "YT2-B",
+          "asset": "/media/replacements/yt2-b-1280w.webp",
+          "variants": [
+            "/media/replacements/yt2-b-1280w.webp",
+            "/media/replacements/yt2-b-1920w.webp",
+            "/media/replacements/yt2-b-2560w.webp",
+            "/media/replacements/yt2-b-640w.webp",
+            "/media/replacements/yt2-b-960w.webp"
+          ],
+          "sourcePage": "https://anime21.blog.br/2018/11/09/yagate-kimi-ni-naru-ep-5-como-a-yuu-se-veria/",
+          "imageUrl": "https://static.anime21.blog.br/2018/11/Yagate-Kimi-ni-Naru-5_4-1200x675-cropped.png",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        }
+      ]
+    },
+    {
+      "heading": "Touko & Sayaka",
+      "entries": [
+        {
+          "id": "touko-sayaka-overlay-1.jpg",
+          "asset": "/media/pages/insights/touko-sayaka/touko-sayaka-overlay-1.jpg",
+          "variants": [
+            "/media/pages/insights/touko-sayaka/touko-sayaka-overlay-1-540x.jpg",
+            "/media/pages/insights/touko-sayaka/touko-sayaka-overlay-1.jpg"
+          ],
+          "sourcePage": "https://wall.alphacoders.com/big.php?i=1178778",
+          "imageUrl": "https://images2.alphacoders.com/117/thumb-1920-1178778.jpg",
+          "matching": "Matching illustration",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "TS1-A",
+          "asset": "/media/replacements/ts1-a-1280w.webp",
+          "variants": [
+            "/media/replacements/ts1-a-1280w.webp",
+            "/media/replacements/ts1-a-1920w.webp",
+            "/media/replacements/ts1-a-2560w.webp",
+            "/media/replacements/ts1-a-640w.webp",
+            "/media/replacements/ts1-a-960w.webp"
+          ],
+          "sourcePage": "https://anisoku01.hatenadiary.jp/entry/2019/05/03/131057",
+          "imageUrl": "https://cdn-ak.f.st-hatena.com/images/fotolife/a/anisoku01/20190503/20190503105118.jpg",
+          "matching": "Matching manga panel",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "TS2-A",
+          "asset": "/media/replacements/ts2-a-1280w.webp",
+          "variants": [
+            "/media/replacements/ts2-a-1280w.webp",
+            "/media/replacements/ts2-a-1920w.webp",
+            "/media/replacements/ts2-a-2560w.webp",
+            "/media/replacements/ts2-a-640w.webp",
+            "/media/replacements/ts2-a-960w.webp"
+          ],
+          "sourcePage": "https://zuka-poke.hatenablog.com/entry/2018/11/21/154212",
+          "imageUrl": "https://cdn-ak.f.st-hatena.com/images/fotolife/z/zuka_poke/20181121/20181121124453.jpg",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        }
+      ]
+    },
+    {
+      "heading": "Yuu Koito",
+      "entries": [
+        {
+          "id": "Y2-A",
+          "asset": "/media/replacements/y2-a-1280w.webp",
+          "variants": [
+            "/media/replacements/y2-a-1280w.webp",
+            "/media/replacements/y2-a-1920w.webp",
+            "/media/replacements/y2-a-2560w.webp",
+            "/media/replacements/y2-a-640w.webp",
+            "/media/replacements/y2-a-960w.webp"
+          ],
+          "sourcePage": "https://www.m6.fr/bloom-into-you-p_27539/episode-6-des-mots-enfermes-c_13147225",
+          "imageUrl": "https://images-fio.6play.fr/v2/images/4764134/raw?auto=avif&blur=0&fit=scale_crop&hash=0eb82a4ec790ab2330e6bff5bda30960e17ef5cc&height=630&interlace=1&optimize=high&width=1200",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        },
+        {
+          "id": "Y2-B",
+          "asset": "/media/replacements/y2-b-1280w.webp",
+          "variants": [
+            "/media/replacements/y2-b-1280w.webp",
+            "/media/replacements/y2-b-1920w.webp",
+            "/media/replacements/y2-b-2560w.webp",
+            "/media/replacements/y2-b-640w.webp",
+            "/media/replacements/y2-b-960w.webp"
+          ],
+          "sourcePage": "https://anime21.blog.br/2018/11/18/yagate-kimi-ni-naru-ep-6-o-rio/",
+          "imageUrl": "https://static.anime21.blog.br/2018/11/Yagate-Kimi-ni-Naru-6_3.png",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        }
+      ]
+    },
+    {
+      "heading": "Touko Nanami",
+      "entries": [
+        {
+          "id": "T1-A",
+          "asset": "/media/replacements/t1-a-1280w.webp",
+          "variants": [
+            "/media/replacements/t1-a-1280w.webp",
+            "/media/replacements/t1-a-1920w.webp",
+            "/media/replacements/t1-a-2560w.webp",
+            "/media/replacements/t1-a-640w.webp",
+            "/media/replacements/t1-a-960w.webp"
+          ],
+          "sourcePage": "https://anitubu.com/archives/post-17642.html",
+          "imageUrl": "https://pbs.twimg.com/media/Du8bEPgUcAE6cIb.jpg",
+          "matching": "Matching animation frame",
+          "permission": "unconfirmed",
+          "provenance": "user-supplied-same-image-audit",
+          "recordedOn": "2026-10-13",
+          "additionalPages": []
+        }
+      ]
+    }
+  ]
+}

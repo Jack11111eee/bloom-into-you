@@ -1,0 +1,37 @@
+---
+ns: imageSources
+pagination:
+  data: locales
+  size: 1
+  alias: language
+permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/image-sources/index.html"
+---
+<header class="section default-header copyright-header" data-scroll-section="">
+   {% include "partials/nav-bar.njk" %}
+   <div class="container medium once-in">
+      <div class="row"><div class="flex-col"><h1 id="image-sources-title">{{ imageSources.title }}</h1></div></div>
+   </div>
+</header>
+<section class="section copyright-content" data-scroll-section="">
+   <div class="container medium">
+      <article class="privacy-reading image-sources-reading" aria-labelledby="image-sources-title">
+         <p>{{ imageSources.updated }}</p>
+         <p>{{ imageSources.intro }}</p>
+         <p>{{ imageSources.limitations }}</p>
+         <p>{{ imageSources.coverage }}</p>
+         {% for group in imageSources.groups %}
+         <h2>{{ group.heading }}</h2>
+         <ul class="image-source-list">
+            {% for entry in group.entries %}
+            <li class="image-source-entry" data-source-id="{{ entry.id }}">
+               <p><span class="image-source-id">{{ entry.id }}</span><br><span>{{ entry.matching }}</span></p>
+               <p><a class="site-image-link" href="{{ entry.asset }}" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ imageSources.imageLabel }}</a> · <a class="source-page-link" href="{{ entry.sourcePage }}" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ imageSources.sourceLabel }}</a>{% for href in entry.additionalPages %} · <a class="source-page-link" href="{{ href }}" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ imageSources.alternativeLabel }}</a>{% endfor %}</p>
+            </li>
+            {% endfor %}
+         </ul>
+         {% endfor %}
+         <p><a href="/copyright/">{{ imageSources.backLabel }}</a></p>
+      </article>
+   </div>
+</section>
+{% include "partials/footer-contact.njk" %}

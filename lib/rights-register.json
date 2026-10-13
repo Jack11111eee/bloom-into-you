@@ -4603,6 +4603,45 @@
       "reviewedOn": "2026-10-13",
       "licenseUrl": "https://github.com/adobe-fonts/source-han-serif/blob/7889f11bf31170b5d092a083b357c8c8130f89e0/LICENSE.txt",
       "licenseFile": "/assets/fonts/reading/source-han-license.txt"
+    },
+    {
+      "path": "src/assets/fonts/reading/serif-zh-cn-sources.woff2",
+      "sha256": "fa5a2bd387200f0dd292caf22bea185f2dda6cca67932181547309bd12eeabc0",
+      "status": "approved",
+      "basis": "license",
+      "author": "Adobe / Source Han Serif contributors",
+      "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/7889f11bf31170b5d092a083b357c8c8130f89e0/Variable/WOFF2/OTF/SourceHanSerifSC-VF.otf.woff2",
+      "scope": "OFL web subset, renamed; additional image-source headings only",
+      "reviewedBy": "site-maintainer",
+      "reviewedOn": "2026-10-13",
+      "licenseUrl": "https://github.com/adobe-fonts/source-han-serif/blob/7889f11bf31170b5d092a083b357c8c8130f89e0/LICENSE.txt",
+      "licenseFile": "/assets/fonts/reading/source-han-license.txt"
+    },
+    {
+      "path": "src/assets/fonts/reading/serif-zh-tw-sources.woff2",
+      "sha256": "52d91d75398ac63071410d036a6903e202b328f17e60cde5a109421ee4abb21f",
+      "status": "approved",
+      "basis": "license",
+      "author": "Adobe / Source Han Serif contributors",
+      "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/7889f11bf31170b5d092a083b357c8c8130f89e0/Variable/WOFF2/OTF/SourceHanSerifTC-VF.otf.woff2",
+      "scope": "OFL web subset, renamed; additional image-source headings only",
+      "reviewedBy": "site-maintainer",
+      "reviewedOn": "2026-10-13",
+      "licenseUrl": "https://github.com/adobe-fonts/source-han-serif/blob/7889f11bf31170b5d092a083b357c8c8130f89e0/LICENSE.txt",
+      "licenseFile": "/assets/fonts/reading/source-han-license.txt"
+    },
+    {
+      "path": "src/assets/fonts/reading/serif-ja-sources.woff2",
+      "sha256": "9826310e734aaa6f024e041f112768937cff1677ca34622c8f79cdbd9ef887f6",
+      "status": "approved",
+      "basis": "license",
+      "author": "Adobe / Source Han Serif contributors",
+      "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/7889f11bf31170b5d092a083b357c8c8130f89e0/Variable/WOFF2/OTF/SourceHanSerif-VF.otf.woff2",
+      "scope": "OFL web subset, renamed; additional image-source headings only",
+      "reviewedBy": "site-maintainer",
+      "reviewedOn": "2026-10-13",
+      "licenseUrl": "https://github.com/adobe-fonts/source-han-serif/blob/7889f11bf31170b5d092a083b357c8c8130f89e0/LICENSE.txt",
+      "licenseFile": "/assets/fonts/reading/source-han-license.txt"
     }
   ]
 }

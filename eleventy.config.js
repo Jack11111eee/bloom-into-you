@@ -10,12 +10,14 @@ import { localizeHtml, clearCatalogCache } from './lib/i18n.mjs';
 import { rmSync } from 'node:fs';
 import path from 'node:path';
 import { validateRightsSources, validatePublishedRights } from './lib/rights.mjs';
+import { validateImageSources } from './lib/image-sources.mjs';
 
 export default function (eleventyConfig) {
   eleventyConfig.setQuietMode(true);
   let withdrawn = new Set();
   eleventyConfig.on('eleventy.before', () => {
     const policy = validateRightsSources();
+    validateImageSources(process.cwd(), policy);
     withdrawn = new Set(policy.assets.filter(entry => ['retired', 'suspended'].includes(entry.status)).map(entry => entry.path.slice(4)));
   });
   eleventyConfig.on('eleventy.before', clearCatalogCache);
