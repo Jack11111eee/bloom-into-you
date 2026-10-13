@@ -685,39 +685,47 @@
     "src": "/media/replacements/t2-c-1280w.webp",
     "width": 1280,
     "height": 960,
-    "bytes": 167696,
+    "bytes": 174242,
     "variants": [
       {
         "src": "/media/replacements/t2-c-640w.webp",
         "width": 640,
         "height": 480,
-        "bytes": 63326
+        "bytes": 65058
       },
       {
         "src": "/media/replacements/t2-c-960w.webp",
         "width": 960,
         "height": 720,
-        "bytes": 112528
+        "bytes": 113860
       },
       {
         "src": "/media/replacements/t2-c-1280w.webp",
         "width": 1280,
         "height": 960,
-        "bytes": 167696
+        "bytes": 174242
       },
       {
         "src": "/media/replacements/t2-c-1920w.webp",
         "width": 1920,
         "height": 1440,
-        "bytes": 292142
+        "bytes": 293778
       },
       {
         "src": "/media/replacements/t2-c-2560w.webp",
         "width": 2560,
         "height": 1920,
-        "bytes": 411874
+        "bytes": 412550
       }
-    ]
+    ],
+    "presentationEdit": {
+      "operation": "remove-dialogue-and-balloons",
+      "inputPublishedSha256": "d1ab780f876c666acd71fce8a4eb5ccd6d8f4409ab2063006e2760d3e466f920",
+      "editedMasterSha256": "a13bcde57d5acaff6c736f3b770b9aa2823ec9b9ad4c8fa836c417bfb4150fe2",
+      "editedMasterWidth": 2560,
+      "editedMasterHeight": 1920,
+      "originalCropAndFramingPreserved": true
+    }
   },
   "S1-A": {
     "source": "S1-A.png",
@@ -925,39 +933,47 @@
     "src": "/media/replacements/yt1-b-1280w.webp",
     "width": 1280,
     "height": 854,
-    "bytes": 118848,
+    "bytes": 115352,
     "variants": [
       {
         "src": "/media/replacements/yt1-b-640w.webp",
         "width": 640,
         "height": 427,
-        "bytes": 44320
+        "bytes": 41792
       },
       {
         "src": "/media/replacements/yt1-b-960w.webp",
         "width": 960,
         "height": 640,
-        "bytes": 78802
+        "bytes": 74154
       },
       {
         "src": "/media/replacements/yt1-b-1280w.webp",
         "width": 1280,
         "height": 854,
-        "bytes": 118848
+        "bytes": 115352
       },
       {
         "src": "/media/replacements/yt1-b-1920w.webp",
         "width": 1920,
         "height": 1280,
-        "bytes": 209164
+        "bytes": 195882
       },
       {
         "src": "/media/replacements/yt1-b-2560w.webp",
         "width": 2560,
         "height": 1707,
-        "bytes": 300566
+        "bytes": 279210
       }
-    ]
+    ],
+    "presentationEdit": {
+      "operation": "remove-dialogue-and-balloons",
+      "inputPublishedSha256": "3e187e14250ea6315bb0162bdb06c8c7a75ce3b6edd4a93fd98f65193b32517e",
+      "editedMasterSha256": "f69fc932e766b9d9892871423293eb2514df68a2270905518028921eeac69c66",
+      "editedMasterWidth": 2560,
+      "editedMasterHeight": 1707,
+      "originalCropAndFramingPreserved": true
+    }
   },
   "YT1-C": {
     "source": "YT1-C.png",
@@ -1165,39 +1181,47 @@
     "src": "/media/replacements/ts1-a-1280w.webp",
     "width": 1280,
     "height": 854,
-    "bytes": 91634,
+    "bytes": 80308,
     "variants": [
       {
         "src": "/media/replacements/ts1-a-640w.webp",
         "width": 640,
         "height": 427,
-        "bytes": 34828
+        "bytes": 30970
       },
       {
         "src": "/media/replacements/ts1-a-960w.webp",
         "width": 960,
         "height": 640,
-        "bytes": 62178
+        "bytes": 55210
       },
       {
         "src": "/media/replacements/ts1-a-1280w.webp",
         "width": 1280,
         "height": 854,
-        "bytes": 91634
+        "bytes": 80308
       },
       {
         "src": "/media/replacements/ts1-a-1920w.webp",
         "width": 1920,
         "height": 1280,
-        "bytes": 161934
+        "bytes": 140240
       },
       {
         "src": "/media/replacements/ts1-a-2560w.webp",
         "width": 2560,
         "height": 1707,
-        "bytes": 254070
+        "bytes": 228076
       }
-    ]
+    ],
+    "presentationEdit": {
+      "operation": "remove-dialogue-and-balloons",
+      "inputPublishedSha256": "29a15eecd9373df169e7b39f044e23b33092e0d83058e5270eb1c0763c1e6907",
+      "editedMasterSha256": "155bf47889cfe15d01a137284fc30427f5e361f78dc97e859c24f085bd54bebf",
+      "editedMasterWidth": 2560,
+      "editedMasterHeight": 1707,
+      "originalCropAndFramingPreserved": true
+    }
   },
   "TS2-A": {
     "source": "TS2-A.png",

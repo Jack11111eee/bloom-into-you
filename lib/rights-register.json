@@ -539,53 +539,133 @@
     },
     {
       "path": "src/media/replacements/t2-c-1280w.webp",
-      "sha256": "97476dd57a535e2821c2048219406f3fb1fb5ca3f1f8e149a904e897fe682a04",
-      "status": "legacy-unverified"
+      "sha256": "870d31cf657388ac5cd68de4137c096b80f7ea38496e24eb03620dd918d64e42",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "97476dd57a535e2821c2048219406f3fb1fb5ca3f1f8e149a904e897fe682a04",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/t2-c-1920w.webp",
-      "sha256": "111a0741b61fbbbceb44d6734bf567e977fc88637d1f8f3816d75c643a72977a",
-      "status": "legacy-unverified"
+      "sha256": "80c712953a0ba215c2a86e587205b92211caa136d8f5afbd3382e1b9ce14eadc",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "111a0741b61fbbbceb44d6734bf567e977fc88637d1f8f3816d75c643a72977a",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/t2-c-2560w.webp",
-      "sha256": "d1ab780f876c666acd71fce8a4eb5ccd6d8f4409ab2063006e2760d3e466f920",
-      "status": "legacy-unverified"
+      "sha256": "323fd6da18ae95699a35389bbe734db375ec7d07e36f499c9203a3557e10533a",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "d1ab780f876c666acd71fce8a4eb5ccd6d8f4409ab2063006e2760d3e466f920",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/t2-c-640w.webp",
-      "sha256": "26a98ef089de0bd42e2984886c4fbcda1b1a034c9152a3a2af028088f2b2ac8a",
-      "status": "legacy-unverified"
+      "sha256": "6ad0a6aa96f41cef4018a0a91cb09aef66cb795508f72f3ef4c18c2050e34fa4",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "26a98ef089de0bd42e2984886c4fbcda1b1a034c9152a3a2af028088f2b2ac8a",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/t2-c-960w.webp",
-      "sha256": "2b1b6ef06ef344967855a98ff2d18ed6c61c8cfb05ab7a1e43b0f0aafeac3622",
-      "status": "legacy-unverified"
+      "sha256": "afe902685f5784d345fd1ca4a20bfdb196fedebe10989fcfdff857e9c3307d1e",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "2b1b6ef06ef344967855a98ff2d18ed6c61c8cfb05ab7a1e43b0f0aafeac3622",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/ts1-a-1280w.webp",
-      "sha256": "8f68affa557f5f46dc6a6e826f80be6123a59116c822f5b7a3dffa1fecb3763e",
-      "status": "legacy-unverified"
+      "sha256": "757b98862852b0d4d82be707076b1936c60043e21259e6da26f101701df57792",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "8f68affa557f5f46dc6a6e826f80be6123a59116c822f5b7a3dffa1fecb3763e",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/ts1-a-1920w.webp",
-      "sha256": "c12a53ef1b3e377766696a450bac9968b32d018d25cf497c44e2d45568a23b87",
-      "status": "legacy-unverified"
+      "sha256": "43a8cdc6d4616feef01455780620fe1eef74cc106eedf48ef766ee00735babc7",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "c12a53ef1b3e377766696a450bac9968b32d018d25cf497c44e2d45568a23b87",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/ts1-a-2560w.webp",
-      "sha256": "29a15eecd9373df169e7b39f044e23b33092e0d83058e5270eb1c0763c1e6907",
-      "status": "legacy-unverified"
+      "sha256": "dbb832b00eabde33cc2ca2443aa755ef0409ae261ca0c583e196ddcc9415ed18",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "29a15eecd9373df169e7b39f044e23b33092e0d83058e5270eb1c0763c1e6907",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/ts1-a-640w.webp",
-      "sha256": "581968f92c4f3400855c3adda17216e1803283a337f7f67d7020be6cd33b13bf",
-      "status": "legacy-unverified"
+      "sha256": "eb32da8180cf54942fa6be13ebfc5a618c869f727f3e33ec51524f646c1fa8ce",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "581968f92c4f3400855c3adda17216e1803283a337f7f67d7020be6cd33b13bf",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/ts1-a-960w.webp",
-      "sha256": "80a35f3572bcdef1913bd5470877a14dd19de6e32488974c0ba15c7b73b5729a",
-      "status": "legacy-unverified"
+      "sha256": "0e11ca82be175350f9bc429d53b7308cfb7ef27588b94d29dd0f7100b14551c1",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "80a35f3572bcdef1913bd5470877a14dd19de6e32488974c0ba15c7b73b5729a",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/ts2-a-1280w.webp",
@@ -714,28 +794,68 @@
     },
     {
       "path": "src/media/replacements/yt1-b-1280w.webp",
-      "sha256": "5b7b3269738b20d7572b1e27896e3819d41575d93b2f39f0e89994be85f2f4e9",
-      "status": "legacy-unverified"
+      "sha256": "3594554451269fff6a10260b18188a5ba8904b7d04d3b7205583e80a330da6f1",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "5b7b3269738b20d7572b1e27896e3819d41575d93b2f39f0e89994be85f2f4e9",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/yt1-b-1920w.webp",
-      "sha256": "43d6c5fb4d62f73bb299b532b918986c9b38c9da9e573793106717a2c36b9395",
-      "status": "legacy-unverified"
+      "sha256": "d475303b24cc44bc55a6d1f813792ac6290e0496d23f6b593b70ca9fa53f9273",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "43d6c5fb4d62f73bb299b532b918986c9b38c9da9e573793106717a2c36b9395",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/yt1-b-2560w.webp",
-      "sha256": "3e187e14250ea6315bb0162bdb06c8c7a75ce3b6edd4a93fd98f65193b32517e",
-      "status": "legacy-unverified"
+      "sha256": "2b89d0e7933f0b33a80a11ff218e924be646c1b1da7dcac4d6ef9e99cf7a2cf3",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "3e187e14250ea6315bb0162bdb06c8c7a75ce3b6edd4a93fd98f65193b32517e",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/yt1-b-640w.webp",
-      "sha256": "3089f14469b6dd465fe1e3bdfc1327e5828d480204c1aaf4b5b8a6f0427ce327",
-      "status": "legacy-unverified"
+      "sha256": "13158c16c24577121b0e60b819eebe0a698bfe26932c51a89522fae28beab99f",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "3089f14469b6dd465fe1e3bdfc1327e5828d480204c1aaf4b5b8a6f0427ce327",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/yt1-b-960w.webp",
-      "sha256": "ad57d8f77a40ec8d36e3b40acdf5ee5d235785b98f3a979ade9e38c3a600e8a9",
-      "status": "legacy-unverified"
+      "sha256": "188266d8c0e5c013f0b1841647dc53514e691fe8125efa8593b051a08dd499d2",
+      "status": "edited-unverified",
+      "editReview": {
+        "sourceSha256": "ad57d8f77a40ec8d36e3b40acdf5ee5d235785b98f3a979ade9e38c3a600e8a9",
+        "operation": "remove-dialogue-and-balloons",
+        "permission": "unconfirmed",
+        "ownerRequest": "2026-10-13: remove dialogue balloons only; preserve all other image content and framing",
+        "reviewedBy": "site-maintainer",
+        "reviewedOn": "2026-10-13"
+      }
     },
     {
       "path": "src/media/replacements/yt1-c-1280w.webp",

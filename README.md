@@ -39,7 +39,7 @@ The owner's original essay and character/relationship commentary prose, only whe
 
 ## Rights checks and contact
 
-Every build checks `lib/rights-register.json`, the fixed asset baseline and script provenance hashes. Existing unverified assets may retain only their established bytes. New or modified images/fonts need recorded sources, usage grounds, scope, reviewer and review date. Expired permissions block the build. Assets marked `suspended` or `retired` must not enter the output or page links. An unverified record is not evidence of permission.
+Every build checks `lib/rights-register.json`, the fixed asset baseline and script provenance hashes. Existing unverified assets retain their established bytes. Owner-reviewed dialogue-removal edits record the original hashes separately and remain unverified. New or modified images/fonts need recorded sources, usage grounds, scope, reviewer and review date. Expired permissions block the build. Assets marked `suspended` or `retired` must not enter the output or page links. An unverified record is not evidence of permission.
 
 Run `node --test lib/rights.test.mjs` to exercise these safeguards. Run `node lib/setup-git-hooks.mjs` to install this checkout's commit-email checks. It preserves your existing name, email and global settings; existing hooks need manual integration. Checks cover author/committer emails and new commits being pushed. Continuous integration also checks the new commit range.
 
