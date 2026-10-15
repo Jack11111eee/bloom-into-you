@@ -1,0 +1,129 @@
+@font-face{font-family:'Bloom Serif en';src:url('../fonts/reading/music-serif-en.woff2') format('woff2');font-style:normal;font-weight:250 900;font-display:swap;unicode-range:U+2018,U+2019,U+2193,U+3001,U+304D,U+3066,U+3067,U+306B,U+306E,U+3075,U+308C,U+4EE5,U+4F91,U+541B,U+5916,U+597D,U+706F,U+8449,U+8A00;}
+@font-face{font-family:'Bloom Serif zh-cn';src:url('../fonts/reading/music-serif-zh-cn.woff2') format('woff2');font-style:normal;font-weight:250 900;font-display:swap;unicode-range:U+2018,U+2019,U+2193,U+304D,U+3066,U+3067,U+306B,U+306E,U+3075,U+308C,U+4E13,U+4E1C,U+4E3E,U+4EAE,U+4EF0,U+4F4E,U+4F9B,U+504F,U+5077,U+50CF,U+50F5,U+513F,U+516D,U+51AC,U+51B7,U+51BB,U+51C9,U+51CF,U+51D1,U+5203,U+521A,U+5269,U+52BF,U+5300,U+53CC,U+53E0,U+53EB,U+53F9,U+5417,U+541B,U+5435,U+54CD,U+54D1,U+5507,U+5531,U+558A,U+55EF,U+561F,U+5634,U+56D4,U+56DB,U+5708,U+5747,U+5750,U+57CB,U+585E,U+5899,U+59FF,U+5C01,U+5C3E,U+5C4F,U+5DE5,U+5DFE,U+5E93,U+5EA7,U+5ED3,U+5F2F,U+5FEB,U+5FFD,U+6000,U+6025,U+6055,U+622A,U+6263,U+6269,U+626B,U+626C,U+626D,U+62A2,U+62AC,U+62BF,U+62C2,U+62D0,U+62D9,U+62DB,U+62E8,U+62FF,U+6302,U+6309,U+6324,U+6325,U+6328,U+633D,U+6396,U+63E1,U+64A9,U+64CD,U+64E6,U+6525,U+6570,U+6625,U+6643,U+6668,U+666E,U+6676,U+66F2,U+670D,U+672B,U+6735,U+677E,U+6795,U+6846,U+6905,U+6B4C,U+6B6A,U+6BDB,U+6BEB,U+6CB3,U+6CBE,U+6CBF,U+6D17,U+6D6E,U+6DB2,U+6DF7,U+6F66,U+706D,U+70D8,U+72AF,U+72E1,U+732B,U+73ED,U+7537,U+76AE,U+76B1,U+76CF,U+7709,U+775B,U+7761,U+776B,U+77E9,U+79FB,U+7A0D,U+7A74,U+7A9D,U+7AD6,U+7AE0,U+7AEF,U+7B28,U+7C73,U+7CDF,U+7EA2,U+7EB8,U+7FFB,U+8033,U+8038,U+80A4,U+80F3,U+80F6,U+80F8,U+8116,U+8155,U+8170,U+817F,U+8180,U+818A,U+81C2,U+820D,U+8212,U+8389,U+8449,U+8584,U+878D,U+8857,U+886B,U+886C,U+888B,U+8936,U+89C4,U+8BEF,U+8D2A,U+8DF3,U+8E2E,U+8E6D,U+8F6E,U+8F83,U+8F91,U+8FD4,U+8FDF,U+901E,U+9178,U+9488,U+94C3,U+94FE,U+9644,U+9694,U+96FE,U+987A,U+9884,U+9886,U+9888,U+98D8,U+98DE,U+990D,U+9976,U+9A73,U+9AA8,U+9EC4,U+9ED1,U+9EE0,U+9F3B;}
+@font-face{font-family:'Bloom Serif zh-tw';src:url('../fonts/reading/music-serif-zh-tw.woff2') format('woff2');font-style:normal;font-weight:250 900;font-display:swap;unicode-range:U+2193,U+300E,U+300F,U+304D,U+3066,U+3067,U+306B,U+306E,U+3075,U+308C,U+4EAE,U+4EF0,U+4F4E,U+4F9B,U+504F,U+5077,U+50F5,U+5152,U+516D,U+51AC,U+51B7,U+51CD,U+525B,U+5269,U+52E2,U+53EB,U+541B,U+5435,U+5495,U+5507,U+5531,U+555E,U+55CE,U+55EF,U+5606,U+5634,U+5665,U+56DB,U+5708,U+5747,U+5750,U+57CB,U+585E,U+59CA,U+59FF,U+5C01,U+5C08,U+5C3E,U+5DE5,U+5DFE,U+5E03,U+5EAB,U+5ED3,U+5F4E,U+5F77,U+5F7F,U+5FEB,U+5FFD,U+61F7,U+6263,U+626D,U+6296,U+62AC,U+62BF,U+62C2,U+62DB,U+62FF,U+6309,U+6328,U+633D,U+6368,U+6372,U+6388,U+6396,U+63DA,U+63E1,U+63EE,U+6436,U+6490,U+64A5,U+64AD,U+64CD,U+64E0,U+64E6,U+64F4,U+6578,U+6625,U+6643,U+6668,U+666E,U+6676,U+66F2,U+66FF,U+670D,U+672B,U+6735,U+6771,U+6795,U+67E5,U+6846,U+6905,U+6B4C,U+6B6A,U+6BDB,U+6BEB,U+6CB3,U+6CBF,U+6CDB,U+6D17,U+6D6E,U+6DBC,U+6DF7,U+6E1B,U+6E4A,U+6EC5,U+6F66,U+706F,U+70D8,U+7184,U+7246,U+72AF,U+72E1,U+73ED,U+7537,U+758A,U+75E0,U+76AE,U+76BA,U+76DE,U+7709,U+775B,U+7761,U+776B,U+77E9,U+79FB,U+7A0D,U+7AA9,U+7AE0,U+7AEF,U+7C73,U+7D05,U+7D19,U+7E5E,U+7FFB,U+8033,U+80F8,U+8116,U+8155,U+8170,U+817F,U+8180,U+819A,U+81A0,U+81C2,U+8209,U+8212,U+8389,U+8449,U+8584,U+8737,U+87A2,U+8857,U+886B,U+888B,U+8936,U+896F,U+898F,U+8ABF,U+8C93,U+8CAA,U+8DF3,U+8E2E,U+8E6D,U+8F2A,U+8F2F,U+8FD4,U+901E,U+9072,U+934A,U+95D4,U+9644,U+9694,U+96BB,U+96D9,U+9727,U+97FF,U+9806,U+9810,U+9818,U+9838,U+98DB,U+99C1,U+9AA8,U+9AEE,U+9B06,U+9EC3,U+9ED1,U+9EE0,U+9F3B,U+9F4A;}
+@font-face{font-family:'Bloom Serif ja';src:url('../fonts/reading/music-serif-ja.woff2') format('woff2');font-style:normal;font-weight:250 900;font-display:swap;unicode-range:U+2193,U+3077,U+307D,U+3083,U+3085,U+30A1,U+30AD,U+30B1,U+30C4,U+30CE,U+30DD,U+30E4,U+4E01,U+4E08,U+4E21,U+4E88,U+4EA4,U+4F0F,U+4F9B,U+5012,U+5099,U+5143,U+51AC,U+523B,U+5247,U+5264,U+52E2,U+539F,U+53CA,U+53CD,U+5410,U+5507,U+55B6,U+56DB,U+57CB,U+592B,U+5BB6,U+5BBF,U+5BD2,U+5BE7,U+5C3E,U+5DDD,U+5E2D,U+5E73,U+5EA7,U+5EAD,U+5F3E,U+60DC,U+6255,U+62BC,U+62E1,U+62F6,U+6328,U+63B2,U+63D0,U+63E1,U+6557,U+6570,U+6574,U+6625,U+6696,U+66F2,U+670D,U+671D,U+673A,U+677F,U+67A0,U+697D,U+6B32,U+6CBF,U+6D17,U+6E80,U+7136,U+732B,U+7537,U+7709,U+7720,U+793A,U+7AEF,U+7C60,U+7D19,U+808C,U+8155,U+8170,U+81D3,U+8389,U+8857,U+88D5,U+88FE,U+895F,U+898F,U+89D2,U+8CB8,U+8D64,U+8D77,U+8F09,U+8F2A,U+901F,U+9045,U+904B,U+9069,U+90ED,U+9234,U+9332,U+9396,U+9580,U+9632,U+9685,U+969B,U+9727,U+9784,U+9810,U+982D,U+9996,U+9AA8,U+9AEA,U+9CF4,U+9EC4,U+9F3B,U+FF0F,U+FF14,U+FF15,U+FF16;}
+#bloom-vinyl-reader .vr-page{--vr-paper:#fff;--vr-ink:#1c1d20;--vr-muted:#626568;--vr-line:#d2d2d2;--vr-soft:#f1f2f2;--vr-active-art:var(--vr-art-one);background:var(--vr-paper);color:var(--vr-ink);font-family:var(--font-reading);padding:45px 6% 40px;min-height:850px;box-sizing:border-box}
+#bloom-vinyl-reader .vr-page *{box-sizing:border-box}
+#bloom-vinyl-reader .vr-overline{font-size:13px;line-height:1.7;color:var(--vr-muted);margin:0 0 23px}
+#bloom-vinyl-reader .vr-heading{font-family:var(--font-heading);font-size:clamp(35px,5.5vw,48px);font-weight:700;line-height:1.25;letter-spacing:-.025em;margin:0 0 18px}
+#bloom-vinyl-reader .vr-deck{position:relative;width:100%;aspect-ratio:1.12;background:var(--vr-soft);border:1px solid #dfe0e0;overflow:hidden}
+#bloom-vinyl-reader .vr-idle-art{position:absolute;inset:0;background:var(--vr-art-one) center/cover;transition:opacity .35s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+#bloom-vinyl-reader .vr-hardware{position:absolute;inset:0;opacity:0;transform:translateY(9px);transition:opacity .4s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+#bloom-vinyl-reader .vr-selected .vr-idle-art{opacity:0;transform:scale(.94)}
+#bloom-vinyl-reader .vr-selected .vr-hardware{opacity:1;transform:none}
+#bloom-vinyl-reader .vr-disc{position:relative;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle at center,#1d1f20 0 1px,#27292b 1.3px 2px,#1c1d20 2.3px 3.5px);box-shadow:0 2px 3px #0002;flex:none}
+#bloom-vinyl-reader .vr-disc:before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from -25deg,transparent 0deg,#ffffff12 45deg,transparent 87deg,transparent 180deg,#ffffff10 240deg,transparent 285deg)}
+#bloom-vinyl-reader .vr-label{position:absolute;inset:19%;border-radius:50%;background:var(--vr-active-art) center/cover;box-shadow:0 0 0 1px #ffffff15;overflow:hidden}
+#bloom-vinyl-reader .vr-label:after{content:'';position:absolute;left:50%;top:50%;width:5px;height:5px;margin:-2.5px;border-radius:50%;background:#c6c6c7;box-shadow:0 0 0 2px #1c1d2044}
+#bloom-vinyl-reader .vr-platter{position:absolute;left:6%;top:15%;width:73%;aspect-ratio:1;border-radius:50%;background:#bbbdbf;padding:2%;box-shadow:0 2px 6px #0002;transform:scale(.91);transition:transform .7s cubic-bezier(.22,1,.36,1)}
+#bloom-vinyl-reader .vr-platter .vr-disc{width:100%;animation:vr-record-spin var(--vr-speed,8s) linear infinite;animation-delay:.45s;animation-play-state:paused}
+#bloom-vinyl-reader .vr-selected .vr-platter{transform:scale(1)}
+#bloom-vinyl-reader .vr-spinning .vr-platter .vr-disc{animation-play-state:running}
+#bloom-vinyl-reader .vr-platter .vr-label{inset:23%}
+#bloom-vinyl-reader .vr-arm{position:absolute;left:85%;top:15%;width:5px;height:64%;background:linear-gradient(90deg,#9c9da1,#f7f7f7 45%,#96979b);border-radius:5px;transform-origin:50% 7px;transform:rotate(-7deg);transition:transform .8s cubic-bezier(.65,0,.35,1);z-index:2;box-shadow:1px 2px 2px #0002}
+#bloom-vinyl-reader .vr-arm:before{content:'';position:absolute;left:50%;top:0;transform:translate(-50%,-25%);width:20px;height:20px;background:radial-gradient(circle,#909296 0 20%,#bdbfc1 25% 58%,#e4e5e6 60%);border-radius:50%}
+#bloom-vinyl-reader .vr-arm:after{content:'';position:absolute;left:-4px;bottom:-2px;width:13px;height:23px;background:#34373a;border-radius:2px}
+#bloom-vinyl-reader .vr-spinning .vr-arm{transform:rotate(22deg);transition-delay:.15s}
+#bloom-vinyl-reader .vr-deck-mark{position:absolute;left:8%;top:7%;font-family:var(--font-reading);font-size:10px;letter-spacing:.09em;color:#6d6e71}
+#bloom-vinyl-reader .vr-deck-light{position:absolute;right:8%;bottom:8%;width:5px;height:5px;border-radius:50%;background:#98999c;transition:background .5s}
+#bloom-vinyl-reader .vr-spinning .vr-deck-light{background:#1c1d20}
+#bloom-vinyl-reader .vr-selected-name{font-family:var(--font-heading);font-size:25px;line-height:1.3;font-weight:650;margin:23px 0 10px;overflow-wrap:anywhere}
+#bloom-vinyl-reader .vr-selected-info{font-size:13px;line-height:1.85;color:var(--vr-muted);margin:0}
+#bloom-vinyl-reader .vr-motion{font:inherit;font-size:12px;line-height:1.7;padding:8px 0;border:0;border-bottom:1px solid var(--vr-line);background:transparent;color:var(--vr-muted);margin-top:18px}
+#bloom-vinyl-reader .vr-motion[hidden]{display:none}
+#bloom-vinyl-reader .vr-list-label{display:flex;justify-content:space-between;gap:15px;font-size:12px;line-height:1.6;color:var(--vr-muted);padding:0 0 17px}
+#bloom-vinyl-reader .vr-item{border-top:1px solid var(--vr-line)}
+#bloom-vinyl-reader .vr-item:last-child{border-bottom:1px solid var(--vr-line)}
+#bloom-vinyl-reader .vr-song{display:grid;grid-template-columns:58px minmax(0,1fr) 28px;gap:17px;align-items:center;width:100%;padding:23px 0;border:0;background:transparent;color:inherit;font:inherit;text-align:left}
+#bloom-vinyl-reader .vr-song .vr-disc{width:58px;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+#bloom-vinyl-reader .vr-song:hover .vr-disc{transform:rotate(-12deg)}
+#bloom-vinyl-reader .vr-song[aria-expanded=true] .vr-disc{transform:rotate(-12deg)}
+#bloom-vinyl-reader .vr-song-name{display:block;font-family:var(--font-heading);font-size:23px;font-weight:650;line-height:1.35;overflow-wrap:anywhere}
+#bloom-vinyl-reader .vr-song-meta{display:block;font-size:12px;line-height:1.7;color:var(--vr-muted);margin-top:7px}
+#bloom-vinyl-reader .vr-open{font-size:11px;color:var(--vr-muted);line-height:1.6;text-align:right}
+#bloom-vinyl-reader .vr-song[aria-expanded=true] .vr-open{color:var(--vr-ink)}
+@keyframes vr-record-spin{to{transform:rotate(360deg)}}
+#bloom-vinyl-reader .vr-page{min-height:0;padding-bottom:35px}
+#bloom-vinyl-reader [hidden]{display:none!important}
+#bloom-vinyl-reader .vr-heading{margin-bottom:48px}
+#bloom-vinyl-reader .vr-board{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);gap:38px;align-items:start;scroll-margin-top:22px}
+#bloom-vinyl-reader .vr-preview{min-width:0}
+#bloom-vinyl-reader .vr-deck{aspect-ratio:1;border:0;background:var(--vr-paper);box-shadow:none}
+#bloom-vinyl-reader .vr-selected .vr-deck{background:var(--vr-soft)}
+#bloom-vinyl-reader .vr-idle-art{background:var(--vr-idle-art) center/contain no-repeat}
+#bloom-vinyl-reader .vr-current{display:block}
+#bloom-vinyl-reader .vr-selected-name{font-size:26px;line-height:1.35}
+#bloom-vinyl-reader .vr-right{min-width:0}
+#bloom-vinyl-reader .vr-song-list{min-height:500px}
+#bloom-vinyl-reader .vr-item{display:block}
+#bloom-vinyl-reader .vr-song{padding:24px 0;min-height:103px}
+#bloom-vinyl-reader .vr-reader{min-width:0}
+#bloom-vinyl-reader .vr-reader-top{display:flex;align-items:center;justify-content:space-between;gap:15px;padding-bottom:20px;border-bottom:1px solid var(--vr-line)}
+#bloom-vinyl-reader .vr-reader-index{font-size:12px;line-height:1.6;color:var(--vr-muted)}
+#bloom-vinyl-reader #vr-reading-title{font-family:var(--font-heading);font-size:26px;line-height:1.35;font-weight:650;margin:5px 0 0;overflow-wrap:anywhere}
+#bloom-vinyl-reader .vr-return{border:0;background:transparent;color:var(--vr-ink);font:inherit;font-size:13px;line-height:1.6;white-space:nowrap;padding:10px 0 10px 14px;text-decoration:underline;text-decoration-color:var(--vr-line);text-underline-offset:5px}
+#bloom-vinyl-reader .vr-reader-body{height:var(--vr-body-height,440px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#b6b7b8 transparent;padding:24px 16px 12px 0}
+#bloom-vinyl-reader .vr-prose p{font-family:var(--font-reading);font-size:17px;line-height:1.95;font-weight:400;color:var(--vr-ink);margin:0 0 1em;overflow-wrap:anywhere}
+#bloom-vinyl-reader .vr-prose p:last-child{margin-bottom:0}
+#bloom-vinyl-reader .vr-reader-bottom{display:flex;justify-content:space-between;gap:16px;padding-top:13px;border-top:1px solid var(--vr-line);font-size:12px;line-height:1.6;color:var(--vr-muted)}
+#bloom-vinyl-reader .vr-reader-status{font-size:12px;line-height:1.6;color:var(--vr-muted);margin:28px 0 0;text-align:right}
+@media(max-width:700px){
+ #bloom-vinyl-reader .vr-page{padding:30px 6%}
+ #bloom-vinyl-reader .vr-heading{font-size:35px;margin-bottom:32px}
+ #bloom-vinyl-reader .vr-board{display:block;scroll-margin-top:16px}
+ #bloom-vinyl-reader .vr-preview{display:block;margin:0 0 30px}
+ #bloom-vinyl-reader .vr-page:not(.vr-selected) .vr-preview{max-width:320px;margin:0 auto 30px}
+ #bloom-vinyl-reader .vr-selected .vr-preview{display:grid;grid-template-columns:100px minmax(0,1fr);gap:18px;align-items:center;margin:0 0 22px}
+ #bloom-vinyl-reader .vr-current{min-width:0}
+ #bloom-vinyl-reader .vr-selected-name{font-size:22px;margin:0 0 7px}
+ #bloom-vinyl-reader .vr-selected-info{font-size:12px;line-height:1.6}
+ #bloom-vinyl-reader .vr-motion{font-size:12px;margin-top:7px;padding:5px 0}
+ #bloom-vinyl-reader .vr-deck-mark{display:none}
+ #bloom-vinyl-reader .vr-reader-top{padding-bottom:14px;gap:10px}
+ #bloom-vinyl-reader #vr-reading-title{font-size:23px}
+ #bloom-vinyl-reader .vr-reader-body{height:var(--vr-body-height,355px);padding:19px 12px 12px 0}
+ #bloom-vinyl-reader .vr-prose p{font-size:16px;line-height:1.95}
+ #bloom-vinyl-reader .vr-song-list{min-height:0}
+ #bloom-vinyl-reader .vr-reader-status{margin-top:20px}
+}
+
+/* Keep the site shell and typographic rhythm; only the collection is scoped. */
+#music .music-header{padding-bottom:3em}
+#music .music-header h1{max-width:11em;font-size:clamp(2.6em,5.5vw,5.1em);line-height:1.3;letter-spacing:-.025em}
+#music .music-section{padding-top:0;padding-bottom:5em}
+#bloom-vinyl-reader .vr-page{padding:0;min-height:0;background:transparent}
+#bloom-vinyl-reader .vr-deck{border:0;box-shadow:none;background:transparent}
+#bloom-vinyl-reader .vr-idle-art{display:block;position:absolute;width:100%;height:100%;object-fit:contain;border:0;box-shadow:none}
+#bloom-vinyl-reader .vr-label{display:block;width:62%;height:62%;object-fit:cover;margin:0}
+#bloom-vinyl-reader .vr-platter .vr-label{width:54%;height:54%}
+#bloom-vinyl-reader .vr-song{grid-template-columns:64px minmax(0,1fr) auto;gap:19px;cursor:pointer}
+#bloom-vinyl-reader .vr-song .vr-disc{width:64px}
+#bloom-vinyl-reader .vr-song-name{font-size:clamp(20px,1.9vw,28px)}
+#bloom-vinyl-reader .vr-reader-body{box-sizing:border-box;overscroll-behavior:contain;touch-action:pan-y;cursor:auto}
+#bloom-vinyl-reader .vr-prose p{font-size:clamp(17px,1.2vw,19px);line-height:1.95}
+#bloom-vinyl-reader .vr-motion,#bloom-vinyl-reader .vr-return{cursor:pointer}
+#bloom-vinyl-reader button:focus-visible,#bloom-vinyl-reader .vr-reader-body:focus-visible{outline:2px solid #737b9a;outline-offset:5px}
+#bloom-vinyl-reader .vr-motion:disabled{cursor:default}
+#bloom-vinyl-reader .vr-arm{width:1.2%}
+#bloom-vinyl-reader .vr-arm:before{width:400%;height:auto;aspect-ratio:1}
+#bloom-vinyl-reader .vr-arm:after{width:260%;height:8%;left:-80%}
+#bloom-vinyl-reader .vr-song-list{min-height:470px}
+#bloom-vinyl-reader .vr-reader-status{min-height:1.6em}
+.original-music-sources{margin:3em 0}
+@media(max-width:700px){
+ #music .music-header{padding-bottom:2em}
+ #music .music-header h1{font-size:2.6em;max-width:11em}
+ #bloom-vinyl-reader .vr-page{padding:0}
+ #bloom-vinyl-reader .vr-song{grid-template-columns:54px minmax(0,1fr) auto;gap:14px;padding:21px 0}
+ #bloom-vinyl-reader .vr-song .vr-disc{width:54px}
+ #bloom-vinyl-reader .vr-song-name{font-size:22px}
+ #bloom-vinyl-reader .vr-song-list{min-height:0}
+ #bloom-vinyl-reader .vr-prose p{font-size:17px}
+ #bloom-vinyl-reader .vr-board{scroll-margin-top:16px}
+}
+@media(prefers-reduced-motion:reduce){#bloom-vinyl-reader *,#bloom-vinyl-reader *:before{transition:none!important;animation:none!important}}
+
+@media(max-width:700px){
+ #music .music-header h1 span{display:block}
+ #bloom-vinyl-reader .vr-selected .vr-current{padding-right:60px}
+}

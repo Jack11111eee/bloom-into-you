@@ -1,9 +1,9 @@
 {
   "title": "Image sources",
-  "updated": "Source references recorded on 13 October 2026.",
-  "intro": "These links identify matching images recorded in a source audit. They are references to existing web pages, not proof of where this site originally acquired a file or permission to reproduce it.",
-  "limitations": "Some references are reposts, product photographs or cropped previews. Matching images may differ in crop, text, size or AI enhancement. Rights holders and permission for public website and source-code distribution remain unconfirmed.",
-  "coverage": "Only recorded same-image references are listed. Adjacent-frame candidates and unconfirmed matches are omitted.",
+  "updated": "music.sources.updated",
+  "intro": "music.sources.intro",
+  "limitations": "music.sources.limitations",
+  "coverage": "music.sources.coverage",
   "imageLabel": "Image on this site",
   "sourceLabel": "Matching-image page",
   "alternativeLabel": "Another matching-image page",
@@ -468,6 +468,33 @@
           "additionalPages": []
         }
       ]
+    }
+  ],
+  "originalMusic": [
+    {
+      "id": "one",
+      "label": "君にふれて",
+      "asset": "/assets/img/music/one.jpg"
+    },
+    {
+      "id": "two",
+      "label": "hectopascal",
+      "asset": "/assets/img/music/two.jpg"
+    },
+    {
+      "id": "three",
+      "label": "好き、以外の言葉で",
+      "asset": "/assets/img/music/three.jpg"
+    },
+    {
+      "id": "four",
+      "label": "rise",
+      "asset": "/assets/img/music/four.jpg"
+    },
+    {
+      "id": "collage",
+      "label": "music.original.collage",
+      "asset": "/assets/img/music/photo-wall.jpg"
     }
   ]
 }

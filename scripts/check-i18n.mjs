@@ -15,6 +15,8 @@ const privacy = JSON.parse(fs.readFileSync('src/_data/privacy.json', 'utf8'));
 const contentLicense = JSON.parse(fs.readFileSync('src/_data/contentLicense.json', 'utf8'));
 const imageSources = JSON.parse(fs.readFileSync('src/_data/imageSources.json', 'utf8'));
 const imageSourceEntries = imageSources.groups.flatMap(group => group.entries);
+const music = JSON.parse(fs.readFileSync('src/_data/music.json', 'utf8'));
+const musicTitles = new Set(music.tracks.map(track => track.title));
 const imageSourceIds = new Set(imageSourceEntries.map(entry => entry.id));
 // H11: remove only the owner's exact work/publisher identifiers from the
 // language-purity check, and only in their registered declaration fields.
@@ -115,6 +117,8 @@ for (const locale of LOCALES) {
       if (value === catalog[contentLicense.identifier]) languageText = '';
       // Only registered image identifiers on this page retain their literal spelling.
       if (route === '/image-sources/' && imageSourceIds.has(value)) languageText = '';
+      if (['/music/', '/image-sources/'].includes(route) && musicTitles.has(value)) languageText = '';
+      if (route === '/music/' && locale.code === 'en' && music.tracks[1].paragraphs.map(key => catalog[key]).includes(value)) languageText = languageText.replaceAll('灯', '').replaceAll('侑', '');
       assert(locale.code === 'en' ? !/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}\p{Script=Thai}\p{Script=Cyrillic}\p{Script=Greek}]/u.test(languageText) : !/[A-Za-z]/.test(languageText.replace(/[^\s@]+@[^\s@]+\.[^\s@。]+/g, '')), `${url}: foreign-language residue: ${value}`);
     }
     assert($('svg:not([aria-hidden=true])').length === 0 && $('svg title').length===0, `${url}: decorative SVG exposes title`);

@@ -28,6 +28,7 @@ node scripts/check-i18n.mjs
 node scripts/check-about-essay.mjs
 node scripts/check-links.mjs
 node scripts/test-i18n-build.mjs
+node --test lib/music.test.mjs
 npm run build:pages
 node scripts/check-pages.mjs
 ```
@@ -40,7 +41,8 @@ node scripts/check-pages.mjs
 简体中文、繁体中文和日文分别位于对应语言前缀下。
 
 版权页最下方链接至独立的 `/image-sources/` 图片来源页，普通页脚不增加来源入口。
-来源页只记录已找到的同画面网页线索，不证明本站当初取得图片的渠道，也不代表转载许可。
+来源页统一标注五张曲库原创插画；其它条目记录已找到的同画面网页线索，
+不证明本站当初取得图片的渠道，也不代表转载许可。
 
 站主有权授权的原创随笔/人物与关系评论正文按
 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) 提供。

@@ -37,6 +37,17 @@
       ]
     },
     {
+      "label": "Music",
+      "href": "/music/",
+      "strength": "20",
+      "strengthText": "10",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
       "label": "About",
       "href": "/about",
       "strength": "20",
@@ -97,6 +108,17 @@
     {
       "label": "Insights",
       "href": "/insights",
+      "strength": "24",
+      "strengthText": "12",
+      "external": false,
+      "classes": [
+        "btn",
+        "btn-link"
+      ]
+    },
+    {
+      "label": "Music",
+      "href": "/music/",
       "strength": "24",
       "strengthText": "12",
       "external": false,
@@ -223,6 +245,10 @@
     },
     {
       "text": "Privacy notice",
+      "cls": ""
+    },
+    {
+      "text": "Music",
       "cls": ""
     }
   ],

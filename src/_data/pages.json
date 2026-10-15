@@ -67,8 +67,8 @@
       "ogImage": "/assets/img/share-card.png",
       "canonical": "/about",
       "loaderActive": 18,
-      "navActive": 3,
-      "fixedNavActive": 4,
+      "navActive": 4,
+      "fixedNavActive": 5,
       "floatImages": null
     },
     "contact": {
@@ -82,7 +82,7 @@
       "canonical": "/contact",
       "loaderActive": 19,
       "navActive": null,
-      "fixedNavActive": 5,
+      "fixedNavActive": 6,
       "floatImages": null
     },
     "copyright": {
@@ -125,6 +125,20 @@
       "loaderActive": 22,
       "navActive": null,
       "fixedNavActive": null,
+      "floatImages": null
+    },
+    "music": {
+      "file": null,
+      "ns": "music",
+      "cursorMode": "none",
+      "cursorSpan": null,
+      "title": "music.pageTitle",
+      "description": "music.description",
+      "ogImage": "/assets/img/share-card.png",
+      "canonical": "/music/",
+      "loaderActive": 24,
+      "navActive": 3,
+      "fixedNavActive": 4,
       "floatImages": null
     }
   }

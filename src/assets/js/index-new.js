@@ -459,6 +459,7 @@ function initPageTransitions() {
 
   // do something before the transition starts
   barba.hooks.before(() => {
+    window.BloomMusic?.destroy();
     select('html').classList.add('is-transitioning');
   });
 
@@ -498,7 +499,7 @@ function initPageTransitions() {
       once(data) {
         // do something once on the initial page load
         initSmoothScroll(data.next.container);
-        initScript();
+        initScript(data.next.container);
         initCookieViews();
         initLoader();
       },
@@ -526,7 +527,7 @@ function initPageTransitions() {
         ScrollTrigger.getAll().forEach(t => t.kill());
         scroll.destroy();
         initSmoothScroll(data.next.container);
-        initScript();
+        initScript(data.next.container);
       },
     },
     {
@@ -539,7 +540,7 @@ function initPageTransitions() {
       once(data) {
         // do something once on the initial page load
         initSmoothScroll(data.next.container);
-        initScript();
+        initScript(data.next.container);
         initCookieViews();
         initLoaderHome();
       },
@@ -655,7 +656,7 @@ function delay(n) {
  * 因而决定了 `ScrollTrigger.getAll()` 的索引 —— 而索引是 P3/P4 验收的比对对象。
  * **不要重排。**
  */
-function initScript() {
+function initScript(container = document.querySelector('main[data-barba="container"]')) {
   select('body').classList.remove('is-loading');
   initWindowInnerheight();
   initCheckTouchDevice();
@@ -672,6 +673,11 @@ function initScript() {
   initPlayVideoInview();
   initScrolltriggerAnimations();
   initReadingLayout();
+  window.BloomMusic?.init({
+    container,
+    align: element => scroll.scrollTo(element, { offset: -24, duration: prefersReducedMotion ? 0 : 650, disableLerp: true }),
+    update: () => scroll.update(),
+  });
 }
 
 // [H6] Fonts can arrive after the initial scroll measurement.

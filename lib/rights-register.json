@@ -4762,6 +4762,118 @@
       "reviewedOn": "2026-10-13",
       "licenseUrl": "https://github.com/adobe-fonts/source-han-serif/blob/7889f11bf31170b5d092a083b357c8c8130f89e0/LICENSE.txt",
       "licenseFile": "/assets/fonts/reading/source-han-license.txt"
+    },
+    {
+      "path": "src/assets/img/music/one.jpg",
+      "sha256": "308916063e922f9419d540ef86bcb7a7e9870d2d0a4a663ab37e69e44208b213",
+      "status": "approved",
+      "basis": "original",
+      "author": "Site owner",
+      "source": "Owner-supplied original illustration; owner declaration and instruction to publish in the music collection (October 2026)",
+      "sourceSha256": "ad650c68c02ee3c820caba5a1089b48b9b7d755fc6c8a225e3b1e2497d2f89c5",
+      "scope": "This website: owner-original illustration, resized JPEG derivative; not an official album cover; underlying song and character rights remain with their holders",
+      "reviewedBy": "Site owner declaration; implementation records provenance, not independent authorship adjudication",
+      "reviewedOn": "2026-10-15"
+    },
+    {
+      "path": "src/assets/img/music/two.jpg",
+      "sha256": "d74c8ce0eca6a97728051c834d2e9ab0e4a1807dee382ba93c51ae51d1ff09d9",
+      "status": "approved",
+      "basis": "original",
+      "author": "Site owner",
+      "source": "Owner-supplied original illustration; owner declaration and instruction to publish in the music collection (October 2026)",
+      "sourceSha256": "b6284c216b180f6a9f62418776faf50aab7e3c54f348e426477ebfbe5a1a8e1c",
+      "scope": "This website: owner-original illustration, resized JPEG derivative; not an official album cover; underlying song and character rights remain with their holders",
+      "reviewedBy": "Site owner declaration; implementation records provenance, not independent authorship adjudication",
+      "reviewedOn": "2026-10-15"
+    },
+    {
+      "path": "src/assets/img/music/three.jpg",
+      "sha256": "9bf73972236e368d28573eb1e20dcb2e12903522d88ff5238e219772ac374521",
+      "status": "approved",
+      "basis": "original",
+      "author": "Site owner",
+      "source": "Owner-supplied original illustration; owner declaration and instruction to publish in the music collection (October 2026)",
+      "sourceSha256": "a38444baeb9f366f5ee7d43fcfa99f317a64e506101ea9d7c6faa05f2dc37d4f",
+      "scope": "This website: owner-original illustration, resized JPEG derivative; not an official album cover; underlying song and character rights remain with their holders",
+      "reviewedBy": "Site owner declaration; implementation records provenance, not independent authorship adjudication",
+      "reviewedOn": "2026-10-15"
+    },
+    {
+      "path": "src/assets/img/music/four.jpg",
+      "sha256": "8ef7543fe154aa76dc3812b3ca2137cc54da10ba86c059386f437e0ea725afae",
+      "status": "approved",
+      "basis": "original",
+      "author": "Site owner",
+      "source": "Owner-supplied original illustration; owner declaration and instruction to publish in the music collection (October 2026)",
+      "sourceSha256": "4df7e4bdca62b9c0923df810c7221b9021fe92a666db5f42687c53e264d9e0d4",
+      "scope": "This website: owner-original illustration, resized JPEG derivative; not an official album cover; underlying song and character rights remain with their holders",
+      "reviewedBy": "Site owner declaration; implementation records provenance, not independent authorship adjudication",
+      "reviewedOn": "2026-10-15"
+    },
+    {
+      "path": "src/assets/img/music/photo-wall.jpg",
+      "sha256": "c3f5e77057193ea5ea527a66097cb524a00580b6c876c0e223a4b175780dd04c",
+      "status": "approved",
+      "basis": "original",
+      "author": "Site owner",
+      "source": "Owner-supplied original illustration; owner declaration and instruction to publish in the music collection (October 2026)",
+      "sourceSha256": "d84758798f736f85672839ed028f59c897fa367105b6caf84c1587f3e6f8a6fd",
+      "scope": "This website: owner-original illustration, resized JPEG derivative; not an official album cover; underlying song and character rights remain with their holders",
+      "reviewedBy": "Site owner declaration; implementation records provenance, not independent authorship adjudication",
+      "reviewedOn": "2026-10-15"
+    },
+    {
+      "path": "src/assets/fonts/reading/music-serif-en.woff2",
+      "sha256": "2786f0cf522a3d35926071f2fb9b71f08142f0725829130e5520dab71ca94968",
+      "status": "approved",
+      "basis": "license",
+      "author": "Upstream font authors, as preserved in the attached OFL notice",
+      "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/7889f11bf31170b5d092a083b357c8c8130f89e0/Variable/WOFF2/OTF/SourceHanSerif-VF.otf.woff2",
+      "licenseUrl": "https://github.com/adobe-fonts/source-han-serif",
+      "licenseFile": "/assets/fonts/reading/source-han-license.txt",
+      "scope": "Additional OFL webfont glyph subset for music stories and song headings; original notices retained",
+      "reviewedBy": "Existing font license and source verification; owner-authorized music feature",
+      "reviewedOn": "2026-10-15"
+    },
+    {
+      "path": "src/assets/fonts/reading/music-serif-zh-cn.woff2",
+      "sha256": "4fc995f2c4c2efb5b3d17ed152830cea7ed5a34c844b4dd6cbbafedb997662ec",
+      "status": "approved",
+      "basis": "license",
+      "author": "Upstream font authors, as preserved in the attached OFL notice",
+      "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/7889f11bf31170b5d092a083b357c8c8130f89e0/Variable/WOFF2/OTF/SourceHanSerifSC-VF.otf.woff2",
+      "licenseUrl": "https://github.com/adobe-fonts/source-han-serif",
+      "licenseFile": "/assets/fonts/reading/source-han-license.txt",
+      "scope": "Additional OFL webfont glyph subset for music stories and song headings; original notices retained",
+      "reviewedBy": "Existing font license and source verification; owner-authorized music feature",
+      "reviewedOn": "2026-10-15"
+    },
+    {
+      "path": "src/assets/fonts/reading/music-serif-zh-tw.woff2",
+      "sha256": "499bbfdc4fc439a7a450092737eca66578cc0840a19bb8144b27cd2a3a581f42",
+      "status": "approved",
+      "basis": "license",
+      "author": "Upstream font authors, as preserved in the attached OFL notice",
+      "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/7889f11bf31170b5d092a083b357c8c8130f89e0/Variable/WOFF2/OTF/SourceHanSerifTC-VF.otf.woff2",
+      "licenseUrl": "https://github.com/adobe-fonts/source-han-serif",
+      "licenseFile": "/assets/fonts/reading/source-han-license.txt",
+      "scope": "Additional OFL webfont glyph subset for music stories and song headings; original notices retained",
+      "reviewedBy": "Existing font license and source verification; owner-authorized music feature",
+      "reviewedOn": "2026-10-15"
+    },
+    {
+      "path": "src/assets/fonts/reading/music-serif-ja.woff2",
+      "sha256": "58a74ad7bb33395769974140ef93a0003d33530062550681ca3fce30526f48bb",
+      "status": "approved",
+      "basis": "license",
+      "author": "Upstream font authors, as preserved in the attached OFL notice",
+      "source": "https://raw.githubusercontent.com/adobe-fonts/source-han-serif/7889f11bf31170b5d092a083b357c8c8130f89e0/Variable/WOFF2/OTF/SourceHanSerif-VF.otf.woff2",
+      "licenseUrl": "https://github.com/adobe-fonts/source-han-serif",
+      "licenseFile": "/assets/fonts/reading/source-han-license.txt",
+      "scope": "Additional OFL webfont glyph subset for music stories and song headings; original notices retained",
+      "reviewedBy": "Existing font license and source verification; owner-authorized music feature",
+      "reviewedOn": "2026-10-15"
     }
   ]
 }

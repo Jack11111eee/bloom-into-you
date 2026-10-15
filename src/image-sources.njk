@@ -19,6 +19,15 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/image-sources/in
          <p>{{ imageSources.intro }}</p>
          <p>{{ imageSources.limitations }}</p>
          <p>{{ imageSources.coverage }}</p>
+         <section class="original-music-sources" aria-labelledby="original-music-sources-title">
+            <h2 id="original-music-sources-title">music.original.heading</h2>
+            <p>music.original.notice</p>
+            <ul class="image-source-list">
+            {% for entry in imageSources.originalMusic %}
+               <li class="original-music-entry" data-original-id="{{ entry.id }}"><p>{{ entry.label }}</p><a href="{{ entry.asset }}" target="_blank" rel="noopener noreferrer" data-barba-prevent>music.original.view</a></li>
+            {% endfor %}
+            </ul>
+         </section>
          {% for group in imageSources.groups %}
          <h2>{{ group.heading }}</h2>
          <ul class="image-source-list">
