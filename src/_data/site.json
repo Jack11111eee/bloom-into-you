@@ -160,10 +160,6 @@
       "cls": "home-active"
     },
     {
-      "text": "やがて君になる",
-      "cls": "home-active jap"
-    },
-    {
       "text": "Bloom Into You",
       "cls": "home-active"
     },
@@ -185,7 +181,11 @@
     },
     {
       "text": "ท้ายที่สุดฉันจะกลายเป็นเธอ",
-      "cls": "home-active-last"
+      "cls": "home-active"
+    },
+    {
+      "text": "やがて君になる",
+      "cls": "home-active-last jap"
     },
     {
       "text": "Home",

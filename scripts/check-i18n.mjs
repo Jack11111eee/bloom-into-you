@@ -82,8 +82,10 @@ for (const locale of LOCALES) {
         assert(item.find('a').toArray().every(node => node.attribs.target === '_blank' && node.attribs.rel === 'noopener noreferrer' && Object.hasOwn(node.attribs, 'data-barba-prevent')), `${url}: unsafe image reference navigation`);
       }
     }
-    const opening = ['终将成为你', '終將成為妳', 'やがて君になる', 'Bloom Into You', '이윽고 네가 된다', 'Gdy zakwitnie w nas miłość', 'В конечном счёте я стану твоей', 'Θα γίνω τελικά εσύ', 'ท้ายที่สุดฉันจะกลายเป็นเธอ'];
-    assert(JSON.stringify($('.loading-words > h2.home-active, .loading-words > h2.home-active-last').map((_,e)=>$(e).text().trim()).get()) === JSON.stringify(opening), `${url}: original multilingual home opening changed`);
+    const opening = ['终将成为你', '終將成為妳', 'Bloom Into You', '이윽고 네가 된다', 'Gdy zakwitnie w nas miłość', 'В конечном счёте я стану твоей', 'Θα γίνω τελικά εσύ', 'ท้ายที่สุดฉันจะกลายเป็นเธอ', 'やがて君になる'];
+    assert(JSON.stringify($('.loading-words > h2.home-active, .loading-words > h2.home-active-last').map((_,e)=>$(e).text().trim()).get()) === JSON.stringify(opening), `${url}: multilingual home opening order changed`);
+    assert($('.loading-words > h2.home-active').length === 8 && $('.loading-words > h2.home-active-first').text().trim() === opening[0], `${url}: opening sequence topology changed`);
+    assert($('.loading-words > h2.home-active-last').length === 1 && $('.loading-words > h2.home-active-last.jap').text().trim() === opening[8], `${url}: final opening must be Japanese with its original styling`);
     assert($('.language-row a').length === 4, `${url}: missing language choices`);
     $('a[data-language]').each((_, node) => {
       const code = node.attribs['data-language'];
