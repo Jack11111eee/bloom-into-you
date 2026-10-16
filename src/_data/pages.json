@@ -140,6 +140,20 @@
       "navActive": 3,
       "fixedNavActive": 4,
       "floatImages": null
+    },
+    "not-found": {
+      "file": null,
+      "ns": "not-found",
+      "cursorMode": "none",
+      "cursorSpan": null,
+      "title": "Page not found — Bloom Into You",
+      "description": "This page could not be found. Return to the Bloom Into You fan website.",
+      "ogImage": "/assets/img/share-card.png",
+      "canonical": "/404/",
+      "loaderActive": null,
+      "navActive": null,
+      "fixedNavActive": null,
+      "floatImages": null
     }
   }
 }

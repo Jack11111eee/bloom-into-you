@@ -51,8 +51,14 @@ for (const locale of LOCALES) {
     assert($('meta[property="og:locale"]').toArray().every(e=>e.attribs.content===locale.og), `${url}: og:locale mismatch`);
     const title = $('title').text();
     assert($('meta[property="og:title"]').attr('content') === title && $('meta[property="twitter:title"]').attr('content') === title, `${url}: title mismatch`);
-    assert($('main[data-barba=container]').length === 1, `${url}: container count`);
-    assert($('.loading-words h2').length === site.loaderWords.length, `${url}: loader topology`);
+    const notFound = route === '/404/';
+    assert($(notFound ? 'main.not-found-main' : 'main[data-barba=container]').length === 1, `${url}: container count`);
+    assert($('.loading-words h2').length === (notFound ? 0 : site.loaderWords.length), `${url}: loader topology`);
+    if (notFound) {
+      assert($('meta[name=robots]').attr('content') === 'noindex, follow', `${url}: error pages must not be indexed`);
+      assert($('canvas[aria-hidden=true]').length === 1 && $('[data-not-found-back]').length === 1, `${url}: missing error recovery UI`);
+      assert($('script[src$="not-found.js"]').length === 1 && $('script[src$="index-new.js"]').length === 0, `${url}: standalone error runtime`);
+    }
     assert($('.footer-legal').length === 1, `${url}: missing shared copyright notice`);
     assert($('.footer-legal a').eq(0).attr('href') === localizedPath('/copyright/', locale.code), `${url}: wrong copyright link`);
     assert($('.footer-legal a').eq(1).attr('href') === localizedPath('/contact', locale.code), `${url}: lost contact link`);
@@ -83,9 +89,11 @@ for (const locale of LOCALES) {
       }
     }
     const opening = ['终将成为你', '終將成為妳', 'Bloom Into You', '이윽고 네가 된다', 'Gdy zakwitnie w nas miłość', 'В конечном счёте я стану твоей', 'Θα γίνω τελικά εσύ', 'ท้ายที่สุดฉันจะกลายเป็นเธอ', 'やがて君になる'];
+    if (!notFound) {
     assert(JSON.stringify($('.loading-words > h2.home-active, .loading-words > h2.home-active-last').map((_,e)=>$(e).text().trim()).get()) === JSON.stringify(opening), `${url}: multilingual home opening order changed`);
     assert($('.loading-words > h2.home-active').length === 8 && $('.loading-words > h2.home-active-first').text().trim() === opening[0], `${url}: opening sequence topology changed`);
     assert($('.loading-words > h2.home-active-last').length === 1 && $('.loading-words > h2.home-active-last.jap').text().trim() === opening[8], `${url}: final opening must be Japanese with its original styling`);
+    }
     assert($('.language-row a').length === 4, `${url}: missing language choices`);
     $('a[data-language]').each((_, node) => {
       const code = node.attribs['data-language'];

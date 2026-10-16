@@ -445,5 +445,17 @@
   "music.sources.updated": "出典一覧の更新日：2026年10月15日。ウェブ上の参照先の記録日：2026年10月13日。",
   "music.sources.intro": "このページでは、楽曲ページ用のオリジナルイラストの作者と、その他の画像に一致するウェブ上の参照先をまとめています。参照先は、当サイトが当初画像を入手した経路や、転載の許諾を証明するものではありません。",
   "music.sources.limitations": "以下のウェブ参照先には、転載、商品写真、切り抜きプレビューが含まれます。構図、文字、サイズ、画像の補正などが異なる場合があります。これらの画像の権利者、および公開サイトやソースコードへの収録許諾は、引き続き未確認です。",
-  "music.sources.coverage": "ウェブ参照先の各欄には、同じ画像と確認・記録したものだけを掲載しています。隣接するコマや未確認の候補は含みません。"
+  "music.sources.coverage": "ウェブ参照先の各欄には、同じ画像と確認・記録したものだけを掲載しています。隣接するコマや未確認の候補は含みません。",
+  "Page not found — Bloom Into You": "ページが見つかりません — やがて君になる",
+  "This page could not be found. Return to the Bloom Into You fan website.": "このページは見つかりませんでした。「やがて君になる」のファンサイトに戻れます。",
+  "Page not found": "ページが見つかりません",
+  "Somehow,": "どうやら、",
+  "we stepped outside the story.": "物語の外に来たようです。",
+  "There is no page at this address.": "このアドレスに該当するページはありません。",
+  "Go back. There is nothing here for you.": "戻ってください。ここに、あなたの探しているものはありません。",
+  "Back to home": "ホームに戻る",
+  "Back to previous page": "前のページに戻る",
+  "Pause motion": "動きを止める",
+  "Resume motion": "動きを再開する",
+  "Website navigation": "サイト内の移動"
 }

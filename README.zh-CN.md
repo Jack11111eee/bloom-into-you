@@ -28,10 +28,12 @@ node scripts/check-i18n.mjs
 node scripts/check-about-essay.mjs
 node scripts/check-links.mjs
 node scripts/test-i18n-build.mjs
-node --test lib/music.test.mjs
+node --test lib/music.test.mjs lib/not-found.test.mjs
 npm run build:pages
 node scripts/check-pages.mjs
 ```
+
+访问不存在的地址时，会显示本站自定义的动态 `404.html` 页面。页面按网址语言前缀或已保存的语言偏好显示四语文案，并保留原始错误地址和 HTTP 404 状态。
 
 默认 Pages 地址为上述在线地址。其它部署地址可通过 `PAGES_URL` 环境变量传给
 `build:pages` 和 `check-pages.mjs`，地址需以 `/` 结尾。推送到 `main` 后由

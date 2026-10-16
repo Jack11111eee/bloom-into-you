@@ -35,7 +35,7 @@ jobs:
           node scripts/check-i18n.mjs
           node scripts/check-about-essay.mjs
           node scripts/check-links.mjs
-          node --test lib/music.test.mjs
+          node --test lib/music.test.mjs lib/not-found.test.mjs
       - run: npm run build:pages
         env:
           PAGES_URL: ${{ steps.pages.outputs.base_url }}/

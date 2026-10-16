@@ -50,4 +50,9 @@
       <link href="/assets/css/home-mobile.css" rel="stylesheet">
       <link href="/assets/css/copyright.css" rel="stylesheet">
       <link href="/assets/css/music.css" rel="stylesheet">
+      {% if ns == 'not-found' %}
+      <meta name="robots" content="noindex, follow">
+      <link href="/assets/css/not-found.css" rel="stylesheet">
+      <script defer src="/assets/js/not-found.js"></script>
+      {% endif %}
    </head>

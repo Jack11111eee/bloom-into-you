@@ -56,6 +56,25 @@ for (const locale of LOCALES) for (const route of ROUTES) {
   assert.equal($('.nav-bar .credit').text().includes('©'), false, `${logical}: ambiguous work copyright mark`);
   pages++;
 }
+// The host serves the same fallback at deeply nested and localized missing URLs.
+const fallback = load(fs.readFileSync(path.join(root, '404.html'), 'utf8'));
+assert.equal(fallback('html').attr('data-site-base'), base);
+assert.equal(fallback('meta[name=robots]').attr('content'), 'noindex, follow');
+assert.equal(fallback('template[data-not-found-locale]').length, 3);
+for (const locale of LOCALES.filter(locale => locale.code !== 'en')) {
+  const template = fallback(`template[data-not-found-locale="${locale.code}"]`);
+  assert.equal(template.attr('data-lang'), locale.lang);
+  const content = load(template.html());
+  assert(content(`a[href="${base}/${locale.code}/"]`).length > 0, `Fallback loses ${locale.code} home`);
+  content('[href],[src]').each((_, node) => {
+    check(content(node).attr('href'), new URL(base + '/' + locale.code + '/deep/missing/', site));
+    check(content(node).attr('src'), new URL(base + '/' + locale.code + '/deep/missing/', site));
+  });
+}
+fallback('[href],[src]').each((_, node) => {
+  check(fallback(node).attr('href'), new URL(base + '/deep/missing/page/', site));
+  check(fallback(node).attr('src'), new URL(base + '/deep/missing/page/', site));
+});
 for (const file of fs.readdirSync(root, { recursive: true })) {
   assert(!/^(docs|reference|baselines|scripts|node_modules)(\/|$)/.test(file), `Non-site file: ${file}`);
   if (!file.endsWith('.css')) continue;

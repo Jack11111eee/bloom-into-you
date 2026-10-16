@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}" data-locale="{{ locale }}" data-path="{{ canonical }}">
+{% include "partials/head.njk" %}
+<body class="not-found-page">
+  <div id="not-found">
+    <header class="nav-bar forms-nav">
+      <a class="forms-brand" href="/"><span aria-hidden="true">· </span>Bloom Into You</a>
+      <ul class="links-wrap forms-links">
+        {% for item in site.navBar %}{% if item.href %}<li><a href="{{ item.href }}">{{ item.label }}</a></li>{% endif %}{% endfor %}
+      </ul>
+      <details class="not-found-menu">
+        <summary>Menu</summary>
+        <div class="fixed-nav-inner">
+          <nav aria-label="Website navigation">
+            {% for item in site.navBar %}{% if item.href %}<a href="{{ item.href }}">{{ item.label }}</a>{% endif %}{% endfor %}
+          </nav>
+        </div>
+      </details>
+    </header>
+    <main class="forms-main not-found-main" data-form="mobius">{{ content | safe }}</main>
+    <footer class="not-found-footer">
+      {% include "partials/bottom-footer.njk" %}
+    </footer>
+  </div>
+</body>
+</html>

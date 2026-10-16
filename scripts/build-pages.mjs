@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { load } from 'cheerio';
 import { ROUTES, LOCALES, localizedPath } from '../lib/i18n.mjs';
+import { writeNotFoundFallback } from '../lib/not-found.mjs';
 
 const site = new URL(process.env.PAGES_URL || 'https://jack11111eee.github.io/bloom-into-you/');
 if (!site.pathname.endsWith('/')) throw new Error('PAGES_URL must end with /');
@@ -45,5 +46,6 @@ for (const file of fs.readdirSync(out, { recursive: true })) {
   fs.writeFileSync(dest, $.html());
   pages++;
 }
+writeNotFoundFallback(out);
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
 console.log(`PAGES BUILD: ${pages} pages for ${site.href} → ${out}/`);

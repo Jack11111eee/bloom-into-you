@@ -27,12 +27,14 @@ node scripts/check-i18n.mjs
 node scripts/check-about-essay.mjs
 node scripts/check-links.mjs
 node scripts/test-i18n-build.mjs
-node --test lib/music.test.mjs
+node --test lib/music.test.mjs lib/not-found.test.mjs
 npm run build:pages
 node scripts/check-pages.mjs
 ```
 
-The default Pages address is the live URL above. For another deployment address, pass a `PAGES_URL` environment variable ending in `/` to `build:pages` and `check-pages.mjs`. Pushes to `main` run `.github/workflows/pages.yml`, which builds, checks and publishes the site.
+The default Pages address is the live URL above. For another deployment address, pass a `PAGES_URL` environment variable ending in `/` to `build:pages` and `check-pages.mjs`. Missing addresses display a custom, animated `404.html`; its four languages follow the URL prefix or saved language preference. The original missing URL and HTTP 404 status are retained.
+
+Pushes to `main` run `.github/workflows/pages.yml`, which builds, checks and publishes the site.
 
 Every page footer links to the copyright notice, contact page and privacy notice. The full copyright notice is at `/copyright/`, with corresponding routes under the three other language prefixes. Its final section links to image-source references at `/image-sources/`. The source index also credits the owner-original music illustrations. Its other references document matching images found on the web; they do not establish the original acquisition channel or permission to reuse them. The source index is not linked from ordinary page footers.
 

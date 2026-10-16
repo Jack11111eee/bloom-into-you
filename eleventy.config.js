@@ -11,6 +11,7 @@ import { rmSync } from 'node:fs';
 import path from 'node:path';
 import { validateRightsSources, validatePublishedRights } from './lib/rights.mjs';
 import { validateImageSources } from './lib/image-sources.mjs';
+import { writeNotFoundFallback } from './lib/not-found.mjs';
 
 export default function (eleventyConfig) {
   eleventyConfig.setQuietMode(true);
@@ -45,6 +46,7 @@ export default function (eleventyConfig) {
   eleventyConfig.on('eleventy.after', ({ directories, outputMode }) => {
     if (outputMode !== 'fs') return;
     for (const file of withdrawn) rmSync(path.join(directories.output, file), { force: true });
+    writeNotFoundFallback(directories.output);
     validatePublishedRights(directories.output);
   });
   // Distribute rights boundaries alongside the exact component license texts.
