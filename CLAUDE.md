@@ -60,6 +60,9 @@ backup, exact ref scope and recovery plan.
 
 - Use a separate branch/worktree for concurrent or broad work; never absorb
   unrelated changes. Re-check branch, status and staged diff before committing.
+- Use English Conventional Commits: `type(scope): description`, with an optional
+  scope and a suitable type such as `feat`, `fix`, `docs` or `chore`. Write the
+  subject, body and footers in English; do not use Chinese in commit messages.
 - Commit completed, verified units locally. Stage only their files or hunks.
 - Push only when the user explicitly requests it. Do not force-push, rewrite
   shared history, hard-reset or delete user files without explicit authorization.
