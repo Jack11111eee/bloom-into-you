@@ -7,9 +7,15 @@ html:not([lang="en"]) .loading-words h2:not(.home-active):not(.home-active-last)
 .loading-container .loading-words h2.home-active,
 .loading-container .loading-words h2.home-active-last { font-family: 'Inter', sans-serif; font-weight: 450; }
 .language-switch { position: relative; margin-left: auto; margin-right: 1.5em; font-size: .85em; }
-.language-switch summary { cursor: pointer; list-style: none; padding: .75em .5em; }
+.language-switch summary { cursor: pointer; list-style: none; padding: .75em .5em; display: flex; align-items: center; gap: .5em; }
+.language-icon { width: 1.15em; height: 1.15em; flex-shrink: 0; }
+.locale-name { white-space: nowrap; }
+.locale-name[lang="en"] { font-family: 'WenKai en', serif; }
+.locale-name[lang="zh-Hans"] { font-family: 'WenKai zh-cn', 'Kaiti SC', serif; }
+.locale-name[lang="zh-Hant"] { font-family: 'WenKai zh-tw', 'Kaiti TC', serif; }
+.locale-name[lang="ja"] { font-family: 'WenKai ja', 'Yu Mincho', serif; }
 .language-switch summary::-webkit-details-marker { display: none; }
-.language-switch summary::after { content: ''; display: inline-block; width: .35em; height: .35em; margin: 0 0 .2em .75em; border-right: 1px solid; border-bottom: 1px solid; transform: rotate(45deg); }
+.language-switch summary::after { content: ''; display: inline-block; width: .35em; height: .35em; margin: 0 0 .2em .25em; border-right: 1px solid; border-bottom: 1px solid; transform: rotate(45deg); }
 .language-switch .language-options { position: absolute; right: 0; top: 100%; width: max-content; min-width: 13em; padding: .6em; color: #fff; background: var(--color-dark); border-radius: .4em; box-shadow: 0 .5em 2em #0002; }
 .language-options a { min-height: 44px; display: flex; justify-content: space-between; align-items: center; gap: 1em; padding: .7em .6em; color: inherit; text-decoration: none; border-radius: .25em; }
 .language-options a:hover, .language-options a:focus-visible { background: #8882; }
@@ -17,7 +23,7 @@ html:not([lang="en"]) .loading-words h2:not(.home-active):not(.home-active-last)
 .locale-code { font-size: .7em; opacity: .65; flex-shrink: 0; white-space: nowrap; }
 .language-row .locale-code { display: none; }
 .language-row { margin-top: 2em; color: var(--color-white); }
-.language-row h5 { margin-bottom: .6em; }
+.language-row h5 { margin-bottom: .6em; display: flex; align-items: center; gap: .5em; }
 .language-row .language-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .15em .75em; font-size: .85em; }
 .fixed-nav-inner { overflow-y: auto; }
 .fixed-nav .fixed-nav-inner { padding-top: 10vh; padding-bottom: 5vh; }

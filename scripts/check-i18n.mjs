@@ -87,9 +87,15 @@ for (const locale of LOCALES) {
     assert($('.language-row a').length === 4, `${url}: missing language choices`);
     $('a[data-language]').each((_, node) => {
       const code = node.attribs['data-language'];
+      const target = LOCALES.find(l => l.code === code);
+      const name = $(node).children('.locale-name');
+      assert(name.length === 1 && name.text() === target?.nativeName && name.attr('lang') === target?.lang && name.attr('translate') === 'no', `${url}: invalid native language name ${code}`);
+      assert(Object.hasOwn(node.attribs, 'aria-current') === (code === locale.code), `${url}: wrong current language ${code}`);
       assert(node.attribs.href === localizedPath(route, code), `${url}: switch loses logical page`);
       assert(Object.hasOwn(node.attribs,'data-barba-prevent'), `${url}: cross-language Barba transition enabled`);
     });
+    const summaryName = $('.language-switch summary > .locale-name');
+    assert(summaryName.length === 1 && summaryName.text() === locale.nativeName && summaryName.attr('lang') === locale.lang && summaryName.attr('translate') === 'no', `${url}: wrong native summary name`);
     $('a[href],link[rel=canonical],form[action]').each((_,node) => {
       const href = node.attribs.href || node.attribs.action;
       if (!href.startsWith('/') || href.startsWith('/assets/') || href.startsWith('/media/')) return;
@@ -99,7 +105,7 @@ for (const locale of LOCALES) {
     const values = [];
     function walk(node) {
       if(node.type==='text') {
-        if(!['style','script'].includes(node.parent?.name) && !$(node.parent).hasClass('locale-code') && !$(node.parent).closest('.loading-words > h2.home-active, .loading-words > h2.home-active-last').length) values.push(node.data.trim());
+        if(!['style','script'].includes(node.parent?.name) && !$(node.parent).hasClass('locale-code') && !$(node.parent).is('.language-options a > .locale-name, .language-switch summary > .locale-name') && !$(node.parent).closest('.loading-words > h2.home-active, .loading-words > h2.home-active-last').length) values.push(node.data.trim());
       } else if(node.children) node.children.forEach(walk);
     }
     walk($.root()[0]);
