@@ -71,3 +71,25 @@ backup, exact ref scope and recovery plan.
 - Push only when the user explicitly requests it. Do not force-push, rewrite
   shared history, hard-reset or delete user files without explicit authorization.
 - Keep `dist/`, `dist-pages/`, dependencies, caches and local research ignored.
+
+## Maintainer reference
+
+- Local preview: Node.js 24, `npm ci`, then `npm run serve`. `npm run build`
+  writes `dist/`; `npm run build:pages` converts it to the GitHub Pages project
+  path in `dist-pages/`. For another address, pass `PAGES_URL` (ending in `/`)
+  to both `build:pages` and `scripts/check-pages.mjs`.
+- Pushes to `main` run `.github/workflows/pages.yml`, which builds, checks and
+  publishes the site. Commit identities must use the GitHub noreply address;
+  `node lib/setup-git-hooks.mjs` installs local checks (requires Node on PATH).
+- Every build validates `lib/rights-register.json` and the asset baseline. New
+  or changed images and fonts need a recorded source, basis, scope, reviewer and
+  date; `retired` or `suspended` assets never reach the output. An unverified
+  record is not evidence of permission. `node --test lib/rights.test.mjs`
+  exercises these safeguards.
+- Rights requests are handled privately with `node lib/rights-cases.mjs`
+  (`create`, `event`, `due`); records go to the ignored `docs/rights-private/`.
+  The tool records actions taken by hand and never sends email. Never commit
+  correspondence or evidence.
+- The image-source index (`/image-sources/`) documents matching images found on
+  the web; it does not establish permission and is linked only from the
+  copyright page.
