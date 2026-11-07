@@ -6,7 +6,7 @@
  * 翻译缺项直接失败；无客户端翻译运行时。
  */
 
-import { localizeHtml, clearCatalogCache } from './lib/i18n.mjs';
+import { localizeHtml, clearCatalogCache, LOCALES, localizedPath } from './lib/i18n.mjs';
 import { rmSync } from 'node:fs';
 import path from 'node:path';
 import { validateRightsSources, validatePublishedRights } from './lib/rights.mjs';
@@ -60,6 +60,12 @@ export default function (eleventyConfig) {
    * 缩略图 URL 就是在扩展名前插入 "-540x"。数据文件只存原图，由此过滤器派生，
    * 避免两处各写一遍而产生漂移。
    */
+  // Language choices are rendered by templates; the transform keeps them untranslated.
+  eleventyConfig.addGlobalData('localeList', LOCALES);
+  eleventyConfig.addFilter('localePath', (logicalPath, code) => localizedPath(logicalPath, code));
+
+  eleventyConfig.addFilter('fail', message => { throw new Error(message); });
+
   eleventyConfig.addFilter('thumb', (url) =>
     typeof url === 'string' && url ? url.replace(/(\.[a-z0-9]+)$/i, '-540x$1') : url,
   );

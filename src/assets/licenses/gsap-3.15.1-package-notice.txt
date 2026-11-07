@@ -1,0 +1,12 @@
+GSAP 3.15.1 package metadata and distributed header
+
+Copyright 2026, GreenSock. All rights reserved.
+Author: Jack Doyle, jack@greensock.com
+
+Subject to the terms at https://gsap.com/standard-license.
+
+Package license field: Standard 'no charge' license: https://gsap.com/standard-license.
+
+The 3.15.1 npm package contains no standalone license file. Its distributed gsap.min.js and ScrollTrigger.min.js keep the header above. The official terms are preserved separately in gsap-standard-license-2025.txt, with their own effective date.
+Source: https://registry.npmjs.org/gsap/3.15.1
+Integrity: sha512-63yjWRFWj3QRP1UOuD8kcidCcy3nxb1mMRpwHr/xJRvPfm9GtWOXFAYUiL0ro1fgPq2nY53LR+98pAgy9BumBg==

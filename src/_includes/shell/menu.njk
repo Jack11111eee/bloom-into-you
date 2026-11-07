@@ -1,0 +1,24 @@
+{#- Floating menu button and the sliding navigation panel. -#}
+{% import "shell/language.njk" as language with context %}
+<button class="menu-toggle" type="button" data-menu-toggle data-magnet="45" data-fill aria-controls="menu-panel" aria-expanded="false">
+  <span class="menu-toggle__body" data-magnet-body data-fill-host>
+    <span class="menu-toggle__fill" aria-hidden="true"></span>
+    <span class="menu-toggle__bars" aria-hidden="true" data-magnet-inner></span>
+  </span>
+  <span class="u-visually-hidden" data-when="closed">Open menu</span>
+  <span class="u-visually-hidden" data-when="open" hidden>Close menu</span>
+</button>
+<div class="menu-scrim" data-menu-scrim></div>
+<nav class="menu-panel" id="menu-panel" data-menu-panel data-tone="dark" aria-label="Main navigation" inert>
+  <svg class="menu-panel__edge" viewBox="0 0 10 100" preserveAspectRatio="none" aria-hidden="true"><path d="M10 0C-3 30-3 70 10 100Z"/></svg>
+  <div class="menu-panel__inner" data-lenis-prevent>
+    <p class="t-label">Navigation</p>
+    <span class="rule"></span>
+    <ul class="menu-panel__links" role="list">
+    {%- for item in site.fixedNav %}
+      <li style="--i: {{ loop.index0 }}"><a class="menu-panel__link" href="{{ item.href }}" data-magnet="24"{% if loop.index0 === fixedNavActive %} aria-current="page"{% endif %}><span data-magnet-inner>{{ item.label }}</span></a></li>
+    {%- endfor %}
+    </ul>
+    {{ language.row(canonical, locale) }}
+  </div>
+</nav>

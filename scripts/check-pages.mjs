@@ -53,7 +53,7 @@ for (const locale of LOCALES) for (const route of ROUTES) {
     assert.equal($(selector).attr('content'), new URL(`${base}/assets/img/share-card.png`, site).href,
       `${logical}: expected original share artwork`);
   }
-  assert.equal($('.nav-bar .credit').text().includes('©'), false, `${logical}: ambiguous work copyright mark`);
+  assert.equal($('[data-brand]').text().includes('©'), false, `${logical}: ambiguous work copyright mark`);
   pages++;
 }
 // The host serves the same fallback at deeply nested and localized missing URLs.

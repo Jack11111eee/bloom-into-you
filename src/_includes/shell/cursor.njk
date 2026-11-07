@@ -1,0 +1,16 @@
+{#- Pointer companion: preview window, dot and label. Fine pointers only. -#}
+{% if cursorMode and cursorMode !== 'none' %}
+<div class="cursor" data-cursor aria-hidden="true">
+  <div class="cursor__preview">
+  {%- if cursorMode === 'float' %}
+    <div class="cursor__stack" data-cursor-stack>
+    {%- for image in floatImages %}
+      <span class="cursor__frame" style="background-color: {{ image.tileColor }}"><img src="{{ image.thumbnail | thumb }}" data-src="{{ image.thumbnail }}" alt="" decoding="async"></span>
+    {%- endfor %}
+    </div>
+  {%- endif %}
+  </div>
+  <div class="cursor__dot"></div>
+  <div class="cursor__label"><span>{{ cursorSpan }}</span></div>
+</div>
+{% endif %}

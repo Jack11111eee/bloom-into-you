@@ -13,10 +13,15 @@
  * **数字**才能与 `loop.index0` 严格比较；写成 `"{{ … }}"` 会得到字符串，
  * 比较恒为 false 且**不报错**（loader 就没有 active 项了）。
  */
+import { localizedPath } from '../lib/i18n.mjs';
+
 const pick = (data) => (data.ns === 'single' ? data.entry : (data.pages.pages[data.ns] || {}));
 
 export default {
-  layout: 'layouts/base.njk',
+  layout: 'layouts/page.njk',
+  // Every route is published once per language; entry pages override both keys.
+  pagination: { data: 'locales', size: 1, alias: 'language' },
+  permalink: data => `${localizedPath(data.pages.pages[data.ns].canonical, data.language).replace(/\/$/, '')}/index.html`,
   eleventyComputed: {
     locale: data => data.language || data.entry?.language || 'en',
     title: (data) => pick(data).title,

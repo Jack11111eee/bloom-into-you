@@ -1,0 +1,17 @@
+{#- Page curtain: first-load opening and the cover used between pages. -#}
+<div class="curtain" data-curtain aria-hidden="true">
+  <div class="curtain__sheet">
+    <svg class="curtain__lip curtain__lip--top" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 10C28 0 72 0 100 10Z"/></svg>
+    <div class="curtain__stage">
+      <p class="curtain__label"><span class="curtain__lamps"><i></i><i></i></span><span class="curtain__word" data-curtain-label>{{ site.loaderWords[loaderActive].text }}</span></p>
+      {%- if ns == 'home' %}
+      <ol class="curtain__opening" role="list" data-i18n-skip>
+      {%- for word in site.loaderWords %}{% if 'home-active' in word.cls %}
+        <li{% if 'jap' in word.cls %} data-opening-word="last" lang="ja"{% else %} data-opening-word{% endif %}>{{ word.text }}</li>
+      {%- endif %}{% endfor %}
+      </ol>
+      {%- endif %}
+    </div>
+    <svg class="curtain__lip curtain__lip--bottom" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 0C28 10 72 10 100 0Z"/></svg>
+  </div>
+</div>

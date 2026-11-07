@@ -17,6 +17,10 @@ const imageSources = JSON.parse(fs.readFileSync('src/_data/imageSources.json', '
 const imageSourceEntries = imageSources.groups.flatMap(group => group.entries);
 const music = JSON.parse(fs.readFileSync('src/_data/music.json', 'utf8'));
 const musicTitles = new Set(music.tracks.map(track => track.title));
+const pagesData = JSON.parse(fs.readFileSync('src/_data/pages.json', 'utf8')).pages;
+const entriesData = [...JSON.parse(fs.readFileSync('src/_data/characters.json', 'utf8')).characters, ...JSON.parse(fs.readFileSync('src/_data/insights.json', 'utf8')).insights];
+// The curtain names the page with its registered loader word.
+const pageWordIndex = route => (Object.values(pagesData).find(page => page.canonical === route) || entriesData.find(entry => entry.href === route)).loaderActive;
 const imageSourceIds = new Set(imageSourceEntries.map(entry => entry.id));
 // H11: remove only the owner's exact work/publisher identifiers from the
 // language-purity check, and only in their registered declaration fields.
@@ -53,11 +57,13 @@ for (const locale of LOCALES) {
     assert($('meta[property="og:title"]').attr('content') === title && $('meta[property="twitter:title"]').attr('content') === title, `${url}: title mismatch`);
     const notFound = route === '/404/';
     assert($(notFound ? 'main.not-found-main' : 'main[data-barba=container]').length === 1, `${url}: container count`);
-    assert($('.loading-words h2').length === (notFound ? 0 : site.loaderWords.length), `${url}: loader topology`);
+    const curtainLabels = $('[data-curtain-label]');
+    assert(curtainLabels.length === (notFound ? 0 : 1), `${url}: curtain label topology`);
+    if (!notFound) assert(curtainLabels.text() === catalog[site.loaderWords[pageWordIndex(route)].text], `${url}: curtain label must name this page`);
     if (notFound) {
       assert($('meta[name=robots]').attr('content') === 'noindex, follow', `${url}: error pages must not be indexed`);
       assert($('canvas[aria-hidden=true]').length === 1 && $('[data-not-found-back]').length === 1, `${url}: missing error recovery UI`);
-      assert($('script[src$="not-found.js"]').length === 1 && $('script[src$="index-new.js"]').length === 0, `${url}: standalone error runtime`);
+      assert($('script[src$="not-found.js"]').length === 1 && $('script[src$="/app.js"]').length === 0, `${url}: standalone error runtime`);
     }
     assert($('.footer-legal').length === 1, `${url}: missing shared copyright notice`);
     assert($('.footer-legal a').eq(0).attr('href') === localizedPath('/copyright/', locale.code), `${url}: wrong copyright link`);
@@ -89,11 +95,12 @@ for (const locale of LOCALES) {
       }
     }
     const opening = ['终将成为你', '終將成為妳', 'Bloom Into You', '이윽고 네가 된다', 'Gdy zakwitnie w nas miłość', 'В конечном счёте я стану твоей', 'Θα γίνω τελικά εσύ', 'ท้ายที่สุดฉันจะกลายเป็นเธอ', 'やがて君になる'];
-    if (!notFound) {
-    assert(JSON.stringify($('.loading-words > h2.home-active, .loading-words > h2.home-active-last').map((_,e)=>$(e).text().trim()).get()) === JSON.stringify(opening), `${url}: multilingual home opening order changed`);
-    assert($('.loading-words > h2.home-active').length === 8 && $('.loading-words > h2.home-active-first').text().trim() === opening[0], `${url}: opening sequence topology changed`);
-    assert($('.loading-words > h2.home-active-last').length === 1 && $('.loading-words > h2.home-active-last.jap').text().trim() === opening[8], `${url}: final opening must be Japanese with its original styling`);
-    }
+    const openingWords = $('[data-i18n-skip] > [data-opening-word]');
+    if (route === '/') {
+    assert(JSON.stringify(openingWords.map((_,e)=>$(e).text().trim()).get()) === JSON.stringify(opening), `${url}: multilingual home opening order changed`);
+    assert(openingWords.length === 9 && openingWords.first().text().trim() === opening[0], `${url}: opening sequence topology changed`);
+    assert($('[data-opening-word="last"][lang="ja"]').length === 1 && openingWords.last().is('[data-opening-word="last"]') && openingWords.last().text().trim() === opening[8], `${url}: final opening must be Japanese with its own styling`);
+    } else assert(openingWords.length === 0, `${url}: the opening belongs to the home page only`);
     assert($('.language-row a').length === 4, `${url}: missing language choices`);
     $('a[data-language]').each((_, node) => {
       const code = node.attribs['data-language'];
@@ -115,7 +122,7 @@ for (const locale of LOCALES) {
     const values = [];
     function walk(node) {
       if(node.type==='text') {
-        if(!['style','script'].includes(node.parent?.name) && !$(node.parent).hasClass('locale-code') && !$(node.parent).is('.language-options a > .locale-name, .language-switch summary > .locale-name') && !$(node.parent).closest('.loading-words > h2.home-active, .loading-words > h2.home-active-last').length) values.push(node.data.trim());
+        if(!['style','script'].includes(node.parent?.name) && !$(node.parent).closest('[data-i18n-skip]').length) values.push(node.data.trim());
       } else if(node.children) node.children.forEach(walk);
     }
     walk($.root()[0]);
@@ -140,7 +147,7 @@ for (const locale of LOCALES) {
     assert($('svg:not([aria-hidden=true])').length === 0 && $('svg title').length===0, `${url}: decorative SVG exposes title`);
     const english = load(fs.readFileSync(fileFor(route),'utf8'));
     assert(JSON.stringify(assetSignature($))===JSON.stringify(assetSignature(english)), `${url}: shared assets or framing changed`);
-    assert($('.count-nr').text()===english('.count-nr').text(), `${url}: derived footer counts changed`);
+    assert($('.pill__count').text()===english('.pill__count').text(), `${url}: derived footer counts changed`);
   }
 }
 const expectedPages = ROUTES.length * LOCALES.length;

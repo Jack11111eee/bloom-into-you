@@ -1,0 +1,33 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/assets/js/boot.js"></script>
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ canonical }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bloom Into You — Unofficial fan website">
+  <meta property="og:locale" content="en">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="{{ ogImage }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="{{ title }}">
+  <meta property="twitter:description" content="{{ description }}">
+  <meta property="twitter:image" content="{{ ogImage }}">
+  <meta name="google" content="notranslate">
+  {%- if ns == 'not-found' %}
+  <meta name="robots" content="noindex, follow">
+  {%- endif %}
+  <link rel="preload" as="font" href="/assets/fonts/reading/wenkai-{{ locale }}.woff2" type="font/woff2" crossorigin="anonymous">
+  {%- if ns == 'home' %}
+  <link rel="preload" as="font" href="/assets/fonts/Inter-450.woff2" type="font/woff2" crossorigin="anonymous">
+  {%- endif %}
+  {%- for sheet in ['tokens', 'base', 'layout', 'components', 'shell', 'pages', 'motion', 'reading-fonts', 'copyright', 'music'] %}
+  <link rel="stylesheet" href="/assets/css/{{ sheet }}.css">
+  {%- endfor %}
+  {%- if ns == 'not-found' %}
+  <link rel="stylesheet" href="/assets/css/not-found.css">
+  <script defer src="/assets/js/not-found.js"></script>
+  {%- endif %}
+</head>

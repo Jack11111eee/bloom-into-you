@@ -18,9 +18,9 @@ for(const locale of LOCALES){
  assert.deepEqual(paragraphs,data.paragraphs.map(p=>p.map(part=>catalog[part.text]).join('')));
  assert.equal($('.about-essay strong').length,2);
  assert.deepEqual($('.about-essay strong').map((_,e)=>$(e).text()).get(),data.paragraphs.flat().filter(p=>p.emphasis).map(p=>catalog[p.text]));
- assert.equal($('.about-essay .animate,.about-essay .fade-in').length,0);
- assert($('.about-essay').prev().hasClass('about-image'));
- assert($('.about-essay').next().hasClass('about-services'));
+ assert.equal($('.about-essay [data-reveal]').length,0);
+ assert($('.about-essay').prev().hasClass('about-story'));
+ assert($('.about-essay').next().hasClass('about-scope'));
  assert.equal($('.quotation-source a').text(),catalog[quotationSources.englishCitation]);
  assert.equal($('.quotation-source a').attr('href'),quotationSources.englishUrl);
  assert.equal($('.quotation-source a').attr('data-barba-prevent'),'');

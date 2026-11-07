@@ -1,0 +1,17 @@
+{#- Top bar that scrolls away with the first section of every page. -#}
+{% import "shell/language.njk" as language with context %}
+<div class="site-header" data-intro>
+  <a class="site-header__brand" href="/" data-brand data-magnet="18">
+    <span class="site-header__mark" aria-hidden="true">·</span>
+    <span class="site-header__name" data-magnet-inner>Bloom Into You</span>
+  </a>
+  {{ language.disclosure(canonical, locale) }}
+  <nav class="site-header__nav" aria-label="Main navigation">
+    <ul role="list">
+    {%- for item in site.navBar %}{% if item.href %}
+      <li><a href="{{ item.href }}" data-magnet="18"{% if loop.index0 === navActive %} aria-current="page"{% endif %}><span data-magnet-inner>{{ item.label }}</span></a></li>
+    {%- endif %}{% endfor %}
+    </ul>
+  </nav>
+  <button class="site-header__menu" type="button" data-menu-open aria-controls="menu-panel" aria-expanded="false">Menu</button>
+</div>

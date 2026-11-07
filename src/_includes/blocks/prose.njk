@@ -1,0 +1,10 @@
+{#- Long-form reading set to a comfortable measure. -#}
+<section class="block prose section{{ ' block--pad-end' if b.paddingBottom }}"{% if b.background %} style="--block-bg: {{ b.background }}"{% endif %}>
+  <div class="wrap wrap--narrow">
+    <div class="prose__body" data-reveal="fade">
+    {%- for paragraph in b.paragraphs %}
+      <p>{{ paragraph }}</p>
+    {%- endfor %}
+    </div>
+  </div>
+</section>

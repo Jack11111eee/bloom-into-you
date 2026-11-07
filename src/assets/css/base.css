@@ -1,0 +1,179 @@
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  :where(body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ol, ul) {
+    margin: 0;
+  }
+
+  :where(ol, ul)[role='list'] {
+    padding: 0;
+    list-style: none;
+  }
+
+  :where(img, svg, video, canvas, picture) {
+    display: block;
+    max-inline-size: 100%;
+  }
+
+  :where(img, video) {
+    block-size: auto;
+  }
+
+  :where(button, input, textarea, select) {
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+  }
+
+  :where(button) {
+    cursor: pointer;
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+
+  :where(a) {
+    color: inherit;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    background: var(--ink);
+  }
+
+  body {
+    min-block-size: 100svh;
+    font-family: var(--font-body);
+    font-size: var(--fs-root);
+    font-weight: 400;
+    line-height: 1.66;
+    color: var(--ink);
+    background: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    color: var(--ink);
+    background: var(--petal);
+  }
+
+  :where(h1, h2, h3, h4) {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  /* Latin quotes in CJK-capable subsets should keep proportional widths. */
+  :root:lang(en) :where(h1, h2, h3, h4) {
+    font-variant-east-asian: proportional-width;
+  }
+
+  :where(h1, h2, h3, h4) :where(span) {
+    font-weight: inherit;
+  }
+
+  :lang(zh),
+  :lang(ja) {
+    line-break: strict;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  p a {
+    text-decoration-line: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  [data-tone='dark'] :focus-visible {
+    outline-color: var(--petal);
+  }
+
+  .u-visually-hidden {
+    position: absolute !important;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .skip-link {
+    position: fixed;
+    inset-block-start: 0.75rem;
+    inset-inline-start: 0.75rem;
+    z-index: 1000;
+    padding: 0.6em 1.1em;
+    color: var(--paper);
+    background: var(--ink);
+    border-radius: var(--radius-pill);
+    translate: 0 -200%;
+    transition: translate var(--t-sm) var(--ease-out);
+  }
+
+  .skip-link:focus-visible {
+    translate: 0 0;
+  }
+
+  /* Type roles */
+  .t-label {
+    margin-block-end: 1em;
+    font-family: var(--font-body);
+    font-size: var(--fs-label);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  [data-tone='dark'] .t-label {
+    color: var(--muted-inverse);
+  }
+
+  .t-lead {
+    font-size: var(--fs-lead);
+    line-height: 1.4;
+  }
+
+  .t-heading {
+    font-size: var(--fs-heading);
+  }
+
+  .t-title {
+    font-size: var(--fs-title);
+  }
+
+  .t-title-xl {
+    font-size: var(--fs-title-xl);
+  }
+
+  .t-note {
+    font-weight: 700;
+  }
+
+  .t-small {
+    font-size: var(--fs-small);
+    line-height: 1.75;
+  }
+}

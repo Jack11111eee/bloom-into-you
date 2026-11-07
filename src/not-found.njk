@@ -1,12 +1,8 @@
 ---
 ns: not-found
 layout: layouts/not-found.njk
-pagination:
-  data: locales
-  size: 1
-  alias: language
-permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/404/index.html"
 ---
+{% from "ui/macros.njk" import icon %}
 <div class="forms-object" data-orbit>
   <span class="not-found-code" aria-hidden="true">404</span>
   <canvas aria-hidden="true"></canvas>
@@ -18,6 +14,6 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/404/index.html"
 <h1 class="forms-title"><span>Somehow,</span> <span>we stepped outside the story.</span></h1>
 <p class="forms-copy"><span class="forms-explanation">There is no page at this address.</span><span>Go back. There is nothing here for you.</span></p>
 <div class="forms-actions">
-  <a href="/" class="forms-home"><span class="not-found-arrow">{% include "partials/icon-arrow.njk" %}</span><span>Back to home</span></a>
+  <a href="/" class="forms-home"><span class="not-found-arrow">{{ icon('arrow') }}</span><span>Back to home</span></a>
   <a href="/" class="forms-back" data-not-found-back>Back to previous page</a>
 </div>

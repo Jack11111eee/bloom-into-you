@@ -1,0 +1,26 @@
+{#- Language choices, shared by the header disclosure and the menu panel. -#}
+{% from "ui/macros.njk" import icon %}
+{% macro choices(logicalPath, current) -%}
+<div class="language-options">
+{%- for other in localeList %}
+  <a href="{{ logicalPath | localePath(other.code) }}" data-language="{{ other.code }}" data-barba-prevent
+  {%- if other.code == current %} aria-current="true"{% endif %}><span class="locale-name" lang="{{ other.lang }}" translate="no" data-i18n-skip>{{ other.nativeName }}</span><span class="locale-code" data-i18n-skip>{{ other.code | upper }}</span></a>
+{%- endfor %}
+</div>
+{%- endmacro %}
+
+{% macro disclosure(logicalPath, current) -%}
+{%- for active in localeList %}{% if active.code == current -%}
+<details class="language-switch">
+  <summary>{{ icon('globe') }}<span class="locale-name" lang="{{ active.lang }}" translate="no" data-i18n-skip>{{ active.nativeName }}</span></summary>
+  {{ choices(logicalPath, current) }}
+</details>
+{%- endif %}{% endfor -%}
+{%- endmacro %}
+
+{% macro row(logicalPath, current) -%}
+<div class="language-row">
+  <p class="t-label language-row__label">{{ icon('globe') }}<span>Language</span></p>
+  {{ choices(logicalPath, current) }}
+</div>
+{%- endmacro %}

@@ -1,0 +1,11 @@
+{#- Portrait images side by side; drifts gently against each other. -#}
+{% from "ui/macros.njk" import picture %}
+<section class="block media-row{{ ' block--pad-end' if b.paddingBottom }}"{% if b.background %} style="--block-bg: {{ b.background }}"{% endif %}>
+  <ul class="media-row__list wrap" role="list" style="--count: {{ b.columns.length }}">
+  {%- for column in b.columns %}
+    <li class="media-row__item"{% if column.deviceAttrs['data-scroll-speed'] %} data-parallax="{{ column.deviceAttrs['data-scroll-speed'] }}"{% endif %}>
+      <div class="media-row__window" data-reveal="media">{{ picture(column.media, '(max-width: 540px) 70vw, 24vw') }}</div>
+    </li>
+  {%- endfor %}
+  </ul>
+</section>

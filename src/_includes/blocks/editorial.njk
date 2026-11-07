@@ -1,47 +1,44 @@
-{# Final crops are baked into WebP variants. Do not reapply fx/fy/z here. #}
+{#- Owner-designed editorial layouts. Crops are baked into the WebP variants. -#}
+{% set sizesFor = {
+  text: '(max-width: 540px) calc(100vw - 40px), (max-width: 1200px) 76vw, (min-width: 1900px) 710px, 38vw',
+  detail: '(max-width: 540px) calc(100vw - 40px), (max-width: 1200px) 76vw, (min-width: 1900px) 820px, 44vw',
+  portrait: '(max-width: 540px) calc(100vw - 40px), (max-width: 1200px) 512px, (min-width: 1900px) 574px, 31vw',
+  sequence: '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 26vw, (min-width: 1900px) 431px, 23vw',
+  quiet: '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 45vw, (min-width: 1900px) 750px, 40vw',
+  pair: '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 38vw, (min-width: 1900px) 646px, 34vw',
+  lead: '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 48vw, (min-width: 1900px) 808px, 43vw',
+  follow: '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 31vw, (min-width: 1900px) 517px, 28vw'
+} %}
 {% macro figure(item, sizes) %}
 {% set m = replacementMedia[item.slot] %}
 <figure class="editorial-figure" data-replacement-slot="{{ item.slot }}">
-   <div class="editorial-image" style="aspect-ratio: {{ m.aspectRatio }};">
-      <img src="{{ m.src }}" srcset="{% for v in m.variants %}{{ v.src }} {{ v.width }}w{{ ', ' if not loop.last }}{% endfor %}" sizes="{{ sizes }}" width="{{ m.width }}" height="{{ m.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async">
-   </div>
-   {% if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}
+  <div class="editorial-image" style="aspect-ratio: {{ m.aspectRatio }};">
+    <img src="{{ m.src }}" srcset="{% for v in m.variants %}{{ v.src }} {{ v.width }}w{{ ', ' if not loop.last }}{% endfor %}" sizes="{{ sizes }}" width="{{ m.width }}" height="{{ m.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async">
+  </div>
+  {%- if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}
 </figure>
 {% endmacro %}
-{% set whole = '(max-width: 540px) calc(100vw - 40px), (max-width: 1200px) 76vw, (min-width: 1900px) 1292px, 68vw' %}
-{% set half = '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 38vw, (min-width: 1900px) 646px, 34vw' %}
-{% set third = '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 26vw, (min-width: 1900px) 431px, 23vw' %}
-{% set textImage = '(max-width: 540px) calc(100vw - 40px), (max-width: 1200px) 76vw, (min-width: 1900px) 710px, 38vw' %}
-{% set detailImage = '(max-width: 540px) calc(100vw - 40px), (max-width: 1200px) 76vw, (min-width: 1900px) 820px, 44vw' %}
-{% set portraitImage = '(max-width: 540px) calc(100vw - 40px), (max-width: 1200px) 512px, (min-width: 1900px) 574px, 31vw' %}
-{% set quietImage = '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 45vw, (min-width: 1900px) 750px, 40vw' %}
-{% set largePair = '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 48vw, (min-width: 1900px) 808px, 43vw' %}
-{% set smallPair = '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 31vw, (min-width: 1900px) 517px, 28vw' %}
-<section class="section single-block block-editorial block-padding-bottom block_{{ b.index }} editorial-{{ b.layout }}" data-editorial-id="{{ b.id }}" data-scroll-section>
-   <div class="container medium">
-   {% if b.layout === 'steps' %}
-      {% for item in b.images %}
-      <div class="editorial-row editorial-motion fade-in animate">
-         {{ figure(item, textImage) }}
-         <div class="editorial-copy">{% for p in item.paragraphs %}<p>{{ p }}</p>{% endfor %}</div>
+{% macro copy(paragraphs, extra = '') %}<div class="editorial-copy {{ extra }}">{% for p in paragraphs %}<p>{{ p }}</p>{% endfor %}</div>{% endmacro %}
+{% set single = b.layout in ['detail', 'portrait', 'text'] %}
+{% set ranked = b.layout in ['contrast', 'daily'] %}
+<section class="block editorial editorial-{{ b.layout }} section block--pad-end" data-editorial-id="{{ b.id }}">
+  <div class="wrap wrap--narrow">
+  {%- if b.layout === 'steps' %}
+    {%- for item in b.images %}
+    <div class="editorial-row" data-reveal="fade">{{ figure(item, sizesFor.text) }}{{ copy(item.paragraphs) }}</div>
+    {%- endfor %}
+  {%- elif single %}
+    <div class="editorial-row" data-reveal="fade">{{ figure(b.images[0], sizesFor[b.layout]) }}{{ copy(b.paragraphs) }}</div>
+  {%- else %}
+    <div data-reveal="fade">
+      <div class="editorial-grid">
+      {%- for item in b.images %}
+        {%- if ranked %}{% set key = 'lead' if loop.first else 'follow' %}{% elif b.layout in ['sequence', 'quiet'] %}{% set key = b.layout %}{% else %}{% set key = 'pair' %}{% endif %}
+        {{ figure(item, sizesFor[key]) }}
+      {%- endfor %}
       </div>
-      {% endfor %}
-   {% else %}
-      <div class="editorial-motion fade-in animate">
-         {% if b.layout === 'detail' or b.layout === 'portrait' or b.layout === 'text' %}
-         <div class="editorial-row">
-            {{ figure(b.images[0], portraitImage if b.layout === 'portrait' else (detailImage if b.layout === 'detail' else textImage)) }}
-            <div class="editorial-copy">{% for p in b.paragraphs %}<p>{{ p }}</p>{% endfor %}</div>
-         </div>
-         {% else %}
-         <div class="editorial-grid">
-            {% for item in b.images %}
-            {{ figure(item, third if b.layout === 'sequence' else (quietImage if b.layout === 'quiet' else ((largePair if loop.first else smallPair) if b.layout === 'contrast' or b.layout === 'daily' else half))) }}
-            {% endfor %}
-         </div>
-         {% if b.paragraphs %}<div class="editorial-copy editorial-after">{% for p in b.paragraphs %}<p>{{ p }}</p>{% endfor %}</div>{% endif %}
-         {% endif %}
-      </div>
-   {% endif %}
-   </div>
+      {%- if b.paragraphs %}{{ copy(b.paragraphs, 'editorial-after') }}{% endif %}
+    </div>
+  {%- endif %}
+  </div>
 </section>

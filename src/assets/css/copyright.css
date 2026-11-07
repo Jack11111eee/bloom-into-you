@@ -1,4 +1,4 @@
-/* H11: the shared footer notice and the standalone reading page. */
+/* H11 notice subsets: extra Source Han Serif glyphs for the copyright, privacy and source pages. */
 @font-face {
   font-family: 'Bloom Serif ja';
   src: url('../fonts/reading/serif-ja-copyright.woff2') format('woff2');
@@ -7,63 +7,9 @@
   font-display: swap;
   unicode-range: U+54E1,U+59D4,U+8457,U+88FD,U+FF0F,U+FF21,U+FF24,U+FF2B,U+FF2F,U+FF37;
 }
-.bottom-footer { flex-direction: column; align-items: stretch; }
-.bottom-footer > .flex-col:first-child { order: 0; }
-.footer-legal {
-  order: 1;
-  margin-top: 1.75em;
-  padding-top: 1.5em;
-  border-top: 1px solid var(--color-border-light);
-  min-width: 0;
-}
-.footer-legal p {
-  max-width: 80em;
-  margin: 0 0 .85em;
-  color: #b5b5b8;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.85;
-}
-.footer-legal p:last-child { margin-bottom: 0; }
-.footer-legal a { color: var(--color-white); }
-.footer-legal a, .copyright-reading a {
-  text-decoration: underline;
-  text-underline-offset: .2em;
-}
-.copyright-credit {
-  font-family: 'Bloom Serif ja', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.8;
-  overflow-wrap: anywhere;
-}
-.copyright-header { padding-bottom: 0; }
-.copyright-header h1 { font-size: clamp(2em, 5vw, 4em); line-height: 1.25; }
-.copyright-content { padding-top: calc(var(--section-padding) / 2); }
-.copyright-reading, .privacy-reading, .rights-reading { max-width: 42em; }
-.copyright-reading p, .copyright-reading li, .privacy-reading p, .rights-reading p { line-height: 1.85; }
-.copyright-reading h2, .privacy-reading h2, .rights-reading h2 { font-size: clamp(1.4em, 3vw, 1.8em); margin: 1.75em 0 .75em; }
-.rights-reading h3 { font-size: 1.15em; margin: 1.5em 0 .75em; }
-.copyright-reading ul { list-style: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
-.copyright-reading li { list-style: disc; margin: .65em 0; }
-.copyright-reading .copyright-credit { font-size: 1em; }
-.copyright-reading a, .privacy-reading a, .rights-reading a { color: var(--color-dark); overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: .2em; }
-.contact-header .form .field:disabled { opacity: 1; cursor: not-allowed; }
-.image-source-list { padding: 0; margin: 0; }
-.image-source-entry { list-style: none; padding: 1.25em 0; border-bottom: 1px solid var(--color-border); }
-.image-source-entry p { margin-bottom: .5em; }
-.image-source-id { overflow-wrap: anywhere; }
-@media screen and (max-width: 720px) {
-  .footer-legal { margin: 0 var(--container-padding); }
-  .copyright-reading, .privacy-reading, .rights-reading { max-width: 100%; }
-}
-
-/* Additional OFL glyphs for the new privacy and rights copy. */
 @font-face { font-family:'Bloom Serif zh-cn'; src:url('../fonts/reading/serif-zh-cn-rights.woff2') format('woff2'); font-style:normal; font-weight:250 900; font-display:swap; unicode-range:U+300C,U+300D,U+304C,U+3066,U+306A,U+306B,U+3084,U+308B,U+4E14,U+4ED3,U+4F9B,U+504F,U+50CF,U+51FB,U+5217,U+5220,U+52A1,U+52A9,U+53C2,U+541B,U+5458,U+54E1,U+5668,U+5740,U+5747,U+59D4,U+5A92,U+5C65,U+5DDD,U+5DE5,U+5E93,U+60A8,U+6258,U+6388,U+63AA,U+653F,U+6570,U+6599,U+65BD,U+66FF,U+670D,U+6750,U+6790,U+6D4F,U+767B,U+76CA,U+7801,U+793A,U+793E,U+79FB,U+7AEF,U+7B56,U+7BA1,U+7C89,U+7D20,U+8425,U+8457,U+88FD,U+89C8,U+8BBF,U+8BEF,U+8D26,U+8D44,U+8E2A,U+9002,U+91C7,U+94FE,U+9644,U+9664,U+9879,U+FF0F,U+FF21,U+FF24,U+FF2B,U+FF2F,U+FF37; }
 @font-face { font-family:'Bloom Serif zh-tw'; src:url('../fonts/reading/serif-zh-tw-rights.woff2') format('woff2'); font-style:normal; font-weight:250 900; font-display:swap; unicode-range:U+304C,U+3066,U+306A,U+306B,U+3084,U+308B,U+4E14,U+4F1A,U+4F9B,U+4FE1,U+5009,U+504F,U+5118,U+5217,U+522A,U+529F,U+52A9,U+52D9,U+541B,U+54E1,U+5546,U+5668,U+5747,U+59D4,U+5A92,U+5C65,U+5DDD,U+5DE5,U+5E33,U+5EAB,U+60A8,U+6388,U+63A1,U+63AA,U+64CA,U+653F,U+6599,U+65BD,U+66FF,U+670D,U+6750,U+6790,U+6838,U+71DF,U+767B,U+76CA,U+78BC,U+793A,U+793E,U+79FB,U+7AEF,U+7B56,U+7BA1,U+7BB1,U+7C89,U+7D20,U+7F72,U+8907,U+8A17,U+8A62,U+8D0A,U+8E64,U+9644,U+9664,U+9805,U+FF0F,U+FF21,U+FF24,U+FF2B,U+FF2F,U+FF37; }
 @font-face { font-family:'Bloom Serif ja'; src:url('../fonts/reading/serif-ja-rights.woff2') format('woff2'); font-style:normal; font-weight:250 900; font-display:swap; unicode-range:U+30A1,U+30AD,U+30C4,U+30D6,U+30DD,U+4EA4,U+4F4F,U+4F9B,U+505C,U+5074,U+5143,U+51E6,U+524A,U+52B9,U+539F,U+53EF,U+5546,U+55B6,U+5B58,U+5C0A,U+5DDD,U+5F93,U+6271,U+6279,U+627F,U+62E0,U+63A5,U+63A7,U+63B2,U+63D0,U+643A,U+6599,U+6790,U+67FB,U+6B04,U+7686,U+76CA,U+793A,U+793E,U+7BA1,U+89A7,U+89D2,U+8A02,U+8A2D,U+8A3C,U+8A72,U+8AA4,U+8AAC,U+8AFE,U+8CC7,U+8F09,U+901F,U+904B,U+9069,U+91DD,U+9332,U+9451,U+95B2,U+9664; }
-
-/* Additional OFL glyphs for the new image-source headings. */
 @font-face { font-family:'Bloom Serif zh-cn'; src:url('../fonts/reading/serif-zh-cn-sources.woff2') format('woff2'); font-style:normal; font-weight:250 900; font-display:swap; unicode-range:U+4ECD,U+5339,U+589E,U+667A,U+677F,U+7AE0,U+88C1,U+8BD1,U+8FD4,U+90BB,U+9884; }
 @font-face { font-family:'Bloom Serif zh-tw'; src:url('../fonts/reading/serif-zh-tw-sources.woff2') format('woff2'); font-style:normal; font-weight:250 900; font-display:swap; unicode-range:U+4ECD,U+589E,U+5E03,U+6167,U+6563,U+667A,U+677F,U+67E5,U+7AE0,U+88C1,U+8B6F,U+8FD4,U+9130,U+9810; }
 @font-face { font-family:'Bloom Serif ja'; src:url('../fonts/reading/serif-ja-sources.woff2') format('woff2'); font-style:normal; font-weight:250 900; font-display:swap; unicode-range:U+5019,U+5DE5,U+62E1,U+72EC,U+7570,U+7E2E,U+7FFB,U+88DC,U+8A33; }

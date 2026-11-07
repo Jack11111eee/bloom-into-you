@@ -457,5 +457,11 @@
   "Back to previous page": "前のページに戻る",
   "Pause motion": "動きを止める",
   "Resume motion": "動きを再開する",
-  "Website navigation": "サイト内の移動"
+  "Website navigation": "サイト内の移動",
+  "Skip to content": "本文へスキップ",
+  "Open menu": "メニューを開く",
+  "Close menu": "メニューを閉じる",
+  "Main navigation": "メインナビゲーション",
+  "List view": "リスト表示",
+  "Grid view": "グリッド表示"
 }

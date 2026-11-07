@@ -1,0 +1,10 @@
+{#- Edition and the short copyright notice shared by every page ending. -#}
+<div class="legal wrap">
+  <dl class="legal__version"><dt class="t-label">{{ site.footer.versionLabel }}</dt><dd>{{ site.footer.version }}</dd></dl>
+  <div class="footer-legal" role="note">
+    <p class="footer-legal__status">{{ copyright.footerIntro }}</p>
+    <p class="footer-legal__rights">{{ copyright.ownership }}<br><span class="copyright-credit" lang="ja">{{ copyright.animeCredit }}</span></p>
+    <p class="footer-legal__contact">{{ copyright.footerLinks.before }}<a href="/copyright/">{{ copyright.footerLinks.label }}</a>{{ copyright.footerLinks.between }}<a href="{{ site.contact.contactHref }}">{{ copyright.footerLinks.contact }}</a>{{ copyright.footerLinks.after }}</p>
+    <p class="footer-legal__privacy"><a href="/privacy/">{{ privacy.title }}</a></p>
+  </div>
+</div>

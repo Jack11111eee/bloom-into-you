@@ -1,160 +1,62 @@
 ---
 ns: contact
-pagination:
-  data: locales
-  size: 1
-  alias: language
-permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/contact/index.html"
 ---
-{#
-  contact.njk — contact 页（SPEC.md §6.5）
-
-  本文件由 `scripts/gen-static-pages.mjs` 从 `reference/html/contact.html` 生成：
-  这是一页**一次性排版**（无重复结构），按 §9.3 / §6.6 的立场"逐字归档，不做抽象"。
-  共享部件已换成 include，原站绝对 URL 已折成根相对路径。
-
-  > ✅ 表单的 `<label for>` **已按 §5.12 A1 修正**（2026-09-26，P8 Gate 4）：
-  > organization 与 service 两个 label 从 `for="email"` 改为 `for="company"` /
-  > `for="service"`。原站的 6 个 `for` 是 `tel` / `name` / `email` / `email` / `email` /
-  > `message` —— 三个 label 共指 email 输入框，是可访问性缺陷（`ISSUES.md` ISSUE-019）。
-  > 跨站结构比对会因此多 2 处**已登记**差异。**原计划为它加一条窄归一化
-  > `normalizeLabelFor`，实测后取消** —— P8 之后跨站（保真）检查在 `--baseline local` 下
-  > **整类报 SKIP**，那 2 处差异进不了任何 Gate，写归一化是死代码（`DEVIATIONS.md` A1）。
-
-  > **P8 已换成占位内容**（`DEVIATIONS.md` D2）：文案、邮箱、电话、业务信息与 4 条社交
-  > 链接全部替换；社交链接一律指向 `example.com`（RFC 2606 的保留域名）。
-  > **各列表的条目数必须保持**（业务信息 4 条、社交 4 条），否则结构层会多出差异。
-  >
-  > **P10 M6**：按方案 §4.8「标题与表单标签换文案」把本页改成**站点口吻**
-  > （本产物不是设计工作室，"组织名 / 需要哪些服务"那类问句没有对应物）：
-  > ① `h1`；② 表单 01–05 的 `label` 与 `placeholder`；③ 右栏第二组
-  > `Business Details` → `Site Details`（4 条内容换成站点信息）。
-  > **表单的结构一字未动** —— 字段数、`name`、`for`/`id` 配对（`DEVIATIONS.md` A1）、
-  > 蜜罐字段、`action` / `method` 全部原样；它仍然没有后端（现状即如此）。
-  > `Send it!` / `Your message` / `Contact Details` / `Socials` 是通用功能性文案，保留。
-  >
-  > **文案方案落地**（`DEVIATIONS.md` F7，`docs/copy-proposal.md` §10）：
-  > ① `h1` → `A thought to share,` / `a detail to keep`；② **新增邀请句**（h1 下的 `<p>`，
-  > 地址做成 mailto —— 方案 §10.1 说"当前页面没有这段说明的渲染点，未来如采用，应明确加在
-  > 联系区"，这就是那个渲染点）；③ 表单 02–05 的 `label` / `placeholder`（01 组与现状相同，
-  > 未动）；④ 右栏 `Contact Details` **只留邮箱**（电话删除）、`Site Details` 换成站点可核实
-  > 的四行、`Socials` **整组删除**。
-  >
-  > ⚠️ **两处与方案字面的偏差，都在这里，改前先读 `DEVIATIONS.md` F7**：
-  > · **提交控件改为 `disabled` 的 `Form unavailable`** —— 方案 §10.2 明写"不能只把 `Send it!`
-  >   改名却继续 POST"。`action="/contact"` 一字未动（它仍然是那个没有后端的表单），
-  >   但**提交动作不再可达**；表单下方给一句 `The form is not connected yet. Please write by email.`
-  >   与一个可用的 `Write by email` → mailto 入口。等后端接通并验证后才换回 `Send message`。
-  > · **邮箱 `jackkkkk1e@proton.me` 在本文件里有三处**（邀请句的链接、右栏 `Contact Details`、
-  >   新加的 `Write by email` 按钮）—— 与 `site.json` 的 `contact.email`（喂页脚）是**两份**，
-  >   改一处要连带改另一处（清单第 07 节第 13 条记的同一件事）。
-#}
-<header class="section default-header contact-header theme-dark" data-scroll-section="">
-   {% include "partials/nav-bar.njk" %}   <div class="container medium">
-      <div class="row once-in">
-         <div class="flex-col">
-            <h1><span><div class="profile-picture"{{ site.avatarFraming | framingAttr('background') | safe }}></div> A thought to share, </span></h1>
-            {# 邀请句（`docs/copy-proposal.md` §10.1，DEVIATIONS.md F7）—— 方案说"当前页面没有
-               这段说明的渲染点，未来如采用，应明确加在联系区"，这就是那个渲染点。
-               地址做成 mailto（与右栏的 Contact Details 同一份字符串，两处都要改）。 #}
-            <p>A different reading, a small detail, or a question about an image — write to me at <a href="mailto:jackkkkk1e@proton.me">jackkkkk1e@proton.me</a>.</p>
-         </div>
-         <div class="flex-col">
-            <div class="profile-picture"{{ site.avatarFraming | framingAttr('background') | safe }}></div>
-            <div class="arrow"><!--?xml version="1.0" encoding="UTF-8"?-->
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>arrow-up-right</title>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#FFFFFF" stroke-width="1.5">
-            <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(90.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
-                <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
-                <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
-            </g>
-        </g>
-    </g>
-</svg></div>
-         </div>
+{% from "ui/macros.njk" import icon, pill, orb %}
+{% set ending = 'plain' %}
+{% set avatarStyle = site.avatarFraming | framingAttr('background') %}
+<header class="page-head contact-head" data-tone="dark">
+  {% include "shell/header.njk" %}
+  <div class="wrap wrap--narrow contact-head__intro" data-intro>
+    <div class="contact-head__lead">
+      <h1 class="page-head__title t-title"><span><span class="avatar avatar--inline"{{ avatarStyle | safe }} aria-hidden="true"></span> A thought to share, </span></h1>
+      <p class="t-note">A different reading, a small detail, or a question about an image — write to me at <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>.</p>
+    </div>
+    <div class="contact-head__portrait">
+      <span class="avatar avatar--large"{{ avatarStyle | safe }} aria-hidden="true"></span>
+      <span class="contact-head__arrow">{{ icon('arrow') }}</span>
+    </div>
+  </div>
+  <div class="wrap wrap--narrow contact-head__body" data-intro>
+    <div class="contact-head__form">
+      <div class="form" role="group" aria-label="Contact form preview" data-form-unavailable>
+        <div class="form__trap" aria-hidden="true"><input class="field" type="text" id="form-tel" name="tel" tabindex="-1" disabled></div>
+        {%- set fields = [
+          ['form-name', 'name', 'text', 'What should I call you?', 'Your name *'],
+          ['form-email', 'email', 'email', 'Where can I write back?', 'Your email address *'],
+          ['form-company', 'company', 'text', 'Which part stayed with you?', 'A character, a scene, or a small detail *'],
+          ['form-service', 'service', 'text', 'What would you like to share?', 'A reading, a question, or an image credit *'],
+          ['form-message', 'message', 'textarea', 'Leave me a few words', 'Take your time. What would you like to tell me? *']
+        ] %}
+        {%- for field in fields %}
+        <div class="form__row">
+          <span class="form__index t-label">{{ '0' + loop.index }}</span>
+          <label class="form__label" for="{{ field[0] }}">{{ field[3] }}</label>
+          {%- if field[2] == 'textarea' %}
+          <textarea class="field" id="{{ field[0] }}" name="{{ field[1] }}" rows="6" placeholder="{{ field[4] }}" disabled></textarea>
+          {%- else %}
+          <input class="field" type="{{ field[2] }}" id="{{ field[0] }}" name="{{ field[1] }}" value="" placeholder="{{ field[4] }}" disabled>
+          {%- endif %}
+        </div>
+        {%- endfor %}
+        <div class="form__send">{{ orb(null, 'Form unavailable', { disabled: true, accent: true }) }}</div>
       </div>
-      <div class="row once-in">
-         <div class="flex-col">
-            <div class="form" role="group" aria-label="Contact form preview" data-form-unavailable>
-               <div class="website-field">
-                  <input class="field" type="text" id="form-tel" name="tel" tabindex="-1" disabled>
-               </div>
-               <div class="form-col">
-                  <h5>01</h5>
-                  <label class="label" for="form-name">What should I call you?</label>
-                  <input class="field" type="text" id="form-name" name="name" value="" placeholder="Your name *" disabled>
-                                 </div>
-               <div class="form-col">
-                  <h5>02</h5>
-                  <label class="label" for="form-email">Where can I write back?</label>
-                  <input class="field" type="email" id="form-email" name="email" value="" placeholder="Your email address *" disabled>
-                                 </div>
-               <div class="form-col">
-                  <h5>03</h5>
-                  <label class="label" for="form-company">Which part stayed with you?</label>
-                  <input class="field" type="text" id="form-company" name="company" value="" placeholder="A character, a scene, or a small detail *" disabled>
-                                 </div>
-               <div class="form-col">
-                  <h5>04</h5>
-                  <label class="label" for="form-service">What would you like to share?</label>
-                  <input class="field" type="text" id="form-service" name="service" value="" placeholder="A reading, a question, or an image credit *" disabled>
-                                 </div>
-               <div class="form-col">
-                  <h5>05</h5>
-                  <label class="label" for="form-message">Leave me a few words</label>
-                  <textarea class="field" id="form-message" name="message" rows="8" placeholder="Take your time. What would you like to tell me? *" disabled></textarea>
-                                 </div>
-               <div class="btn-contact-send">
-                  <div class="btn btn-round" data-scroll="" data-scroll-speed="2" data-scroll-offset="-50%, 0%">
-                     <div class="btn-click magnetic" data-strength="100" data-strength-text="50">
-                        <div class="btn-fill"></div>
-                        <span class="btn-text">
-                           {# ⚠️ **表单没有后端**（`action="/contact"` 在静态产物里不会真的发信）。
-                              `docs/copy-proposal.md` §10.2 明写"不能只把 `Send it!` 改名却继续 POST"，
-                              故提交控件改为 `disabled` + 文案 `Form unavailable`（`DEVIATIONS.md` F7）。
-                              等发送后端真正接通并验证后，才换回 `Send message` 并去掉 `disabled`。
-                              **结构一字未动**：字段数、`name`、A1 的 `for`/`id`、蜜罐、`action`/`method` 全部原样。 #}
-                           <input type="submit" name="submit" value="Form unavailable" class="form-btn" disabled>
-                        </span>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            {# 表单未接通时的诚实出口（`docs/copy-proposal.md` §10.2）——
-               一个可用的动作 + 一句说明，替代"提交了却什么也没发生"。 #}
-            <p class="small">The form is not connected yet. Please write by email.</p>
-            <p class="small">The preview fields are disabled and do not send or save a message. Email opens your own mail application.</p>
-            <div class="btn btn-normal">
-               <a href="mailto:jackkkkk1e@proton.me" class="btn-click magnetic" data-strength="25" data-strength-text="15">
-                  <div class="btn-fill"></div>
-                  <span class="btn-text">
-                     <span class="btn-text-inner change">Write by email</span>
-                  </span>
-               </a>
-            </div>
-         </div>
-         <div class="flex-col">
-            <h5>Contact Details</h5>
-            <ul class="links-wrap">
-               <li class="btn btn-link btn-link-external">
-                  <a href="mailto:jackkkkk1e@proton.me" class="btn-click magnetic" data-strength="20" data-strength-text="10">
-                     <span class="btn-text">
-                        <span class="btn-text-inner">jackkkkk1e@proton.me</span>
-                     </span>
-                  </a>
-               </li>
-            </ul>
-            <h5>Site Details</h5>
-            <ul class="links-wrap">
-               <li><p>Bloom Into You</p></li>
-               <li><p>A personal reading site</p></li>
-               <li><p>Complete manga · Volumes 1–8</p></li>
-               <li><p>Images, characters, and close readings</p></li>
-            </ul>
-         </div>
-      </div>
-   </div>
+      <p class="t-small t-note">The form is not connected yet. Please write by email.</p>
+      <p class="t-small t-note">The preview fields are disabled and do not send or save a message. Email opens your own mail application.</p>
+      {{ pill('mailto:' + site.contact.email, 'Write by email', { inverse: true, magnet: 25 }) }}
+    </div>
+    <aside class="contact-head__details">
+      <p class="t-label">Contact Details</p>
+      <ul role="list" class="contact-head__list">
+        <li><a class="text-link" href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
+      </ul>
+      <p class="t-label">Site Details</p>
+      <ul role="list" class="contact-head__list t-note">
+        <li>Bloom Into You</li>
+        <li>A personal reading site</li>
+        <li>Complete manga · Volumes 1–8</li>
+        <li>Images, characters, and close readings</li>
+      </ul>
+    </aside>
+  </div>
 </header>
-                                {% include "partials/footer-contact.njk" %}
+{% include "shell/page-end.njk" %}

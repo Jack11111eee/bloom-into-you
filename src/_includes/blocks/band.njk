@@ -1,0 +1,17 @@
+{#- Full-bleed image band with optional shade and caption. -#}
+{% from "ui/macros.njk" import picture %}
+<section class="block media-band{{ ' block--pad-end' if b.paddingBottom }}"{% if b.background %} style="--block-bg: {{ b.background }}"{% endif %}>
+  <div class="media-band__frame" data-reveal="media">
+    <div class="media-band__inner" data-parallax="{{ b.scrollSpeed or 0 }}">
+      {{ picture(b.media, '100vw') }}
+    </div>
+    {%- if b.darkOverlay and b.darkOverlay != '0' %}
+    <span class="media-band__shade" style="opacity: {{ b.darkOverlay }}"></span>
+    {%- endif %}
+    {%- if b.textOverlay %}
+    <div class="media-band__caption" data-tone="dark">
+      <h2 class="t-title" data-reveal="words">{{ b.textOverlay }}</h2>
+    </div>
+    {%- endif %}
+  </div>
+</section>

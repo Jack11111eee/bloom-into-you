@@ -1,0 +1,35 @@
+{#- Owner-designed silent record reader; markup kept intact for music.js. -#}
+<section class="music-section section">
+ <div class="wrap wrap--narrow" id="bloom-vinyl-reader">
+ <div class="vr-page" role="region" aria-label="music.region">
+  <div class="vr-board">
+   <div class="vr-preview">
+    <div class="vr-deck">
+     <img class="vr-idle-art" src="/assets/img/music/photo-wall.jpg" width="960" height="960" alt="music.art" decoding="async" fetchpriority="high">
+     <div class="vr-hardware" role="img" aria-label="music.deck" aria-hidden="true"><span class="vr-deck-mark">music.brand</span><div class="vr-platter"><div class="vr-disc"><img class="vr-label" src="{{ music.tracks[0].art }}" width="768" height="768" alt="" decoding="async"></div></div><div class="vr-arm"></div><span class="vr-deck-light"></span></div>
+    </div>
+    <div class="vr-current" hidden><h2 class="vr-selected-name" data-current-name></h2><p class="vr-selected-info" data-current-info></p><button class="vr-motion cursor-interaction" type="button">music.pause</button></div>
+   </div>
+   <div class="vr-right">
+    <div class="vr-song-list">
+     <div class="vr-list-label"><span>music.tracklist</span><span>music.count</span></div>
+     {% for track in music.tracks %}
+     <div class="vr-item"><button class="vr-song cursor-interaction" data-song="{{ track.id }}" type="button" aria-expanded="false" aria-controls="vr-reading-pane"><span class="vr-disc" aria-hidden="true"><img class="vr-label" src="{{ track.art }}" alt="" width="768" height="768" decoding="async"></span><span><span class="vr-song-name" lang="{% if track.id == 'one' or track.id == 'three' %}ja{% else %}en{% endif %}">{{ track.title }}</span><span class="vr-song-meta">{{ track.meta }}</span></span><span class="vr-open">music.open</span></button></div>
+     {% endfor %}
+    </div>
+    <article class="vr-reader" id="vr-reading-pane" aria-labelledby="vr-reading-title" hidden>
+     <div class="vr-reader-top"><div><span class="vr-reader-index"></span><h2 id="vr-reading-title"></h2></div><button class="vr-return cursor-interaction" type="button">music.back</button></div>
+     <div class="vr-reader-body" tabindex="0" role="region" aria-label="music.reader" data-lenis-prevent>
+      {% for track in music.tracks %}
+      <div class="vr-prose" data-story="{{ track.id }}" hidden>{% for key in track.paragraphs %}<p>{{ key }}</p>{% endfor %}</div>
+      {% endfor %}
+     </div>
+     <div class="vr-reader-bottom"><span>music.story</span><span class="vr-reader-progress" aria-hidden="true">music.down</span></div>
+    </article>
+   </div>
+  </div>
+  <p class="vr-reader-status" role="status">music.choose</p>
+  <div class="vr-labels" hidden><span data-label="choose">music.choose</span><span data-label="silent">music.silent</span><span data-label="pause">music.pause</span><span data-label="resume">music.resume</span><span data-label="reduced">music.reduced</span><span data-label="down">music.down</span><span data-label="end">music.end</span></div>
+ </div>
+ </div>
+</section>

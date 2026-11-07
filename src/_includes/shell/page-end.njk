@@ -1,0 +1,37 @@
+{#-
+  Page ending. Set `ending` before including:
+    'invite' — curved hand-off and the large invitation (default)
+    'next'   — curved hand-off and the next entry in the same collection
+    'plain'  — the notice only, for dark or document pages
+-#}
+{% from "ui/macros.njk" import icon, pill, orb %}
+{% set ending = ending or 'invite' %}
+{% if ending != 'plain' %}
+<div class="page-end__curve" data-curve aria-hidden="true"{% if footerAccent %} style="--curve-color: {{ footerAccent }}"{% endif %}></div>
+{% endif %}
+<footer class="page-end page-end--{{ ending }}" data-tone="dark" data-page-end>
+  <div class="page-end__body"{% if ending != 'plain' %} data-parallax="-4" data-parallax-mode="end"{% endif %}>
+  {%- if ending == 'invite' %}
+    <div class="page-end__invite wrap wrap--narrow">
+      <h2 class="page-end__title t-title"><span><span class="avatar"{{ site.avatarFraming | framingAttr('background') | safe }} aria-hidden="true"></span> to share</span></h2>
+      <span class="page-end__arrow" data-turn="15,0">{{ icon('arrow') }}</span>
+      <div class="page-end__cta">
+        <span class="rule"></span>
+        <div class="page-end__orb" data-parallax="-1" data-parallax-mode="end" data-parallax-axis="x">{{ orb(site.contact.contactHref, 'Write to me', { accent: true }) }}</div>
+      </div>
+      <div class="page-end__links">{{ pill('mailto:' + site.contact.email, site.contact.email, { inverse: true, magnet: 25 }) }}</div>
+    </div>
+  {%- elif ending == 'next' %}
+    <div class="page-end__next wrap wrap--narrow">
+      <a class="next-entry" href="{{ nextCase.href }}" data-cursor="next">
+        <p class="next-entry__label">Next</p>
+        <h2 class="next-entry__title t-title-xl">{{ nextCase.name }}</h2>
+        <span class="next-entry__peek" aria-hidden="true"><span class="next-entry__image" style="background-color: {{ nextCase.tileColor }}"><img src="{{ nextCase.tileImage | thumb }}" alt="" loading="lazy" decoding="async"></span></span>
+      </a>
+      <span class="rule"></span>
+      <div class="page-end__links page-end__links--center">{{ pill(allLink.href, allLink.label, { inverse: true, count: allLink.count, magnet: 25 }) }}</div>
+    </div>
+  {%- endif %}
+    {% include "shell/legal.njk" %}
+  </div>
+</footer>

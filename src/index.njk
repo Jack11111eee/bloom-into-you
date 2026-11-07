@@ -1,189 +1,74 @@
 ---
 ns: home
-# 取景（DEVIATIONS.md G1）—— 首页首屏（机制③，只水平平移）。null = 原站居中
 heroFraming: {"fx":57,"fy":50}
-pagination:
-  data: locales
-  size: 1
-  alias: language
-permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/index.html"
 ---
-{#
-  index.njk — 首页（SPEC.md §6.2；P10 M5 按 `docs/bloom-redesign-plan.md` §4.1 改造）
-
-  `.main-wrap` 内 7 段（方案 §4.1 的 7 项）：
-    `.home-header` → `.home-intro` → 精选画面 ×2（`blocks/fullwidth.njk`）→
-    `.work-grid.large-work-grid`（三人物行式，桌面）→ `.work-tiles.work-tiles-home`（同源卡片，≤1024px）→
-    `.center-grid-btn`（解读入口）→ `.center-grid-btn-home`（画廊入口）→ 页脚。
-
-  **第 6 段（`.horizontal-items`）在原站被整段 HTML 注释掉**，不渲染。本模板**不输出**它：
-  注释节点不进 DOM，输出它只会让产物多带一段引用原站媒体的死代码。§6.2 已登记该段不渲染。
-
-  **P10 M5 的四处**（方案 §5 M5）：
-    ① 首屏文案换成站名 + 作品相关短句（`DEVIATIONS.md` D2 的占位口径：英文、中性、可整体替换）；
-    ② `.home-intro` 文案与圆钮 `About this site`（方案 §4.1 第 2 项）；
-    ③ 两张 fullwidth「精选画面」——媒体**复用长廊的占位图**（M5 决定，见方案 §7 的 M5-1），
-       由 `home.blocks` 经 `blocks/dispatch.njk` 渲染（与长廊同一条代码路径）；
-    ④ 三人物入口改为**从 `characters.json` 派生**（`src.11tydata.js` 的 `homeFeatured`），
-       解读入口 `.center-grid-btn`（按钮 `Insights` + 旁注 `Contains story discussion`），
-       画廊入口 `More work 11` → `Gallery`（`.count-nr` 删除 —— 方案 §4.1 第 6 项）。
-
-  **文案方案落地**（`DEVIATIONS.md` F7，`docs/copy-proposal.md` §4）：
-    ① 副标 `h4` → `A feeling,` / `still unnamed`（第一个 `<span>` 是 `display:block`，
-       故它自己占一行）；② 挂绳三 `<span>` → `A story` / `of becoming` / `yourself`；
-    ③ 解读入口旁注 → `Personal readings · Manga ending spoilers`（比原注多一句剧透范围）。
-    `About this site` / `Insights` / `Gallery` 三个圆钮与列表悬停光标 `View` 按方案**保留**。
-
-  > **首屏文案硬编码在本文件**（`home.json` 的 `heroName` / `heroRole` / `heroLocation` 是死字段，
-  > 见 `content-inventory.md` §2.1）。跑马灯里的 `<span class="spacer">—</span>` **必须保留**，
-  > 挂绳那三个 `<span>` 的**数量与顺序也必须保持**（`.hanger` 的排版按它们断行）。
-  > 站名 = `Bloom Into You`（用户 2026-10-01 裁决；署名 / og:site_name / 页 title 在 **M6** 同步）。
-#}
-<header class="section home-header theme-dark" data-scroll-section>
-   <div class="overlay personal-image no-select once-in" data-scroll data-scroll-speed="-3" data-scroll-position="top">
-      <img src="/assets/img/studio-01.jpg"{{ heroFraming | framingAttr('left') | safe }}>
-   </div>
-   <div class="overlay get-height once-in once-in-secondary">
-      <div class="hanger">
-         <p><span>A story </span><span>of becoming </span></p>
-         {% include "partials/icon-hanger.njk" %}
-         <div class="digital-ball">
-            <div class="overlay"></div>
-            <div class="globe">
-               <div class="globe-wrap">
-                  <div class="circle"></div>
-                  <div class="circle"></div>
-                  <div class="circle"></div>
-                  <div class="circle-hor"></div>
-                  <div class="circle-hor-middle"></div>
-               </div>
-            </div>
-         </div>
+{% from "ui/macros.njk" import icon, pill, orb %}
+<header class="hero" data-tone="light">
+  <div class="hero__media" data-parallax="-3" data-parallax-mode="top">
+    <img src="/assets/img/studio-01.jpg" alt="" width="5832" height="4008" fetchpriority="high" decoding="async" style="--focus-x: {{ heroFraming.fx }}%">
+  </div>
+  <div class="tanzaku" data-tanzaku data-intro="drop">
+    <div class="tanzaku__swing">
+      <span class="tanzaku__string" aria-hidden="true"></span>
+      <span class="tanzaku__knot" aria-hidden="true"></span>
+      <div class="tanzaku__paper">
+        <p class="tanzaku__text"><span>A story </span><span>of becoming </span></p>
+        {{ icon('star') }}
       </div>
-   </div>
-   {% include "partials/nav-bar.njk" %}   <div class="container once-in once-in-secondary">
-      <div class="row">
-         <div class="flex-col">
-            <div class="header-above-h4" data-scroll data-scroll-speed="1">
-               <div class="arrow big">{% include "partials/icon-arrow.njk" %}</div>
-            </div>
-            <h4><span>A feeling,</span> still unnamed</h4>
-         </div>
-      </div>
-   </div>
-   <div class="big-name">
-      <div class="name-h1" data-scroll data-scroll-direction="horizontal" data-scroll-speed="4" data-scroll-position="top">
-         <div class="name-wrap">
-            <h1 class="no-select once-in once-in-secondary">Bloom Into You<span class="spacer">—</span></h1>
-         </div>
-      </div>
-   </div>
-   <div class="white-block"></div>
+    </div>
+  </div>
+  {% include "shell/header.njk" %}
+  <div class="hero__lead" data-intro>
+    <span class="hero__arrow" data-turn="0,90">{{ icon('arrow') }}</span>
+    <p class="t-lead"><span>A feeling,</span> still unnamed</p>
+  </div>
+  <div class="hero__marquee" data-intro data-parallax="4" data-parallax-mode="top" data-parallax-axis="x">
+    <h1 class="u-visually-hidden">Bloom Into You</h1>
+    <div class="marquee" data-marquee aria-hidden="true">
+      <div class="marquee__track"><span class="marquee__text">Bloom Into You</span><span class="marquee__sep">—</span></div>
+    </div>
+  </div>
 </header>
-<section class="section home-intro" data-scroll-section>
-   <div class="container medium">
-      <div class="row">
-         <div class="flex-col">
-            <h4 class="span-lines animate">{{ home.introHeading }}</h4>
-         </div>
-         <div class="flex-col">
-            <div class="text-wrap fade-in animate">
-               <p>{{ home.introText }}</p>
-            </div>
-            <div class="btn btn-round" data-scroll data-scroll-speed="2">
-               <a href="/about" class="btn-click magnetic " data-strength="100" data-strength-text="50">
-                  <div class="btn-fill"></div>
-                  <span class="btn-text">
-                     <span class="btn-text-inner">About this site</span>
-                  </span>
-               </a>
-            </div>
-         </div>
-      </div>
-   </div>
+
+<section class="intro section">
+  <div class="wrap wrap--narrow intro__grid">
+    <h2 class="intro__heading t-lead" data-reveal="words">{{ home.introHeading }}</h2>
+    <div class="intro__aside">
+      <p class="intro__text t-note" data-reveal="fade">{{ home.introText }}</p>
+      <div class="intro__orb" data-parallax="2">{{ orb('/about', 'About this site') }}</div>
+    </div>
+  </div>
 </section>
-{# 精选画面 ×2（方案 §4.1 第 3 项）—— 走与长廊同一条 dispatch 路径，媒体复用长廊占位图（M5-1） #}
+
 {%- for b in home.blocks %}
-{% include "blocks/dispatch.njk" %}
+{% include "blocks/render.njk" %}
 {%- endfor %}
-<section class="section work-grid large-work-grid" data-scroll-section>
-   <div class="container">
-      <div class="grid-sub-title">
-         <div class="flex-col">
-            <h5>Characters</h5>
-         </div>
-      </div>
-      <ul class="work-items mouse-pos-list-image-wrap">
-{%- for item in homeFeatured %}
-                     <li class="{{ item.classes | join(' ') }} visible">
-            <div class="stripe animate"></div>
-            <a href="{{ item.href }}" class="row">
-               <div class="flex-col">
-                  <h4><span>{{ item.name }}</span></h4>
-               </div>
-               <div class="flex-col animate">
-                  <p>{{ item.line }}</p>
-               </div>
-            </a>
-         </li>
-{%- endfor %}
-                  <div class="stripe last animate"></div>
-      </ul>
-   </div>
+
+<section class="featured section" data-cursor-zone>
+  <div class="wrap">
+    <p class="t-label featured__label">Characters</p>
+    <ol class="index-list index-list--feature" role="list">
+    {%- for item in homeFeatured %}
+      <li class="index-row">
+        <a href="{{ item.href }}" data-cursor="preview" data-cursor-index="{{ loop.index0 }}">
+          <h3 class="index-row__title"><span>{{ item.name }}</span></h3>
+          <p class="index-row__cell">{{ item.line }}</p>
+        </a>
+      </li>
+    {%- endfor %}
+    </ol>
+  </div>
+  {% set tiles = homeFeatured %}{% set tileStyle = 'feature' %}
+  {% include "sections/tiles.njk" %}
 </section>
-<section class="section work-tiles work-tiles-home" data-scroll-section>
-   <div class="container">
-      <ul>
-{%- for item in homeFeatured %}
-                  <li class="{{ item.classes | join(' ') }} visible">
-            <div class="single-tile-wrap">
-               <a href="{{ item.href }}" class="row">
-                  <div class="flex-col">
-                     <div class="tile-image">
-                        <div class="overlay overlay-image lazy" style="background-color: {{ item.tileColor }}; background-position: center center; background-repeat: no-repeat; background-size: cover;" data-bg="{{ item.tileImage }}"></div>                     </div>
-                  </div>
-                  <div class="flex-col">
-                     <h4><span>{{ item.name }}</span></h4>
-                     <div class="stripe"></div>
-                  </div>
-                  <div class="flex-col">
-                     <p>{{ item.line }}</p>
-                  </div>
-               </a>
-            </div>
-         </li>
-{%- endfor %}
-               </ul>
-   </div>
+
+<section class="section links-section">
+  <div class="wrap links-section__row">
+    {{ pill('/insights', 'Insights') }}
+    <p class="links-section__note t-note">Personal readings · Manga ending spoilers</p>
+  </div>
+  <div class="wrap links-section__row">
+    {{ pill(home.moreWorkHref, 'Gallery') }}
+  </div>
 </section>
-<section class="section center-grid-btn" data-scroll-section>
-   <div class="container">
-      <div class="grid-after-btn">
-         <div class="btn btn-normal">
-            <a href="/insights" class="btn-click magnetic" data-strength="25" data-strength-text="15">
-               <div class="btn-fill"></div>
-               <span class="btn-text">
-                  <span class="btn-text-inner change">Insights</span>
-               </span>
-            </a>
-         </div>
-      </div>
-      <p>Personal readings · Manga ending spoilers</p>
-   </div>
-</section>
-<section class="section center-grid-btn center-grid-btn-home" data-scroll-section style="padding-bottom: calc(var(--section-padding) - 2.5vw);">
-   <div class="container">
-      <div class="grid-after-btn">
-         <div class="btn btn-normal">
-            <a href="{{ home.moreWorkHref }}" class="btn-click magnetic" data-strength="25" data-strength-text="15">
-               <div class="btn-fill"></div>
-               <span class="btn-text">
-                  <span class="btn-text-inner change">Gallery</span>
-               </span>
-            </a>
-         </div>
-      </div>
-   </div>
-</section>
-{% include "partials/footer-rounded.njk" %}
-{% include "partials/footer.njk" %}
+{% include "shell/page-end.njk" %}

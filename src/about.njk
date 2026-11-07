@@ -1,165 +1,59 @@
 ---
 ns: about
-# 取景（DEVIATIONS.md G1）—— about 人像（机制②，只平移）。null = 原站居中
 aboutImageFraming: null
-pagination:
-  data: locales
-  size: 1
-  alias: language
-permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/about/index.html"
 ---
-{#
-  about.njk — about 页（SPEC.md §6.4）
-
-  本文件由 `scripts/gen-static-pages.mjs` 从 `reference/html/about.html` 生成：
-  这是一页**一次性排版**（无重复结构），按 §9.3 / §6.6 的立场"逐字归档，不做抽象"。
-  共享部件已换成 include，原站绝对 URL 已折成根相对路径。
-
-  P8「内容个性化」替换了本页的全部原站文案与媒体引用（DEVIATIONS.md D2）。
-
-  > **P10 M6**：按 `docs/bloom-redesign-plan.md` §4.7 改造本页 ——
-  > ① `about-header` 两行 `h1` 换成站点口吻；② `line-globe` **原样保留**（纯装饰动效）；
-  > ③ `about-image` 的图文换成 **why this work / why this site**；
-  > ④ `about-services` 三栏**保留结构**，改为 `Content` / `Sources` / `Credits` 三项说明；
-  > ⑤ **删除 `about-award` 区块**（没有对应内容，方案 §4.7 明文要求）。
-  >
-  > **⑤ 的连带后果（务必知道）**：该区块带一条 `.award-badge` 的 ScrollTrigger
-  > （`index-new.js:1419`）⇒ about 路由的 `st` 由 **8 降到 7**，`route-expectations.mjs`
-  > 已同步。`DEVIATIONS.md` E2 当初"**保留结构位**以免改动运动层"的处置**已被本条取代**
-  > （见 `DEVIATIONS.md` F6）。
-  >
-  > 本页的 CSS 一字未动**：`.about-award` 的一组规则随之成为死规则（§7.1 #3 的同一处置：
-  > 删 CSS 属"改视觉层"的另一件事）。`.single-about-image` 的配图
-  > （`studio-04.jpg`）**复用现有占位图**，不新增文件、不改生成器（方案 §7 的 M6-3 裁决）。
-  > （M6 确实改过 `styleguide.css`，但改的是**左上角署名**那两条规则，与本页无关 —— 见 `DEVIATIONS.md` E1。）
-  >
-  > **文案方案落地**（`DEVIATIONS.md` F7，`docs/copy-proposal.md` §9）：① `h1` 两行 →
-  > `For the moments` / `that stay`；② `about-image` 两段正文换成 §9.1 的"为什么这部作品 /
-  > 为什么做这个站"；③ `about-services` 区域标题 → `What lives here`（三个 `animate-dot`
-  > 保留 —— 省略号由它们给，**正文里不再写三个点**）；④ 三栏正文换成 §9.2 的
-  > Content / Sources / Credits。
-  > ⚠️ **Credits 栏与方案字面有意不同**：方案要求点名致谢（`Dennis Snellenberg's portfolio`），
-  > 而 `check-leaks.mjs` ④ 把该姓名出现在产物里判为 **FAIL**（`DEVIATIONS.md` E1 记着 M6 时
-  > 把姓名写进 `styleguide.css` 注释、当场被 ④ 抓住的那一次）。**站主 2026-10-03 裁决：
-  > 不写姓名**，改为 `a study of a reference portfolio design` —— 命题（布局与动效不是本站原创）
-  > 保留，只是不点名。**改这一句前先读 `DEVIATIONS.md` F7。**
-  > ⑤ `Sources` 采用方案里"来源仍在整理"的版本（`docs/asset-sources.md` 记的是本地图源文件名，
-  > 不能据此识别插画作者与原发布链接）；真实来源补齐后才换成方案给的完成态文字。
-  > H4（2026-10-11）：第二段改为两行完整句子，移除该句尾部的三个省略号节点；随笔正文由下方 H5 区块接续。
-#}
-<header class="section default-header about-header" data-scroll-section="">
-   {% include "partials/nav-bar.njk" %}   <div class="container medium once-in">
-      <div class="row">
-         <div class="flex-col">
-            <h1><span>For the moments </span><span>that stay</span></h1>
-         </div>
-      </div>
-   </div>
+{% from "ui/macros.njk" import icon, bloomMark %}
+<header class="page-head about-head" data-tint>
+  {% include "shell/header.njk" %}
+  <div class="page-head__body wrap wrap--narrow" data-intro>
+    <h1 class="page-head__title t-title"><span>For the moments </span><span>that stay</span></h1>
+  </div>
 </header>
-<section class="section no-padding line-globe once-in" data-scroll-section="">
-   <div class="container medium">
-      <div class="row">
-            <div class="flex-col">
-               <div class="stripe"></div>
-               <div class="digital-ball">
-                  <div class="overlay"></div>
-                  <div class="globe">
-                     <div class="globe-wrap">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle-hor"></div>
-                        <div class="circle-hor-middle"></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-      </div>
-   </div>
+<div class="about-rule wrap wrap--narrow" data-tint data-intro>
+  <span class="rule"></span>
+  <span class="about-rule__orb" data-turn-on-scroll>{{ bloomMark() }}</span>
+</div>
+<section class="about-story section" data-tint>
+  <div class="wrap about-story__grid" data-intro>
+    <div class="about-story__text" data-parallax="-1">
+      <span class="about-story__arrow" data-turn="0,60">{{ icon('arrow') }}</span>
+      <p>What stays with me in Bloom Into You is the time it gives its characters to be uncertain. Affection does not arrive in the same shape for everyone. A person can want to be close and still be afraid of what closeness asks of them.</p>
+      <p><span class="about-story__aside">So this site keeps a few images and follows a few questions. It leaves space for looking again</span></p>
+    </div>
+    <div class="about-story__portrait">
+      <img src="/assets/img/studio-04.jpg" alt="" width="2832" height="4008" loading="lazy" decoding="async" data-parallax="-2"{{ aboutImageFraming | framingAttr('object') | safe }}>
+    </div>
+  </div>
 </section>
-<section class="section about-image once-in" data-scroll-section="">
-   <div class="bottom-lightgray"></div>
-   <div class="container">
-      <div class="row">
-         <div class="flex-col">
-            <div class="arrow"><!--?xml version="1.0" encoding="UTF-8"?-->
-<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>arrow-up-right</title>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#FFFFFF" stroke-width="1.5">
-            <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(90.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
-                <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
-                <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
-            </g>
-        </g>
-    </g>
-</svg></div>
-            <p data-scroll="" data-scroll-speed="-1" data-scroll-position="top" data-scroll-offset="0%, -50%">What stays with me in Bloom Into You is the time it gives its characters to be uncertain. Affection does not arrive in the same shape for everyone. A person can want to be close and still be afraid of what closeness asks of them.</p>
-            <p data-scroll="" data-scroll-speed="-1" data-scroll-position="top" data-scroll-offset="0%, -50%"><span style="opacity: .5; display: block; padding-top: .5em;">So this site keeps a few images and follows a few questions. It leaves space for looking again</span></p>
-         </div>
-         <div class="flex-col">
-            <div class="single-about-image">
-               <div class="overlay overlay-image" data-scroll="" data-scroll-speed="-2" data-scroll-position="top"{{ aboutImageFraming | framingAttr('background') | safe }}></div>
-               <div class="overlay"></div>
-            </div>
-         </div>
-      </div>
-   </div>
+<section class="about-essay section" data-tint>
+  <div class="wrap wrap--narrow">
+    <article class="about-essay__article" id="ramblings" aria-labelledby="ramblings-title">
+      <h2 id="ramblings-title" class="t-heading">{{ aboutEssay.title }}</h2>
+      {%- for paragraph in aboutEssay.paragraphs %}
+      <p>{% for part in paragraph %}{% if part.emphasis %}<strong>{{ part.text }}</strong>{% else %}{{ part.text }}{% endif %}{% endfor %}</p>
+      {%- endfor %}
+      <small class="quotation-source">{{ quotationSources.englishLabel }} <a href="{{ quotationSources.englishUrl }}" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ quotationSources.englishCitation }}</a></small>
+    </article>
+  </div>
 </section>
-{# H5：站主碎碎念；九段原文，单栏阅读，强调保留，不新增入场触发器。 #}
-<section class="section about-essay block-reading" data-scroll-section="">
-   <div class="container medium">
-      <div class="row">
-         <div class="flex-col">
-            <article class="text-wrap" id="ramblings" aria-labelledby="ramblings-title">
-               <h2 id="ramblings-title">{{ aboutEssay.title }}</h2>
-               {% for paragraph in aboutEssay.paragraphs %}
-               <p>{% for part in paragraph %}{% if part.emphasis %}<strong>{{ part.text }}</strong>{% else %}{{ part.text }}{% endif %}{% endfor %}</p>
-               {% endfor %}
-               <small class="quotation-source">{{ quotationSources.englishLabel }} <a href="{{ quotationSources.englishUrl }}" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ quotationSources.englishCitation }}</a></small>
-            </article>
-         </div>
+<section class="about-scope section" data-tint>
+  <div class="wrap">
+    <h2 class="about-scope__title t-heading">What lives here <span class="ellipsis" aria-hidden="true"><i>.</i><i>.</i><i>.</i></span></h2>
+    <div class="about-scope__grid">
+      {%- set scope = [
+        ['01', 'Content', 'Selected images, three character readings, and two notes on closeness. The readings follow the complete manga; character and insight pages include ending spoilers.'],
+        ['02', 'Sources', 'Based on the manga by Nio Nakatani and its TV adaptation by TROYCA. This collection includes animation stills and illustrations; individual image credits are being compiled.'],
+        ['03', 'Credits', "An unofficial personal collection. The story and its images belong to their respective creators. This site's layout and motion began as a study of a reference portfolio design, adapted here around Bloom Into You."]
+      ] %}
+      {%- for item in scope %}
+      <div class="about-scope__item" data-reveal="fade">
+        <p class="t-label">{{ item[0] }}</p>
+        <span class="rule" data-reveal="line"></span>
+        <h3 class="t-lead">{% if loop.last %}{{ bloomMark('bloom-mark--inline') }}{% endif %}{{ item[1] }}</h3>
+        <p class="t-note">{{ item[2] }}</p>
       </div>
-   </div>
+      {%- endfor %}
+    </div>
+  </div>
 </section>
-<section class="section about-services" data-scroll-section="">
-   <div class="container">
-      <div class="row">
-         <div class="flex-col">
-            <h2>What lives here <span class="animate-dot">.</span><span class="animate-dot">.</span><span class="animate-dot">.</span></h2>
-         </div>
-      </div>
-      <div class="row">
-         <div class="flex-col">
-            <h5>01</h5>
-            <div class="stripe"></div>
-            <h4>Content</h4>
-            <p>Selected images, three character readings, and two notes on closeness. The readings follow the complete manga; character and insight pages include ending spoilers.</p>
-         </div>
-         <div class="flex-col">
-            <h5>02</h5>
-            <div class="stripe"></div>
-            <h4>Sources</h4>
-            <p>Based on the manga by Nio Nakatani and its TV adaptation by TROYCA. This collection includes animation stills and illustrations; individual image credits are being compiled.</p>
-         </div>
-         <div class="flex-col">
-            <h5>03</h5>
-            <div class="stripe"></div>
-            <h4><span><!--?xml version="1.0" encoding="UTF-8"?-->
-<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Oval + Oval + Oval + Oval Mask</title>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard" transform="translate(-468.000000, -671.000000)" fill="#FFFFFF">
-            <g id="Oval-+-Oval-+-Oval-+-Oval-Mask" transform="translate(468.000000, 671.000000)">
-                <path d="M99.1731586,50.0066986 C71.9402858,50.4482381 50,72.6619049 50,100 L50,100 L49.9933014,99.1731586 C49.5517619,71.9402858 27.3380951,50 0,50 L0,50 L0.826841425,49.9933014 C28.0597142,49.5517619 50,27.3380951 50,0 L50,0 L50.0066986,0.826841425 C50.4482381,28.0597142 72.6619049,50 100,50 L100,50 Z" id="Combined-Shape"></path>
-            </g>
-        </g>
-    </g>
-</svg></span>Credits</h4>
-            <p>An unofficial personal collection. The story and its images belong to their respective creators. This site's layout and motion began as a study of a reference portfolio design, adapted here around Bloom Into You.</p>
-         </div>
-      </div>
-   </div>
-</section>
-                                {% include "partials/footer-rounded.njk" %}
-                {% include "partials/footer.njk" %}
+{% include "shell/page-end.njk" %}

@@ -1,0 +1,7 @@
+{#- A pause between images: a short heading and a quiet aside. -#}
+<section class="block pull-quote section{{ ' block--pad-end' if b.paddingBottom }}"{% if b.background %} style="--block-bg: {{ b.background }}"{% endif %}>
+  <div class="wrap wrap--narrow pull-quote__grid">
+    <h2 class="pull-quote__heading t-lead" data-reveal="words">{{ b.heading }}</h2>
+    <p class="pull-quote__text t-note" data-reveal="fade">{{ b.text }}</p>
+  </div>
+</section>

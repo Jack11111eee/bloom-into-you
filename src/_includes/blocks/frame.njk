@@ -1,0 +1,9 @@
+{#- Single contained image on a tinted ground. -#}
+{% from "ui/macros.njk" import picture %}
+<section class="block media-frame{{ ' block--pad-end' if b.paddingBottom }}"{% if b.background %} style="--block-bg: {{ b.background }}"{% endif %}>
+  <div class="wrap">
+    <div class="media-frame__window" data-reveal="media">
+      {{ picture(b.media, '(max-width: 540px) 100vw, 84vw') }}
+    </div>
+  </div>
+</section>

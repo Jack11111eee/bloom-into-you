@@ -1,0 +1,90 @@
+@layer layout {
+  .page {
+    position: relative;
+    display: block;
+    background: var(--paper);
+    outline: none;
+  }
+
+  .page__content {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .wrap {
+    inline-size: 100%;
+    max-inline-size: var(--wrap-max);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .wrap--narrow {
+    padding-inline: var(--gutter-narrow);
+  }
+
+  .section {
+    padding-block: var(--section);
+  }
+
+  .block {
+    position: relative;
+    background: var(--block-bg, var(--paper));
+  }
+
+  .block--pad-end {
+    padding-block-end: var(--section);
+  }
+
+  .rule {
+    display: block;
+    inline-size: 100%;
+    block-size: 1px;
+    background: var(--line);
+    transform-origin: left center;
+  }
+
+  [data-tone='dark'] {
+    color: var(--paper);
+    background: var(--ink);
+  }
+
+  [data-tone='dark'] .rule {
+    background: var(--line-inverse);
+  }
+
+  /* Page header shared by every route except the home hero. */
+  .page-head {
+    position: relative;
+    padding-block: calc(var(--section) * 1.33) calc(var(--section) * 0.66);
+    background: var(--paper);
+  }
+
+  .page-head[data-tone='dark'] {
+    background: var(--ink);
+  }
+
+  .page-head__title > span {
+    display: block;
+  }
+
+  .page-head__note {
+    margin-block-start: 1.6em;
+    max-inline-size: 32em;
+  }
+
+  @media (max-width: 720px) {
+    .page-head {
+      padding-block: calc(var(--section) * 1.95) calc(var(--section) * 0.75);
+    }
+
+    .page-head__title > span {
+      display: inline;
+    }
+  }
+
+  @media (max-width: 540px) {
+    :root:not(:lang(en)) .page-head__title {
+      font-size: clamp(2em, 8vw, 3.25em);
+    }
+  }
+}

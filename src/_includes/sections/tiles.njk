@@ -1,0 +1,19 @@
+{#- Card grid shared by the home features and both index pages. -#}
+<ul class="tile-grid tile-grid--{{ tileStyle }}" role="list"{% if tileStyle == 'index' %} data-view-pane="grid"{% endif %}>
+{%- for item in tiles %}
+  <li class="tile" style="--i: {{ loop.index0 }}">
+    <a href="{{ item.href }}" data-cursor="next">
+      <span class="tile__media" style="background-color: {{ item.tileColor }}" data-reveal="media">
+        <img src="{{ item.tileImage | thumb }}" srcset="{{ item.tileImage | thumb }} 540w, {{ item.tileImage }} 2400w" sizes="(max-width: 620px) 92vw, 45vw" alt="" loading="lazy" decoding="async">
+      </span>
+      <h3 class="tile__title">{{ item.name }}</h3>
+      <span class="rule"></span>
+      {%- if tileStyle == 'feature' %}
+      <p class="tile__meta">{{ item.line }}</p>
+      {%- else %}
+      <p class="tile__meta"><span>{{ item.col3 }}</span><span>{{ item.col4 }}</span></p>
+      {%- endif %}
+    </a>
+  </li>
+{%- endfor %}
+</ul>

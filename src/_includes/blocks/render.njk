@@ -1,0 +1,9 @@
+{#- Content block dispatcher. Unknown types stop the build instead of vanishing. -#}
+{%- if b.type === 'fullwidth' %}{% include "blocks/band.njk" %}
+{%- elif b.type === 'device' %}{% include "blocks/frame.njk" %}
+{%- elif b.type === 'mobile-devices' %}{% include "blocks/row.njk" %}
+{%- elif b.type === 'pause' %}{% include "blocks/pull-quote.njk" %}
+{%- elif b.type === 'reading' %}{% include "blocks/prose.njk" %}
+{%- elif b.type === 'editorial' %}{% include "blocks/editorial.njk" %}
+{%- else %}{{ ('Unknown content block: ' + b.type) | fail }}
+{%- endif %}

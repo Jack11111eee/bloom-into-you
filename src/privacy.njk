@@ -1,19 +1,13 @@
 ---
 ns: privacy
-pagination:
-  data: locales
-  size: 1
-  alias: language
-permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/privacy/index.html"
 ---
-<header class="section default-header copyright-header" data-scroll-section="">
-   {% include "partials/nav-bar.njk" %}
-   <div class="container medium once-in">
-      <div class="row"><div class="flex-col"><h1 id="privacy-page-title">{{ privacy.title }}</h1></div></div>
-   </div>
+{% set ending = 'plain' %}
+<header class="page-head legal-head">
+  {% include "shell/header.njk" %}
+  <div class="page-head__body wrap wrap--narrow" data-intro><h1 class="page-head__title" id="privacy-page-title">{{ privacy.title }}</h1></div>
 </header>
-<section class="section copyright-content" data-scroll-section="">
-   <div class="container medium">
+<section class="legal-page section">
+   <div class="wrap wrap--narrow">
       <article class="privacy-reading" aria-labelledby="privacy-page-title">
          <p>{{ privacy.updated }}</p>
          <p>{{ privacy.intro }}</p>
@@ -26,4 +20,4 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/privacy/index.ht
       </article>
    </div>
 </section>
-{% include "partials/footer-contact.njk" %}
+{% include "shell/page-end.njk" %}

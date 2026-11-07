@@ -1,19 +1,13 @@
 ---
 ns: copyright
-pagination:
-  data: locales
-  size: 1
-  alias: language
-permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/copyright/index.html"
 ---
-<header class="section default-header copyright-header" data-scroll-section="">
-   {% include "partials/nav-bar.njk" %}
-   <div class="container medium once-in">
-      <div class="row"><div class="flex-col"><h1 id="copyright-page-title">{{ copyright.title }}</h1></div></div>
-   </div>
+{% set ending = 'plain' %}
+<header class="page-head legal-head">
+  {% include "shell/header.njk" %}
+  <div class="page-head__body wrap wrap--narrow" data-intro><h1 class="page-head__title" id="copyright-page-title">{{ copyright.title }}</h1></div>
 </header>
-<section class="section copyright-content" data-scroll-section="">
-   <div class="container medium">
+<section class="legal-page section">
+   <div class="wrap wrap--narrow">
       <article class="copyright-reading" aria-labelledby="copyright-page-title">
          <p>{{ copyright.intro }}</p>
          <p>{{ copyright.affiliation }}</p>
@@ -35,8 +29,8 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/copyright/index.
       </article>
    </div>
 </section>
-<section class="section copyright-content rights-handling" data-scroll-section="">
-   <div class="container medium">
+<section class="legal-page section legal-page--rights">
+   <div class="wrap wrap--narrow">
       <article class="rights-reading" aria-labelledby="rights-handling-title">
          <h2 id="rights-handling-title">{{ rightsHandling.title }}</h2>
          {% for section in rightsHandling.sections %}
@@ -49,4 +43,4 @@ permalink: "{% if language != 'en' %}/{{ language }}{% endif %}/copyright/index.
       </article>
    </div>
 </section>
-{% include "partials/footer-contact.njk" %}
+{% include "shell/page-end.njk" %}
