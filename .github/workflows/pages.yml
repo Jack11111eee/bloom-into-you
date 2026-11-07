@@ -36,6 +36,10 @@ jobs:
           node scripts/check-about-essay.mjs
           node scripts/check-links.mjs
           node --test lib/music.test.mjs lib/not-found.test.mjs
+      - name: Check code originality against the reference-derived baseline
+        run: node --test lib/originality.test.mjs
+        env:
+          ORIGINALITY_STRICT: '1'
       - run: npm run build:pages
         env:
           PAGES_URL: ${{ steps.pages.outputs.base_url }}/
