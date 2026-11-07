@@ -3,17 +3,17 @@ ns: not-found
 layout: layouts/not-found.njk
 ---
 {% from "ui/macros.njk" import icon %}
-<div class="forms-object" data-orbit>
-  <span class="not-found-code" aria-hidden="true">404</span>
+<figure class="lost__orbit" data-orbit>
+  <span class="lost__code" aria-hidden="true">404</span>
   <canvas aria-hidden="true"></canvas>
-  <button type="button" class="forms-motion" aria-pressed="false" hidden>
-    <span data-motion-pause>Pause motion</span><span data-motion-resume hidden>Resume motion</span>
+  <button class="lost__motion" type="button" aria-pressed="false" hidden>
+    <span data-when="playing">Pause motion</span><span data-when="paused" hidden>Resume motion</span>
   </button>
-</div>
-<p class="forms-status">404 · <span>Page not found</span></p>
-<h1 class="forms-title"><span>Somehow,</span> <span>we stepped outside the story.</span></h1>
-<p class="forms-copy"><span class="forms-explanation">There is no page at this address.</span><span>Go back. There is nothing here for you.</span></p>
-<div class="forms-actions">
-  <a href="/" class="forms-home"><span class="not-found-arrow">{{ icon('arrow') }}</span><span>Back to home</span></a>
-  <a href="/" class="forms-back" data-not-found-back>Back to previous page</a>
+</figure>
+<p class="lost__status">404 · <span>Page not found</span></p>
+<h1 class="lost__title"><span>Somehow,</span> <span>we stepped outside the story.</span></h1>
+<p class="lost__copy"><span class="lost__note">There is no page at this address.</span><span>Go back. There is nothing here for you.</span></p>
+<div class="lost__actions">
+  <a class="lost__home" href="/"><span class="lost__arrow">{{ icon('arrow') }}</span><span>Back to home</span></a>
+  <a class="lost__back" href="/" data-not-found-back>Back to previous page</a>
 </div>

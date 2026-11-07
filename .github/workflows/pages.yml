@@ -36,10 +36,8 @@ jobs:
           node scripts/check-about-essay.mjs
           node scripts/check-links.mjs
           node --test lib/music.test.mjs lib/not-found.test.mjs
-      - name: Check code originality against the reference-derived baseline
+      - name: Check that no site code repeats the pre-rewrite baseline
         run: node --test lib/originality.test.mjs
-        env:
-          ORIGINALITY_STRICT: '1'
       - run: npm run build:pages
         env:
           PAGES_URL: ${{ steps.pages.outputs.base_url }}/

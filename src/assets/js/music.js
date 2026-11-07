@@ -1,106 +1,155 @@
-/* Owner-requested silent record collection. No audio, remote requests or persistent storage. */
+// The silent record collection: no audio, no requests, nothing stored beyond this visit.
+// Picking a song turns the deck and opens its story; the page runtime calls init/destroy.
 (() => {
-  let cleanup = () => {};
-  const positions = new Map(); // Reading position lasts only for this page visit.
+  // Reading positions survive page changes within one visit only.
+  const bookmarks = new Map();
+  let teardown = () => {};
+
+  function mountRecord(record, { align, update }) {
+    const find = hook => record.querySelector(`[data-record-${hook}]`);
+    const board = find('board');
+    const list = find('list');
+    const reader = find('reader');
+    const pages = find('pages');
+    const now = find('now');
+    const motion = find('motion');
+    const status = find('status');
+    const hint = find('hint');
+    const returnButton = find('return');
+    const songs = [...record.querySelectorAll('[data-song]')];
+    const phrase = Object.fromEntries([...record.querySelectorAll('[data-phrase]')].map(node => [node.dataset.phrase, node.textContent]));
+    const stillness = matchMedia('(prefers-reduced-motion: reduce)');
+    const events = new AbortController();
+    const on = (target, type, listener, options = {}) => target.addEventListener(type, listener, { ...options, signal: events.signal });
+
+    const state = { song: null, last: null, held: false, visible: false };
+    let pending = 0;
+    const bookmarkKey = id => `${document.documentElement.lang}:${id}`;
+
+    // The disc turns only while a song is chosen, playing, on screen and motion is allowed.
+    function refresh() {
+      const turning = Boolean(state.song) && !state.held && state.visible && !document.hidden && !stillness.matches;
+      record.classList.toggle('is-turning', turning);
+      motion.disabled = stillness.matches;
+      motion.textContent = phrase[stillness.matches ? 'reduced' : state.held ? 'resume' : 'pause'];
+      motion.setAttribute('aria-pressed', String(state.held || stillness.matches));
+    }
+
+    function remember() {
+      const room = pages.scrollHeight - pages.clientHeight;
+      hint.textContent = room <= 2 || pages.scrollTop >= room - 3 ? phrase.end : phrase.down;
+      if (state.song) bookmarks.set(bookmarkKey(state.song), pages.scrollTop);
+    }
+
+    // Keep the deck, the reading pane and its footer inside one screen.
+    function fit() {
+      const narrow = matchMedia('(max-width: 700px)').matches;
+      const screenHeight = window.visualViewport?.height || innerHeight;
+      const foot = reader.querySelector('.record__reader-foot').offsetHeight;
+      const reserved = state.song
+        ? pages.getBoundingClientRect().top - board.getBoundingClientRect().top + foot + 72
+        : narrow ? 265 : 190;
+      const height = Math.max(150, Math.min(narrow ? 470 : 540, screenHeight - reserved));
+      record.style.setProperty('--record-pages', `${height}px`);
+      update();
+      remember();
+    }
+
+    function choose(song) {
+      state.song = state.last = song.dataset.song;
+      state.held = false;
+      const title = song.querySelector('.record__song-name');
+      for (const heading of [find('name'), reader.querySelector('.record__reader-title')]) {
+        heading.textContent = title.textContent;
+        heading.lang = title.lang;
+      }
+      find('info').textContent = song.querySelector('.record__song-meta').textContent;
+      find('position').textContent = `${String(songs.indexOf(song) + 1).padStart(2, '0')} / 04`;
+      find('label').src = song.querySelector('img').src;
+      songs.forEach(other => other.setAttribute('aria-expanded', String(other === song)));
+      record.querySelectorAll('[data-story]').forEach(story => { story.hidden = story.dataset.story !== state.song; });
+      record.querySelector('.record__poster').setAttribute('aria-hidden', 'true');
+      record.querySelector('.record__player').setAttribute('aria-hidden', 'false');
+      list.hidden = true;
+      reader.hidden = false;
+      now.hidden = false;
+      record.classList.add('is-chosen');
+      fit();
+      pages.scrollTop = bookmarks.get(bookmarkKey(state.song)) || 0;
+      remember();
+      refresh();
+      status.textContent = phrase.silent;
+      if (!stillness.matches) {
+        const frames = [{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }];
+        reader.animate(frames, { duration: 420, easing: 'cubic-bezier(.22,1,.36,1)' });
+      }
+      returnButton.focus({ preventScroll: true });
+      cancelAnimationFrame(pending);
+      pending = requestAnimationFrame(() => record.isConnected && align(board));
+    }
+
+    function putBack() {
+      if (state.song) bookmarks.set(bookmarkKey(state.song), pages.scrollTop);
+      state.song = null;
+      state.held = true;
+      record.classList.remove('is-chosen', 'is-turning');
+      reader.hidden = true;
+      now.hidden = true;
+      list.hidden = false;
+      record.querySelector('.record__poster').removeAttribute('aria-hidden');
+      record.querySelector('.record__player').setAttribute('aria-hidden', 'true');
+      songs.forEach(song => song.setAttribute('aria-expanded', 'false'));
+      status.textContent = phrase.choose;
+      songs.find(song => song.dataset.song === state.last)?.focus({ preventScroll: true });
+      update();
+    }
+
+    songs.forEach(song => on(song, 'click', () => choose(song)));
+    on(returnButton, 'click', putBack);
+    on(motion, 'click', () => {
+      state.held = !state.held;
+      refresh();
+    });
+    on(pages, 'scroll', remember, { passive: true });
+    on(pages, 'keydown', event => {
+      if (event.key === 'Escape') putBack();
+    });
+    // Focusing the pane can scroll it into the middle of a phone screen; bring the deck back.
+    on(pages, 'focus', () => {
+      cancelAnimationFrame(pending);
+      pending = requestAnimationFrame(() => record.isConnected && state.song && align(board));
+    });
+    on(document, 'visibilitychange', refresh);
+    on(stillness, 'change', refresh);
+    on(window, 'resize', fit);
+    if (window.visualViewport) on(window.visualViewport, 'resize', fit);
+
+    const watcher = new IntersectionObserver(([entry]) => {
+      state.visible = entry.isIntersecting;
+      refresh();
+    });
+    watcher.observe(find('deck'));
+    document.fonts.ready.then(() => events.signal.aborted || fit());
+    fit();
+    refresh();
+
+    return () => {
+      events.abort();
+      watcher.disconnect();
+      cancelAnimationFrame(pending);
+      record.classList.remove('is-turning');
+    };
+  }
+
   window.BloomMusic = {
-    destroy() { cleanup(); cleanup = () => {}; },
+    destroy() {
+      teardown();
+      teardown = () => {};
+    },
     init({ container, align, update }) {
       this.destroy();
-      const root = container?.id === 'music' ? container.querySelector('#bloom-vinyl-reader') : null;
-      if (!root) return;
-      const q = selector => root.querySelector(selector);
-      const page = q('.vr-page'), board = q('.vr-board'), list = q('.vr-song-list');
-      const reader = q('.vr-reader'), body = q('.vr-reader-body'), back = q('.vr-return');
-      const current = q('.vr-current'), status = q('.vr-reader-status'), motion = q('.vr-motion');
-      const buttons = [...root.querySelectorAll('.vr-song')];
-      const labels = Object.fromEntries([...root.querySelectorAll('[data-label]')].map(el => [el.dataset.label, el.textContent]));
-      const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-      const events = new AbortController(), signal = events.signal;
-      let selected = null, lastSelected = null, paused = false, inView = false, frame = 0;
-      const memoryKey = id => document.documentElement.lang + ':' + id;
-      function sync() {
-        page.classList.toggle('vr-spinning', !!selected && !paused && inView && !document.hidden && !reduced.matches);
-        motion.textContent = labels[reduced.matches ? 'reduced' : paused ? 'resume' : 'pause'];
-        motion.disabled = reduced.matches;
-        motion.setAttribute('aria-pressed', String(paused || reduced.matches));
-      }
-      function progress() {
-        const max = body.scrollHeight - body.clientHeight;
-        q('.vr-reader-progress').textContent = max <= 2 || body.scrollTop >= max - 3 ? labels.end : labels.down;
-        if (selected) positions.set(memoryKey(selected), body.scrollTop);
-      }
-      function layout() {
-        // Reserve space for the turntable, reader controls and browser chrome.
-        const mobile = matchMedia('(max-width: 700px)').matches;
-        const viewport = window.visualViewport?.height || window.innerHeight;
-        const overhead = selected ? body.getBoundingClientRect().top - board.getBoundingClientRect().top + q('.vr-reader-bottom').offsetHeight + 72 : mobile ? 265 : 190;
-        page.style.setProperty('--vr-body-height', Math.max(150, Math.min(mobile ? 470 : 540, viewport - overhead)) + 'px');
-        update(); progress();
-      }
-      function open(button) {
-        selected = lastSelected = button.dataset.song;
-        paused = false;
-        const title = button.querySelector('.vr-song-name');
-        for (const el of [q('[data-current-name]'), q('#vr-reading-title')]) {
-          el.textContent = title.textContent; el.lang = title.lang;
-        }
-        q('[data-current-info]').textContent = button.querySelector('.vr-song-meta').textContent;
-        q('.vr-reader-index').textContent = String(buttons.indexOf(button) + 1).padStart(2, '0') + ' / 04';
-        q('.vr-platter .vr-label').src = button.querySelector('img').src;
-        buttons.forEach(el => el.setAttribute('aria-expanded', String(el === button)));
-        root.querySelectorAll('[data-story]').forEach(el => { el.hidden = el.dataset.story !== selected; });
-        q('.vr-idle-art').setAttribute('aria-hidden', 'true');
-        q('.vr-hardware').setAttribute('aria-hidden', 'false');
-        list.hidden = true; reader.hidden = false; current.hidden = false;
-        page.classList.add('vr-selected');
-        const previousPosition = positions.get(memoryKey(selected)) || 0;
-        layout();
-        body.scrollTop = previousPosition;
-        progress(); sync();
-        status.textContent = labels.silent;
-        if (!reduced.matches) reader.animate([{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }], { duration: 420, easing: 'cubic-bezier(.22,1,.36,1)' });
-        back.focus({ preventScroll: true });
-        cancelAnimationFrame(frame);
-        frame = requestAnimationFrame(() => { if (root.isConnected) align(board); });
-      }
-      function close() {
-        if (selected) positions.set(memoryKey(selected), body.scrollTop);
-        selected = null; paused = true;
-        page.classList.remove('vr-selected', 'vr-spinning');
-        reader.hidden = true; current.hidden = true; list.hidden = false;
-        q('.vr-idle-art').removeAttribute('aria-hidden');
-        q('.vr-hardware').setAttribute('aria-hidden', 'true');
-        buttons.forEach(el => el.setAttribute('aria-expanded', 'false'));
-        status.textContent = labels.choose;
-        buttons.find(el => el.dataset.song === lastSelected)?.focus({ preventScroll: true });
-        update();
-      }
-      buttons.forEach(button => button.addEventListener('click', () => open(button), { signal }));
-      back.addEventListener('click', close, { signal });
-      motion.addEventListener('click', () => { paused = !paused; sync(); }, { signal });
-      body.addEventListener('scroll', progress, { passive: true, signal });
-      body.addEventListener('focus', () => {
-        // Native focus may centre the scroll region and push the mobile deck away.
-        cancelAnimationFrame(frame);
-        frame = requestAnimationFrame(() => { if (root.isConnected && selected) align(board); });
-      }, { signal });
-      // Locomotive's virtual scroll listens above this native scrolling region.
-      // Keep its wheel/key input here so reading never moves the turntable.
-      body.addEventListener('wheel', event => event.stopPropagation(), { passive: true, signal });
-      body.addEventListener('touchmove', event => event.stopPropagation(), { passive: true, signal });
-      body.addEventListener('keydown', event => {
-        if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) event.stopPropagation();
-        if (event.key === 'Escape') close();
-      }, { signal });
-      document.addEventListener('visibilitychange', sync, { signal });
-      reduced.addEventListener('change', sync, { signal });
-      window.addEventListener('resize', layout, { signal });
-      window.visualViewport?.addEventListener('resize', layout, { signal });
-      const observer = new IntersectionObserver(entries => { inView = entries[0].isIntersecting; sync(); });
-      observer.observe(q('.vr-deck'));
-      document.fonts.ready.then(() => { if (!signal.aborted) layout(); });
-      layout(); sync();
-      cleanup = () => { events.abort(); observer.disconnect(); cancelAnimationFrame(frame); page.classList.remove('vr-spinning'); };
+      const record = container?.querySelector('#bloom-vinyl-reader [data-record]');
+      if (record) teardown = mountRecord(record, { align, update });
     },
   };
 })();

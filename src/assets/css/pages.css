@@ -712,15 +712,6 @@
       max-inline-size: 100%;
     }
   }
-
-  /* Music shell around the owner's reader */
-  .music-header {
-    padding-block-end: 3em;
-  }
-
-  .music-section {
-    padding-block-start: 0;
-  }
 }
 
 @layer pages {

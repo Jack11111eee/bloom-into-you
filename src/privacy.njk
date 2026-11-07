@@ -1,23 +1,20 @@
 ---
 ns: privacy
 ---
-{% set ending = 'plain' %}
-<header class="page-head legal-head">
-  {% include "shell/header.njk" %}
-  <div class="page-head__body wrap wrap--narrow" data-intro><h1 class="page-head__title" id="privacy-page-title">{{ privacy.title }}</h1></div>
-</header>
+{% from "ui/macros.njk" import outLink %}
+{% set documentTitle = privacy.title %}{% set documentId = 'privacy-page-title' %}
+{% include "sections/document-head.njk" %}
 <section class="legal-page section">
-   <div class="wrap wrap--narrow">
-      <article class="privacy-reading" aria-labelledby="privacy-page-title">
-         <p>{{ privacy.updated }}</p>
-         <p>{{ privacy.intro }}</p>
-         {% for section in privacy.sections %}
-         <h2>{{ section.title }}</h2>
-         {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
-         {% for link in section.links %}<p><a href="{{ link.href }}" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ link.label }}</a></p>{% endfor %}
-         {% endfor %}
-         <p>{{ privacy.contactLabel }} <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
-      </article>
-   </div>
+  <div class="wrap wrap--narrow"><article class="privacy-reading" aria-labelledby="privacy-page-title">
+    {%- for opening in [privacy.updated, privacy.intro] %}
+    <p>{{ opening }}</p>
+    {%- endfor %}
+    {%- for part in privacy.sections %}
+    <h2>{{ part.title }}</h2>
+    {%- for text in part.paragraphs %}<p>{{ text }}</p>{% endfor %}
+    {%- for link in part.links %}<p>{{ outLink(link.href, link.label) }}</p>{% endfor %}
+    {%- endfor %}
+    <p>{{ privacy.contactLabel }} <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+  </article></div>
 </section>
 {% include "shell/page-end.njk" %}

@@ -9,11 +9,6 @@
     stroke-linecap: round;
   }
 
-  /* The 404 stylesheet turns its arrow a quarter back; start one quarter on. */
-  .not-found-arrow .icon {
-    rotate: 90deg;
-  }
-
   .icon--grid {
     stroke-width: 1.1;
   }

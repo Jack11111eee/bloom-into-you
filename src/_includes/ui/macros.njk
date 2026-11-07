@@ -54,3 +54,8 @@
   {%- if opts.eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async"
   {{- media.framing | framingAttr('object') | safe }}>
 {%- endmacro %}
+
+{#- Link that leaves the site in a new tab and is never handled by the page router. -#}
+{% macro outLink(href, label, cls = '') -%}
+<a{% if cls %} class="{{ cls }}"{% endif %} href="{{ href }}" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ label }}</a>
+{%- endmacro %}

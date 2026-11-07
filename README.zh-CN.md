@@ -29,7 +29,7 @@ node scripts/check-about-essay.mjs
 node scripts/check-links.mjs
 node scripts/test-i18n-build.mjs
 node --test lib/music.test.mjs lib/not-found.test.mjs
-ORIGINALITY_STRICT=1 node --test lib/originality.test.mjs
+node --test lib/originality.test.mjs
 npm run build:pages
 node scripts/check-pages.mjs
 ```

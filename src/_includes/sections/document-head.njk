@@ -1,0 +1,8 @@
+{#- Heading for long documents; set documentTitle and documentId before including. -#}
+{% set ending = 'plain' %}
+<header class="page-head legal-head">
+  {% include "shell/header.njk" %}
+  <div class="page-head__body wrap wrap--narrow" data-intro>
+    <h1 class="page-head__title" id="{{ documentId }}">{{ documentTitle }}</h1>
+  </div>
+</header>

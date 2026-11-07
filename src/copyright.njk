@@ -1,46 +1,45 @@
 ---
 ns: copyright
 ---
-{% set ending = 'plain' %}
-<header class="page-head legal-head">
-  {% include "shell/header.njk" %}
-  <div class="page-head__body wrap wrap--narrow" data-intro><h1 class="page-head__title" id="copyright-page-title">{{ copyright.title }}</h1></div>
-</header>
+{% from "ui/macros.njk" import outLink %}
+{% set documentTitle = copyright.title %}{% set documentId = 'copyright-page-title' %}
+{% include "sections/document-head.njk" %}
+{#- The notice reads in this order; each step names a field of copyright.json. -#}
+{% set notice = [
+  ['p', 'intro'], ['p', 'affiliation'], ['h2', 'ownershipTitle'], ['p', 'materials'], ['credits'],
+  ['p', 'permission'], ['h2', 'rightsTitle'], ['p', 'respect'], ['p', 'request'], ['email'],
+  ['p', 'response'], ['p', 'corrections'], ['p', 'thanks']
+] %}
+{% set credits = [['mangaLabel', 'mangaCredit'], ['animeLabel', 'animeCredit'], ['publisherLabel', 'publisherCredit']] %}
 <section class="legal-page section">
-   <div class="wrap wrap--narrow">
-      <article class="copyright-reading" aria-labelledby="copyright-page-title">
-         <p>{{ copyright.intro }}</p>
-         <p>{{ copyright.affiliation }}</p>
-         <h2>{{ copyright.ownershipTitle }}</h2>
-         <p>{{ copyright.materials }}</p>
-         <ul>
-            <li><strong>{{ copyright.mangaLabel }}</strong> {{ copyright.mangaCredit }}</li>
-            <li><strong>{{ copyright.animeLabel }}</strong> <span class="copyright-credit" lang="ja">{{ copyright.animeCredit }}</span></li>
-            <li><strong>{{ copyright.publisherLabel }}</strong> {{ copyright.publisherCredit }}</li>
-         </ul>
-         <p>{{ copyright.permission }}</p>
-         <h2>{{ copyright.rightsTitle }}</h2>
-         <p>{{ copyright.respect }}</p>
-         <p>{{ copyright.request }}</p>
-         <p><strong>{{ copyright.emailLabel }}</strong> <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
-         <p>{{ copyright.response }}</p>
-         <p>{{ copyright.corrections }}</p>
-         <p>{{ copyright.thanks }}</p>
-      </article>
-   </div>
+  <div class="wrap wrap--narrow"><article class="copyright-reading" aria-labelledby="copyright-page-title">
+  {%- for step in notice %}
+    {%- if step[0] == 'p' %}
+    <p>{{ copyright[step[1]] }}</p>
+    {%- elif step[0] == 'h2' %}
+    <h2>{{ copyright[step[1]] }}</h2>
+    {%- elif step[0] == 'email' %}
+    <p><strong>{{ copyright.emailLabel }}</strong> <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+    {%- else %}
+    <ul>
+      {%- for pair in credits %}
+      <li><strong>{{ copyright[pair[0]] }}</strong> {% if pair[1] == 'animeCredit' %}<span class="copyright-credit" lang="ja">{{ copyright.animeCredit }}</span>{% else %}{{ copyright[pair[1]] }}{% endif %}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  {%- endfor %}
+  </article></div>
 </section>
-<section class="legal-page section legal-page--rights">
-   <div class="wrap wrap--narrow">
-      <article class="rights-reading" aria-labelledby="rights-handling-title">
-         <h2 id="rights-handling-title">{{ rightsHandling.title }}</h2>
-         {% for section in rightsHandling.sections %}
-         <h3>{{ section.title }}</h3>
-         {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
-         {% endfor %}
-         <p class="content-license-reading"><span>{{ contentLicense.intro }}</span> <a class="license-identifier" href="{{ contentLicense.legalUrl }}" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ contentLicense.identifier }}</a> · <span>{{ contentLicense.exclusions }}</span> <a href="/assets/licenses/CONTENT-LICENSING.md" target="_blank" rel="noopener noreferrer" data-barba-prevent>{{ contentLicense.scopeLabel }}</a></p>
-         <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a> · <a href="/privacy/">{{ privacy.title }}</a></p>
-         <p class="image-sources-entry"><a href="/image-sources/">{{ imageSources.entryLabel }}</a></p>
-      </article>
-   </div>
+<section class="legal-page legal-page--rights section">
+  <div class="wrap wrap--narrow"><article class="rights-reading" aria-labelledby="rights-handling-title">
+    <h2 id="rights-handling-title">{{ rightsHandling.title }}</h2>
+    {%- for part in rightsHandling.sections %}
+    <h3>{{ part.title }}</h3>
+    {%- for text in part.paragraphs %}<p>{{ text }}</p>{% endfor %}
+    {%- endfor %}
+    <p class="content-license-reading"><span>{{ contentLicense.intro }}</span> {{ outLink(contentLicense.legalUrl, contentLicense.identifier, 'license-identifier') }} · <span>{{ contentLicense.exclusions }}</span> {{ outLink('/assets/licenses/CONTENT-LICENSING.md', contentLicense.scopeLabel) }}</p>
+    <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a> · <a href="/privacy/">{{ privacy.title }}</a></p>
+    <p class="image-sources-entry"><a href="/image-sources/">{{ imageSources.entryLabel }}</a></p>
+  </article></div>
 </section>
 {% include "shell/page-end.njk" %}

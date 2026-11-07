@@ -9,15 +9,18 @@
   lead: '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 48vw, (min-width: 1900px) 808px, 43vw',
   follow: '(max-width: 840px) calc(100vw - 40px), (max-width: 1200px) 31vw, (min-width: 1900px) 517px, 28vw'
 } %}
-{% macro figure(item, sizes) %}
-{% set m = replacementMedia[item.slot] %}
+{#- Image variants come from replacementMedia, keyed by the block's slot name. -#}
+{% macro figure(item, sizes) -%}
+{%- set art = replacementMedia[item.slot] -%}
+{%- set sources = [] -%}
+{%- for variant in art.variants %}{% set sources = (sources.push(variant.src + ' ' + variant.width + 'w'), sources) %}{% endfor -%}
 <figure class="editorial-figure" data-replacement-slot="{{ item.slot }}">
-  <div class="editorial-image" style="aspect-ratio: {{ m.aspectRatio }};">
-    <img src="{{ m.src }}" srcset="{% for v in m.variants %}{{ v.src }} {{ v.width }}w{{ ', ' if not loop.last }}{% endfor %}" sizes="{{ sizes }}" width="{{ m.width }}" height="{{ m.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async">
-  </div>
-  {%- if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}
+  <div class="editorial-image" style="aspect-ratio: {{ art.aspectRatio }};"><img src="{{ art.src }}" srcset="{{ sources | join(', ') }}" sizes="{{ sizes }}" width="{{ art.width }}" height="{{ art.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async"></div>
+  {%- if item.caption %}
+  <figcaption>{{ item.caption }}</figcaption>
+  {%- endif %}
 </figure>
-{% endmacro %}
+{%- endmacro %}
 {% macro copy(paragraphs, extra = '') %}<div class="editorial-copy {{ extra }}">{% for p in paragraphs %}<p>{{ p }}</p>{% endfor %}</div>{% endmacro %}
 {% set single = b.layout in ['detail', 'portrait', 'text'] %}
 {% set ranked = b.layout in ['contrast', 'daily'] %}

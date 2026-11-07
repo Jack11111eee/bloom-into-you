@@ -8,6 +8,7 @@ export function mount(scope, { signal }) {
   let loop = null;
 
   function build() {
+    if (signal.aborted || !marquee.isConnected) return;
     marquee.querySelectorAll('[data-clone]').forEach(clone => clone.remove());
     const width = track.getBoundingClientRect().width;
     if (!width) return;
@@ -24,35 +25,40 @@ export function mount(scope, { signal }) {
   }
 
   build();
-  document.fonts.ready.then(() => { if (marquee.isConnected) build(); });
+  document.fonts.ready.then(build);
   let resizeTimer = 0;
   addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(build, 150);
   }, { signal });
 
+  // Scrolling steers the loop: its direction follows the scroll, its pace the scroll speed.
+  // A killed tween revives if its timeScale is set, so steering stops once the page leaves.
   let direction = 1;
-  const speed = { value: 1 };
-  const setSpeed = gsap.quickTo(speed, 'value', {
-    duration: 0.5,
-    ease: 'power2.out',
-    onUpdate: () => loop?.timeScale(speed.value),
-  });
+  const steer = pace => {
+    if (signal.aborted || !loop) return;
+    gsap.to(loop, { timeScale: pace, duration: 0.5, ease: 'power2.out', overwrite: true });
+  };
   ScrollTrigger.create({
     trigger: document.documentElement,
     start: 0,
     end: 'max',
     onUpdate(self) {
       direction = self.direction;
-      setSpeed(direction * (1 + clamp(Math.abs(self.getVelocity()) / 1800, 0, 1.4)));
+      steer(direction * (1 + clamp(Math.abs(self.getVelocity()) / 1800, 0, 1.4)));
     },
   });
-  const settle = () => setSpeed(direction);
+  const settle = () => steer(direction);
   ScrollTrigger.addEventListener('scrollEnd', settle);
 
   return () => {
     ScrollTrigger.removeEventListener('scrollEnd', settle);
     clearTimeout(resizeTimer);
-    loop?.kill();
+    if (loop) {
+      gsap.killTweensOf(loop);
+      loop.kill();
+      loop = null;
+    }
+    gsap.killTweensOf(marquee);
   };
 }

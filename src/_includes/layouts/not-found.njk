@@ -2,28 +2,32 @@
 <html lang="{{ site.lang }}" data-locale="{{ locale }}" data-path="{{ canonical }}">
 {% include "shell/head.njk" %}
 {% import "shell/language.njk" as language with context %}
-<body class="not-found-page">
-  <div id="not-found">
-    <header class="forms-nav">
-      <a class="forms-brand" href="/" data-brand><span aria-hidden="true">· </span>Bloom Into You</a>
+<body class="lost-page">
+  <div id="not-found" class="lost">
+    <header class="lost__bar">
+      <a class="lost__brand" href="/" data-brand><span aria-hidden="true">· </span>Bloom Into You</a>
       {{ language.disclosure(canonical, locale) }}
-      <ul class="forms-links" role="list">
-        {% for item in site.navBar %}{% if item.href %}<li><a href="{{ item.href }}">{{ item.label }}</a></li>{% endif %}{% endfor %}
-      </ul>
-      <details class="not-found-menu">
+      <nav class="lost__links" aria-label="Main navigation">
+        <ul role="list">
+          {%- for item in site.navBar %}{% if item.href %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+          {%- endif %}{% endfor %}
+        </ul>
+      </nav>
+      <details class="lost__menu">
         <summary>Menu</summary>
-        <div class="not-found-menu__panel">
+        <div class="lost__menu-panel" data-tone="dark">
           <nav aria-label="Website navigation">
-            {% for item in site.navBar %}{% if item.href %}<a href="{{ item.href }}">{{ item.label }}</a>{% endif %}{% endfor %}
+            {%- for item in site.navBar %}{% if item.href %}<a href="{{ item.href }}">{{ item.label }}</a>{% endif %}{% endfor %}
           </nav>
           {{ language.row(canonical, locale) }}
         </div>
       </details>
     </header>
-    <main class="forms-main not-found-main" data-form="mobius">{{ content | safe }}</main>
-    <footer class="not-found-footer">
-      {% include "shell/legal.njk" %}
-    </footer>
+    <main class="lost__main not-found-main">
+{{ content | safe }}
+    </main>
+    <footer class="lost__footer">{% include "shell/legal.njk" %}</footer>
   </div>
 </body>
 </html>
