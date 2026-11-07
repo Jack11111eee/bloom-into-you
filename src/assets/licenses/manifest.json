@@ -2,6 +2,15 @@
   "verifiedOn": "2026-11-07",
   "entries": [
     {
+      "name": "Inter",
+      "licenseSourceVersion": "4.1",
+      "license": "OFL-1.1",
+      "source": "https://github.com/rsms/inter/blob/v4.1/LICENSE.txt",
+      "file": "/assets/fonts/inter/LICENSE.txt",
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+      "note": "Unmodified upstream release file."
+    },
+    {
       "name": "@barba/core",
       "licenseSourceVersion": "2.10.3",
       "license": "MIT",
@@ -27,13 +36,6 @@
       "file": "/assets/licenses/path-to-regexp-6.2.2.txt",
       "sha256": "4eeb3271453a891df609e5a9f4ee79a68307f730c13417a3bfeffa604ac8cf25",
       "note": "License source version is not proof of the exact transitive version embedded in a bundle."
-    },
-    {
-      "name": "Inter modified static fonts",
-      "license": "OFL-1.1",
-      "source": "https://github.com/rsms/inter/blob/master/LICENSE.txt",
-      "file": "/assets/fonts/LICENSE.txt",
-      "sha256": "3340d04c9e385fb45c2248decb080fe81a1f93b2c8536d9ef9414c10483d1f0b"
     },
     {
       "name": "Source Han Serif subsets",

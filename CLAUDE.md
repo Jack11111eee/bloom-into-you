@@ -12,11 +12,15 @@ the same templates, media and interaction system.
   `src/_data/`, build-time localization in `lib/i18n.mjs`.
 - Keep all website media, fonts and font licenses. Do not prune resources merely
   because one search finds no literal reference; references can be derived.
-- Preserve the owner's wording and multilingual home opening. Do not regenerate
-  content or media from the original reference website.
-- Preserve Barba markup, script load order, Locomotive scrolling, GSAP timelines
-  and font-readiness behavior unless the user requests a behavior change.
-  Verify library behavior in a browser; source inspection alone is insufficient.
+- Preserve the owner's wording and multilingual home opening. Do not generate
+  content or media from third-party websites.
+- Preserve the Barba page transitions, Lenis scrolling, the curtain and GSAP
+  motion, per-page module mount/cleanup and font-readiness refresh unless the
+  user requests a behavior change. Verify library behavior in a browser; source
+  inspection alone is insufficient.
+- Site code is written for this website. It must not repeat six consecutive
+  lines of the code recorded before the November 2026 rewrite (`352831d`);
+  `lib/originality.test.mjs` enforces this in CI.
 
 ## Local research and authoring materials
 
@@ -29,8 +33,7 @@ When available, local `HANDOFF.md`, `LEDGER.md`, `DEVIATIONS.md`, `ISSUES.md`,
 `SPEC.md` and `PLAN.md` preserve prior decisions and evidence. Consult them for
 related changes and maintain them when recording new evidence or decisions.
 They are optional for a fresh clone; normal website work must not depend on
-their presence. Original-site drift checks belong to original-site comparisons,
-not routine builds of the personalized website.
+their presence.
 
 No original authoring files were deleted from the owner's development directory.
 The complete previous tracked version, including historical commit
@@ -46,7 +49,8 @@ backup, exact ref scope and recovery plan.
 - Inspect the branch and working tree first. Preserve unrelated user changes.
   Make only changes needed for the request; do not refactor neighboring code.
 - Run `npm run build`, then `node scripts/check-i18n.mjs`,
-  `node scripts/check-about-essay.mjs` and `node scripts/check-links.mjs`.
+  `node scripts/check-about-essay.mjs`, `node scripts/check-links.mjs` and
+  `node --test lib/*.test.mjs`.
 - For deployment changes, also run `npm run build:pages` and
   `node scripts/check-pages.mjs`. Output must contain only the website.
 - For localization changes, run `node scripts/test-i18n-build.mjs`.

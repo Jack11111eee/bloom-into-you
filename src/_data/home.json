@@ -1,5 +1,5 @@
 {
-  "_comment": "首页专属内容（SPEC.md §6.2 / §7.1）。P8 已换成占位内容（DEVIATIONS.md D2）。★ P10 M5 的改造（方案 §4.1 / §5 M5）：① `featured` **删除** —— 三人物入口改为从 `characters.json` 派生（`src.11tydata.js` 的 `homeFeatured`，与 `floatImages` 同源，方案 §5 M5 步骤 4）；② 新增 `blocks`（两张 fullwidth「精选画面」，方案 §4.1 第 3 项）—— 媒体**复用长廊的占位图**（M5 决定，见方案 §7 的 M5-1），不新增文件；③ intro 文案换成贴合主题的占位英文。⚠️ `heroRole` / `heroName` / `heroLocation` 是**死字段**（没有模板读它们，首屏文案硬编码在 `index.njk`）—— 保留只为 `extract-page-data.mjs` 的 `guardPersonalized()` 拿 `heroName` 当哨兵（ISSUE-045），值已随 M5 的新站名更新。 ★ 文案方案落地（DEVIATIONS.md F7）：`introHeading` / `introText` 换成 `docs/copy-proposal.md` §4.2 的两句；两个死字段 `heroRole` / `heroLocation` 一并同步为方案 §4.1 的副标与挂绳口径（避免记录漂移，`heroName` 仍是哨兵值 `Bloom Into You`）。",
+  "_comment": "Home page: intro copy, the two featured image bands and the gallery link. Character entries come from characters.json.",
   "introHeading": "Some feelings arrive before the words for them.",
   "introText": "Bloom Into You lingers where a glance lasts a little longer, a promise becomes difficult to keep, and a borrowed self begins to feel too small. This is a place to return to those moments, without hurrying them into an answer.",
   "heroRole": "A feeling, still unnamed",

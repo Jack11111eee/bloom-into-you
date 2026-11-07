@@ -1072,17 +1072,20 @@
     {
       "path": "src/assets/fonts/Inter-300.woff2",
       "sha256": "338e2c7be17edbfc9044ebf0a8766fa7ca96838e290bc2c5d994de46ed5a4d86",
-      "status": "legacy-unverified"
+      "status": "retired",
+      "reason": "Replaced on 2026-11-07 by unmodified upstream Inter 4.1; kept in the repository, not published."
     },
     {
       "path": "src/assets/fonts/Inter-450.woff2",
       "sha256": "273ef94c54edcaef562151da2087b3a07f59e75f5020296b5b4ef86a0fa8d08c",
-      "status": "legacy-unverified"
+      "status": "retired",
+      "reason": "Replaced on 2026-11-07 by unmodified upstream Inter 4.1; kept in the repository, not published."
     },
     {
       "path": "src/assets/fonts/Inter-800.woff2",
       "sha256": "76e495d5dc343fd70343a57ba2ebf44b91cd68f8b05fb6855bd544db126b997e",
-      "status": "legacy-unverified"
+      "status": "retired",
+      "reason": "Replaced on 2026-11-07 by unmodified upstream Inter 4.1; kept in the repository, not published."
     },
     {
       "path": "src/assets/fonts/reading/serif-en.woff2",
@@ -4874,6 +4877,19 @@
       "scope": "Additional OFL webfont glyph subset for music stories and song headings; original notices retained",
       "reviewedBy": "Existing font license and source verification; owner-authorized music feature",
       "reviewedOn": "2026-10-15"
+    },
+    {
+      "path": "src/assets/fonts/inter/Inter-Medium.woff2",
+      "sha256": "0ff3e94614e1493eb556314fd247ae6c4a85a7783b4cc86be539940cf83f2a48",
+      "status": "approved",
+      "basis": "license",
+      "author": "The Inter Project Authors",
+      "source": "https://github.com/rsms/inter/releases/download/v4.1/Inter-4.1.zip (web/Inter-Medium.woff2, unmodified; zip sha256 9883fdd4a49d4fb66bd8177ba6625ef9a64aa45899767dde3d36aa425756b11e)",
+      "licenseUrl": "https://github.com/rsms/inter/blob/v4.1/LICENSE.txt",
+      "licenseFile": "/assets/fonts/inter/LICENSE.txt",
+      "scope": "Unmodified OFL webfont for the multilingual home opening",
+      "reviewedBy": "Owner-authorized font replacement",
+      "reviewedOn": "2026-11-07"
     }
   ]
 }

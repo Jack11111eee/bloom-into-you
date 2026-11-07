@@ -28,8 +28,8 @@ The following are **not covered** by this grant:
 - All images, manga panels, animation stills, artwork, audio and video.
 - Third-party quotations, original-work dialogue, and third-party translations,
   including the Pessoa and Salinger-related quotations in the personal essay.
-- The reference-derived website design, templates, layout, CSS, JavaScript and
-  motion implementation; no right to reuse them is granted here.
+- The website design, templates, layout, CSS, JavaScript and motion
+  implementation; no right to reuse them is granted here.
 - All other source/build/tooling code, fonts and third-party dependencies. Their
   existing rights and specific licences remain separate.
 - Third-party characters, names, facts, trademarks and other rights the owner
@@ -37,7 +37,7 @@ The following are **not covered** by this grant:
 
 Public-domain material and uses permitted by applicable copyright exceptions
 remain unaffected. This licence does not establish permission for this site's
-use of third-party material or resolve the reference-template rights question.
+use of third-party material.
 
 ## Reusing the covered prose
 
@@ -61,5 +61,5 @@ There is **no repository-wide CC or software licence**. See
 
 CC BY-NC-ND 4.0 仅覆盖上表六篇随笔/评论中站主有权授权的原创正文部分。
 可按许可要求署名、非商业转载；分享改编或自行翻译的版本须另获许可。
-图片、第三方引文和译文、参考站模板/设计/动效、代码、字体及依赖均不包含。
+图片、第三方引文和译文、网站模板/设计/动效、代码、字体及依赖均不包含。
 这不是整个网站或仓库的转载、复制、改编授权，也不能替网站所用第三方内容补授权。

@@ -39,7 +39,7 @@ Pushes to `main` run `.github/workflows/pages.yml`, which builds, checks and pub
 
 Every page footer links to the copyright notice, contact page and privacy notice. The full copyright notice is at `/copyright/`, with corresponding routes under the three other language prefixes. Its final section links to image-source references at `/image-sources/`. The source index also credits the owner-original music illustrations. Its other references document matching images found on the web; they do not establish the original acquisition channel or permission to reuse them. The source index is not linked from ordinary page footers.
 
-The owner's original essay and character/relationship commentary prose, only where the owner has authority to license it, is available under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/). See [LICENSING.md](LICENSING.md) for the six articles, attribution and exclusions. Reference templates, design, motion, code, images and fonts are outside that grant. There is no repository-wide licence.
+The owner's original essay and character/relationship commentary prose, only where the owner has authority to license it, is available under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/). See [LICENSING.md](LICENSING.md) for the six articles, attribution and exclusions. Website templates, design, motion, code, images and fonts are outside that grant. There is no repository-wide licence.
 
 ## Rights checks and contact
 
@@ -59,7 +59,7 @@ node lib/rights-cases.mjs due
 
 The tool lists required fields for receipt, acknowledgement, review, decision, verified action, notification and closure. Records go into ignored `docs/rights-private/`. Do not commit private correspondence or evidence. A notification event records a message you have already sent manually; it sends nothing. A retention review is prompted 90 days after closure, with no automatic deletion. Attachments, mail accounts and backups need separate review.
 
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) covers component/font licences and unresolved provenance. Their licence texts ship under `assets/licenses/` and `assets/fonts/`. These notices do not grant permission to use original-work images or reference-site code.
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) covers component/font licences and unresolved provenance. Their licence texts ship under `assets/licenses/` and `assets/fonts/`. These notices do not grant permission to use original-work images.
 
 ## Repository boundaries
 

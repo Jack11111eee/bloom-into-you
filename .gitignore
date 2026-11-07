@@ -1,59 +1,32 @@
-# ─────────────────────────────────────────────────────────────
-#  reference/  —  原站归档（HTML/CSS/JS/字体/媒体）
-# ─────────────────────────────────────────────────────────────
-#  这是研究资料，不是产品代码。内含第三方版权素材：
-#    · PP Neue Montreal 字体（Pangram Pangram，商业授权，EULA §2.4 按域名授权）
-#    · Dennis Snellenberg 的文案、照片与客户项目媒体
-#  因此严禁进入任何公开发布产物，也不应提交到公开仓库。
-#  见审计报告 §4.2 E6 与 §6 决策。
+# Local research captures and screenshots. They may contain third-party
+# material, so they never enter the repository or the published website.
 reference/
-
-# ─────────────────────────────────────────────────────────────
-#  baselines/  —  P1 harness 的采集产物（原站基线）
-# ─────────────────────────────────────────────────────────────
-#  两类内容都不该入库：
-#    · shots/*.png 是原站页面的截图 —— 第三方版权像素，与 reference/ 同理
-#    · captures/*.json 是我们自己的测量数据，但体积大（约 200KB/条 × 数十条）
-#  二者都可由一条命令重建（约 10 分钟）：
-#    node scripts/harness/capture.mjs --out baselines/live-scroll-1440 --states top,mid,bottom
-#  另：baselines/_selftest/ 是自检的临时产物，同样不入库。
 baselines/
+previews/
 
-# ─────────────────────────────────────────────────────────────
-#  工具与依赖
-# ─────────────────────────────────────────────────────────────
+# Dependencies, logs and system files
 node_modules/
 .pnpm-store/
 *.log
 npm-debug.log*
 .DS_Store
 
-# 构建产物（P1 引入模板层后启用）
+# Build output (local root build and the GitHub Pages project-path build)
 dist/
+dist-pages/
 .astro/
 .cache/
 
-# ─────────────────────────────────────────────────────────────
-#  previews/  —  人工复核用的临时截图（不进产物，也不进版本库）
-# ─────────────────────────────────────────────────────────────
-#  docs/content-inventory.md §13.4 用它展示"主图叠加层"的观感对照。
-#  重新生成：起 `node scripts/serve-dist.mjs`，用 Playwright 打开 /work/project-01
-#  滚到 .case-intro-image 截图（必须用裸标识符 scroll.scrollTo，不能用 window.scrollTo）。
-previews/
-
-# GitHub Pages project-path build
-dist-pages/
-
-# Local research and authoring materials. Keep files on disk; do not publish them.
+# Local process documents and authoring notes stay on disk only.
+# Every Markdown file in the repository root is local except the published ones.
 /docs/
-/SPEC.md
-/PLAN.md
-/HANDOFF.md
-/LEDGER.md
-/DEVIATIONS.md
-/ISSUES.md
-/dennis-snellenberg-clone-audit.md
-/dennis-snellenberg-clone-research-tech-plan.md
+/*.md
+!/README.md
+!/README.zh-CN.md
+!/LICENSING.md
+!/THIRD_PARTY_NOTICES.md
+!/CLAUDE.md
+!/AGENTS.md
 
 # Track only scripts needed to build, deploy, or check the current website.
 # Historical probes, generators and authoring tools remain available locally.

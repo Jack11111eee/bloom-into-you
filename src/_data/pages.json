@@ -1,5 +1,5 @@
 {
-  "_comment": "非详情页的 head 字段与高亮索引（详情页的同类字段在 characters.json / insights.json，经 single.njk 的分页 alias 进入）。键**就是** namespace —— 它同时是 main 的 id 与 data-barba-namespace（layouts/base.njk:46），故每个索引页必须有独立键，否则两页会共用同一份 title / navActive / loaderActive（方案 §7.1 #4 / #6）。P10 M1：删 work / archive / styleguide 三键，加 gallery / characters / insights。 gallery / characters / insights 的 file 为 null —— 它们是 P10 新页，没有归档对应物。 P10 M4：characters / insights 的 `floatImages` 为 null —— 它们的浮动缩略图**从 `characters.json` / `insights.json` 派生**（`src.11tydata.js`），不在这里另存一份（存两处必然漂移）。 P10 M5：home 的 `floatImages` 同样改为 null —— 首页三人物入口与浮动图都从 `characters.json` 派生（`src.11tydata.js` 的 `homeFeatured` / `floatImages`）。 P10 M6：`title` 的站名由练习名 `Bloom Studio` 换成站名 `Bloom Into You`；`description` 由「Placeholder content for a personal portfolio…」换成站点口吻的一句话（方案 §4.8）。 ★ 文案方案落地（DEVIATIONS.md F7）：六页的 `title` / `description` 按 `docs/copy-proposal.md` §3 全部替换 —— `title` 的分隔符统一为 `—`（原为 `-`，home 原为 `•`），并加了一句作品主题（`A feeling, still unnamed`）。`canonical` / `ogImage` / `loaderActive` / `navActive` / `fixedNavActive` / `cursorMode` / `cursorSpan` 一律不动。",
+  "_comment": "Per-route metadata for pages other than character and insight entries; each key is the page namespace (ns).",
   "pages": {
     "home": {
       "file": "home.html",

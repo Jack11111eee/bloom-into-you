@@ -1,14 +1,16 @@
 # Third-party notices and rights boundaries
 
-This notice identifies third-party components and unresolved rights questions. It does not grant permission to reuse third-party artwork or reference-site code.
+This notice identifies third-party components and unresolved rights questions. It does not grant permission to reuse third-party artwork.
 
-## Website content and reference implementation
+## Website content
 
 - This is an unofficial, non-commercial fan website for *Bloom Into You* / *やがて君になる*. Manga, animation stills, illustrations and any associated translations belong to their respective rights holders. The website has not obtained official authorization for these materials; individual sources and usage grounds remain under review. They are excluded from any permission covering the website owner's original work.
 - The original manga is by Nio Nakatani, published by KADOKAWA. The TV animation credit is **©2018 仲谷 鳰／ＫＡＤＯＫＡＷＡ／やがて君になる製作委員会**. This animation credit is not a blanket attribution for every illustration, manga translation or fan artwork.
-- The layout and interaction implementation originated in a reconstruction of [Dennis Snellenberg's portfolio](https://www.dennissnellenberg.com/). Portions of the CSS, JavaScript and templates derive from that reference. No permission to redistribute its proprietary implementation has been established. Attribution is not a substitute for permission; the reference-derived code is not offered as an independently authored, freely licensed template.
-- Earlier versions included a word-animation snippet credited to T.RICKS / Timothy Ricks, with a restriction on redistribution. The current `initWordSpans` independently implements the text-node wrapping contract and replaces that snippet. This change does not clear historical copies or the separate provenance of the surrounding reference-derived runtime.
 - The owner's original prose in the six articles listed in [LICENSING.md](https://github.com/Jack11111eee/bloom-into-you/blob/main/LICENSING.md) is licensed under CC BY-NC-ND 4.0, only to the extent the owner has authority to license it. Third-party quotations, translations and all media are excluded. Templates, design, CSS, JavaScript, tooling and fonts are outside that content grant. No repository-wide reuse licence is granted; third-party components retain their own terms.
+
+## Repository history
+
+The website's templates, styles and scripts were rewritten from scratch in November 2026. Commits before that rewrite contain an earlier layout implementation adapted from [Dennis Snellenberg's portfolio](https://www.dennissnellenberg.com/) and a word-animation snippet credited to T.RICKS / Timothy Ricks. That earlier code is not part of the current website and is not offered for reuse; it remains only in the repository's history.
 
 ## Runtime libraries
 
@@ -30,22 +32,13 @@ The GSAP 3.15.1 npm package carries GreenSock's 2026 copyright notice and a refe
 
 | Font | Rights / terms | Included license |
 |---|---|---|
-| Modified Inter static faces, weights 300 / 450 / 800 | Copyright 2016 The Inter Project Authors; SIL OFL 1.1 | `assets/fonts/LICENSE.txt` |
+| Inter 4.1 Medium, unmodified upstream file | Copyright 2016 The Inter Project Authors; SIL OFL 1.1 | `assets/fonts/inter/LICENSE.txt` |
 | Source Han Serif subsets, named Bloom Serif | Adobe / Source Han Serif contributors; SIL OFL 1.1 | `assets/fonts/reading/source-han-license.txt` |
 | LXGW WenKai subsets | LXGW WenKai contributors; SIL OFL 1.1 | `assets/fonts/reading/wenkai-license.txt` |
 
-The Inter files are modified faces rather than untouched upstream Inter. Their existing modification record is retained. The commercial reference-font metrics used during the original generation remain a separate unresolved provenance question; attaching OFL does not resolve that question. Commercial reference-font files are not included in the website or repository. The current website build uses the existing WOFF2 assets and does not require those reference files.
-
-Pangram Pangram's [official FAQ](https://pangrampangram.com/pages/faq), checked on
-13 October 2026, permits free personal use of its trial fonts in noncommercial
-projects, including web portfolios and small-audience artistic projects. Thus
-noncommercial personal use alone is not treated here as requiring a commercial
-purchase. That statement does not specifically address extracting reference
-metrics to calibrate and publicly distribute another font. The original file
-acquisition/terms record and that particular use remain unconfirmed; the current
-Inter binaries are retained without claiming the FAQ clears that question.
-
 The Source Han Serif and WenKai license files remain unchanged, including original notices and naming conditions. Any future font changes must continue to comply with their own licenses.
+
+Three earlier Inter files with modified metrics (`src/assets/fonts/Inter-300/450/800.woff2`) are retired: they stay in the repository with their modification record (`src/assets/fonts/LICENSE.txt`) but are no longer published or used by the website.
 
 ## Build tooling
 

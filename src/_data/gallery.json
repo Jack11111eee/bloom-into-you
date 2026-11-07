@@ -1,5 +1,5 @@
 {
-  "_comment": "画面长廊的 block 序列（docs/bloom-redesign-plan.md §4.2 / §5 M3）。13 个 block：fullwidth 大图 / device nodevice 中图 / mobile-devices（2 列 2 组 = 视觉呼应、3 列 1 组）/ fullwidth 短视频交替；**2 处呼吸点**（新类型 `pause`，见 _includes/blocks/pause.njk 与方案 §7 的 M3-2）。第一版**不含筛选与行/格切换**（方案 D3）—— 那两套控件的代码保留不删（DEVIATIONS.md F3）。数据形状与已删的 projects.json 的 blocks 相同（`_block-samples.json` 是各变体的形状参考）。全部为中性占位文案，替换见 src/_data。 ★ 文案方案落地（DEVIATIONS.md F7）：两处呼吸点的 `heading` / `text` 与收尾大图的 `textOverlay` 换成 `docs/copy-proposal.md` §8 的五处文字；**block 数与顺序一字未动**（2 个 `pause` 是 `block-sequence.mjs` 的结构常量）。",
+  "_comment": "Gallery page: the ordered content blocks rendered by blocks/render.njk.",
   "blocks": [
     {
       "type": "fullwidth",

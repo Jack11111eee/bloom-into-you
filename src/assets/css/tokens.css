@@ -107,24 +107,10 @@
   }
 }
 
-/* The multilingual home opening keeps its metric-compatible Inter faces. */
+/* The multilingual home opening is set in upstream Inter (OFL), served unmodified. */
 @font-face {
-  src: url('../fonts/Inter-450.woff2') format('woff2');
+  src: url('../fonts/inter/Inter-Medium.woff2') format('woff2');
   font-family: 'Inter';
-  font-weight: 450;
-  font-display: block;
-}
-
-@font-face {
-  src: url('../fonts/Inter-300.woff2') format('woff2');
-  font-family: 'Inter';
-  font-weight: 300;
-  font-display: block;
-}
-
-@font-face {
-  src: url('../fonts/Inter-800.woff2') format('woff2');
-  font-family: 'Inter';
-  font-weight: 800;
+  font-weight: 500;
   font-display: block;
 }

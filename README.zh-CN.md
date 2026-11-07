@@ -50,7 +50,7 @@ node scripts/check-pages.mjs
 站主有权授权的原创随笔/人物与关系评论正文按
 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) 提供。
 具体六篇文章、署名方式和第三方引文排除范围见 [LICENSING.md](LICENSING.md)。
-参考站模板、设计、动效、代码、图片及字体不在该授权内；这不是全仓库许可。
+网站模板、设计、动效、代码、图片及字体不在该授权内；这不是全仓库许可。
 
 ## 权利检查与联系
 
@@ -84,7 +84,7 @@ node lib/rights-cases.mjs due
 
 第三方代码、字体许可及尚待核实的权属边界见
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。具体许可文本随站发布在
-`assets/licenses/` 和 `assets/fonts/`；这些说明不授予原作图片或参考站代码的使用许可。
+`assets/licenses/` 和 `assets/fonts/`；这些说明不授予原作图片的使用许可。
 
 ## 文件边界
 
