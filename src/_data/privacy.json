@@ -19,8 +19,8 @@
     {
       "title": "Browser preferences",
       "paragraphs": [
-        "Your language choice is stored locally in your browser until you clear this site’s data. List-layout preferences are remembered in a preference cookie for 14 days. These settings contain no contact details and are not used for cross-site tracking.",
-        "You can clear these preferences in your browser’s site-data settings. The website remains readable without saved preferences."
+        "Your language choice is stored locally in your browser until you clear this site’s data. It contains no contact details and is not used for cross-site tracking.",
+        "You can clear this preference in your browser’s site-data settings. The website remains readable without it."
       ]
     },
     {

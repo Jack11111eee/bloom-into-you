@@ -1,5 +1,5 @@
 {#- Card grid shared by the home features and both index pages. -#}
-<ul class="tile-grid tile-grid--{{ tileStyle }}" role="list"{% if tileStyle == 'index' %} data-view-pane="grid"{% endif %}>
+<ul class="tile-grid tile-grid--{{ tileStyle }}" role="list">
 {%- for item in tiles %}
   <li class="tile" style="--i: {{ loop.index0 }}">
     <a href="{{ item.href }}" data-cursor="next">

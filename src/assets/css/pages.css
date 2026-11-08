@@ -325,16 +325,10 @@
     padding-block-end: calc(var(--section) * 0.5);
   }
 
-  .index-view__bar {
-    display: flex;
-    justify-content: flex-end;
-    margin-block: calc(var(--section) * -0.25) calc(var(--section) / 2);
-    padding-inline: calc(var(--gutter) * 0.96);
-  }
-
-  @media (max-width: 1024px) {
-    .index-view__bar {
-      display: none;
+  /* The table keeps the place it had below the former list/grid switch. */
+  @media (min-width: 1025px) {
+    .index-view {
+      padding-block-start: calc(var(--section) * 0.25 + 4.25em);
     }
   }
 

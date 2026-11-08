@@ -9,14 +9,6 @@
     stroke-linecap: round;
   }
 
-  .icon--grid {
-    stroke-width: 1.1;
-  }
-
-  .icon--rows {
-    stroke-width: 1.1;
-  }
-
   /* Bloom mark */
   .bloom-mark {
     inline-size: 1em;
@@ -119,28 +111,6 @@
   .pill--inverse {
     color: var(--paper);
     box-shadow: inset 0 0 0 1px var(--line-inverse);
-  }
-
-  .pill--icon {
-    min-inline-size: 0;
-    inline-size: 4.25em;
-    padding: 0;
-    font-size: 1em;
-  }
-
-  .pill--icon .icon {
-    inline-size: 1.15em;
-    block-size: 1.15em;
-  }
-
-  .pill[aria-pressed='true'] {
-    color: var(--paper);
-    background: var(--ink);
-    box-shadow: none;
-  }
-
-  .pill[aria-pressed='true'] .pill__fill {
-    visibility: hidden;
   }
 
   /* Orb */
@@ -461,29 +431,17 @@
     }
   }
 
-  /* View switching between the table and the cards. */
-  .view-toggle {
-    display: flex;
-    gap: 0.5em;
-  }
-
-  @media (min-width: 1025px) {
-    [data-view-root]:not([data-view='grid']) [data-view-pane='grid'],
-    [data-view-root][data-view='grid'] [data-view-pane='list'] {
-      display: none;
-    }
-  }
-
+  /* Lists on wide screens, cards on narrow ones. */
   @media (max-width: 1024px) {
-    .view-toggle,
     .index-list--feature,
-    [data-view-root] [data-view-pane='list'] {
+    .index-table {
       display: none;
     }
   }
 
   @media (min-width: 1025px) {
-    .tile-grid--feature {
+    .tile-grid--feature,
+    .tile-grid--index {
       display: none;
     }
   }

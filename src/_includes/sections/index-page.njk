@@ -1,5 +1,4 @@
-{#- Character and insight indexes: switchable list and card views. -#}
-{% from "ui/macros.njk" import icon %}
+{#- Character and insight indexes: the table on wide screens, the cards on narrow ones. -#}
 <header class="page-head">
   {% include "shell/header.njk" %}
   <div class="page-head__body wrap wrap--narrow" data-intro>
@@ -7,15 +6,9 @@
     <p class="page-head__note t-note">{{ headingNote }}</p>
   </div>
 </header>
-<section class="index-view" data-view-root>
-  <div class="wrap index-view__bar" data-intro>
-    <div class="view-toggle" role="group">
-      <button class="pill pill--icon" type="button" data-view="list" data-fill aria-pressed="true" aria-label="List view"><span class="pill__fill" aria-hidden="true"></span><span class="pill__label">{{ icon('rows') }}</span></button>
-      <button class="pill pill--icon" type="button" data-view="grid" data-fill aria-pressed="false" aria-label="Grid view"><span class="pill__fill" aria-hidden="true"></span><span class="pill__label">{{ icon('grid') }}</span></button>
-    </div>
-  </div>
+<section class="index-view">
   <div class="wrap index-view__panes" data-intro data-cursor-zone>
-    <div class="index-table" data-view-pane="list">
+    <div class="index-table">
       <div class="index-table__head" aria-hidden="true">
       {%- for label in indexList.headers %}
         <p class="t-label">{{ label }}</p>

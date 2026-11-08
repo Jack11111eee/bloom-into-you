@@ -29,14 +29,5 @@ addEventListener('pointermove', event => {
   lastMove = now;
 }, { passive: true });
 
-// The list/grid choice is a 14-day preference cookie, as stated in the privacy notice.
-const VIEW_COOKIE = 'view';
-export const viewPreference = {
-  read() {
-    const match = document.cookie.match(/(?:^|;\s*)view=([^;]*)/);
-    return match ? decodeURIComponent(match[1]) : null;
-  },
-  write(value) {
-    document.cookie = `${VIEW_COOKIE}=${encodeURIComponent(value)}; max-age=1209600; path=/; SameSite=Lax`;
-  },
-};
+// The list/grid switch is gone; a cookie it left behind is cleared rather than kept for 14 days.
+if (/(?:^|;\s*)view=/.test(document.cookie)) document.cookie = 'view=; max-age=0; path=/; SameSite=Lax';
