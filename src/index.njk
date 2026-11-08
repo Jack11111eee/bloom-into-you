@@ -2,7 +2,7 @@
 ns: home
 heroFraming: {"fx":57,"fy":50}
 ---
-{% from "ui/macros.njk" import icon, pill, orb %}
+{% from "ui/macros.njk" import icon, orb, bloomMark %}
 <header class="hero" data-tone="light">
   <div class="hero__media" data-parallax="-3" data-parallax-mode="top">
     <img src="/assets/img/studio-01.jpg" alt="" width="5832" height="4008" fetchpriority="high" decoding="async" style="--focus-x: {{ heroFraming.fx }}%">
@@ -62,13 +62,23 @@ heroFraming: {"fx":57,"fy":50}
   {% include "sections/tiles.njk" %}
 </section>
 
-<section class="section links-section">
-  <div class="wrap links-section__row">
-    {{ pill('/insights', 'Insights') }}
-    <p class="links-section__note t-note">Personal readings · Manga ending spoilers</p>
-  </div>
-  <div class="wrap links-section__row">
-    {{ pill(home.moreWorkHref, 'Gallery') }}
+<section class="chapters section">
+  <div class="wrap">
+    <p class="t-label chapters__label">Chapters</p>
+    <ol class="chapter-list" role="list">
+    {%- for chapter in site.chapters %}
+      <li class="chapter-row">
+        <a href="{{ chapter.href }}">
+          <span class="chapter-row__index t-label">{{ '0' + loop.index }}</span>
+          <h3 class="chapter-row__title">{{ chapter.name }}</h3>
+          <p class="chapter-row__note t-note">{% if chapter.note %}{{ chapter.note }}{% endif %}</p>
+          <span class="chapter-row__thumb" style="background-color: {{ chapter.tileColor }}" aria-hidden="true">
+          {%- if chapter.tileThumb %}<img src="{{ chapter.tileThumb }}" alt="" loading="lazy" decoding="async">{% else %}{{ bloomMark() }}{% endif -%}
+          </span>
+        </a>
+      </li>
+    {%- endfor %}
+    </ol>
   </div>
 </section>
 {% include "shell/page-end.njk" %}
