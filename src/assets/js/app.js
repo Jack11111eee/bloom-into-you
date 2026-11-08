@@ -86,6 +86,10 @@ function arrive(container) {
 
 barba.hooks.before(() => menu.closeMenuNow());
 
+// Back and forward return to where the reader left each page.
+const positions = new Map();
+const fromHistory = trigger => ['back', 'forward', 'popstate'].includes(trigger);
+
 barba.init({
   timeout: 7000,
   preventRunning: true,
@@ -96,15 +100,21 @@ barba.init({
       return curtain.boot(next.container, next.namespace === 'home');
     },
     async leave({ current, next }) {
+      positions.set(current.url.href, scroll.y);
       await curtain.cover(labelFor(next.url.href));
       unmount();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       current.container.remove();
     },
-    enter({ next }) {
+    enter({ next, trigger }) {
       syncHead(next.html);
       scroll.reset();
       unmount = mountPage(next.container);
+      const saved = fromHistory(trigger) ? positions.get(next.url.href) : 0;
+      if (saved) {
+        scroll.resize();
+        scroll.to(saved, { immediate: true });
+      }
       arrive(next.container);
       return curtain.reveal(next.container);
     },
