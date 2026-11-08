@@ -1,6 +1,9 @@
 // Endless title band; reverses with the scroll direction and quickens with its speed.
 import { isReduced, clamp } from '../core/env.js';
 
+// Whole cycles kept behind the playhead so the band can also run left to right.
+const HEADROOM = 1000;
+
 export function mount(scope, { signal }) {
   const marquee = scope.querySelector('[data-marquee]');
   if (!marquee || isReduced()) return;
@@ -18,10 +21,19 @@ export function mount(scope, { signal }) {
       clone.dataset.clone = '';
       marquee.append(clone);
     }
-    const progress = loop ? loop.progress() : 0;
+    const phase = loop ? loop.progress() : 0;
     loop?.kill();
-    loop = gsap.fromTo(marquee, { x: 0 }, { x: -width, duration: 20, ease: 'none', repeat: -1 });
-    loop.progress(progress);
+    loop = gsap.fromTo(marquee, { x: 0 }, {
+      x: -width,
+      duration: 20,
+      ease: 'none',
+      repeat: -1,
+      // Played backwards, a repeating tween halts at its first cycle; jump ahead in whole cycles.
+      onReverseComplete() {
+        this.totalTime(this.totalTime() + this.duration() * HEADROOM);
+      },
+    });
+    loop.totalTime(loop.duration() * (HEADROOM + phase));
   }
 
   build();
