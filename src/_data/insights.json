@@ -161,7 +161,11 @@
         "name": "Touko & Sayaka",
         "tileColor": "#D8D5CC",
         "tileImage": "/media/pages/insights/touko-sayaka/touko-sayaka-intro.jpg"
-      }
+      },
+      "related": [
+        "/characters/yuu",
+        "/characters/touko"
+      ]
     },
     {
       "href": "/insights/touko-sayaka",
@@ -314,12 +318,11 @@
       ],
       "customCss": null,
       "footerAccent": "#D8D5CC",
-      "nextCase": {
-        "href": "/insights/yuu-touko",
-        "name": "Yuu & Touko",
-        "tileColor": "#DCD0C2",
-        "tileImage": "/media/pages/insights/yuu-touko/yuu-touko-intro.jpg"
-      }
+      "nextCase": null,
+      "related": [
+        "/characters/touko",
+        "/characters/sayaka"
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@ import { pointer, hasFinePointer, clamp } from '../core/env.js';
 const FOLLOW = { preview: 0.1, dot: 0.16, label: 0.2 };
 
 export function mount(scope, { signal, scroll }) {
-  const cursor = scope.querySelector('[data-cursor]');
+  const cursor = scope.querySelector('.cursor[data-cursor]');
   if (!cursor || !hasFinePointer()) return;
   const layers = {
     preview: cursor.querySelector('.cursor__preview'),

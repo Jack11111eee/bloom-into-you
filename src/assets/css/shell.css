@@ -945,6 +945,22 @@
     object-fit: cover;
   }
 
+  .next-entry__image .bloom-mark--peek {
+    position: absolute;
+    inset-block-start: 4%;
+    inset-inline-start: 50%;
+    inline-size: 20%;
+    block-size: auto;
+    aspect-ratio: 1;
+    color: var(--paper);
+    translate: -50% 0;
+  }
+
+  .page-end__links .pill__hint {
+    font-size: 0.75em;
+    opacity: 0.6;
+  }
+
   .next-entry:hover .next-entry__title {
     opacity: 0.3;
   }

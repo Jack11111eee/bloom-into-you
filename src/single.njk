@@ -25,6 +25,20 @@
 {%- for b in entry.blocks %}
 {% include "blocks/render.njk" %}
 {%- endfor %}
+{%- if related.length %}
+{% from "ui/macros.njk" import pill %}
+<nav class="related section" aria-labelledby="related-title">
+  <div class="wrap wrap--narrow">
+    <p class="t-label" id="related-title">{{ 'Related insights' if entry.kind == 'character' else 'Characters in this reading' }}</p>
+    <span class="rule"></span>
+    <ul class="related__list" role="list">
+    {%- for item in related %}
+      <li>{{ pill(item.href, item.name) }}</li>
+    {%- endfor %}
+    </ul>
+  </div>
+</nav>
+{%- endif %}
 {% include "shell/page-end.njk" %}
 {%- if entry.customCss %}
 <style>{{ entry.customCss | safe }}</style>

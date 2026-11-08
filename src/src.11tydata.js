@@ -22,6 +22,19 @@ const listed = (item, column) => item.intro?.[column]?.items?.join(', ') ?? '';
 
 const fromRecord = key => data => recordOf(data)[key];
 
+// Reading order: home, then each chapter in turn. Entries continue with the
+// chapter after their own collection once the collection runs out.
+function nextChapter(data) {
+  const chapters = data.site.chapters;
+  if (data.ns === 'home') return chapters[0];
+  const own = data.ns === 'single' ? `${data.entry.kind}s` : data.ns;
+  const index = chapters.findIndex(chapter => chapter.ns === own);
+  return index === -1 ? null : chapters[index + 1] ?? null;
+}
+
+// Characters, then insights: one sequence for stepping back between entries.
+const entrySequence = data => [...data.characters.characters, ...data.insights.insights];
+
 export default {
   layout: 'layouts/page.njk',
   pagination: { data: 'locales', size: 1, alias: 'language' },
@@ -40,7 +53,21 @@ export default {
     fixedNavActive: fromRecord('fixedNavActive'),
     cursorMode: fromRecord('cursorMode'),
     cursorSpan: fromRecord('cursorSpan'),
-    nextCase: fromRecord('nextCase'),
+    nextCase: data => recordOf(data).nextCase ?? nextChapter(data),
+
+    prevCase(data) {
+      if (data.ns !== 'single') return null;
+      const sequence = entrySequence(data);
+      const index = sequence.findIndex(item => item.href === data.entry.href);
+      return index > 0 ? card(sequence[index - 1]) : null;
+    },
+
+    related(data) {
+      if (data.ns !== 'single') return null;
+      const sequence = entrySequence(data);
+      return (data.entry.related ?? []).map(href => card(sequence.find(item => item.href === href)));
+    },
+
     footerAccent: fromRecord('footerAccent'),
 
     // Cursor previews follow the same order as the rows they belong to.

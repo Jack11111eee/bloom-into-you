@@ -12,6 +12,7 @@ import * as reveal from './ui/reveal.js';
 import * as motion from './ui/motion.js';
 import * as viewToggle from './ui/view-toggle.js';
 import * as progress from './ui/progress.js';
+import * as keys from './ui/keys.js';
 
 gsap.registerPlugin(ScrollTrigger);
 history.scrollRestoration = 'manual';
@@ -19,7 +20,7 @@ history.scrollRestoration = 'manual';
 const scroll = createScroll();
 const curtain = createCurtain(scroll);
 const announcer = document.querySelector('[data-route-announcer]');
-const modules = [fill, magnet, menu, cursor, marquee, tanzaku, reveal, motion, viewToggle, progress];
+const modules = [fill, magnet, menu, cursor, marquee, tanzaku, reveal, motion, viewToggle, progress, keys];
 let unmount = () => {};
 
 // Mount every module inside one GSAP context so leaving a page reverts it completely.

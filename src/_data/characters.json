@@ -155,7 +155,10 @@
         "name": "Touko Nanami",
         "tileColor": "#E0D9D1",
         "tileImage": "/media/pages/characters/touko/touko-intro.jpg"
-      }
+      },
+      "related": [
+        "/insights/yuu-touko"
+      ]
     },
     {
       "href": "/characters/touko",
@@ -327,7 +330,11 @@
         "name": "Sayaka Saeki",
         "tileColor": "#E6E8EB",
         "tileImage": "/media/pages/characters/sayaka/sayaka-intro.jpg"
-      }
+      },
+      "related": [
+        "/insights/yuu-touko",
+        "/insights/touko-sayaka"
+      ]
     },
     {
       "href": "/characters/sayaka",
@@ -478,11 +485,14 @@
       "customCss": null,
       "footerAccent": "#E6E8EB",
       "nextCase": {
-        "href": "/characters/yuu",
-        "name": "Yuu Koito",
-        "tileColor": "#C0CAC9",
-        "tileImage": "/media/pages/characters/yuu/yuu-intro.jpg"
-      }
+        "href": "/insights/yuu-touko",
+        "name": "Yuu & Touko",
+        "tileColor": "#DCD0C2",
+        "tileImage": "/media/pages/insights/yuu-touko/yuu-touko-intro.jpg"
+      },
+      "related": [
+        "/insights/touko-sayaka"
+      ]
     }
   ]
 }

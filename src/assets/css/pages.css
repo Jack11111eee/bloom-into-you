@@ -329,6 +329,28 @@
     }
   }
 
+  /* Related entries, just before the page ending. */
+  .related {
+    padding-block-start: calc(var(--section) / 2);
+  }
+
+  .related .rule {
+    margin-block: 1em var(--gap);
+  }
+
+  .related__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75em;
+  }
+
+  @media (max-width: 540px) {
+    .related__list,
+    .related__list .pill {
+      inline-size: 100%;
+    }
+  }
+
   /* About */
   .about-rule {
     position: relative;

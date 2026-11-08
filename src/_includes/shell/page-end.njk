@@ -1,11 +1,11 @@
 {#-
   Page ending. Set `ending` before including:
     'invite' — curved hand-off and the large invitation (default)
-    'next'   — curved hand-off and the next entry in the same collection
+    'next'   — curved hand-off and the next entry or chapter (default when there is one)
     'plain'  — the notice only, for dark or document pages
 -#}
-{% from "ui/macros.njk" import icon, pill, orb %}
-{% set ending = ending or 'invite' %}
+{% from "ui/macros.njk" import icon, pill, orb, bloomMark %}
+{% set ending = ending or ('next' if nextCase else 'invite') %}
 {% if ending != 'plain' %}
 <div class="page-end__curve" data-curve aria-hidden="true"{% if footerAccent %} style="--curve-color: {{ footerAccent }}"{% endif %}></div>
 {% endif %}
@@ -23,13 +23,28 @@
     </div>
   {%- elif ending == 'next' %}
     <div class="page-end__next wrap wrap--narrow">
-      <a class="next-entry" href="{{ nextCase.href }}" data-cursor="next">
-        <p class="next-entry__label">Next</p>
+      <a class="next-entry" href="{{ nextCase.href }}" data-cursor="next"{% if allLink %} data-key-next aria-keyshortcuts="ArrowRight"{% endif %}>
+        <p class="next-entry__label">{{ 'Next chapter' if nextCase.ns else 'Next' }}</p>
         <h2 class="next-entry__title t-title-xl">{{ nextCase.name }}</h2>
-        <span class="next-entry__peek" aria-hidden="true"><span class="next-entry__image" style="background-color: {{ nextCase.tileColor }}"><img src="{{ nextCase.tileImage | thumb }}" alt="" loading="lazy" decoding="async"></span></span>
+        <span class="next-entry__peek" aria-hidden="true"><span class="next-entry__image" style="background-color: {{ nextCase.tileColor }}">
+        {%- if nextCase.tileImage %}<img src="{{ nextCase.tileThumb or (nextCase.tileImage | thumb) }}" alt="" loading="lazy" decoding="async">
+        {%- else %}{{ bloomMark('bloom-mark--peek') }}{% endif -%}
+        </span></span>
       </a>
       <span class="rule"></span>
-      <div class="page-end__links page-end__links--center">{{ pill(allLink.href, allLink.label, { inverse: true, count: allLink.count, magnet: 25 }) }}</div>
+      <div class="page-end__links page-end__links--center">
+      {%- if allLink %}
+        {%- if prevCase %}
+        <a class="pill pill--inverse" href="{{ prevCase.href }}" rel="prev" data-key-prev aria-keyshortcuts="ArrowLeft" data-magnet="25" data-fill>
+          <span class="pill__fill" aria-hidden="true"></span>
+          <span class="pill__label" data-magnet-inner><span class="pill__hint">Previous</span> {{ prevCase.name }}</span>
+        </a>
+        {%- endif %}
+        {{ pill(allLink.href, allLink.label, { inverse: true, count: allLink.count, magnet: 25 }) }}
+      {%- else %}
+        {{ pill(site.contact.contactHref, 'Write to me', { inverse: true, magnet: 25 }) }}
+      {%- endif %}
+      </div>
     </div>
   {%- endif %}
     {% include "shell/legal.njk" %}

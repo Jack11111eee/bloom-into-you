@@ -150,6 +150,54 @@
       ]
     }
   ],
+  "_chapters": "Reading order after the home page. Each page ends by leading to the next chapter; About closes with the invitation to write. A chapter without an image shows the bloom mark.",
+  "chapters": [
+    {
+      "ns": "gallery",
+      "href": "/gallery",
+      "name": "Gallery",
+      "note": null,
+      "tileColor": "#DCD0C2",
+      "tileImage": "/media/pages/gallery/gallery-full-1.jpg",
+      "tileThumb": "/media/pages/gallery/gallery-full-1-540x.jpg"
+    },
+    {
+      "ns": "characters",
+      "href": "/characters",
+      "name": "Characters",
+      "note": null,
+      "tileColor": "#C0CAC9",
+      "tileImage": "/media/pages/characters/yuu/yuu-intro.jpg",
+      "tileThumb": "/media/pages/characters/yuu/yuu-intro-540x.jpg"
+    },
+    {
+      "ns": "insights",
+      "href": "/insights",
+      "name": "Insights",
+      "note": "Personal readings · Manga ending spoilers",
+      "tileColor": "#DCD0C2",
+      "tileImage": "/media/pages/insights/yuu-touko/yuu-touko-intro.jpg",
+      "tileThumb": "/media/pages/insights/yuu-touko/yuu-touko-intro-540x.jpg"
+    },
+    {
+      "ns": "music",
+      "href": "/music/",
+      "name": "Music",
+      "note": null,
+      "tileColor": "#ECEBE8",
+      "tileImage": "/assets/img/music/photo-wall.jpg",
+      "tileThumb": "/assets/img/music/photo-wall.jpg"
+    },
+    {
+      "ns": "about",
+      "href": "/about",
+      "name": "About",
+      "note": null,
+      "tileColor": "#455CE9",
+      "tileImage": null,
+      "tileThumb": null
+    }
+  ],
   "loaderWords": [
     {
       "text": "终将成为你",
