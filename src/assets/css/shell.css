@@ -271,6 +271,49 @@
     }
   }
 
+  /* Wide screens: the header returns as a slim bar while the reader scrolls up. */
+  @media (min-width: 1025px) {
+    .site-header.is-peeking {
+      position: fixed;
+      z-index: 20;
+      padding-block: calc(var(--gap) / 4);
+      background: color-mix(in srgb, var(--paper) 94%, transparent);
+      box-shadow: 0 1px 0 var(--line);
+      backdrop-filter: blur(10px);
+      /* GSAP writes an inline translate for the intro; the bar's own position wins. */
+      translate: 0 -100% !important;
+    }
+
+    [data-tone='dark'] .site-header.is-peeking {
+      background: color-mix(in srgb, var(--ink) 94%, transparent);
+      box-shadow: 0 1px 0 var(--line-inverse);
+    }
+
+    .site-header.is-animated {
+      transition: translate var(--t-md) var(--ease-out);
+    }
+
+    .site-header.is-peeking.is-shown,
+    .site-header.is-peeking:has(:focus-visible) {
+      translate: 0 0 !important;
+    }
+
+    /* The bar carries its own menu link, so the round button steps aside. */
+    .site-header.is-peeking .site-header__menu {
+      display: inline-flex;
+    }
+
+    .has-header-peek:not(.has-menu-open) .menu-toggle:not(:focus-visible) {
+      scale: 0;
+    }
+  }
+
+  @media (min-width: 1025px) and (prefers-reduced-motion: reduce) {
+    .site-header.is-animated {
+      transition: none;
+    }
+  }
+
   /* Language disclosure and the menu's language grid (owner design, H1). */
   .language-switch {
     position: relative;
