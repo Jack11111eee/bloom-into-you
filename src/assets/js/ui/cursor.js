@@ -76,7 +76,9 @@ export function mount(scope, { signal, scroll }) {
   signal.addEventListener('abort', stopWatching);
 
   scope.addEventListener('pointerdown', () => cursor.classList.add('is-pressed'), { signal });
-  addEventListener('pointerup', () => cursor.classList.remove('is-pressed'), { signal });
+  const release = () => cursor.classList.remove('is-pressed');
+  addEventListener('pointerup', release, { signal });
+  addEventListener('pointercancel', release, { signal });
 
   return () => gsap.ticker.remove(follow);
 }

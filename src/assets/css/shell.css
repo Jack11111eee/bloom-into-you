@@ -713,7 +713,7 @@
     font-size: 0.6em;
   }
 
-  .cursor.is-pressed :is(.cursor__dot, .cursor__label) {
+  .cursor.is-pressed[data-state='preview'] :is(.cursor__dot, .cursor__label) {
     scale: 1.3;
   }
 
