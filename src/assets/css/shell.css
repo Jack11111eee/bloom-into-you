@@ -875,6 +875,11 @@
     margin: 0;
   }
 
+  .legal__version a {
+    color: inherit;
+    text-underline-offset: 0.2em;
+  }
+
   .legal__version .t-label {
     margin-block-end: 1.2em;
   }

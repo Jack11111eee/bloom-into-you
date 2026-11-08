@@ -48,4 +48,12 @@ for (const file of fs.readdirSync(out, { recursive: true })) {
 }
 writeNotFoundFallback(out);
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
+// Sitemaps need absolute addresses, which only this step knows.
+const listed = LOCALES.flatMap(l => ROUTES.filter(route => route !== '/404/').map(route => localizedPath(route, l.code)));
+const address = logical => new URL(base + logical + (logical.endsWith('/') ? '' : '/'), site).href;
+fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${listed.map(logical => `  <url><loc>${address(logical)}</loc></url>`).join('\n')}
+</urlset>
+`);
 console.log(`PAGES BUILD: ${pages} pages for ${site.href} → ${out}/`);

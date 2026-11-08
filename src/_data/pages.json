@@ -141,6 +141,20 @@
       "fixedNavActive": 4,
       "floatImages": null
     },
+    "updates": {
+      "file": null,
+      "ns": "updates",
+      "cursorMode": "none",
+      "cursorSpan": null,
+      "title": "Updates — Bloom Into You",
+      "description": "What has changed on this personal Bloom Into You site, newest first. Unofficial fan website.",
+      "ogImage": "/assets/img/share-card.png",
+      "canonical": "/updates/",
+      "loaderActive": 25,
+      "navActive": null,
+      "fixedNavActive": null,
+      "floatImages": null
+    },
     "not-found": {
       "file": null,
       "ns": "not-found",

@@ -1,0 +1,19 @@
+---
+ns: updates
+---
+{% set documentTitle = updates.title %}{% set documentId = 'updates-page-title' %}
+{% include "sections/document-head.njk" %}
+<section class="legal-page section">
+  <div class="wrap wrap--narrow"><article class="updates-reading" aria-labelledby="updates-page-title">
+    <p>{{ updates.intro }}</p>
+    {%- for entry in updates.entries %}
+    <h2><time datetime="{{ entry.date }}">{{ entry.label }}</time></h2>
+    <ul>
+      {%- for item in entry.items %}
+      <li>{{ item }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endfor %}
+  </article></div>
+</section>
+{% include "shell/page-end.njk" %}

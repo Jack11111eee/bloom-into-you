@@ -81,6 +81,14 @@ for (const file of fs.readdirSync(root, { recursive: true })) {
   for (const match of fs.readFileSync(path.join(root, file), 'utf8').matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g)) check(match[1], new URL(file, site));
 }
 assert.equal(pages, ROUTES.length * LOCALES.length);
+// The sitemap names every published page once, at its project address.
+const sitemap = [...fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+const expected = LOCALES.flatMap(locale => ROUTES.filter(route => route !== '/404/').map(route => {
+  const logical = localizedPath(route, locale.code);
+  return new URL(base + logical + (logical.endsWith('/') ? '' : '/'), site).href;
+}));
+assert.deepEqual([...sitemap].sort(), [...expected].sort(), 'Sitemap does not match the published pages');
+sitemap.forEach(entry => check(entry, site));
 // Public copies must carry the complete notices, not just a license URL in a header.
 const licenses = JSON.parse(fs.readFileSync('src/assets/licenses/manifest.json', 'utf8'));
 for (const entry of licenses.entries) {

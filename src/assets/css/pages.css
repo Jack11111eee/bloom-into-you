@@ -754,7 +754,8 @@
 
   .copyright-reading,
   .privacy-reading,
-  .rights-reading {
+  .rights-reading,
+  .updates-reading {
     max-inline-size: 42em;
   }
 
@@ -768,7 +769,7 @@
     margin-block-start: 1em;
   }
 
-  .legal-page :is(.copyright-reading, .privacy-reading, .rights-reading) h2 {
+  .legal-page :is(.copyright-reading, .privacy-reading, .rights-reading, .updates-reading) h2 {
     margin: 1.75em 0 0.75em;
     font-size: clamp(1.4em, 3vw, 1.8em);
   }
@@ -778,12 +779,14 @@
     font-size: 1.15em;
   }
 
-  .copyright-reading ul {
+  .copyright-reading ul,
+  .updates-reading ul {
     padding-inline-start: 1.5em;
     list-style: disc;
   }
 
-  .copyright-reading li {
+  .copyright-reading li,
+  .updates-reading li {
     margin-block: 0.65em;
   }
 
