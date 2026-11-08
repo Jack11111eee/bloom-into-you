@@ -4890,6 +4890,39 @@
       "scope": "Unmodified OFL webfont for the multilingual home opening",
       "reviewedBy": "Owner-authorized font replacement",
       "reviewedOn": "2026-11-07"
+    },
+    {
+      "path": "src/assets/img/favicon.svg",
+      "sha256": "79d56944629b65d7461dfda92490e79424c48c65a0836df2a851425fe8f412db",
+      "status": "approved",
+      "basis": "original",
+      "author": "Site owner",
+      "source": "Geometric five-petal mark drawn for this website after the site's own bloom mark; chosen by the owner from five drafts on 2026-11-08",
+      "scope": "Browser tab and bookmark icon for this website",
+      "reviewedBy": "Site owner selection",
+      "reviewedOn": "2026-11-08"
+    },
+    {
+      "path": "src/assets/img/favicon-32.png",
+      "sha256": "c74d906846e6a30a2f9771cd7bbf3dc5c4673753f56160b7fc1c2928ac7b86dc",
+      "status": "approved",
+      "basis": "original",
+      "author": "Site owner",
+      "source": "Geometric five-petal mark drawn for this website after the site's own bloom mark; chosen by the owner from five drafts on 2026-11-08",
+      "scope": "PNG fallback of the browser tab icon for this website",
+      "reviewedBy": "Site owner selection",
+      "reviewedOn": "2026-11-08"
+    },
+    {
+      "path": "src/assets/img/apple-touch-icon.png",
+      "sha256": "6fc78fc2e94fbda48019d43d7d69c9eae285d69eb08e2a97f60dcf7b88046890",
+      "status": "approved",
+      "basis": "original",
+      "author": "Site owner",
+      "source": "Geometric five-petal mark drawn for this website after the site's own bloom mark; chosen by the owner from five drafts on 2026-11-08",
+      "scope": "Home-screen icon for this website; square version of the tab icon",
+      "reviewedBy": "Site owner selection",
+      "reviewedOn": "2026-11-08"
     }
   ]
 }
