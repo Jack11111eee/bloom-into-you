@@ -1,6 +1,6 @@
 {
   "title": "Privacy notice",
-  "updated": "Last updated: 13 October 2026",
+  "updated": "Last updated: 8 November 2026",
   "intro": "This is a personal, non-commercial fan website. There are no accounts, payment features, advertising trackers or audience analytics.",
   "sections": [
     {
@@ -26,7 +26,7 @@
     {
       "title": "Contact and rights requests",
       "paragraphs": [
-        "The contact form is an inactive preview. Its fields are disabled and it has no submission endpoint. It does not send or save a message. Email links open your own mail application.",
+        "The contact form does not send or save a message. Its button only opens a draft of what you wrote in your own email application; nothing is sent until you send that email yourself. Email links also open your own mail application.",
         "If you email us, your address and message are used to reply and, where relevant, investigate the identified rights concern. Your email provider and the receiving email service also handle the message under their own policies.",
         "Rights-request correspondence and evidence are kept privately for as long as needed to handle the matter, explain the outcome or meet applicable obligations. We do not publish private messages or identity documents. You may contact us to request correction or deletion; any necessary retention will be explained."
       ],

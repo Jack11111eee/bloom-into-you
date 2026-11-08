@@ -170,11 +170,6 @@
     background: var(--accent-deep);
   }
 
-  .orb--disabled .orb__label {
-    cursor: not-allowed;
-    pointer-events: auto;
-  }
-
   /* Avatar */
   .avatar {
     display: inline-block;
@@ -743,14 +738,9 @@
     }
   }
 
-  /* Contact form preview: fields stay disabled until a sender exists. */
+  /* Contact form: it only prepares an email in the reader's own mail app. */
   .form {
     display: block;
-  }
-
-  .form__trap {
-    position: absolute;
-    inset-inline-start: -9999px;
   }
 
   .form__row {
@@ -789,12 +779,26 @@
     border-radius: 0;
     resize: none;
     appearance: none;
-    cursor: not-allowed;
   }
 
   .form .field::placeholder {
     color: var(--paper);
     opacity: 0.4;
+  }
+
+  /* The row's rule lights up instead of a ring that would cross the question. */
+  .form .field:focus-visible {
+    outline: none;
+  }
+
+  .form__row:has(.field:focus-visible) {
+    border-block-end-color: var(--petal);
+    box-shadow: 0 1px 0 var(--petal);
+  }
+
+  /* Keeps the last lines of a long message clear of the round send button. */
+  .form textarea.field {
+    padding-block-end: calc(var(--orb-size) * 0.6);
   }
 
   .form__send {

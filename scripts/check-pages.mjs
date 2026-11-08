@@ -102,4 +102,4 @@ for (const output of ['dist', 'dist-pages']) {
 }
 console.log(`PAGES CHECK PASS: ${pages} pages, ${references} references, unchanged copy, four-language routes and metadata`);
 console.log(`LICENSE CHECK PASS: ${licenses.entries.length} complete license/notice copies and rights boundaries in both outputs`);
-console.log(`RIGHTS CHECK PASS: ${validatePublishedRights(root, process.cwd(), site.origin)} registered resources; local runtime, inactive form, pinned vendor bodies and withdrawal checks`);
+console.log(`RIGHTS CHECK PASS: ${validatePublishedRights(root, process.cwd(), site.origin)} registered resources; local runtime, email-draft-only contact form, pinned vendor bodies and withdrawal checks`);

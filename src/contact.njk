@@ -18,13 +18,11 @@ ns: contact
   </div>
   <div class="wrap wrap--narrow contact-head__body" data-intro>
     <div class="contact-head__form">
-      <div class="form" role="group" aria-label="Contact form preview" data-form-unavailable>
-        <div class="form__trap" aria-hidden="true"><input class="field" type="text" id="form-tel" name="tel" tabindex="-1" disabled></div>
+      <form class="form" action="mailto:{{ site.contact.email }}" method="get" data-mail-draft>
         {%- set fields = [
           ['form-name', 'name', 'text', 'What should I call you?', 'Your name *'],
-          ['form-email', 'email', 'email', 'Where can I write back?', 'Your email address *'],
-          ['form-company', 'company', 'text', 'Which part stayed with you?', 'A character, a scene, or a small detail *'],
-          ['form-service', 'service', 'text', 'What would you like to share?', 'A reading, a question, or an image credit *'],
+          ['form-part', 'part', 'text', 'Which part stayed with you?', 'A character, a scene, or a small detail *'],
+          ['form-topic', 'topic', 'text', 'What would you like to share?', 'A reading, a question, or an image credit *'],
           ['form-message', 'message', 'textarea', 'Leave me a few words', 'Take your time. What would you like to tell me? *']
         ] %}
         {%- for field in fields %}
@@ -32,16 +30,16 @@ ns: contact
           <span class="form__index t-label">{{ '0' + loop.index }}</span>
           <label class="form__label" for="{{ field[0] }}">{{ field[3] }}</label>
           {%- if field[2] == 'textarea' %}
-          <textarea class="field" id="{{ field[0] }}" name="{{ field[1] }}" rows="6" placeholder="{{ field[4] }}" disabled></textarea>
+          <textarea class="field" id="{{ field[0] }}" name="{{ field[1] }}" rows="6" placeholder="{{ field[4] }}" required></textarea>
           {%- else %}
-          <input class="field" type="{{ field[2] }}" id="{{ field[0] }}" name="{{ field[1] }}" value="" placeholder="{{ field[4] }}" disabled>
+          <input class="field" type="{{ field[2] }}" id="{{ field[0] }}" name="{{ field[1] }}" value="" placeholder="{{ field[4] }}" required>
           {%- endif %}
         </div>
         {%- endfor %}
-        <div class="form__send">{{ orb(null, 'Form unavailable', { disabled: true, accent: true }) }}</div>
-      </div>
-      <p class="t-small t-note">The form is not connected yet. Please write by email.</p>
-      <p class="t-small t-note">The preview fields are disabled and do not send or save a message. Email opens your own mail application.</p>
+        <div class="form__send">{{ orb(null, 'Open email draft', { submit: true, accent: true }) }}</div>
+      </form>
+      <p class="t-small t-note">Sending opens your own email app with these words in place. Nothing is sent until you send it there.</p>
+      <p class="t-small t-note">This page does not store or send anything itself.</p>
       {{ pill('mailto:' + site.contact.email, 'Write by email', { inverse: true, magnet: 25 }) }}
     </div>
     <aside class="contact-head__details">

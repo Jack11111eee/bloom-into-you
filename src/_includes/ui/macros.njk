@@ -33,10 +33,11 @@
 
 {#- Orb: the large round call to action. -#}
 {% macro orb(href, label, opts = {}) -%}
-{%- if opts.disabled -%}
-<span class="orb orb--disabled{{ ' orb--accent' if opts.accent }}">
-  <button class="orb__label" type="button" disabled>{{ label }}</button>
-</span>
+{%- if opts.submit -%}
+<button class="orb{{ ' orb--accent' if opts.accent }}" type="submit" data-magnet="{{ opts.magnet or 90 }}" data-fill>
+  <span class="orb__fill" aria-hidden="true"></span>
+  <span class="orb__label" data-magnet-inner>{{ label }}</span>
+</button>
 {%- else -%}
 <a class="orb{{ ' orb--accent' if opts.accent }}" href="{{ href }}" data-magnet="{{ opts.magnet or 90 }}" data-fill>
   <span class="orb__fill" aria-hidden="true"></span>
