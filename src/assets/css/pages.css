@@ -11,6 +11,8 @@
   .hero__media {
     position: absolute;
     inset: -10% 0 0;
+    /* Its own layer: the swaying tanzaku above repaints every frame and must not redraw the photograph. */
+    will-change: transform;
   }
 
   .hero__media img {
