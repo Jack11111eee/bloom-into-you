@@ -92,7 +92,7 @@ export function createCurtain(scroll) {
     });
   }
 
-  // Between pages: rise from below, then wait for the destination.
+  // Between pages: rise from below, hold the page name long enough to read, then wait for the destination.
   function cover(nextLabel) {
     root.classList.add('is-transitioning');
     scroll.stop();
@@ -106,13 +106,14 @@ export function createCurtain(scroll) {
     const timeline = gsap.timeline();
     timeline.to(sheet, { yPercent: 0, duration: 0.55, ease: ease.in }, 0);
     timeline.to(sheet, { '--lip-top': LIP, duration: 0.45, ease: ease.in }, 0);
-    timeline.add(() => showLabel(nextLabel), 0.3);
+    timeline.add(() => showLabel(nextLabel), 0.55);
+    timeline.to({}, { duration: 0.45 }, 0.55);
     return timeline.then();
   }
 
   function showLabel(nextLabel) {
     const waiting = setTimeout(() => element.classList.add('is-waiting'), 1200);
-    gsap.fromTo(label, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: ease.out });
+    gsap.fromTo(label, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.8, ease: ease.out });
     return Promise.resolve(nextLabel).then(text => {
       clearTimeout(waiting);
       if (text) word.textContent = text;
@@ -136,7 +137,7 @@ export function createCurtain(scroll) {
     timeline.to(sheet, { '--lip-top': '0vh', duration: 0.3, ease: 'power2.out' }, 'out');
     timeline.to(sheet, { yPercent: -100, duration: 0.8, ease: 'power3.inOut' }, 'out');
     timeline.fromTo(sheet, { '--lip-bottom': LIP }, { '--lip-bottom': '0vh', duration: 0.85, ease: 'power3.inOut' }, 'out+=0.2');
-    timeline.to(label, { opacity: 0, duration: 0.4, ease: 'none' }, 'out');
+    timeline.to(label, { opacity: 0, duration: 0.6, ease: 'none' }, 'out');
     arrive(timeline, parts, 'out+=0.3', { duration: 1, stagger: 0.05 });
     return timeline.then();
   }
